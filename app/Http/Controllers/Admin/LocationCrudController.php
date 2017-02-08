@@ -29,7 +29,34 @@ class LocationCrudController extends CrudController
 		|--------------------------------------------------------------------------
 		*/
 
-        $this->crud->setFromDb();
+        //$this->crud->setFromDb();
+         $this->crud->addField([
+                                'name' => 'room',
+                                'label' => "Salle",
+                                'type' => 'text'
+                                ]);
+         $this->crud->addField([
+                                'name' => 'adress',
+                                'label' => "Adresse",
+                                'type' => 'text'
+                                ]);
+         // $this->crud->addField([
+         //                        'name' => 'adress',
+         //                        'label' => "Adresse",
+         //                        'type' => 'text'
+         //                        ]);
+
+         $this->crud->addColumn([
+                                     'name' => 'room', // The db column name
+                                     'label' => "Salle", // Table column heading
+                                     'type' => 'Text'
+                                 ]);
+         $this->crud->addColumn([
+                                'name' => 'adress',
+                                'label' => "Adresse",
+                                'type' => 'text'
+                                ]);
+
 
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');

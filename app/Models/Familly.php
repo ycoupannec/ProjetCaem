@@ -15,11 +15,11 @@ class Familly extends Model
 	|--------------------------------------------------------------------------
 	*/
 
-    //protected $table = 'famillys';
+    protected $table = 'famillies';
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $fillable = ['name'];
     // protected $hidden = [];
     // protected $dates = [];
 

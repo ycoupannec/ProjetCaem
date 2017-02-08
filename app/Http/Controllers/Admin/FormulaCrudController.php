@@ -29,7 +29,13 @@ class FormulaCrudController extends CrudController
 		|--------------------------------------------------------------------------
 		*/
 
-        $this->crud->setFromDb();
+        //$this->crud->setFromDb();
+
+        $this->crud->addField([
+                                'name' => 'name',
+                                'label' => "nom",
+                                'type' => 'text'
+                                ]);
 
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
@@ -38,6 +44,12 @@ class FormulaCrudController extends CrudController
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
         // ------ CRUD COLUMNS
+
+        $this->crud->addColumn([
+                                'name' => 'name',
+                                'label' => "nom",
+                                'type' => 'text'
+                                ]);
         // $this->crud->addColumn(); // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
         // $this->crud->removeColumn('column_name'); // remove a column from the stack

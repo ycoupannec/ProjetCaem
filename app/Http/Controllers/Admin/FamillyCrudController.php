@@ -29,9 +29,15 @@ class FamillyCrudController extends CrudController
 		|--------------------------------------------------------------------------
 		*/
 
-        $this->crud->setFromDb();
+        //$this->crud->setFromDb();
 
         // ------ CRUD FIELDS
+
+         $this->crud->addField([
+                                'name' => 'name',
+                                'label' => "nom",
+                                'type' => 'text'
+                                ]);
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
         // $this->crud->removeField('name', 'update/create/both');
@@ -44,6 +50,11 @@ class FamillyCrudController extends CrudController
         // $this->crud->removeColumns(['column_name_1', 'column_name_2']); // remove an array of columns from the stack
         // $this->crud->setColumnDetails('column_name', ['attribute' => 'value']); // adjusts the properties of the passed in column (by name)
         // $this->crud->setColumnsDetails(['column_1', 'column_2'], ['attribute' => 'value']);
+         $this->crud->addColumn([
+         'name' => 'name', // The db column name
+         'label' => "Nom", // Table column heading
+             'type' => 'Text'
+         ]);
 
         // ------ CRUD BUTTONS
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;
