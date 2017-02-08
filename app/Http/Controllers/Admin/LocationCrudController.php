@@ -29,17 +29,28 @@ class LocationCrudController extends CrudController
 		|--------------------------------------------------------------------------
 		*/
 
+
          $this->crud->setFromDb();
          $this->crud->addField([
+
+
+
+        $this->crud->setFromDb();
+        
+        $this->crud->addField([
+
                                 'name' => 'room',
                                 'label' => "Salle",
                                 'type' => 'text'
                                 ]);
+
+        
          $this->crud->addField([
                                 'name' => 'adress',
                                 'label' => "Adresse",
                                 'type' => 'text'
                                 ]);
+
 
 
          $this->crud->addField(
@@ -52,14 +63,30 @@ class LocationCrudController extends CrudController
             'attribute' => 'name', // foreign key attribute that is shown to user
             'model' => "App\Models\City" // foreign key model
             ]);
+
+          $this->crud->addField([
+                                'label' => "Ville",
+                                'type' => 'select',
+                                'name' => 'caem_city_id',
+                                'entity' =>'city',
+                                'attribute' => 'name',
+                                'model' => 'App\Models\City'
+
+                                ]);
+
          // $this->crud->addField([
          //                        'name' => 'adress',
          //                        'label' => "Adresse",
          //                        'type' => 'text'
          //                        ]);
 
+
          $this->crud->setColumnDetails('room',
                                 [
+
+        
+       /*  $this->crud->addColumn([
+
                                      'name' => 'room', // The db column name
                                      'label' => "Salle" // Table column heading
                                  ]);
@@ -68,6 +95,7 @@ class LocationCrudController extends CrudController
                                 [
                                 'name' => 'adress',
                                 'label' => "Adresse",
+
                                 ]);
 
           $this->crud->setColumnDetails('city_id',
@@ -82,6 +110,10 @@ class LocationCrudController extends CrudController
         );
 
 
+                                'type' => 'text'
+                                ]);*/
+
+
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
@@ -93,8 +125,18 @@ class LocationCrudController extends CrudController
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
         // $this->crud->removeColumn('column_name'); // remove a column from the stack
         // $this->crud->removeColumns(['column_name_1', 'column_name_2']); // remove an array of columns from the stack
-        // $this->crud->setColumnDetails('column_name', ['attribute' => 'value']); // adjusts the properties of the passed in column (by name)
+         // adjusts the properties of the passed in column (by name)
         // $this->crud->setColumnsDetails(['column_1', 'column_2'], ['attribute' => 'value']);
+        $this->crud->setColumnDetails('room', ['label' => 'Salle']);
+        $this->crud->setColumnDetails('adress', ['label' => 'Adresse']);
+        $this->crud->setColumnDetails('caem_city_id', 
+                                [ 'label' => "Ville",
+                                'type' => 'select',
+                                'name' => 'caem_city_id',
+                                'entity' =>'city',
+                                'attribute' => 'name',
+                                'model' => 'App\Models\City'
+                                ]);
 
         // ------ CRUD BUTTONS
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;

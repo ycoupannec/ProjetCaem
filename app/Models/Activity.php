@@ -15,11 +15,14 @@ class Activity extends Model
 	|--------------------------------------------------------------------------
 	*/
 
-    //protected $table = 'activitys';
-    //protected $primaryKey = 'id';
+    // protected $table = 'activities';
+    // protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    // protected $fillable = [];
+       protected $fillable = [
+        'name',
+        'type_activity_id'
+    ];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -33,7 +36,10 @@ class Activity extends Model
 	|--------------------------------------------------------------------------
 	| RELATIONS
 	|--------------------------------------------------------------------------
-	*/
+	*/ 
+    public function type_activity(){
+        return $this->belongsTo('App\Models\Types_activity');
+    }
 
     /*
 	|--------------------------------------------------------------------------

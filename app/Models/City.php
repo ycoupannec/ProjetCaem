@@ -15,12 +15,11 @@ class City extends Model
 	|--------------------------------------------------------------------------
 	*/
 
-    protected $table = 'cities';
-    protected $fillable=['name'];
+    //protected $table = 'citys';
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $fillable = ['name'];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -29,7 +28,7 @@ class City extends Model
 	| FUNCTIONS
 	|--------------------------------------------------------------------------
 	*/
-	
+
     /*
 	|--------------------------------------------------------------------------
 	| RELATIONS

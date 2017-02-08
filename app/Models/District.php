@@ -19,7 +19,7 @@ class District extends Model
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $fillable = ['name', 'city_id'];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -34,7 +34,9 @@ class District extends Model
 	| RELATIONS
 	|--------------------------------------------------------------------------
 	*/
-
+      public function city(){
+        return $this->belongsTo('App\Models\City');
+    }
     /*
 	|--------------------------------------------------------------------------
 	| SCOPES

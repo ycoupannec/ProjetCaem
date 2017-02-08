@@ -30,6 +30,28 @@ class DistrictCrudController extends CrudController
 		*/
 
         $this->crud->setFromDb();
+        
+         $this->crud->addField([
+            'name'  => 'name', // DB column name (will also be the name of the input)
+            'label' => 'Nom', // the human-readable label for the input
+            'type'  => 'text'
+            ]);
+        
+        $this->crud->addField(
+           
+           [  // Select
+            'label' => "Ville",
+            'type' => 'select',
+            'name' => 'city_id', // the db column for the foreign key
+            'entity' => 'city', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\City" // foreign key model
+            ]);
+        
+        
+        
+        
+        
 
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
@@ -38,6 +60,25 @@ class DistrictCrudController extends CrudController
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
         // ------ CRUD COLUMNS
+         $this->crud->setColumnDetails('name',
+            [
+            'name'  => 'name', // DB column name (will also be the name of the input)
+            'label' => 'Nom', // the human-readable label for the input 
+           ]
+        ); 
+        
+           $this->crud->setColumnDetails('city_id',
+            [
+            'label' => 'Ville', // Table column heading
+            'type' => 'select',
+            'name' => 'city_id', // the column that contains the ID of that connected entity;
+            'entity' => 'city', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\City", // foreign key model
+            ]
+        );
+        
+        
         // $this->crud->addColumn(); // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
         // $this->crud->removeColumn('column_name'); // remove a column from the stack
