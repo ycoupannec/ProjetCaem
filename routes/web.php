@@ -19,7 +19,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
 {
   // Backpack\CRUD: Define the resources for the entities you want to CRUD.
-    CRUD::resource('tag', 'Admin\TagCrudController');
+  
     CRUD::resource('city', 'Admin\CityCrudController');
     CRUD::resource('district', 'Admin\DistrictCrudController');
     CRUD::resource('person', 'Admin\PersonCrudController');
