@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 08, 2017 at 09:50 AM
+-- Generation Time: Feb 08, 2017 at 10:20 AM
 -- Server version: 5.7.17-0ubuntu0.16.04.1
 -- PHP Version: 5.6.30-1+deb.sury.org~xenial+1
 
@@ -29,10 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `activities` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `caem_type_activity_id` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `caem_type_activity_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -57,10 +54,7 @@ CREATE TABLE `caem_user` (
 
 CREATE TABLE `cities` (
   `id` int(11) NOT NULL,
-  `name` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `name` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -72,10 +66,7 @@ CREATE TABLE `cities` (
 CREATE TABLE `districts` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `caem_city_id` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `caem_city_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -86,10 +77,7 @@ CREATE TABLE `districts` (
 
 CREATE TABLE `famillies` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -100,10 +88,7 @@ CREATE TABLE `famillies` (
 
 CREATE TABLE `formulae` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -115,10 +100,7 @@ CREATE TABLE `formulae` (
 CREATE TABLE `formula_activities` (
   `id` int(11) NOT NULL,
   `caem_activity_id` int(11) DEFAULT NULL,
-  `caem_formula_id` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `caem_formula_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -129,10 +111,7 @@ CREATE TABLE `formula_activities` (
 
 CREATE TABLE `instruments` (
   `id` int(11) NOT NULL,
-  `name` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `name` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -145,10 +124,7 @@ CREATE TABLE `locations` (
   `id` int(11) NOT NULL,
   `room` varchar(255) NOT NULL,
   `adress` varchar(255) NOT NULL,
-  `caem_city_id` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `caem_city_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -161,10 +137,7 @@ CREATE TABLE `memberships` (
   `id` int(11) NOT NULL,
   `date_start` date NOT NULL,
   `date_end` date NOT NULL,
-  `caem_people_id` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `caem_people_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -176,10 +149,7 @@ CREATE TABLE `memberships` (
 CREATE TABLE `member_activities` (
   `id` int(11) NOT NULL,
   `caem_activity_id` int(11) DEFAULT NULL,
-  `caem_people_id` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `caem_people_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -192,10 +162,7 @@ CREATE TABLE `payments` (
   `id` int(11) NOT NULL,
   `price` float NOT NULL,
   `date` date NOT NULL,
-  `caem_type_payment_id` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `caem_type_payment_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -208,10 +175,7 @@ CREATE TABLE `payments_details` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `price` float NOT NULL,
-  `caem_activity_id` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `caem_activity_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -224,10 +188,7 @@ CREATE TABLE `payments_people` (
   `id` int(11) NOT NULL,
   `caem_payment_id` int(11) DEFAULT NULL,
   `caem_people_id` int(11) DEFAULT NULL,
-  `caem_produit_id` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `caem_produit_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -250,10 +211,7 @@ CREATE TABLE `people` (
   `observation` text,
   `caem_city_id` int(11) DEFAULT NULL,
   `caem_district_id` int(11) DEFAULT NULL,
-  `caem_familly_id` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `caem_familly_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -265,10 +223,7 @@ CREATE TABLE `people` (
 CREATE TABLE `people_instruments` (
   `id` int(11) NOT NULL,
   `caem_people_id` int(11) DEFAULT NULL,
-  `caem_instrument_id` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `caem_instrument_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -280,10 +235,7 @@ CREATE TABLE `people_instruments` (
 CREATE TABLE `people_types_people` (
   `id` int(11) NOT NULL,
   `caem_people_id` int(11) NOT NULL,
-  `caem_type_people_id` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `caem_type_people_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -295,10 +247,7 @@ CREATE TABLE `people_types_people` (
 CREATE TABLE `person_people` (
   `id` int(11) NOT NULL,
   `caem_people_id` int(11) DEFAULT NULL,
-  `caem_people_link_id` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `caem_people_link_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -313,10 +262,7 @@ CREATE TABLE `plm_activities` (
   `hour_end` time NOT NULL,
   `date` date NOT NULL,
   `observation` text NOT NULL,
-  `caem_location_id` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `caem_location_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -329,10 +275,7 @@ CREATE TABLE `plm_activities_people` (
   `id` int(11) NOT NULL,
   `caem_plm_activity_id` int(11) DEFAULT NULL,
   `caem_member_activity_id` int(11) DEFAULT NULL,
-  `caem_prof_activity_id` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `caem_prof_activity_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -345,10 +288,7 @@ CREATE TABLE `produits` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `price` float NOT NULL,
-  `caem_activity_id` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `caem_activity_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -360,10 +300,7 @@ CREATE TABLE `produits` (
 CREATE TABLE `teachers_activities` (
   `id` int(11) NOT NULL,
   `caem_activity_id` int(11) DEFAULT NULL,
-  `caem_people_id` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `caem_people_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -374,10 +311,7 @@ CREATE TABLE `teachers_activities` (
 
 CREATE TABLE `types_activities` (
   `id` int(11) NOT NULL,
-  `name` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `name` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -388,10 +322,7 @@ CREATE TABLE `types_activities` (
 
 CREATE TABLE `type_payments` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -403,10 +334,7 @@ CREATE TABLE `type_payments` (
 CREATE TABLE `type_people` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `caem_people_id` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `caem_people_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -418,10 +346,7 @@ CREATE TABLE `type_people` (
 CREATE TABLE `users_peoples` (
   `id` int(11) NOT NULL,
   `caem_user_id` int(11) DEFAULT NULL,
-  `caem_people_id` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `caem_people_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
