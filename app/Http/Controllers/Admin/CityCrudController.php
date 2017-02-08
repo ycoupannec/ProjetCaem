@@ -38,7 +38,7 @@ class CityCrudController extends CrudController
 
         $this->crud->addField([
             'name'=>'name',
-            'label'=>'nom',
+            'label'=>'Nom',
             'type'=>'text'
             ]);
 
@@ -53,7 +53,7 @@ class CityCrudController extends CrudController
 
 $this->crud->addColumn([
             'name'=>'name',
-            'label'=>'nom',
+            'label'=>'Nom',
             'type'=>'text'
             ]);
 
