@@ -16,6 +16,7 @@ return array(
     'CreateRevisionsTable' => $vendorDir . '/venturecraft/revisionable/src/migrations/2013_04_09_062329_create_revisions_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
+    'DeleteCaemToChamp' => $baseDir . '/database/migrations/2017_02_08_123715_delete_caem_to_champ.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
     'File_Iterator_Factory' => $vendorDir . '/phpunit/php-file-iterator/src/Factory.php',
