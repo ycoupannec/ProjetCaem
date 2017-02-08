@@ -32,13 +32,49 @@ class ActivityCrudController extends CrudController
         $this->crud->setFromDb();
 
         // ------ CRUD FIELDS
-        // $this->crud->addField($options, 'update/create/both');
+        $this->crud->addField([
+            'name'  => 'name', // DB column name (will also be the name of the input)
+            'label' => 'Nom', // the human-readable label for the input
+            'type'  => 'text'
+            ]);
+        
+        $this->crud->addField(
+           
+           [  // Select
+            'label' => "Types",
+            'type' => 'select',
+            'name' => 'type_activity_id', // the db column for the foreign key
+            'entity' => 'type_activity', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\Types_activity" // foreign key model
+            ]);
+        
+        
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
         // $this->crud->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
         // ------ CRUD COLUMNS
-        // $this->crud->addColumn(); // add a single column, at the end of the stack
+        
+        $this->crud->setColumnDetails('name',
+            [
+            'name'  => 'name', // DB column name (will also be the name of the input)
+            'label' => 'Nom', // the human-readable label for the input 
+           ]
+        );
+        
+        $this->crud->setColumnsDetails(['type_activity_id'],
+            [
+            'label' => 'Types', // Table column heading
+            'type' => 'select',
+            'name' => 'type_activity_id', // the column that contains the ID of that connected entity;
+            'entity' => 'type_activity', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\Types_activity", // foreign key model
+            ]
+        );
+        
+        // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
         // $this->crud->removeColumn('column_name'); // remove a column from the stack
         // $this->crud->removeColumns(['column_name_1', 'column_name_2']); // remove an array of columns from the stack
