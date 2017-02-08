@@ -417,6 +417,7 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
         'AddTimestampsToAll' => __DIR__ . '/../..' . '/database/migrations/2017_02_07_154243_add_timestamps_to_all.php',
         'AddTimestampsToCity' => __DIR__ . '/../..' . '/database/migrations/2017_02_07_134003_add_timestamps_to_city.php',
         'AddTimestampsToDistricts' => __DIR__ . '/../..' . '/database/migrations/2017_02_07_145909_add_timestamps_to_districts.php',
+        'ChangeIntToCharName' => __DIR__ . '/../..' . '/database/migrations/2017_02_08_110740_change_int_to_char_name.php',
         'ChangeNameInstrument' => __DIR__ . '/../..' . '/database/migrations/2017_02_08_104226_change_name_instrument.php',
         'CreatePagesTable' => __DIR__ . '/../..' . '/database/migrations/2016_05_25_121918_create_pages_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
