@@ -31,6 +31,60 @@ class PaymentCrudController extends CrudController
 
         $this->crud->setFromDb();
 
+        $this->crud->addField([
+                                'name' => 'price',
+                                'label' => "Montant",
+                                'type' => 'number',
+                                'prefix' => "€",
+                                ]);
+
+        $this->crud->addField([
+                                'name' => 'date',
+                                'label' => "Date de paiement",
+                                'type' => 'datetime_picker',
+
+                                'datetime_picker_options' => [
+                                                                'format' => 'DD/MM/YYYY',
+                                                                'language' => 'fr']
+                                ]);
+
+        $this->crud->addField(
+           
+           [  // Select
+            'label' => "Type de paiement",
+            'type' => 'select',
+            'name' => 'type_payment_id', // the db column for the foreign key
+            'entity' => 'type_payment', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\Type_payment", // foreign key model
+            
+            
+            ]);
+
+        $this->crud->setColumnDetails('price',
+                                [
+                                     'name' => 'price', // The db column name
+                                     'label' => "Montant" // Table column heading
+                                 ]);
+
+         $this->crud->setColumnDetails('date',
+                                [
+                                'name' => 'date',
+                                'label' => "Date de paiement",
+                                
+                                ]);
+
+          $this->crud->setColumnDetails('type_payment_id',
+            [
+            'label' => 'Type de paiement', // Table column heading
+            'type' => 'select',
+            'name' => 'type_payment_id', // the column that contains the ID of that connected entity;
+            'entity' => 'type_payment', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\Type_payment", // foreign key model
+            ]
+        );
+
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');

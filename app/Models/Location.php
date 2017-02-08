@@ -19,7 +19,7 @@ class Location extends Model
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $fillable = ['room', 'adress', 'city_id'];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -34,7 +34,9 @@ class Location extends Model
 	| RELATIONS
 	|--------------------------------------------------------------------------
 	*/
-
+	public function city(){
+        return $this->belongsTo('App\Models\City');
+    }
     /*
 	|--------------------------------------------------------------------------
 	| SCOPES

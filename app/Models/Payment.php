@@ -19,7 +19,7 @@ class Payment extends Model
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    // protected $fillable = [];
+     protected $fillable = ['price', 'date', 'type_payment_id'];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -34,7 +34,9 @@ class Payment extends Model
 	| RELATIONS
 	|--------------------------------------------------------------------------
 	*/
-
+	 public function type_payment(){
+        return $this->belongsTo('App\Models\Type_payment');
+    }
     /*
 	|--------------------------------------------------------------------------
 	| SCOPES

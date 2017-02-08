@@ -29,7 +29,7 @@ class LocationCrudController extends CrudController
 		|--------------------------------------------------------------------------
 		*/
 
-        //$this->crud->setFromDb();
+         $this->crud->setFromDb();
          $this->crud->addField([
                                 'name' => 'room',
                                 'label' => "Salle",
@@ -40,22 +40,46 @@ class LocationCrudController extends CrudController
                                 'label' => "Adresse",
                                 'type' => 'text'
                                 ]);
+
+
+         $this->crud->addField(
+           
+           [  // Select
+            'label' => "Ville",
+            'type' => 'select',
+            'name' => 'city_id', // the db column for the foreign key
+            'entity' => 'city', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\City" // foreign key model
+            ]);
          // $this->crud->addField([
          //                        'name' => 'adress',
          //                        'label' => "Adresse",
          //                        'type' => 'text'
          //                        ]);
 
-         $this->crud->addColumn([
+         $this->crud->setColumnDetails('room',
+                                [
                                      'name' => 'room', // The db column name
-                                     'label' => "Salle", // Table column heading
-                                     'type' => 'Text'
+                                     'label' => "Salle" // Table column heading
                                  ]);
-         $this->crud->addColumn([
+
+         $this->crud->setColumnDetails('adress',
+                                [
                                 'name' => 'adress',
                                 'label' => "Adresse",
-                                'type' => 'text'
                                 ]);
+
+          $this->crud->setColumnDetails('city_id',
+            [
+            'label' => 'Ville', // Table column heading
+            'type' => 'select',
+            'name' => 'city_id', // the column that contains the ID of that connected entity;
+            'entity' => 'city', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\City", // foreign key model
+            ]
+        );
 
 
         // ------ CRUD FIELDS

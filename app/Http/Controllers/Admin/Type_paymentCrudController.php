@@ -31,6 +31,20 @@ class Type_paymentCrudController extends CrudController
 
         $this->crud->setFromDb();
 
+         $this->crud->addField([
+            'name'=>'name',
+            'label'=>'Nom',
+            'type'=>'text'
+            ]);
+
+         $this->crud->setColumnDetails('name',
+                                [
+                                     'name' => 'name', // The db column name
+                                     'label' => "Nom" // Table column heading
+                                 ]);
+
+
+
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
