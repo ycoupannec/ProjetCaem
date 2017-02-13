@@ -414,6 +414,7 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
     );
 
     public static $classMap = array (
+        'AddPersonTypePerson' => __DIR__ . '/../..' . '/database/migrations/2017_02_13_103630_add_person_type_person.php',
         'AddTimestampsToAll' => __DIR__ . '/../..' . '/database/migrations/2017_02_07_154243_add_timestamps_to_all.php',
         'AddTimestampsToCity' => __DIR__ . '/../..' . '/database/migrations/2017_02_07_134003_add_timestamps_to_city.php',
         'AddTimestampsToDistricts' => __DIR__ . '/../..' . '/database/migrations/2017_02_07_145909_add_timestamps_to_districts.php',
