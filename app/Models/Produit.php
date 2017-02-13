@@ -22,13 +22,21 @@ class Produit extends Model
     // protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];
+		  protected $fillable = [
+        'name',
+        'price',
+        'activity_id'
+    ];
+
 
     /*
 	|--------------------------------------------------------------------------
 	| FUNCTIONS
 	|--------------------------------------------------------------------------
 	*/
-
+ public function activity(){
+        return $this->belongsTo('App\Models\Activity');
+    }
     /*
 	|--------------------------------------------------------------------------
 	| RELATIONS

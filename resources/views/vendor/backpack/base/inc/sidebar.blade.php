@@ -16,6 +16,7 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
           <li class="header">{{ trans('backpack::base.administration') }}</li>
+
           <!-- ================================================ -->
           <!-- ==== Recommended place for admin menu items ==== -->
           <!-- ================================================ -->
@@ -24,10 +25,12 @@
           <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/language/texts') }}"><i class="fa fa-language"></i> <span>Language Files</span></a></li>
           <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/page') }}"><i class="fa fa-file-o"></i> <span>Pages</span></a></li>
           <li><a href="{{ url('admin/activity') }}"><i class="fa fa-tag"></i> <span>Activités</span></a></li>
-          <li><a href="{{ url('admin/city') }}"><i class="fa fa-industry"></i> <span>Ville</span></a></li>
-          <li><a href="{{ url('admin/district') }}"><i class="fa fa-building"></i> <span>Quartier</span></a></li>
+          
           <li><a href="{{ url('admin/familly') }}"><i class="fa fa-users"></i> <span>Famille</span></a></li> 
           <li><a href="{{ url('admin/formula') }}"><i class="fa fa-tag"></i> <span>Formule</span></a></li> 
+          <li class="header">{{ trans('GESTION') }}</li>
+          <li><a href="{{ url('admin/city') }}"><i class="fa fa-industry"></i> <span>Ville</span></a></li>
+          <li><a href="{{ url('admin/district') }}"><i class="fa fa-building"></i> <span>Quartier</span></a></li>
           <li><a href="{{ url('admin/instrument') }}"><i class="fa fa-tag"></i> <span>Instrument</span></a></li> 
           <li><a href="{{ url('admin/location') }}"><i class="fa fa-map"></i> <span>Lieu</span></a></li> 
           <li><a href="{{ url('admin/membership') }}"><i class="fa fa-user-plus"></i> <span>Adhésion</span></a></li> 
