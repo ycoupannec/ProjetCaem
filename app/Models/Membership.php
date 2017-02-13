@@ -22,7 +22,15 @@ class Membership extends Model
     // protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];
+    protected $fillable = [
+        'date_start',
+        'date_end',
+        'person_id'
+    ];
 
+    public function person(){
+        return $this->belongsTo('App\Models\Person');
+    }
     /*
 	|--------------------------------------------------------------------------
 	| FUNCTIONS

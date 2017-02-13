@@ -19,11 +19,11 @@ class Location extends Model
 
     protected $fillable=['room',
     					'adress',
-    					'caem_city_id'];
+    					'city_id'];
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = ['room', 'adress', 'city_id'];
+  
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -32,9 +32,7 @@ class Location extends Model
 	| FUNCTIONS
 	|--------------------------------------------------------------------------
 	*/
-	public function city(){
-		return $this->belongsTo('App\Models\City', 'id');
-	}
+
     /*
 	|--------------------------------------------------------------------------
 	| RELATIONS
