@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddPersonTypePerson' => $baseDir . '/database/migrations/2017_02_13_103630_add_person_type_person.php',
     'AddTimestampsToAll' => $baseDir . '/database/migrations/2017_02_07_154243_add_timestamps_to_all.php',
     'AddTimestampsToCity' => $baseDir . '/database/migrations/2017_02_07_134003_add_timestamps_to_city.php',
     'AddTimestampsToDistricts' => $baseDir . '/database/migrations/2017_02_07_145909_add_timestamps_to_districts.php',

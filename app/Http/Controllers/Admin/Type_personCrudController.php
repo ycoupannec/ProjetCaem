@@ -31,6 +31,21 @@ class Type_personCrudController extends CrudController
 
         $this->crud->setFromDb();
 
+        $this->crud->addField([
+            'name'  => 'name', // DB column name (will also be the name of the input)
+            'label' => 'Nom', // the human-readable label for the input
+            'type'  => 'text'
+            ]);
+
+        
+
+        $this->crud->setColumnDetails('name',
+            [
+            'name'  => 'name', // DB column name (will also be the name of the input)
+            'label' => 'Nom', // the human-readable label for the input 
+           ]
+        );
+
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');

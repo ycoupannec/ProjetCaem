@@ -14,9 +14,15 @@ class DropPersonId extends Migration
     public function up()
     {
         //
-        // Schema::table('type_people', function (Blueprint $table) {
-        //     $table->dropColumn('person_id');
-        // });
+        if (Schema::hasColumn('type_people', 'person_id'))
+        {
+            Schema::table('type_people', function (Blueprint $table) {
+                // $table->dropIndex('ID_personne');
+                $table->dropForeign('type_people_ibfk_1');
+                $table->dropColumn('person_id');
+            });
+            //
+        }
     }
 
     /**
@@ -29,7 +35,7 @@ class DropPersonId extends Migration
         //
 
         // Schema::table('type_people', function (Blueprint $table) {
-        //     $table->dropColumn('person_id');
+        //     $table->number('person_id',11);
         // });
     }
 }
