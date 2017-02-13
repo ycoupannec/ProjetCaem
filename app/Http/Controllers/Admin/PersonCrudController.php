@@ -32,6 +32,199 @@ class PersonCrudController extends CrudController
         $this->crud->setFromDb();
 
         // ------ CRUD FIELDS
+        $this->crud->addField([
+            'name'  => 'name', // DB column name (will also be the name of the input)
+            'label' => 'Nom', // the human-readable label for the input
+            'type'  => 'text'
+            ]);
+
+        $this->crud->addField([
+            'name'  => 'family_name', // DB column name (will also be the name of the input)
+            'label' => 'Prenom', // the human-readable label for the input
+            'type'  => 'text'
+            ]);
+
+        $this->crud->addField([
+            'name'  => 'mail', // DB column name (will also be the name of the input)
+            'label' => 'Email', // the human-readable label for the input
+            'type'  => 'email'
+            ]);
+
+        $this->crud->addField([
+            'name'  => 'tel_fix', // DB column name (will also be the name of the input)
+            'label' => 'Tel. fix', // the human-readable label for the input
+            'type'  => 'text'
+            ]);
+
+        $this->crud->addField([
+            'name'  => 'tel_mob', // DB column name (will also be the name of the input)
+            'label' => 'Tel. mobile', // the human-readable label for the input
+            'type'  => 'text'
+            ]);
+
+        $this->crud->addField([
+            'name'  => 'postal_code', // DB column name (will also be the name of the input)
+            'label' => 'Code postale', // the human-readable label for the input
+            'type'  => 'number'
+            ]);
+
+        $this->crud->addField([
+            'name'  => 'adress', // DB column name (will also be the name of the input)
+            'label' => 'Adresse', // the human-readable label for the input
+            'type'  => 'text'
+            ]);
+
+        $this->crud->addField([
+            'name'  => 'birthday', // DB column name (will also be the name of the input)
+            'label' => 'Date de naissance', // the human-readable label for the input
+            'type' => 'datetime_picker',
+
+            'datetime_picker_options' => [
+                                            'format' => 'DD/MM/YYYY',
+                                            'language' => 'fr']
+            ]);
+
+        $this->crud->addField([
+            'name'  => 'observation', // DB column name (will also be the name of the input)
+            'label' => 'Observation', // the human-readable label for the input
+            'type'  => 'textarea'
+            ]);
+        
+        $this->crud->addField(
+           
+           [  // Select
+            'label' => "Cities",
+            'type' => 'select',
+            'name' => 'city_id', // the db column for the foreign key
+            'entity' => 'city', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\City" // foreign key model
+            ]);
+
+
+        $this->crud->addField(
+           
+           [  // Select
+            'label' => "Quartier",
+            'type' => 'select',
+            'name' => 'district_id', // the db column for the foreign key
+            'entity' => 'district', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\District" // foreign key model
+            ]);
+
+        $this->crud->addField(
+           
+           [  // Select
+            'label' => "famillies",
+            'type' => 'select',
+            'name' => 'familly_id', // the db column for the foreign key
+            'entity' => 'familly', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\Familly" // foreign key model
+            ]);
+
+
+
+         // ------ CRUD COLUMNS
+        
+        $this->crud->setColumnDetails('name',
+            [
+            'name'  => 'name', // DB column name (will also be the name of the input)
+            'label' => 'Nom', // the human-readable label for the input 
+           ]
+        );
+        
+        $this->crud->setColumnDetails('family_name',
+            [
+            'name'  => 'family_name', // DB column name (will also be the name of the input)
+            'label' => 'Nom de famille', // the human-readable label for the input 
+           ]
+        );
+
+        $this->crud->setColumnDetails('mail',
+            [
+            'name'  => 'mail', // DB column name (will also be the name of the input)
+            'label' => 'Email', // the human-readable label for the input 
+           ]
+        );
+
+        $this->crud->setColumnDetails('tel_fix',
+            [
+            'name'  => 'tel_fix', // DB column name (will also be the name of the input)
+            'label' => 'Tel. fix', // the human-readable label for the input 
+           ]
+        );
+
+        $this->crud->setColumnDetails('tel_mob',
+            [
+            'name'  => 'tel_mob', // DB column name (will also be the name of the input)
+            'label' => 'Tel. mobile', // the human-readable label for the input 
+           ]
+        );
+
+        $this->crud->setColumnDetails('postal_code',
+            [
+            'name'  => 'postal_code', // DB column name (will also be the name of the input)
+            'label' => 'Code postale', // the human-readable label for the input 
+           ]
+        );
+
+        $this->crud->setColumnDetails('adress',
+            [
+            'name'  => 'adress', // DB column name (will also be the name of the input)
+            'label' => 'Adresse', // the human-readable label for the input 
+           ]
+        );
+
+        $this->crud->setColumnDetails('birthday',
+            [
+            'name'  => 'birthday', // DB column name (will also be the name of the input)
+            'label' => 'Date de naissance', // the human-readable label for the input 
+           ]
+        );
+
+        $this->crud->setColumnDetails('observation',
+            [
+            'name'  => 'observation', // DB column name (will also be the name of the input)
+            'label' => 'Observation', // the human-readable label for the input 
+           ]
+        );
+
+        $this->crud->setColumnsDetails(['city_id'],
+            [
+            'label' => 'Ville', // Table column heading
+            'type' => 'select',
+            'name' => 'city_id', // the column that contains the ID of that connected entity;
+            'entity' => 'city', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\City", // foreign key model
+            ]
+        );
+
+        $this->crud->setColumnsDetails(['district_id'],
+            [
+            'label' => 'Quartier', // Table column heading
+            'type' => 'select',
+            'name' => 'district_id', // the column that contains the ID of that connected entity;
+            'entity' => 'district', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\district", // foreign key model
+            ]
+        );
+
+        $this->crud->setColumnsDetails(['familly_id'],
+            [
+            'label' => 'Famille', // Table column heading
+            'type' => 'select',
+            'name' => 'familly_id', // the column that contains the ID of that connected entity;
+            'entity' => 'familly', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\familly", // foreign key model
+            ]
+        );
+
+        // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
         // $this->crud->removeField('name', 'update/create/both');
