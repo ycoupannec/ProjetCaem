@@ -109,12 +109,12 @@ class MembershipCrudController extends CrudController
 
 
         
-         $this->crud->setColumnsDetails(['Person_id'],
+         $this->crud->setColumnsDetails(['person_id'],
             [
             'label' => 'Nom personne', // Table column heading
             'name' => 'person_id', // the column that contains the ID of that connected entity;
-            'type' => 'select2',
-            'entity' => 'getFullNameAttribute', // the method that defines the relationship in your Model
+            'type' => 'select',
+            'entity' => 'person', // the method that defines the relationship in your Model
             'attribute' => 'fullname', // foreign key attribute that is shown to user
             'model' => "App\Models\Person", // foreign key model
             ]
