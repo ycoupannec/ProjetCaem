@@ -10,6 +10,7 @@ return array(
     'AddTimestampsToAll' => $baseDir . '/database/migrations/2017_02_07_154243_add_timestamps_to_all.php',
     'AddTimestampsToCity' => $baseDir . '/database/migrations/2017_02_07_134003_add_timestamps_to_city.php',
     'AddTimestampsToDistricts' => $baseDir . '/database/migrations/2017_02_07_145909_add_timestamps_to_districts.php',
+    'ChangeIdIncrement' => $baseDir . '/database/migrations/2017_02_14_124629_change_id_increment.php',
     'ChangeIdProduit' => $baseDir . '/database/migrations/2017_02_08_144542_change_id_produit.php',
     'ChangeIntToCharName' => $baseDir . '/database/migrations/2017_02_08_110740_change_int_to_char_name.php',
     'ChangeNameInstrument' => $baseDir . '/database/migrations/2017_02_08_104226_change_name_instrument.php',

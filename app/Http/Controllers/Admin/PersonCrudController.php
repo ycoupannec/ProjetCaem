@@ -259,6 +259,32 @@ class PersonCrudController extends CrudController
             ]
         );
 
+        $this->crud->addField(
+           
+           [  // Select
+            'label' => "Type",
+            'type' => 'select2_multiple',
+            'name' => 'type_people', // the db column for the foreign key
+            'entity' => 'type_people', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\Type_person", // foreign key model
+            'pivot' => true
+            ]);
+
+        $this->crud->addColumn('type');
+
+        $this->crud->setColumnsDetails(['type'],
+            [
+            'label' => 'Type', // Table column heading
+            'type' => 'select_multiple',
+            'name' => 'type_people', // the column that contains the ID of that connected entity;
+            'entity' => 'type_people', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\Type_person", // foreign key model
+
+            ]
+        );
+
 
         
 
