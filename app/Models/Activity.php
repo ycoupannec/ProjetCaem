@@ -41,6 +41,18 @@ class Activity extends Model
         return $this->belongsTo('App\Models\Types_activity');
     }
 
+    public function member_activities()
+    {
+        return $this->belongsToMany('App\Models\Person', 'member_activities','activity_id','person_id');
+        // return $this->belongsToMany('App\Models\Person');
+    }
+
+    public function teachers_activities()
+    {
+        return $this->belongsToMany('App\Models\Person', 'teachers_activities','activity_id','person_id');
+        // return $this->belongsToMany('App\Models\Person');
+    }
+
     /*
 	|--------------------------------------------------------------------------
 	| SCOPES

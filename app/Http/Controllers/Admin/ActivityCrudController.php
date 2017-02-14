@@ -73,6 +73,59 @@ class ActivityCrudController extends CrudController
             'model' => "App\Models\Types_activity", // foreign key model
             ]
         );
+
+
+         $this->crud->addField(
+           
+           [  // Select
+            'label' => "Membres",
+            'type' => 'select2_multiple',
+            'name' => 'member_activities', // the db column for the foreign key
+            'entity' => 'member_activities', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\Person", // foreign key model
+            'pivot' => true
+            ]);
+
+        $this->crud->addColumn('type');
+
+        $this->crud->setColumnsDetails(['type'],
+            [
+            'label' => 'Membres', // Table column heading
+            'type' => 'select_multiple',
+            'name' => 'member_activities', // the column that contains the ID of that connected entity;
+            'entity' => 'member_activities', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\Person", // foreign key model
+
+            ]
+        );
+
+        $this->crud->addField(
+           
+           [  // Select
+            'label' => "Professeurs",
+            'type' => 'select2_multiple',
+            'name' => 'teachers_activities', // the db column for the foreign key
+            'entity' => 'teachers_activities', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\Person", // foreign key model
+            'pivot' => true
+            ]);
+
+        $this->crud->addColumn('type');
+
+        $this->crud->setColumnsDetails(['type'],
+            [
+            'label' => 'Professeurs', // Table column heading
+            'type' => 'select_multiple',
+            'name' => 'teachers_activities', // the column that contains the ID of that connected entity;
+            'entity' => 'teachers_activities', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\Person", // foreign key model
+
+            ]
+        );
         
         // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack

@@ -37,6 +37,14 @@ class Payment extends Model
 	 public function type_payment(){
         return $this->belongsTo('App\Models\Type_payment');
     }
+
+    
+
+    public function payments_people()
+    {
+        return $this->belongsToMany('App\Models\Person', 'payments_people','payment_id','person_id');
+        // return $this->belongsToMany('App\Models\Person');
+    }
     /*
 	|--------------------------------------------------------------------------
 	| SCOPES
