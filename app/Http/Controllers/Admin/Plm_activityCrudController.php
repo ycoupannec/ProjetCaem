@@ -36,6 +36,53 @@ class Plm_activityCrudController extends CrudController
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
         // $this->crud->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
+ $this->crud->addField( [   // date_picker
+    'name' => 'hour_start',
+    'label' => 'heure de début',
+    'type' => 'time'
+]);
+
+ $this->crud->addField( [   // date_picker
+    'name' => 'hour_end',
+    'label' => 'heure de fin',
+    'type' => 'time'
+]);
+
+$this->crud->addField(
+            [
+            'label' => 'Place', // Table column heading
+            'type' => 'select2',
+            'name' => 'location_id', // the column that contains the ID of that connected entity;
+            'entity' => 'getFullAdressAttribute', // the method that defines the relationship in your Model
+            'attribute' => 'fulladress', // foreign key attribute that is shown to user
+            'model' => "App\Models\Location", // foreign key model
+            ]
+        );
+
+       
+ $this->crud->setColumnDetails('hour_start',
+            [
+            'name'  => 'hour_start', // DB column name (will also be the name of the input)
+            'label' => 'Heure de début', // the human-readable label for the input 
+           ]
+        );
+  $this->crud->setColumnDetails('hour_end',
+            [
+            'name'  => 'hour_end', // DB column name (will also be the name of the input)
+            'label' => 'Heure de fin', // the human-readable label for the input 
+           ]
+        );
+
+    $this->crud->setColumnsDetails(['location_id'],
+            [
+            'label' => 'Place', // Table column heading
+            'name' => 'location_id', // the column that contains the ID of that connected entity;
+            'type' => 'select',
+            'entity' => 'location', // the method that defines the relationship in your Model
+            'attribute' => 'fulladress', // foreign key attribute that is shown to user
+            'model' => "App\Models\Location", // foreign key model
+            ]
+         );
 
         // ------ CRUD COLUMNS
         // $this->crud->addColumn(); // add a single column, at the end of the stack

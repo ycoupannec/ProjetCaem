@@ -28,13 +28,9 @@ class Membership extends Model
         'person_id'
     ];
 
-
-
     public function person(){
         return $this->belongsTo('App\Models\Person');
     }
-
-   
     /*
 	|--------------------------------------------------------------------------
 	| FUNCTIONS

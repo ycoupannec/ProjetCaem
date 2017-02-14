@@ -45,6 +45,10 @@ class Location extends Model
     public function membership(){
         return $this->belongsTo('App\Models\Membership');
     }
+
+    public function getFullAdressAttribute() {
+   		return $this->city_id.' '.$this->adress.' '.$this->room;
+}
     /*
 	|--------------------------------------------------------------------------
 	| SCOPES

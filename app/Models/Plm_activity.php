@@ -19,7 +19,7 @@ class Plm_activity extends Model
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $fillable = ['hour_start','hour_end','date','observation','location_id'];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -28,7 +28,9 @@ class Plm_activity extends Model
 	| FUNCTIONS
 	|--------------------------------------------------------------------------
 	*/
-
+	public function Location(){
+        return $this->belongsTo('App\Models\Location');
+    }
     /*
 	|--------------------------------------------------------------------------
 	| RELATIONS
