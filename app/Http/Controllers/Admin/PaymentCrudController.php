@@ -92,7 +92,7 @@ class PaymentCrudController extends CrudController
             'type' => 'select2_multiple',
             'name' => 'payments_people', // the db column for the foreign key
             'entity' => 'payments_people', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
+            'attribute' => 'fullname', // foreign key attribute that is shown to user
             'model' => "App\Models\Person", // foreign key model
              'pivot' => true
             ]);
@@ -105,11 +105,23 @@ class PaymentCrudController extends CrudController
             'type' => 'select_multiple',
             'name' => 'payments_people', // the column that contains the ID of that connected entity;
             'entity' => 'payments_people', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
+            'attribute' => 'fullname', // foreign key attribute that is shown to user
             'model' => "App\Models\Person", // foreign key model
 
             ]
         );
+
+
+        // $this->crud->setColumnsDetails(['person_id'],
+        //     [
+        //     'label' => 'Nom personne', // Table column heading
+        //     'name' => 'person_id', // the column that contains the ID of that connected entity;
+        //     'type' => 'select',
+        //     'entity' => 'person', // the method that defines the relationship in your Model
+        //     'attribute' => 'fullname', // foreign key attribute that is shown to user
+        //     'model' => "App\Models\Person", // foreign key model
+        //     ]
+        //  );
 
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
