@@ -50,7 +50,7 @@ class Plm_activityCrudController extends CrudController
 
 $this->crud->addField(
             [
-            'label' => 'Place', // Table column heading
+            'label' => 'Lieu', // Table column heading
             'type' => 'select2',
             'name' => 'location_id', // the column that contains the ID of that connected entity;
             'entity' => 'getFullAdressAttribute', // the method that defines the relationship in your Model
@@ -75,7 +75,7 @@ $this->crud->addField(
 
     $this->crud->setColumnsDetails(['location_id'],
             [
-            'label' => 'Place', // Table column heading
+            'label' => 'Lieu', // Table column heading
             'name' => 'location_id', // the column that contains the ID of that connected entity;
             'type' => 'select',
             'entity' => 'location', // the method that defines the relationship in your Model
