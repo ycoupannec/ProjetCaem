@@ -21,7 +21,7 @@ class DistrictCrudController extends CrudController
 		*/
         $this->crud->setModel("App\Models\District");
         $this->crud->setRoute("admin/district");
-        $this->crud->setEntityNameStrings('district', 'districts');
+        $this->crud->setEntityNameStrings('district','quartiers');
 
         /*
 		|--------------------------------------------------------------------------
@@ -68,7 +68,7 @@ class DistrictCrudController extends CrudController
         ); 
         
            $this->crud->setColumnDetails('city_id',
-            [
+            [p
             'label' => 'Ville', // Table column heading
             'type' => 'select',
             'name' => 'city_id', // the column that contains the ID of that connected entity;

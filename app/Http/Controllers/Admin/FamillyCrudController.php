@@ -21,7 +21,7 @@ class FamillyCrudController extends CrudController
 		*/
         $this->crud->setModel("App\Models\Familly");
         $this->crud->setRoute("admin/familly");
-        $this->crud->setEntityNameStrings('familly', 'famillys');
+        $this->crud->setEntityNameStrings('familly', 'Familles');
 
         /*
 		|--------------------------------------------------------------------------

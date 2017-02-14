@@ -21,7 +21,7 @@ class ActivityCrudController extends CrudController
 		*/
         $this->crud->setModel("App\Models\Activity");
         $this->crud->setRoute("admin/activity");
-        $this->crud->setEntityNameStrings('activity', 'activitys');
+        $this->crud->setEntityNameStrings('activity', 'Activités');
 
         /*
 		|--------------------------------------------------------------------------

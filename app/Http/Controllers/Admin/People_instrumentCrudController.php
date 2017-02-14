@@ -30,6 +30,30 @@ class People_instrumentCrudController extends CrudController
 		*/
 
         $this->crud->setFromDb();
+        
+         $this->crud->addField(
+           
+           [  // Select
+            'label' => "Personne",
+            'type' => 'select',
+            'name' => 'person_id', // the db column for the foreign key
+            'entity' => 'person', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\Person" // foreign key model
+            ]);
+        
+        $this->crud->addField(
+           
+           [  // Select
+            'label' => "Instruments",
+            'type' => 'select',
+            'name' => 'instrument_id', // the db column for the foreign key
+            'entity' => 'instrument', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\Instrument" // foreign key model
+            ]);
+        
+        
 
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
