@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\DistrictRequest as StoreRequest;
-use App\Http\Requests\DistrictRequest as UpdateRequest;
+use App\Http\Requests\MembershipRequest as StoreRequest;
+use App\Http\Requests\MembershipRequest as UpdateRequest;
 
-class DistrictCrudController extends CrudController
+class MembershipCrudController extends CrudController
 {
 
     public function setUp()
@@ -19,9 +19,9 @@ class DistrictCrudController extends CrudController
 		| BASIC CRUD INFORMATION
 		|--------------------------------------------------------------------------
 		*/
-        $this->crud->setModel("App\Models\District");
-        $this->crud->setRoute("admin/district");
-        $this->crud->setEntityNameStrings('district','quartiers');
+        $this->crud->setModel("App\Models\Membership");
+        $this->crud->setRoute("admin/membership");
+        $this->crud->setEntityNameStrings('adhesion', 'adhesions');//mettre en francais 
 
         /*
 		|--------------------------------------------------------------------------
@@ -30,53 +30,76 @@ class DistrictCrudController extends CrudController
 		*/
 
         $this->crud->setFromDb();
+
+        // ------ CRUD FIELDS
         
-         $this->crud->addField([
-            'name'  => 'name', // DB column name (will also be the name of the input)
-            'label' => 'Nom', // the human-readable label for the input
-            'type'  => 'text'
-            ]);
+        $this->crud->addField([
+            'name' => 'date_start',
+            'label' => 'date Inscription',
+            'type' => 'datetime_picker',
+                     'datetime_picker_options' => [ 'format' => 'DD/MM/YYYY',
+                                               'language' => 'fr']
+            
+        ]);
+        
+        $this->crud->addField([
+            'name' => 'date_end',
+            'label' => 'Date fin',
+            'type' => 'datetime_picker',
+                 'datetime_picker_options' => [ 'format' => 'DD/MM/YYYY',
+                                               'language' => 'fr']
+            
+        ]);
+        
         
         $this->crud->addField(
            
            [  // Select
-            'label' => "Ville",
+            
+            'label' => "Personne",
             'type' => 'select',
-            'name' => 'city_id', // the db column for the foreign key
-            'entity' => 'city', // the method that defines the relationship in your Model
+            'name' => 'person_id',
+             // the db column for the foreign key
+            'entity' => 'person', // the method that defines the relationship in your Model
             'attribute' => 'name', // foreign key attribute that is shown to user
-            'model' => "App\Models\City" // foreign key model
+            'model' => "App\Models\Person" // foreign key model
             ]);
         
-        
-        
-        
-        
-
-        // ------ CRUD FIELDS
+      
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
         // $this->crud->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
         // ------ CRUD COLUMNS
-         $this->crud->setColumnDetails('name',
+        $this->crud->setColumnDetails('date_start',
             [
-            'name'  => 'name', // DB column name (will also be the name of the input)
-            'label' => 'Nom', // the human-readable label for the input 
+            'name'  => 'date_start', // DB column name (will also be the name of the input)
+            'label' => 'Date inscrition', // the human-readable label for the input 
            ]
         ); 
         
-           $this->crud->setColumnDetails('city_id',
+         $this->crud->setColumnDetails('date_end',
             [
-            'label' => 'Ville', // Table column heading
-            'type' => 'select',
-            'name' => 'city_id', // the column that contains the ID of that connected entity;
-            'entity' => 'city', // the method that defines the relationship in your Model
+            'name'  => 'date_end', // DB column name (will also be the name of the input)
+            'label' => 'Date de fin', // the human-readable label for the input 
+           ]
+        ); 
+        
+        $this->crud->setColumnDetails('person_id',
+            [
+            'name'  => 'person_id', // DB column name (will also be the name of the input)
+            'label' => 'Personne',
+            'type'=>'select',// the human-readable label for the input 
+            'entity' => 'person', // the method that defines the relationship in your Model
             'attribute' => 'name', // foreign key attribute that is shown to user
-            'model' => "App\Models\City", // foreign key model
-            ]
-        );
+            'model' => "App\Models\Person" // foreign key model
+           
+        
+            
+           ]
+        ); 
+        
         
         
         // $this->crud->addColumn(); // add a single column, at the end of the stack

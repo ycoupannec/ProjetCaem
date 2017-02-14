@@ -21,7 +21,7 @@ class FormulaCrudController extends CrudController
 		*/
         $this->crud->setModel("App\Models\Formula");
         $this->crud->setRoute("admin/formula");
-        $this->crud->setEntityNameStrings('formula', 'formulas');
+        $this->crud->setEntityNameStrings('formula', 'formules');
 
         /*
 		|--------------------------------------------------------------------------

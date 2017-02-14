@@ -109,22 +109,22 @@ class MembershipCrudController extends CrudController
 
 
         
-         $this->crud->setColumnsDetails(['Person_id'],
+         $this->crud->setColumnsDetails('person_id',
             [
             'label' => 'Nom personne', // Table column heading
             'name' => 'person_id', // the column that contains the ID of that connected entity;
-            'type' => 'select2',
-            'entity' => 'getFullNameAttribute', // the method that defines the relationship in your Model
+            'type' => 'select',
+            'entity' => 'person', // the method that defines the relationship in your Model
             'attribute' => 'fullname', // foreign key attribute that is shown to user
             'model' => "App\Models\Person", // foreign key model
             ]
-         );
+         ); 
         
 
 
         // ------ CRUD BUTTONS
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;
-        // $this->crud->addButton($stack, $name, $type, $content, $position); // add a button; possible types are: view, model_function
+        // $this->cr'attribute' => 'fullname', // foreign key attribute that is shown to userud->addButton($stack, $name, $type, $content, $position); // add a button; possible types are: view, model_function
         // $this->crud->addButtonFromModelFunction($stack, $name, $model_function_name, $position); // add a button whose HTML is returned by a method in the CRUD model
         // $this->crud->addButtonFromView($stack, $name, $view, $position); // add a button whose HTML is in a view placed at resources\views\vendor\backpack\crud\buttons
         // $this->crud->removeButton($name);

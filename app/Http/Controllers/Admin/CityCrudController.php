@@ -21,7 +21,7 @@ class CityCrudController extends CrudController
 		*/
         $this->crud->setModel("App\Models\City");
         $this->crud->setRoute("admin/city");
-        $this->crud->setEntityNameStrings('city', 'citys');
+        $this->crud->setEntityNameStrings('city', 'Villes');
 
         /*
 		|--------------------------------------------------------------------------
