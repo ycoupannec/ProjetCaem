@@ -19,7 +19,7 @@ class Person_person extends Model
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $fillable = ['person_id', 'people_link_id'];
     // protected $hidden = [];
     // protected $dates = [];
 

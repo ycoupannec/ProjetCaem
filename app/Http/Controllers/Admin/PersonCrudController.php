@@ -16,18 +16,22 @@ class PersonCrudController extends CrudController
 
         /*
 		|--------------------------------------------------------------------------
-		| BASIC CRUD INFORMATION
-		|--------------------------------------------------------------------------
-		*/
+        | BASIC CRUD INFORMATION
+        |--------------------------------------------------------------------------
+        */
         $this->crud->setModel("App\Models\Person");
         $this->crud->setRoute("admin/person");
         $this->crud->setEntityNameStrings('person', 'persons');
 
+
+        
+
+
         /*
-		|--------------------------------------------------------------------------
-		| BASIC CRUD INFORMATION
-		|--------------------------------------------------------------------------
-		*/
+        |--------------------------------------------------------------------------
+        | BASIC CRUD INFORMATION
+        |--------------------------------------------------------------------------
+        */
 
         $this->crud->setFromDb();
 
@@ -124,6 +128,8 @@ class PersonCrudController extends CrudController
             'model' => "App\Models\Familly" // foreign key model
             ]);
 
+        
+
 
 
          // ------ CRUD COLUMNS
@@ -194,7 +200,7 @@ class PersonCrudController extends CrudController
         $this->crud->setColumnsDetails(['city_id'],
             [
             'label' => 'Ville', // Table column heading
-            'type' => 'select',
+            'type' => 'select2',
             'name' => 'city_id', // the column that contains the ID of that connected entity;
             'entity' => 'city', // the method that defines the relationship in your Model
             'attribute' => 'name', // foreign key attribute that is shown to user
@@ -205,7 +211,7 @@ class PersonCrudController extends CrudController
         $this->crud->setColumnsDetails(['district_id'],
             [
             'label' => 'Quartier', // Table column heading
-            'type' => 'select',
+            'type' => 'select2',
             'name' => 'district_id', // the column that contains the ID of that connected entity;
             'entity' => 'district', // the method that defines the relationship in your Model
             'attribute' => 'name', // foreign key attribute that is shown to user
@@ -216,14 +222,49 @@ class PersonCrudController extends CrudController
         $this->crud->setColumnsDetails(['familly_id'],
             [
             'label' => 'Famille', // Table column heading
-            'type' => 'select',
+            'type' => 'select2',
             'name' => 'familly_id', // the column that contains the ID of that connected entity;
             'entity' => 'familly', // the method that defines the relationship in your Model
             'attribute' => 'name', // foreign key attribute that is shown to user
-            'model' => "App\Models\familly", // foreign key model
+            'model' => "App\Models\Familly", // foreign key model
             ]
         );
+
+
+// -------------------------------------------------------------------
+
+        $this->crud->addField(
+           
+           [  // Select
+            'label' => "Personne rattaché",
+            'type' => 'select2_multiple',
+            'name' => 'people_people', // the db column for the foreign key
+            'entity' => 'people_people', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\Person", // foreign key model
+            'pivot' => true
+            ]);
+
+        $this->crud->addColumn('rattache');
+
+        $this->crud->setColumnsDetails(['rattache'],
+            [
+            'label' => 'Personne rattaché', // Table column heading
+            'type' => 'select_multiple',
+            'name' => 'people_people', // the column that contains the ID of that connected entity;
+            'entity' => 'people_people', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\Person", // foreign key model
+
+            ]
+        );
+
+
         
+
+
+
+
 
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
