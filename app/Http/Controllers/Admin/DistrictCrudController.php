@@ -68,7 +68,7 @@ class DistrictCrudController extends CrudController
         ); 
         
            $this->crud->setColumnDetails('city_id',
-            [
+            [p
             'label' => 'Ville', // Table column heading
             'type' => 'select',
             'name' => 'city_id', // the column that contains the ID of that connected entity;
