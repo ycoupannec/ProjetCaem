@@ -56,9 +56,13 @@ class Person extends Model
         // return $this->belongsToMany('App\Models\Person');
     }
 
-   
+    public function type_people()
+    {
+        return $this->belongsToMany('App\Models\Type_person', 'people_types_people','person_id','type_person_id');
+        // return $this->belongsToMany('App\Models\Person');
+    }
 
-        public function membership(){
+    public function membership(){
         return $this->belongsTo('App\Models\Membership');
     }
 
