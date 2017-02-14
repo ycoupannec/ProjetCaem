@@ -85,6 +85,32 @@ class PaymentCrudController extends CrudController
             ]
         );
 
+        $this->crud->addField(
+           
+           [  // Select
+            'label' => "Personne",
+            'type' => 'select2_multiple',
+            'name' => 'payments_people', // the db column for the foreign key
+            'entity' => 'payments_people', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\Person", // foreign key model
+             'pivot' => true
+            ]);
+
+        $this->crud->addColumn('people');
+
+        $this->crud->setColumnsDetails(['people'],
+            [
+            'label' => 'Personne', // Table column heading
+            'type' => 'select_multiple',
+            'name' => 'payments_people', // the column that contains the ID of that connected entity;
+            'entity' => 'payments_people', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\Person", // foreign key model
+
+            ]
+        );
+
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
