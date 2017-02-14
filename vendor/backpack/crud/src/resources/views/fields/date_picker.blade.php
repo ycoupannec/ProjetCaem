@@ -4,7 +4,7 @@
     // if the column has been cast to Carbon or Date (using attribute casting)
     // get the value as a date string
     if (isset($field['value']) && ( $field['value'] instanceof \Carbon\Carbon || $field['value'] instanceof \Jenssegers\Date\Date )) {
-        $field['value'] = $field['value']->format( 'Y-m-d' );
+        $field['value'] = $field['value']->format('Y-m-d');
     }
 
     $field_language = isset($field['date_picker_options']['language'])?$field['date_picker_options']['language']:\App::getLocale();
@@ -13,6 +13,7 @@
 <div @include('crud::inc.field_wrapper_attributes') >
     <input type="hidden" name="{{ $field['name'] }}" value="{{ old($field['name']) ? old($field['name']) : (isset($field['value']) ? $field['value'] : (isset($field['default']) ? $field['default'] : '' )) }}">
     <label>{!! $field['label'] !!}</label>
+    @include('crud::inc.field_translatable_icon')
     <div class="input-group date">
         <input
             data-bs-datepicker="{{ isset($field['date_picker_options']) ? json_encode($field['date_picker_options']) : '{}'}}"
@@ -76,28 +77,30 @@
                 });
 
                 $picker.on('show hide change', function(e){
-                     if( e.date ){
-                         var sqlDate = e.format('yyyy-mm-dd');
-                     } else {
-                         try {
-                             var sqlDate = $fake.val();
+                    if( e.date ){
+                        var sqlDate = e.format('yyyy-mm-dd');
+                    } else {
+                        try {
+                            var sqlDate = $fake.val();
 
-                             if( $customConfig.format === 'dd/mm/yyyy' ){
-                                 sqlDate = new Date(sqlDate.split('/')[2], sqlDate.split('/')[1] - 1, sqlDate.split('/')[0]).format('yyyy-mm-dd');
-                             }
-                         } catch(e){
-                             PNotify.removeAll();
-                             new PNotify({
-                                title: 'Whoops!',
-                                text: 'Sorry we did not recognise that date format, please make sure it uses a yyyy mm dd combination',
-                                type: 'error',
-                                icon: false
-                            });
-                         }
-                     }
-                     $field.val(sqlDate);
+                            if( $customConfig.format === 'dd/mm/yyyy' ){
+                                sqlDate = new Date(sqlDate.split('/')[2], sqlDate.split('/')[1] - 1, sqlDate.split('/')[0]).format('yyyy-mm-dd');
+                            }
+                        } catch(e){
+                            if( $fake.val() ){
+                                PNotify.removeAll();
+                                new PNotify({
+                                    title: 'Whoops!',
+                                    text: 'Sorry we did not recognise that date format, please make sure it uses a yyyy mm dd combination',
+                                    type: 'error',
+                                    icon: false
+                                });
+                            }
+                        }
+                    }
+
+                    $field.val(sqlDate);
                 });
-
             });
         });
     </script>

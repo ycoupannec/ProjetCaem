@@ -20,6 +20,71 @@ All Notable changes to `Backpack CRUD` will be documented in this file
 - Nothing
 
 
+## [3.2.3] - 2017-02-14
+
+### Fixed
+- Spatie/Translatable fake columns had some slashed added to the json - fixes #442;
+
+
+## [3.2.2] - 2017-02-13
+
+### Fixed
+- CrudTrait::getCastedAttributes();
+
+
+
+## [3.2.1] - 2017-02-13
+
+### Fixed
+- removed a few PHP7 methods, so that PHP 5.6.x is still supported;
+
+
+## [3.2.0] - 2017-02-13
+
+### Added
+- form save button better UI&UX: they have the options in a dropdown instead of radio buttons and the default behaviour is stored in the session upon change - thanks to [Owen Melbourne](https://github.com/OwenMelbz);
+- redirect_after_save button actions;
+- filters on list views (deleted the 3.1.41 and 4.1.42 tags because they were breaking changes);
+- routes are now abstracted intro CrudRoute, so that new routes can be easily added;
+- Greek translation (thanks [Stamatis Katsaounis](https://github.com/skatsaounis));
+- tabbed create&update forms - thanks to [Owen Melbourne](https://github.com/OwenMelbz);
+- grouped and inline errors - thanks to [Owen Melbourne](https://github.com/OwenMelbz);
+- developers can now choose custom views per CRUD panel - thanks to [Owen Melbourne](https://github.com/OwenMelbz);
+- select2_ajax and select2_ajax_multiple field types - thanks to [maesklaas](https://github.com/maesklaas);
+
+### Fixed
+- excluded _method from massAssignment, so create/update errors will be more useful;
+
+## [3.1.60] - 2017-02-13
+
+### Fixed
+- select2_ajax and select2_ajax_multiple field types have been renamed to select2_from_ajax and select2_from_ajax_multiple for field naming consistency;
+
+
+## [3.1.59] - 2017-02-13
+
+### Added
+- date_range field, thanks to [Owen Melbourne](https://github.com/OwenMelbz);
+- select2_ajax and select2_ajax_multiple field types - thanks to [maesklaas](https://github.com/maesklaas);
+
+### Fixed
+- change the way the CrudPanel class is injected, so it can be overwritten more easily;
+- simpleMDE field type - full screen fixed;
+
+
+## [3.1.58] - 2017-02-10
+
+### Added
+- Bulgarian translation, thanks to [Petyo Tsonev](https://github.com/petyots);
+- select2_from_array, thanks to [Nick Barrett](https://github.com/njbarrett);
+
+### Fixed
+- DateTime Picker error when date deleted after being set - fixes #386;
+- Abstracted primary key in select_multiple column - fixes #377 and #412;
+- AutoSet methods now using the connection on the model, instead of the default connection; This should allow for CRUDs from multiple databases inside one app; Big thanks to [Hamid Alaei Varnosfaderani](https://github.com/halaei) for this PR;
+- Check that the Fake field is included in the request before trying to use it;
+
+
 ## [3.1.57] - 2017-02-03
 
 ### Added
@@ -139,6 +204,7 @@ All Notable changes to `Backpack CRUD` will be documented in this file
 
 ### Fixed
 - n-n filters prevented CRUD items from being added;
+
 
 ## [3.1.41] - 2016-11-11
 

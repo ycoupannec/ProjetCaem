@@ -66,11 +66,21 @@ class Person extends Model
 
         return $this->belongsTo('App\Models\Membership');
     }
+<<<<<<< HEAD
 
 
 	public function getFullNameAttribute() {
    		return $this->family_name.' '.$this->name;
 }
+=======
+    
+        public function people_instruments()
+    {
+        return $this->belongsToMany('App\Models\Instrument', 'people_instruments','person_id','instrument_id');
+        // return $this->belongsToMany('App\Models\Person');
+    }
+
+>>>>>>> f943ef3624f6f708e1ed7c27da30ec6599e1e657
     /*
 	|--------------------------------------------------------------------------
 	| SCOPES

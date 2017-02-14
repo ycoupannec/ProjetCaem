@@ -1,6 +1,6 @@
 /*!
  * elFinder - file manager for web
- * Version 2.1.20 (2017-01-11)
+ * Version 2.1.21 (2017-02-08)
  * http://elfinder.org
  * 
  * Copyright 2009-2017, Studio 42
@@ -1995,7 +1995,7 @@ var elFinder = function(node, opts) {
 				return parents;
 			};
 		
-		if (! onlydir) {
+		if (! onlydir && self.api >= 2) {
 			(cwd !== this.root()) && opts.push(this.request({
 				data           : {cmd : 'parents', target : cwd},
 				preventDefault : true
@@ -2042,7 +2042,10 @@ var elFinder = function(node, opts) {
 			}
 			
 			if (self.api < 2.1) {
-				pdata.tree = (pdata.tree || []).push(odata.cwd);
+				if (! pdata.tree) {
+					pdata.tree = [];
+				}
+				pdata.tree.push(odata.cwd);
 			}
 			
 			// data normalize
@@ -6903,7 +6906,7 @@ if (!Object.keys) {
  *
  * @type String
  **/
-elFinder.prototype.version = '2.1.20';
+elFinder.prototype.version = '2.1.21';
 
 
 
@@ -7424,7 +7427,10 @@ elFinder.prototype._options = {
 			// If you set to "get" will be displayed request parameter in the browser's location field
 			// so if you want to conceal its parameters should be given "post".
 			// Nevertheless, please specify "get" if you want to enable the partial request by HTTP Range header.
-			method : 'post'
+			method : 'post',
+			// Where to open into : 'window'(default), 'tab' or 'tabs'
+			// 'tabs' opens in each tabs
+			into   : 'window'
 		},
 		// "upload" command options.
 		upload : {
@@ -13077,11 +13083,7 @@ $.fn.elfindernavbar = function(fm, opts) {
 			};
 
 			fm.one('cssloaded', function() {
-				var old = delta;
 				delta = nav.outerHeight() - nav.height();
-				if (old !== delta) {
-					fm.trigger('wzresize');
-				}
 			}).bind('wzresize', function() {
 				nav.height(wz.height() - delta);
 			});
@@ -15934,11 +15936,8 @@ $.fn.elfinderworkzone = function(fm) {
 			
 		parent.add(window).on('resize.' + fm.namespace, fitsize);
 		fm.one('cssloaded', function() {
-			var old = wdelta;
 			wdelta = wz.outerHeight(true) - wz.height();
-			if (old !== wdelta) {
-				fm.trigger('uiresize');
-			}
+			fitsize();
 		}).bind('uiresize', fitsize);
 	});
 	return this;
@@ -16731,7 +16730,7 @@ elFinder.prototype.commands.download = function() {
 										dfd.resolve();
 										setTimeout(function() {
 											iframe.remove();
-										}, fm.UA.Firefox? 20000 : 1000); // give mozilla 20 sec file to be saved
+										}, 20000); // give 20 sec file to be saved
 									});
 							}
 						}
@@ -16801,7 +16800,7 @@ elFinder.prototype.commands.download = function() {
 						$(iframes).each(function() {
 							$('#' + $(this).attr('id')).remove();
 						});
-					}, fm.UA.Firefox? (20000 + (10000 * i)) : 1000); // give mozilla 20 sec + 10 sec for each file to be saved
+					}, 20000 + (10000 * i)); // give 20 sec + 10 sec for each file to be saved
 				});
 			fm.trigger('download', {files : files});
 			return dfrd.resolve();
@@ -18756,6 +18755,7 @@ elFinder.prototype.commands.netunmount = function() {
 			cnt   = files.length,
 			thash = (typeof opts == 'object')? opts.thash : false,
 			opts  = this.options,
+			into  = opts.into || 'window',
 			file, url, s, w, imgW, imgH, winW, winH, reg, link, html5dl, inline;
 
 		if (!cnt && !thash) {
@@ -18784,6 +18784,8 @@ elFinder.prototype.commands.netunmount = function() {
 		}
 		
 		var doOpen = function() {
+			var wnd, target;
+			
 			try {
 				reg = new RegExp(fm.option('dispInlineRegex'));
 			} catch(e) {
@@ -18795,6 +18797,7 @@ elFinder.prototype.commands.netunmount = function() {
 			html5dl  = (typeof link.get(0).download === 'string');
 			cnt = files.length;
 			while (cnt--) {
+				target = 'elf_open_window';
 				file = files[cnt];
 				
 				if (!file.read) {
@@ -18816,34 +18819,40 @@ elFinder.prototype.commands.netunmount = function() {
 						}
 					}
 				} else {
-					
-					// set window size for image if set
-					imgW = winW = Math.round(2 * $(window).width() / 3);
-					imgH = winH = Math.round(2 * $(window).height() / 3);
-					if (parseInt(file.width) && parseInt(file.height)) {
-						imgW = parseInt(file.width);
-						imgH = parseInt(file.height);
-					} else if (file.dim) {
-						s = file.dim.split('x');
-						imgW = parseInt(s[0]);
-						imgH = parseInt(s[1]);
-					}
-					if (winW >= imgW && winH >= imgH) {
-						winW = imgW;
-						winH = imgH;
-					} else {
-						if ((imgW - winW) > (imgH - winH)) {
-							winH = Math.round(imgH * (winW / imgW));
-						} else {
-							winW = Math.round(imgW * (winH / imgH));
-						}
-					}
-					w = 'width='+winW+',height='+winH;
-		
 					if (url.indexOf(fm.options.url) === 0) {
 						url = '';
 					}
-					var wnd = window.open(url, 'new_window', w + ',top=50,left=50,scrollbars=yes,resizable=yes');
+					if (into === 'window') {
+						// set window size for image if set
+						imgW = winW = Math.round(2 * $(window).width() / 3);
+						imgH = winH = Math.round(2 * $(window).height() / 3);
+						if (parseInt(file.width) && parseInt(file.height)) {
+							imgW = parseInt(file.width);
+							imgH = parseInt(file.height);
+						} else if (file.dim) {
+							s = file.dim.split('x');
+							imgW = parseInt(s[0]);
+							imgH = parseInt(s[1]);
+						}
+						if (winW >= imgW && winH >= imgH) {
+							winW = imgW;
+							winH = imgH;
+						} else {
+							if ((imgW - winW) > (imgH - winH)) {
+								winH = Math.round(imgH * (winW / imgW));
+							} else {
+								winW = Math.round(imgW * (winH / imgH));
+							}
+						}
+						w = 'width='+winW+',height='+winH;
+						wnd = window.open(url, target, w + ',top=50,left=50,scrollbars=yes,resizable=yes');
+					} else {
+						if (into === 'tabs') {
+							target = file.hash;
+						}
+						wnd = window.open('about:blank', target);
+					}
+					
 					if (!wnd) {
 						return dfrd.reject('errPopup');
 					}
@@ -18852,7 +18861,7 @@ elFinder.prototype.commands.netunmount = function() {
 						var form = document.createElement("form");
 						form.action = fm.options.url;
 						form.method = typeof opts.method === 'string' && opts.method.toLowerCase() === 'get'? 'GET' : 'POST';
-						form.target = 'new_window';
+						form.target = target;
 						form.style.display = 'none';
 						var params = $.extend({}, fm.options.customData, {
 							cmd: 'file',
@@ -18868,6 +18877,8 @@ elFinder.prototype.commands.netunmount = function() {
 						
 						document.body.appendChild(form);
 						form.submit();
+					} else if (into !== 'window') {
+						wnd.location = url;
 					}
 					wnd.focus();
 					
@@ -22657,7 +22668,7 @@ elFinder.prototype.commands.upload = function() {
 				return tgts;
 			},
 			targets = getTargets(),
-			check = !targets && data && data.target? data.target : targets[0],
+			check = targets? targets[0] : (data && data.target? data.target : null),
 			targetDir = check? fm.file(check) : fm.cwd(),
 			fmUpload = function(data) {
 				fm.upload(data)
