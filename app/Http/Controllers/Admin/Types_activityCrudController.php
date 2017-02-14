@@ -36,7 +36,11 @@ class Types_activityCrudController extends CrudController
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
         // $this->crud->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
-
+        $this->crud->addField([
+            'name'  => 'name', // DB column name (will also be the name of the input)
+            'label' => 'Nom', // the human-readable label for the input
+            'type'  => 'text'
+            ]);
         // ------ CRUD COLUMNS
         // $this->crud->addColumn(); // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
@@ -44,7 +48,13 @@ class Types_activityCrudController extends CrudController
         // $this->crud->removeColumns(['column_name_1', 'column_name_2']); // remove an array of columns from the stack
         // $this->crud->setColumnDetails('column_name', ['attribute' => 'value']); // adjusts the properties of the passed in column (by name)
         // $this->crud->setColumnsDetails(['column_1', 'column_2'], ['attribute' => 'value']);
-
+        $this->crud->setColumnDetails('name',
+            [
+            'name'  => 'name', // DB column name (will also be the name of the input)
+            'label' => 'Nom', // the human-readable label for the input 
+           ]
+        );
+        
         // ------ CRUD BUTTONS
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;
         // $this->crud->addButton($stack, $name, $type, $content, $position); // add a button; possible types are: view, model_function

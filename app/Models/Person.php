@@ -50,6 +50,10 @@ class Person extends Model
     public function familly(){
         return $this->belongsTo('App\Models\Familly');
     }
+
+        public function membership(){
+        return $this->belongsTo('App\Models\Membership');
+    }
     /*
 	|--------------------------------------------------------------------------
 	| SCOPES

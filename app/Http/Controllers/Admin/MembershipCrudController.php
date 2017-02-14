@@ -31,6 +31,8 @@ class MembershipCrudController extends CrudController
 
         $this->crud->setFromDb();
 
+
+
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
@@ -60,13 +62,15 @@ class MembershipCrudController extends CrudController
          $this->crud->addField(
             [
             'label' => 'Nom personne', // Table column heading
-            'type' => 'select2_multiple',
-            'name' => 'Person_id', // the column that contains the ID of that connected entity;
+            'type' => 'select2',
+            'name' => 'person_id', // the column that contains the ID of that connected entity;
             'entity' => 'getFullNameAttribute', // the method that defines the relationship in your Model
-            'attribute' => 'completename', // foreign key attribute that is shown to user
+            'attribute' => 'fullname', // foreign key attribute that is shown to user
             'model' => "App\Models\Person", // foreign key model
             ]
         );
+
+           
 
         // ------ CRUD COLUMNS
         // $this->crud->addColumn(); // add a single column, at the end of the stack
@@ -75,6 +79,48 @@ class MembershipCrudController extends CrudController
         // $this->crud->removeColumns(['column_name_1', 'column_name_2']); // remove an array of columns from the stack
         // $this->crud->setColumnDetails('column_name', ['attribute' => 'value']); // adjusts the properties of the passed in column (by name)
         // $this->crud->setColumnsDetails(['column_1', 'column_2'], ['attribute' => 'value']);
+
+
+      
+            $this->crud->setColumnsDetails(['date_end'],
+            [
+                 'name'  => 'date_end', // DB column name (will also be the name of the input)
+            'label' => "Date de fin d'adhésion", // the human-readable label for the input
+            'type'  => 'datetime_picker',
+            'datetime_picker_options' => [
+                                             'format' => 'DD/MM/YYYY',
+                                            'language' => 'fr'
+                                        ]
+            ]
+            );
+
+
+         $this->crud->setColumnsDetails(['date_start'],
+            [
+                 'name'  => 'date_start', // DB column name (will also be the name of the input)
+            'label' => "Date d'adhésion", // the human-readable label for the input
+            'type'  => 'datetime_picker',
+            'datetime_picker_options' => [
+                                             'format' => 'DD/MM/YYYY',
+                                            'language' => 'fr'
+                                        ]
+            ]
+            );
+
+
+        
+         $this->crud->setColumnsDetails(['Person_id'],
+            [
+            'label' => 'Nom personne', // Table column heading
+            'name' => 'person_id', // the column that contains the ID of that connected entity;
+            'type' => 'select2',
+            'entity' => 'getFullNameAttribute', // the method that defines the relationship in your Model
+            'attribute' => 'fullname', // foreign key attribute that is shown to user
+            'model' => "App\Models\Person", // foreign key model
+            ]
+         );
+        
+
 
         // ------ CRUD BUTTONS
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;
