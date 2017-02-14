@@ -41,6 +41,10 @@ class Location extends Model
 	public function city(){
         return $this->belongsTo('App\Models\City');
     }
+
+    public function membership(){
+        return $this->belongsTo('App\Models\Membership');
+    }
     /*
 	|--------------------------------------------------------------------------
 	| SCOPES

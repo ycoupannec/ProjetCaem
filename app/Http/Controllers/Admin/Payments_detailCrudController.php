@@ -37,6 +37,58 @@ class Payments_detailCrudController extends CrudController
         // $this->crud->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
+        $this->crud->addField([
+            'name'  => 'name', // DB column name (will also be the name of the input)
+            'label' => 'Nom', // the human-readable label for the input
+            'type'  => 'text'
+            ]);
+
+        $this->crud->addField([
+                                'name' => 'price',
+                                'label' => "Montant",
+                                'type' => 'number',
+                                'prefix' => "€",
+                                ]);
+
+
+
+        $this->crud->addField(
+           
+           [  // Select
+            'label' => "Activity_id",
+            'type' => 'select',
+            'name' => 'activity_id', // the db column for the foreign key
+            'entity' => 'id_activity', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\Activity", // foreign key model
+            ]);
+
+
+        // $this->crud->setColumnsDetails(['column_1', 'column_2'], ['attribute' => 'value']);
+        $this->crud->setColumnDetails('name',
+            [
+            'name'  => 'name', // DB column name (will also be the name of the input)
+            'label' => 'Nom', // the human-readable label for the input 
+           ]
+        );
+
+         $this->crud->setColumnDetails('price',
+            [
+            'name'  => 'price', // DB column name (will also be the name of the input)
+            'label' => 'prix', // the human-readable label for the input 
+           ]
+        );
+
+          $this->crud->setColumnsDetails(['activity_id'],
+            [  // Select
+            'label' => "Activity_id",
+            'type' => 'select',
+            'name' => 'activity_id', // the db column for the foreign key
+            'entity' => 'activity', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\Activity", // foreign key model
+            ]);
+
         // ------ CRUD COLUMNS
         // $this->crud->addColumn(); // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack

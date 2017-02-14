@@ -49,6 +49,7 @@ class Person extends Model
     }
 
 
+
     public function people_people()
     {
         return $this->belongsToMany('App\Models\Person', 'person_people','person_id','people_link_id');
@@ -57,6 +58,9 @@ class Person extends Model
 
    
 
+        public function membership(){
+        return $this->belongsTo('App\Models\Membership');
+    }
 
     /*
 	|--------------------------------------------------------------------------

@@ -18,7 +18,10 @@ class Payments_detail extends Model
     //protected $table = 'payments_details';
     //protected $primaryKey = 'id';
     // public $timestamps = false;
-    // protected $guarded = ['id'];
+    protected $fillable = ['name',
+    					  'price',
+    					  'activity_id'
+    ];
     // protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];
@@ -28,8 +31,9 @@ class Payments_detail extends Model
 	| FUNCTIONS
 	|--------------------------------------------------------------------------
 	*/
-
-    /*
+	public function activity(){
+        return $this->belongsTo('App\Models\Activity');
+    }    /*
 	|--------------------------------------------------------------------------
 	| RELATIONS
 	|--------------------------------------------------------------------------
