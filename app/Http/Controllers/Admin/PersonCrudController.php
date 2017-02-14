@@ -200,7 +200,7 @@ class PersonCrudController extends CrudController
         $this->crud->setColumnsDetails(['city_id'],
             [
             'label' => 'Ville', // Table column heading
-            'type' => 'select2',
+            'type' => 'select',
             'name' => 'city_id', // the column that contains the ID of that connected entity;
             'entity' => 'city', // the method that defines the relationship in your Model
             'attribute' => 'name', // foreign key attribute that is shown to user
@@ -211,7 +211,7 @@ class PersonCrudController extends CrudController
         $this->crud->setColumnsDetails(['district_id'],
             [
             'label' => 'Quartier', // Table column heading
-            'type' => 'select2',
+            'type' => 'select',
             'name' => 'district_id', // the column that contains the ID of that connected entity;
             'entity' => 'district', // the method that defines the relationship in your Model
             'attribute' => 'name', // foreign key attribute that is shown to user
@@ -222,7 +222,7 @@ class PersonCrudController extends CrudController
         $this->crud->setColumnsDetails(['familly_id'],
             [
             'label' => 'Famille', // Table column heading
-            'type' => 'select2',
+            'type' => 'select',
             'name' => 'familly_id', // the column that contains the ID of that connected entity;
             'entity' => 'familly', // the method that defines the relationship in your Model
             'attribute' => 'name', // foreign key attribute that is shown to user
