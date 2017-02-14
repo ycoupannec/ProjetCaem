@@ -144,7 +144,6 @@ trait CrudTrait
 
         // if a new file is uploaded, store it on disk and its filename in the database
         if ($request->hasFile($attribute_name) && $request->file($attribute_name)->isValid()) {
-
             // 1. Generate a new file name
             $file = $request->file($attribute_name);
             $new_file_name = md5($file->getClientOriginalName().time()).'.'.$file->getClientOriginalExtension();
@@ -207,5 +206,38 @@ trait CrudTrait
         }
 
         $this->attributes[$attribute_name] = json_encode($attribute_value);
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Methods for working with translatable models.
+    |--------------------------------------------------------------------------
+    */
+
+    /**
+     * Get the attributes that were casted in the model.
+     * Used for translations because Spatie/Laravel-Translatable
+     * overwrites the getCasts() method.
+     *
+     * @return [type] [description]
+     */
+    public function getCastedAttributes()
+    {
+        return parent::getCasts();
+    }
+
+    /**
+     * Check if a model is translatable.
+     * All translation adaptors must have the translationEnabledForModel() method.
+     *
+     * @return bool
+     */
+    public function translationEnabled()
+    {
+        if (method_exists($this, 'translationEnabledForModel')) {
+            return $this->translationEnabledForModel();
+        }
+
+        return false;
     }
 }

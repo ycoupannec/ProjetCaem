@@ -46,13 +46,24 @@ class CrudServiceProvider extends ServiceProvider
 
         // publish custom files for elFinder
         $this->publishes([
-                            __DIR__.'/config/elfinder.php'      => config_path('elfinder.php'),
-                            __DIR__.'/resources/views-elfinder' => resource_path('views/vendor/elfinder'),
-                            ], 'elfinder');
+            __DIR__.'/config/elfinder.php'      => config_path('elfinder.php'),
+            __DIR__.'/resources/views-elfinder' => resource_path('views/vendor/elfinder'),
+        ], 'elfinder');
+
+        // AUTO PUBLISH
+        if (\App::environment('local')) {
+            if ($this->shouldAutoPublishPublic()) {
+                \Artisan::call('vendor:publish', [
+                    '--provider' => 'Backpack\CRUD\CrudServiceProvider',
+                    '--tag' => 'public',
+                ]);
+            }
+        }
 
         // use the vendor configuration file as fallback
         $this->mergeConfigFrom(
-            __DIR__.'/config/backpack/crud.php', 'backpack.crud'
+            __DIR__.'/config/backpack/crud.php',
+            'backpack.crud'
         );
     }
 
@@ -88,48 +99,23 @@ class CrudServiceProvider extends ServiceProvider
 
     public static function resource($name, $controller, array $options = [])
     {
-        // CRUD routes
-        Route::post($name.'/search', [
-            'as' => 'crud.'.$name.'.search',
-            'uses' => $controller.'@search',
-          ]);
-        Route::get($name.'/reorder', [
-            'as' => 'crud.'.$name.'.reorder',
-            'uses' => $controller.'@reorder',
-          ]);
-        Route::post($name.'/reorder', [
-            'as' => 'crud.'.$name.'.save.reorder',
-            'uses' => $controller.'@saveReorder',
-          ]);
-        Route::get($name.'/{id}/details', [
-            'as' => 'crud.'.$name.'.showDetailsRow',
-            'uses' => $controller.'@showDetailsRow',
-          ]);
-        Route::get($name.'/{id}/translate/{lang}', [
-            'as' => 'crud.'.$name.'.translateItem',
-            'uses' => $controller.'@translateItem',
-          ]);
-        Route::get($name.'/{id}/revisions', [
-            'as' => 'crud.'.$name.'.listRevisions',
-            'uses' => $controller.'@listRevisions',
-          ]);
-        Route::post($name.'/{id}/revisions/{revisionId}/restore', [
-            'as' => 'crud.'.$name.'.restoreRevision',
-            'uses' => $controller.'@restoreRevision',
-          ]);
+        return new CrudRouter($name, $controller, $options);
+    }
 
-        $options_with_default_route_names = array_merge([
-            'names' => [
-                'index'     => 'crud.'.$name.'.index',
-                'create'    => 'crud.'.$name.'.create',
-                'store'     => 'crud.'.$name.'.store',
-                'edit'      => 'crud.'.$name.'.edit',
-                'update'    => 'crud.'.$name.'.update',
-                'show'      => 'crud.'.$name.'.show',
-                'destroy'   => 'crud.'.$name.'.destroy',
-                ],
-            ], $options);
+    /**
+     * Checks to see if we should automatically publish
+     * vendor files from the public tag.
+     *
+     * @return bool
+     */
+    private function shouldAutoPublishPublic()
+    {
+        $crudPubPath = public_path('vendor/backpack/crud');
 
-        Route::resource($name, $controller, $options_with_default_route_names);
+        if (! is_dir($crudPubPath)) {
+            return true;
+        }
+
+        return false;
     }
 }

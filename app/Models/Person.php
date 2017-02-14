@@ -69,6 +69,13 @@ class Person extends Model
 
         return $this->belongsTo('App\Models\Membership');
     }
+    
+        public function people_instruments()
+    {
+        return $this->belongsToMany('App\Models\Instrument', 'people_instruments','person_id','instrument_id');
+        // return $this->belongsToMany('App\Models\Person');
+    }
+
     /*
 	|--------------------------------------------------------------------------
 	| SCOPES

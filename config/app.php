@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'locale' => 'fr',
+    'locale' => 'fr',   
 
     /*
     |--------------------------------------------------------------------------
@@ -176,6 +176,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        MaddHatter\LaravelFullcalendar\ServiceProvider::class,
 
         // ------------------------------------------------
         // add by yohann
@@ -237,6 +238,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Calendar'  => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
+    
 
     ],
 
