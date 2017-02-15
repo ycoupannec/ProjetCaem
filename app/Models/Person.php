@@ -19,7 +19,7 @@ class Person extends Model
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-     protected $fillable = ['name', 'family_name', 'mail', 'tel_fix', 'tel_mob', 'postal_code', 'adress', 'birthday', 'observation', 'city_id', 'district_id', 'familly_id'];
+     protected $fillable = ['gender','name', 'family_name', 'mail', 'tel_fix', 'tel_mob', 'postal_code', 'adress', 'birthday', 'observation','code_analytique','image_right', 'city_id', 'district_id', 'familly_id'];
     // protected $hidden = [];
     // protected $dates = [];
 

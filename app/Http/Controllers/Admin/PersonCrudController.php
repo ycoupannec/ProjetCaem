@@ -40,7 +40,7 @@ class PersonCrudController extends CrudController
             'name'  => 'gender', // DB column name (will also be the name of the input)
             'label' => 'Civilité', // the human-readable label for the input
             'type'  => 'select_from_array',
-            'options' => ['one' => 'Mr', 'two' => 'Mme'],
+            'options' => ['Mr' => 'Mr', 'Mme' => 'Mme'],
             'allows_null' => false,
             ]);
 
@@ -51,7 +51,7 @@ class PersonCrudController extends CrudController
             ]);
 
         
-        
+
         $this->crud->addField([
             'name'  => 'family_name', // DB column name (will also be the name of the input)
             'label' => 'Nom de famille', // the human-readable label for the input
@@ -110,6 +110,15 @@ class PersonCrudController extends CrudController
             'type'  => 'textarea'
             ]);
         
+        $this->crud->addField([
+            'name'  => 'image_right', // DB column name (will also be the name of the input)
+            'label' => 'Droit à l\'image', // the human-readable label for the input
+            'type'  => 'select_from_array',
+            'options' => ['Oui' => 'Oui', 'Non' => 'Non'],
+            'allows_null' => false,
+            ]);
+
+
         $this->crud->addField(
            
            [  // Select
@@ -133,23 +142,23 @@ class PersonCrudController extends CrudController
             'model' => "App\Models\District" // foreign key model
             ]);
 
-        $this->crud->addField(
-           
-           [  // Select
-            'label' => "famillies",
-            'type' => 'select',
-            'name' => 'familly_id', // the db column for the foreign key
-            'entity' => 'familly', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
-            'model' => "App\Models\Familly" // foreign key model
-            ]);
-
+  
         
-
 
 
          // ------ CRUD COLUMNS
-        
+         $this->crud->setColumnDetails('gender',
+            [
+             'name'  => 'gender', // DB column name (will also be the name of the input)
+            'label' => 'Civilité', // the human-readable label for the input
+            'type'  => 'select_from_array',
+            'options' => ['Mr' => 'Mr', 'Mme' => 'Mme'],
+            'allows_null' => false,
+          
+           ]
+        );
+
+
         $this->crud->setColumnDetails('name',
             [
             'name'  => 'name', // DB column name (will also be the name of the input)
@@ -220,6 +229,17 @@ class PersonCrudController extends CrudController
            ]
         );
 
+       $this->crud->setColumnDetails('image_right',
+            [
+             'name'  => 'image_right', // DB column name (will also be the name of the input)
+            'label' => 'Droit à l\'image', // the human-readable label for the input
+            'type'  => 'select_from_array',
+            'options' => ['Oui' => 'Oui', 'Non' => 'Non'],
+            'allows_null' => false,
+          
+           ]
+        );
+
 
         $this->crud->setColumnsDetails(['city_id'],
             [
@@ -243,16 +263,7 @@ class PersonCrudController extends CrudController
             ]
         );
 
-        $this->crud->setColumnsDetails(['familly_id'],
-            [
-            'label' => 'Famille', // Table column heading
-            'type' => 'select',
-            'name' => 'familly_id', // the column that contains the ID of that connected entity;
-            'entity' => 'familly', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
-            'model' => "App\Models\Familly", // foreign key model
-            ]
-        );
+       
 
 
 // -------------------------------------------------------------------
