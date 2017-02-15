@@ -16,6 +16,8 @@
             <!-- ==== Recommended place for admin menu items ==== -->
             <!-- ================================================ -->
             <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/dashboard') }}"><i class="fa fa-dashboard"></i> <span>{{ trans('backpack::base.dashboard') }}</span></a></li>
+            <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/elfinder') }}"><i class="fa fa-files-o"></i> <span>File manager</span></a></li>
+
             <li class="header">{{ trans('GESTION') }}</li>
             <li><a href="{{ url('admin/person') }}"><i class="fa fa-id-card"></i> <span>Personne</span></a></li>
             <li><a href="{{ url('admin/type_person') }}"><i class="fa fa-tag"></i> <span>Type de personne</span></a></li>
