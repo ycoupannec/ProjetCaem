@@ -62,16 +62,16 @@ return [
             'region' => env('AWS_REGION'),
             'bucket' => env('AWS_BUCKET'),
         ],
-
+        'uploads' => [
+            'driver' => 'local',
+            'root' => public_path('uploads'),
+        ],
     ],
 
     // ------------------------------------------------------------
     // add by Yohann
     // ------------------------------------------------------------
     
-    'uploads' => [
-            'driver' => 'local',
-            'root' => public_path('uploads'),
-        ],
+    
 
 ];

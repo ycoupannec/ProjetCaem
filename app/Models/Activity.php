@@ -62,11 +62,20 @@ class Activity extends Model
         // return $this->belongsToMany('App\Models\Person');
     }
 
-    public function setImageAttribute($value)
+    public function setPicture1Attribute($value)
     {
-        $attribute_name = "image";
-        $disk = "public";
-        $destination_path = "folder_1/subfolder_1";
+        $attribute_name = "picture_1";
+        $disk = "uploads";
+        $destination_path = "activity";
+
+        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path);
+    }
+
+    public function setPicture2Attribute($value)
+    {
+        $attribute_name = "picture_2";
+        $disk = "uploads";
+        $destination_path = "activity";
 
         $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path);
     }
