@@ -433,6 +433,7 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'DeleteCaemToChamp' => __DIR__ . '/../..' . '/database/migrations/2017_02_08_123715_delete_caem_to_champ.php',
+        'DeleteFamily' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_101120_delete_family.php',
         'DropPersonId' => __DIR__ . '/../..' . '/database/migrations/2017_02_13_090016_drop_person_id.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
