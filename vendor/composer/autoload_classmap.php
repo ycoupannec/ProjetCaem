@@ -559,6 +559,7 @@ return array(
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
     'UpdateGenderVarchar' => $baseDir . '/database/migrations/2017_02_15_091935_update_gender_varchar.php',
     'UpdateImageRightVarchar' => $baseDir . '/database/migrations/2017_02_15_094351_update_image_right_varchar.php',
+    'UpdateStatusVarchar' => $baseDir . '/database/migrations/2017_02_15_124725_update_status_varchar.php',
     'elFinder' => $vendorDir . '/studio-42/elfinder/php/elFinder.class.php',
     'elFinderConnector' => $vendorDir . '/studio-42/elfinder/php/elFinderConnector.class.php',
     'elFinderLibGdBmp' => $vendorDir . '/studio-42/elfinder/php/libs/GdBmp.php',
