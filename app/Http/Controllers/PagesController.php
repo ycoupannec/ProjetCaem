@@ -16,9 +16,10 @@ public function index()
 
 public function course()
 {
-	//$people = ['Taylor','Matt','Jeffrey'];
-	$activities = \App\Models\Activity::where('id', 1)
-	->get();
+
+	$activities = \App\Models\Activity::join('types_activities', 'types_activities.id', '=', 'activities.type_activity_id')->get(['types_activities.*','activities.* ']);
+	print_r($activities);
+	exit;
 	return view('course', ['activities' => $activities]);
 
 }
