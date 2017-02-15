@@ -966,6 +966,7 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
         'SebastianBergmann\\ResourceOperations\\ResourceOperations' => __DIR__ . '/..' . '/sebastian/resource-operations/src/ResourceOperations.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'UpdateGenderVarchar' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_091935_update_gender_varchar.php',
         'elFinder' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinder.class.php',
         'elFinderConnector' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderConnector.class.php',
         'elFinderLibGdBmp' => __DIR__ . '/..' . '/studio-42/elfinder/php/libs/GdBmp.php',
