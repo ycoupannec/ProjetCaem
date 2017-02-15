@@ -9,7 +9,8 @@ use App\Http\Requests\CityRequest as StoreRequest;
 use App\Http\Requests\CityRequest as UpdateRequest;
 
 class CityCrudController extends CrudController
-{
+    
+{  
 
     public function setUp()
     {
@@ -18,10 +19,14 @@ class CityCrudController extends CrudController
 		|--------------------------------------------------------------------------
 		| BASIC CRUD INFORMATION
 		|--------------------------------------------------------------------------
+        
 		*/
+        
         $this->crud->setModel("App\Models\City");
         $this->crud->setRoute("admin/city");
         $this->crud->setEntityNameStrings('city', 'Villes');
+        
+        
 
         /*
 		|--------------------------------------------------------------------------
@@ -103,7 +108,7 @@ $this->crud->addColumn([
 
         // ------ ADVANCED QUERIES
         // $this->crud->addClause('active');
-        // $this->crud->addClause('type', 'car');
+        //$this->crud->addClause('type', 'car');
         // $this->crud->addClause('where', 'name', '==', 'car');
         // $this->crud->addClause('whereName', 'car');
         // $this->crud->addClause('whereHas', 'posts', function($query) {
