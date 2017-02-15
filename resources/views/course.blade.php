@@ -18,9 +18,9 @@
 
 
 
-        @foreach($people as $person)
+        @foreach($activities as $activity)
 
-            <li>{{ $person }}</li>
+            <li>{{ $activity->name }}</li>
         @endforeach
 
 
