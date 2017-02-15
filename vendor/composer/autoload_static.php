@@ -418,6 +418,7 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
     );
 
     public static $classMap = array (
+        'AddChampActivities' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_102828_add_champ_activities.php',
         'AddCodeAnalytiqueGender' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_083814_add_code_analytique_gender.php',
         'AddPersonTypePerson' => __DIR__ . '/../..' . '/database/migrations/2017_02_13_103630_add_person_type_person.php',
         'AddTimestampsToAll' => __DIR__ . '/../..' . '/database/migrations/2017_02_07_154243_add_timestamps_to_all.php',
