@@ -37,11 +37,21 @@ class PersonCrudController extends CrudController
 
         // ------ CRUD FIELDS
         $this->crud->addField([
+            'name'  => 'gender', // DB column name (will also be the name of the input)
+            'label' => 'Civilité', // the human-readable label for the input
+            'type'  => 'select_from_array',
+            'options' => ['one' => 'Mr', 'two' => 'Mme'],
+            'allows_null' => false,
+            ]);
+
+        $this->crud->addField([
             'name'  => 'name', // DB column name (will also be the name of the input)
             'label' => 'Prénom', // the human-readable label for the input
             'type'  => 'text'
             ]);
 
+        
+        
         $this->crud->addField([
             'name'  => 'family_name', // DB column name (will also be the name of the input)
             'label' => 'Nom de famille', // the human-readable label for the input
@@ -91,6 +101,12 @@ class PersonCrudController extends CrudController
         $this->crud->addField([
             'name'  => 'observation', // DB column name (will also be the name of the input)
             'label' => 'Observation', // the human-readable label for the input
+            'type'  => 'textarea'
+            ]);
+
+        $this->crud->addField([
+            'name'  => 'code_analytique', // DB column name (will also be the name of the input)
+            'label' => 'code_analytique', // the human-readable label for the input
             'type'  => 'textarea'
             ]);
         
@@ -196,6 +212,14 @@ class PersonCrudController extends CrudController
             'label' => 'Observation', // the human-readable label for the input 
            ]
         );
+
+        $this->crud->setColumnDetails('code_analytique',
+            [
+            'name'  => 'code_analytique', // DB column name (will also be the name of the input)
+            'label' => 'code_analytique', // the human-readable label for the input 
+           ]
+        );
+
 
         $this->crud->setColumnsDetails(['city_id'],
             [
