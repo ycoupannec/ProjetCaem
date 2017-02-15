@@ -21,7 +21,16 @@ class Activity extends Model
     // protected $guarded = ['id'];
        protected $fillable = [
         'name',
-        'type_activity_id'
+        'type_activity_id',
+        'picture_1',
+        'picture_2',
+        'age_min',
+        'age_max',
+        'day',
+        'description',
+        'status',
+        'hour_start',
+        'hour_end',
     ];
     // protected $hidden = [];
     // protected $dates = [];
@@ -51,6 +60,15 @@ class Activity extends Model
     {
         return $this->belongsToMany('App\Models\Person', 'teachers_activities','activity_id','person_id');
         // return $this->belongsToMany('App\Models\Person');
+    }
+
+    public function setImageAttribute($value)
+    {
+        $attribute_name = "image";
+        $disk = "public";
+        $destination_path = "folder_1/subfolder_1";
+
+        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path);
     }
 
     /*

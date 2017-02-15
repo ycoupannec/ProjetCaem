@@ -126,7 +126,163 @@ class ActivityCrudController extends CrudController
 
             ]
         );
+
+        $this->crud->addField([
+            'name'  => 'day', // DB column name (will also be the name of the input)
+            'label' => 'Jour', // the human-readable label for the input
+            'type'  => 'select_from_array',
+            'options' => [
+                        'Lundi' => 'Lundi',
+                        'Mardi' => 'Mardi',
+                        'Mercredi' => 'Mercredi',
+                        'Jeudi' => 'Jeudi',
+                        'Vendredi' => 'Vendredi',
+                        'Samedi' => 'Samedi',
+                        'Dimanche' => 'Dimanche'
+                        ],
+            'allows_null' => false,
+            ]);
+
+        $this->crud->setColumnDetails('day',
+            [
+             'name'  => 'day', // DB column name (will also be the name of the input)
+            'label' => 'Jour', // the human-readable label for the input
+            'type'  => 'select_from_array',
+            'options' => [
+                        'Lundi' => 'Lundi',
+                        'Mardi' => 'Mardi',
+                        'Mercredi' => 'Mercredi',
+                        'Jeudi' => 'Jeudi',
+                        'Vendredi' => 'Vendredi',
+                        'Samedi' => 'Samedi',
+                        'Dimanche' => 'Dimanche'
+                        ],
+            'allows_null' => false,
+          
+           ]
+        );
+
+        $this->crud->addField([
+            'name'  => 'status', // DB column name (will also be the name of the input)
+            'label' => 'Status', // the human-readable label for the input
+            'type'  => 'select_from_array',
+            'options' => [
+                        'Online' => 'Online',
+                        'Offline' => 'Offline'
+                        ],
+            'allows_null' => false,
+            ]);
+
+        $this->crud->setColumnDetails('status',
+            [
+             'name'  => 'status', // DB column name (will also be the name of the input)
+            'label' => 'Status', // the human-readable label for the input
+            'type'  => 'select_from_array',
+            'options' => [
+                        'Online' => 'Online',
+                        'Offline' => 'Offline'
+                        ],
+            'allows_null' => false,
+          
+           ]
+        );
+
+        $this->crud->addField([
+            'name'  => 'description', // DB column name (will also be the name of the input)
+            'label' => 'Description', // the human-readable label for the input
+            'type'  => 'textarea'
+            ]);
+
+        $this->crud->setColumnDetails('description',
+            [
+            'name'  => 'description', // DB column name (will also be the name of the input)
+            'label' => 'Description', // the human-readable label for the input
+            'type'  => 'textarea'
+            ]);
+
+        $this->crud->addField([
+            'name'  => 'age_min', // DB column name (will also be the name of the input)
+            'label' => 'Age min', // the human-readable label for the input
+            'type'  => 'number'
+            ]);
+
+        $this->crud->setColumnDetails('age_min',
+            [
+            'name'  => 'age_min', // DB column name (will also be the name of the input)
+            'label' => 'Age min', // the human-readable label for the input
+            'type'  => 'number'
+            ]);
+
+        $this->crud->addField([
+            'name'  => 'age_max', // DB column name (will also be the name of the input)
+            'label' => 'Age max', // the human-readable label for the input
+            'type'  => 'number'
+            ]);
+
+        $this->crud->setColumnDetails('age_max',
+            [
+            'name'  => 'age_max', // DB column name (will also be the name of the input)
+            'label' => 'Age max', // the human-readable label for the input
+            'type'  => 'number'
+            ]);
+
+        $this->crud->addField([
+            'name'  => 'picture_1', // DB column name (will also be the name of the input)
+            'label' => '1ere image', // the human-readable label for the input
+           'type' => 'upload',
+            'upload' => true,
+            'disk' => 'uploads'
+            ]);
+
+        $this->crud->setColumnDetails('picture_1',
+            [
+            'name'  => 'picture_1', // DB column name (will also be the name of the input)
+            'label' => '1ere image', // the human-readable label for the input
+            'type'  => 'text'
+            ]);
+
+        $this->crud->addField([
+            'name'  => 'picture_2', // DB column name (will also be the name of the input)
+            'label' => '2eme image', // the human-readable label for the input
+           'type' => 'upload',
+            'upload' => true,
+            'disk' => 'uploads'
+            ]);
+
+        $this->crud->setColumnDetails('picture_2',
+            [
+            'name'  => 'picture_2', // DB column name (will also be the name of the input)
+            'label' => '2eme image', // the human-readable label for the input
+            'type'  => 'text'
+            ]);
+
+        $this->crud->addField([
+            'name'  => 'hour_start', // DB column name (will also be the name of the input)
+            'label' => 'Heure de début', // the human-readable label for the input
+           'type' => 'time',
+            
+            ]);
+
+        $this->crud->setColumnDetails('hour_start',
+            [
+            'name'  => 'hour_start', // DB column name (will also be the name of the input)
+            'label' => 'Heure de début', // the human-readable label for the input
+            'type'  => 'text'
+            ]);
         
+        $this->crud->addField([
+            'name'  => 'hour_end', // DB column name (will also be the name of the input)
+            'label' => 'Heure de fin', // the human-readable label for the input
+           'type' => 'time',
+            
+            ]);
+
+        $this->crud->setColumnDetails('hour_end',
+            [
+            'name'  => 'hour_end', // DB column name (will also be the name of the input)
+            'label' => 'Heure de fin', // the human-readable label for the input
+            'type'  => 'text'
+            ]);
         // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
         // $this->crud->removeColumn('column_name'); // remove a column from the stack
