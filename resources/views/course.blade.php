@@ -20,7 +20,7 @@
 
         @foreach($activities as $activity)
 
-            <li>{{ $activity->name }}</li>
+            <li>{{ $activity }}</li>
         @endforeach
 
 
