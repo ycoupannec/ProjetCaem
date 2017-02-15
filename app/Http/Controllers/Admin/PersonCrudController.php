@@ -38,13 +38,13 @@ class PersonCrudController extends CrudController
         // ------ CRUD FIELDS
         $this->crud->addField([
             'name'  => 'name', // DB column name (will also be the name of the input)
-            'label' => 'Nom', // the human-readable label for the input
+            'label' => 'Prénom', // the human-readable label for the input
             'type'  => 'text'
             ]);
 
         $this->crud->addField([
             'name'  => 'family_name', // DB column name (will also be the name of the input)
-            'label' => 'Prenom', // the human-readable label for the input
+            'label' => 'Nom de famille', // the human-readable label for the input
             'type'  => 'text'
             ]);
 
@@ -68,7 +68,7 @@ class PersonCrudController extends CrudController
 
         $this->crud->addField([
             'name'  => 'postal_code', // DB column name (will also be the name of the input)
-            'label' => 'Code postale', // the human-readable label for the input
+            'label' => 'Code postal', // the human-readable label for the input
             'type'  => 'number'
             ]);
 
@@ -137,7 +137,7 @@ class PersonCrudController extends CrudController
         $this->crud->setColumnDetails('name',
             [
             'name'  => 'name', // DB column name (will also be the name of the input)
-            'label' => 'Nom', // the human-readable label for the input 
+            'label' => 'Prénom', // the human-readable label for the input 
            ]
         );
         
@@ -172,7 +172,7 @@ class PersonCrudController extends CrudController
         $this->crud->setColumnDetails('postal_code',
             [
             'name'  => 'postal_code', // DB column name (will also be the name of the input)
-            'label' => 'Code postale', // the human-readable label for the input 
+            'label' => 'Code postal', // the human-readable label for the input 
            ]
         );
 
@@ -236,7 +236,7 @@ class PersonCrudController extends CrudController
         $this->crud->addField(
            
            [  // Select
-            'label' => "Personne rattaché",
+            'label' => "Responsable légal",
             'type' => 'select2_multiple',
             'name' => 'people_people', // the db column for the foreign key
             'entity' => 'people_people', // the method that defines the relationship in your Model
@@ -249,7 +249,7 @@ class PersonCrudController extends CrudController
 
         $this->crud->setColumnsDetails(['rattache'],
             [
-            'label' => 'Personne rattaché', // Table column heading
+            'label' => 'Responsable légal', // Table column heading
             'type' => 'select_multiple',
             'name' => 'people_people', // the column that contains the ID of that connected entity;
             'entity' => 'people_people', // the method that defines the relationship in your Model
@@ -262,7 +262,7 @@ class PersonCrudController extends CrudController
         $this->crud->addField(
            
            [  // Select
-            'label' => "Type",
+            'label' => "Types",
             'type' => 'select2_multiple',
             'name' => 'type_people', // the db column for the foreign key
             'entity' => 'type_people', // the method that defines the relationship in your Model
@@ -275,7 +275,7 @@ class PersonCrudController extends CrudController
 
         $this->crud->setColumnsDetails(['type'],
             [
-            'label' => 'Type', // Table column heading
+            'label' => 'Types', // Table column heading
             'type' => 'select_multiple',
             'name' => 'type_people', // the column that contains the ID of that connected entity;
             'entity' => 'type_people', // the method that defines the relationship in your Model
