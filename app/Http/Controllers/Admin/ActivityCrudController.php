@@ -82,7 +82,7 @@ class ActivityCrudController extends CrudController
             'type' => 'select2_multiple',
             'name' => 'member_activities', // the db column for the foreign key
             'entity' => 'member_activities', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
+            'attribute' => 'fullname', // foreign key attribute that is shown to user
             'model' => "App\Models\Person", // foreign key model
             'pivot' => true
             ]);
@@ -95,7 +95,7 @@ class ActivityCrudController extends CrudController
             'type' => 'select_multiple',
             'name' => 'member_activities', // the column that contains the ID of that connected entity;
             'entity' => 'member_activities', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
+            'attribute' => 'fullname', // foreign key attribute that is shown to user
             'model' => "App\Models\Person", // foreign key model
 
             ]
@@ -108,7 +108,7 @@ class ActivityCrudController extends CrudController
             'type' => 'select2_multiple',
             'name' => 'teachers_activities', // the db column for the foreign key
             'entity' => 'teachers_activities', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
+            'attribute' => 'fullname', // foreign key attribute that is shown to user
             'model' => "App\Models\Person", // foreign key model
             'pivot' => true
             ]);
@@ -121,7 +121,7 @@ class ActivityCrudController extends CrudController
             'type' => 'select_multiple',
             'name' => 'teachers_activities', // the column that contains the ID of that connected entity;
             'entity' => 'teachers_activities', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
+            'attribute' => 'fullname', // foreign key attribute that is shown to user
             'model' => "App\Models\Person", // foreign key model
 
             ]
@@ -281,6 +281,34 @@ class ActivityCrudController extends CrudController
             [
             'name'  => 'hour_end', // DB column name (will also be the name of the input)
             'label' => 'Heure de fin', // the human-readable label for the input
+            'type'  => 'text'
+            ]);
+
+        $this->crud->addField([
+            'name'  => 'when', // DB column name (will also be the name of the input)
+            'label' => 'Quand', // the human-readable label for the input
+           'type' => 'text',
+            
+            ]);
+
+        $this->crud->setColumnDetails('when',
+            [
+            'name'  => 'when', // DB column name (will also be the name of the input)
+            'label' => 'Quand', // the human-readable label for the input
+            'type'  => 'text'
+            ]);
+
+        $this->crud->addField([
+            'name'  => 'price', // DB column name (will also be the name of the input)
+            'label' => 'Tarifs', // the human-readable label for the input
+           'type' => 'text',
+            
+            ]);
+
+        $this->crud->setColumnDetails('price',
+            [
+            'name'  => 'price', // DB column name (will also be the name of the input)
+            'label' => 'Tarifs', // the human-readable label for the input
             'type'  => 'text'
             ]);
         // add a single column, at the end of the stack

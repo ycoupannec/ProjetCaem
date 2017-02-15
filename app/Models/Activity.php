@@ -31,6 +31,8 @@ class Activity extends Model
         'status',
         'hour_start',
         'hour_end',
+        'when',
+        'price',
     ];
     // protected $hidden = [];
     // protected $dates = [];
