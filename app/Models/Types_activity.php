@@ -34,7 +34,9 @@ class Types_activity extends Model
 	| RELATIONS
 	|--------------------------------------------------------------------------
 	*/
-
+	 public function activities(){
+        return $this->hasMany('App\Models\Activity','type_activity_id');
+    }
     /*
 	|--------------------------------------------------------------------------
 	| SCOPES
