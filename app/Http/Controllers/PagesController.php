@@ -17,9 +17,9 @@ public function index()
 public function course()
 {
 
-	$activities = \App\Models\Activity::join('types_activities', 'types_activities.id', '=', 'activities.type_activity_id')->get(['types_activities.*','activities.* ']);
-	print_r($activities);
-	exit;
+	$activities = \App\Models\Types_activity::with('activities')->get();
+	// print_r($activities);
+	// exit;
 	return view('course', ['activities' => $activities]);
 
 }
