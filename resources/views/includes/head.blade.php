@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="École de musique à Besançon" />
 
-    <title>CAEM Besançon École de musique - Accueil</title>
+    <title>@yield('pageTitle', 'CAEM - Ecole de musique')</title>
 
     <!--STYLESHEET-->
 	<link href="{{ asset('css/app.css') }}" rel="stylesheet">

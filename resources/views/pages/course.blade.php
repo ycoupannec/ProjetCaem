@@ -1,3 +1,12 @@
+@extends('layouts.default')
+
+<!--HEAD TITLE :-->
+@section('pageTitle')
+CAEM - Mon parcours musical
+@endsection
+
+<!--MAIN CONTENT :-->
+@section('pageContent')
 <main class="container mainParcoursMusical">
 
 
@@ -278,3 +287,4 @@
 
 
 </main>
+@endsection
