@@ -122,7 +122,7 @@ class PersonCrudController extends CrudController
         $this->crud->addField(
            
            [  // Select
-            'label' => "Cities",
+            'label' => "Ville",
             'type' => 'select',
             'name' => 'city_id', // the db column for the foreign key
             'entity' => 'city', // the method that defines the relationship in your Model
@@ -275,7 +275,7 @@ class PersonCrudController extends CrudController
             'type' => 'select2_multiple',
             'name' => 'people_people', // the db column for the foreign key
             'entity' => 'people_people', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
+            'attribute' => 'fullname', // foreign key attribute that is shown to user
             'model' => "App\Models\Person", // foreign key model
             'pivot' => true
             ]);
@@ -288,7 +288,7 @@ class PersonCrudController extends CrudController
             'type' => 'select_multiple',
             'name' => 'people_people', // the column that contains the ID of that connected entity;
             'entity' => 'people_people', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
+            'attribute' => 'fullname', // foreign key attribute that is shown to user
             'model' => "App\Models\Person", // foreign key model
 
             ]
@@ -357,6 +357,19 @@ class PersonCrudController extends CrudController
         ]
         );
         
+
+        $this->crud->addField([
+            'name'  => 'code_analytique', // DB column name (will also be the name of the input)
+            'label' => 'Code analytique', // the human-readable label for the input
+            'type'  => 'textarea'
+            ]);
+
+        $this->crud->setColumnDetails('code_analytique',
+            [
+            'name'  => 'code_analytique', // DB column name (will also be the name of the input)
+            'label' => 'Code analytique', // the human-readable label for the input 
+           ]
+        );
 /**/
 
 
