@@ -1,31 +1,430 @@
 <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-   
-    </head>
-    <body>
-        <p>course</p>
 
 
 
-        @foreach($activities as $activity)
 
-            <li>{{ $activity }}</li>
-        @endforeach
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CAEM Besançon École de musique - Accueil</title>
+    <meta name="description" content="École de musique à Besançon" />
+    <link href="http://fonts.googleapis.com/css?family=Quicksand:300,400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  </head>
 
 
 
+
+  <body>
+
+
+
+	<header>
+	<div class="container-fluid">
+	  <div class="row" id="contact-connection">
+		<div id="logo-desktop" class="col-md-11">Suivez-nous sur <a href="#"><img src="{{ asset('images/facebook_logo.svg')}}" /></a> <a href="#"><img src="{{ asset('images/twitter_logo.svg')}}" /></a> <a href="#"><img src="{{ asset('images/youtube_logo.svg')}}" /></a> ou <a href="#">contactez-nous</a> directement.
+		</div>
+		<div id="logo-mobile" class="col-md-11"><a href="#"><img src="{{ asset('images/facebook_logo.svg')}}" /></a> <a href="#"><img src="{{ asset('images/twitter_logo.svg')}}" /></a> <a href="#"><img src="{{ asset('images/youtube_logo.svg')}}" /></a></div>
+		<div  class="col-md-1">
+		  <a id="connection" href="#">Connexion</a>
+		</div>
+	  </div>
+	  <div class="row" id="header">
+		<img src="{{ asset('images/logo_CAEM.svg')}}" alt="logo">
+	  </div>
+	</div>
+	<nav>
+	  <ul class="menu" id="myMenu">
+		  <li class="home"><a href="#">Accueil</a></li>
+		  <li class="icon">
+			  <a href="javascript:void(0);" onclick="myBurger()">&#9776;</a>
+		  </li>
+		  <li><a href="#">Mon parcours musical</a></li>
+		  <li><a href="#">Tarifs &amp; Inscriptions</a></li>
+		  <li><a href="#">Évenements</a></li>
+		  <li><a href="#">L'équipe</a></li>
+	  </ul>
+	</nav>
+	</header>
+
+
+	<main class="container mainParcoursMusical">
+
+
+		<aside class="col-md-3 col-sm-3 container">
 
         
-    </body>
+			<section id="sectionAge">
+				<h2>Quel est votre âge ?</h2>
+
+				<label for="age1">
+					<p>4 - 6 ans</p>
+					<input type="radio" id="age1" name="age" value="option1">
+				</label>
+
+				<label for="age2">
+					<p>6 - 11 ans</p>
+					<input type="radio" id="age2" name="age" value="option2">
+				</label>
+
+				<label for="age3">
+					<p>11 - 26 ans</p>
+					<input type="radio" id="age3" name="age" value="option3">
+				</label>
+
+				<label for="age4">
+					<p>+ de 26 ans</p>
+					<input type="radio" id="age4" name="age" value="option4">
+				</label>
+			</section>
+
+
+			<section id="sectionInterest">
+
+				<h2>Qu'est-ce qui vous intéresse ?</h2>
+
+				<section id="sectionInstrument">
+					<h3>Instruments :</h3>
+					<label for="instrument1">
+						<p>Guitare</p>
+						<input type="checkbox" id="instrument1" value="option1">
+					</label>
+
+					<label for="instrument2">
+						<p>Basse</p>
+						<input type="checkbox" id="instrument2" value="option2">
+					</label>
+
+					<label for="instrument3">
+						<p>Batterie</p>
+						<input type="checkbox" id="instrument3" value="option3">
+					</label>
+
+					<label for="instrument4">
+						<p>Percussions</p>
+						<input type="checkbox" id="instrument4" value="option4">
+					</label>
+
+					<label for="instrument5">
+						<p>Piano</p>
+						<input type="checkbox" id="instrument5" value="option5">
+					</label>
+
+					<label for="instrument6">
+						<p>Saxophone</p>
+						<input type="checkbox" id="instrument6" value="option6">
+					</label>
+
+					<label for="instrument7">
+						<p>Chant / Coaching vocal</p>
+						<input type="checkbox" id="instrument7" value="option7">
+					</label>
+
+					<label for="instrument8">
+						<p>Trompette</p>
+						<input type="checkbox" id="instrument8" value="option8">
+					</label>
+
+					<label for="instrument9">
+						<p>Violon</p>
+						<input type="checkbox" id="instrument9" value="option9">
+					</label>
+
+					<label for="instrument10">
+						<p>MAO</p>
+						<input type="checkbox" id="instrument10" value="option10">
+					</label>
+				</section>
+
+
+				<section id="sectionAtelier">
+						<h3>Ateliers :</h3>
+						<label for="atelier1">
+							<p>Blues</p>
+							<input type="checkbox" id="atelier1" value="option1">
+						</label>
+
+						<label for="atelier2">
+							<p>Jazz</p>
+							<input type="checkbox" id="atelier2" value="option2">
+						</label>
+
+						<label for="atelier3">
+							<p>Rock</p>
+							<input type="checkbox" id="atelier3" value="option3">
+						</label>
+
+						<label for="atelier4">
+							<p>Reggae</p>
+							<input type="checkbox" id="atelier4" value="option4">
+						</label>
+
+						<label for="atelier5">
+							<p>Ensemble accoustique</p>
+							<input type="checkbox" id="atelier5" value="option5">
+						</label>
+
+						<label for="atelier6">
+							<p>Percussions africaines</p>
+							<input type="checkbox" id="atelier6" value="option6">
+						</label>
+				</section>
+
+				<section id="sectionActivite">
+						<h3>Activités :</h3>
+						<label for="activite1">
+							<p>Batucada</p>
+							<input type="checkbox" id="activite1" value="option1">
+						</label>
+
+						<label for="activite2">
+							<p>Chorales</p>
+							<input type="checkbox" id="activite2" value="option2">
+						</label>
+
+						<label for="activite3">
+							<p>Fanfare groove</p>
+							<input type="checkbox" id="activite3" value="option3">
+						</label>
+
+						<label for="activite4">
+							<p>Taï Chi</p>
+							<input type="checkbox" id="activite4" value="option4">
+						</label>
+
+						<label for="activite5">
+							<p>Hip-Hip &amp; Breakdance</p>
+							<input type="checkbox" id="activite5" value="option5">
+						</label>
+
+						<label for="activite6">
+							<p>LA Kif</p>
+							<input type="checkbox" id="activite6" value="option6">
+						</label>
+
+						<label for="activite7">
+							<p>Idencité</p>
+							<input type="checkbox" id="activite7" value="option7">
+						</label>
+
+						<label for="activite8">
+							<p>Paye ton groupe</p>
+							<input type="checkbox" id="activite8" value="option8">
+						</label>
+				</section>
+
+			</section>
+
+		</aside>
+
+
+		<div class="col-md-9 col-sm-9">
+
+
+			<ul>
+			@foreach($activities as $activity)
+				<li>{{ $activity->id }}</li>
+			@endforeach
+			</ul>
+			
+			
+			<section class="col-md-12">
+
+				<header class="col-md-12">
+					<h3>Guitare</h3>
+				</header>
+
+				<main class="col-md-12">
+					<article>
+						POUETI will not have my fwends widiculed by the common soldiewy. Anybody else feel like a little... giggle... when I
+						mention my fwiend... Biggus... Dickus? We use only the finest baby frogs, dew picked and flown from Iraq,
+						cleansed in finest quality spring water, lightly killed, and then sealed in a succulent Swiss quintuple smooth
+						treble cream milk chocolate envelope and lovingly frosted with glucose.
+					</article>
+				</main>
+
+				<footer class="col-md-12">
+
+					<div class="col-md-4">
+						<h4>Quand ?</h4>
+						<p>Mercredi 19h-20h30</p>
+					</div>
+
+					<div class="col-md-4">
+						<h4>Avec qui ?</h4>
+						<p>Pierre PERRET</p>
+					</div>
+
+					<div class="col-md-4">
+						<h4>Tarifs :</h4>
+						<p>10€ par mois ou 120€ l’année</p>
+					</div>
+
+					<figure class="col-md-12">
+
+						<div class="col-md-6 center-block">
+							<img class="col-md-12" src="http://placehold.it/350x150" />
+						</div>
+
+						<div class="col-md-6 center-block">
+							<img class="col-md-12" src="http://placehold.it/350x150" />
+						</div>
+
+					</figure>
+
+				</footer>
+
+			</section>
+
+			<section class="col-md-12">
+
+				<header class="col-md-12">
+					<h3>Guitare</h3>
+				</header>
+
+				<main class="col-md-12">
+					<article>
+						I will not have my fwends widiculed by the common soldiewy. Anybody else feel like a little... giggle... when I
+						mention my fwiend... Biggus... Dickus? We use only the finest baby frogs, dew picked and flown from Iraq,
+						cleansed in finest quality spring water, lightly killed, and then sealed in a succulent Swiss quintuple smooth
+						treble cream milk chocolate envelope and lovingly frosted with glucose.
+					</article>
+				</main>
+
+				<footer class="col-md-12">
+
+					<div class="col-md-4">
+						<h4>Quand ?</h4>
+						<p>Mercredi 19h-20h30</p>
+					</div>
+
+					<div class="col-md-4">
+						<h4>Avec qui ?</h4>
+						<p>Pierre PERRET</p>
+					</div>
+
+					<div class="col-md-4">
+						<h4>Tarifs :</h4>
+						<p>10€ par mois ou 120€ l’année</p>
+					</div>
+
+					<figure class="col-md-12">
+
+						<div class="col-md-6 center-block">
+							<img class="col-md-12" src="http://placehold.it/350x150" />
+						</div>
+
+						<div class="col-md-6 center-block">
+							<img class="col-md-12" src="http://placehold.it/350x150" />
+						</div>
+
+					</figure>
+
+				</footer>
+
+			</section>
+
+		</div>
+
+
+	</main>
+
+
+<!--FOOTER-->
+
+		<div id="bgImage" class="container-fluid"> <!--DIV used to apply a global background to the footer-->
+			<footer class="container">
+
+
+				<section class="row caemSection"> <!--First section of the footer, containing informations about CAEM, Logo, and Social Networks links-->
+
+					<address class="col-md-5 col-sm-6"> <!--Informations about CAEM, adress, phone number and mail-->
+						<div class="caemInfos col-md-12">
+							<img class="col-md-2" src="{{ asset('images/position_icon-05.svg')}}" />
+							<p class="col-md-10" id="address">13 A avenue Ile-de-France 25 000 Besançon</p>
+						</div>
+						<div class="caemInfos col-md-12">
+							<img class="col-md-2" src="{{ asset('images/phone_icon-05.svg')}}" />
+							<p class="col-md-10" id="phone">03.81.51.21.36</p>
+						</div>
+						<div class="caemInfos col-md-12">
+							<img class="col-md-2" src="{{ asset('images/mail_icon-05.svg')}}" />
+							<p class="col-md-10" id="email">&#097;&#099;&#099;&#117;&#101;&#105;&#108;&#064;&#099;&#097;&#101;&#109;&#045;&#098;&#101;&#115;&#097;&#110;ç&#111;&#110;&#046;&#102;&#114;</p>
+						</div>
+					</address>
+
+					<img class="col-md-2 hidden-sm hidden-xs center-block" src="{{ asset('images/logo_CAEM.svg')}}" alt="logo CAEM"> <!--Logo of CAEM-->
+
+					<div class="socialNetwork col-md-5 col-sm-6"> <!--Links to social networks-->
+						<p>Suivez-nous sur :</p>
+						<div>
+							<a href="#"><img src="{{ asset('images/facebook_logo.svg')}}" /></a>
+							<a href="#"><img src="{{ asset('images/twitter_logo.svg')}}" /></a>
+							<a href="#"><img src="{{ asset('images/youtube_logo.svg')}}" /></a>
+						</div>
+					</div>
+
+				</section>
+
+
+				<nav class="row"> <!--Footer "navbar" to some sections of the website, "L'association", "Credits" and "Mentions légales"-->
+				  <ul class="list-inline">
+					<li class="col-md-4 col-sm-4 col-xs-12 text-center"><a href="#">L'association</a></li>
+					<li class="col-md-4 col-sm-4 col-xs-12 text-center"><a href="#">Crédits</a></li>
+					<li class="col-md-4 col-sm-4 col-xs-12 text-center"><a href="#">Mentions légales</a></li>
+				  </ul>
+				</nav>
+
+
+				<section class="row banner"> <!--Footer section to display partnership logotypes-->
+
+					<div class="col-md-3 col-sm-6 col-xs-6">
+					  <img class="img-responsive" src="{{ asset('images/besancon_logo.png')}}" alt="Logo ville de Besançon">
+					</div>
+
+					<div class="col-md-3 col-sm-6 col-xs-6">
+					  <img class="img-responsive" src="{{ asset('images/grandbesancon_logo.png')}}" alt="Logo grand Besançon">
+					</div>
+
+					<div class="col-md-3 col-sm-6 col-xs-6">
+					  <img class="img-responsive" src="{{ asset('images/doubs_logo.png')}}" alt="Logo Doubs">
+					</div>
+
+					<div class="col-md-3 col-sm-6 col-xs-6">
+					  <img class="img-responsive" src="{{ asset('images/creditmutuel_logo.png')}}" alt="Logo Crédit Mutuelle">
+					</div>
+
+				</section>
+
+
+			</footer>
+		</div>
+<!--END OF FOOTER-->
+
+
+
+
+
+	<script src="//localhost:35729/livereload.js"></script>
+	<script>
+		function myBurger() {
+			var x = document.getElementById("myMenu");
+			if (x.className === "menu") {
+				x.className += " responsive";
+			} else {
+				x.className = "menu";
+			}
+		}
+	</script>
+
+  </body>
+
+
+
+
 </html>

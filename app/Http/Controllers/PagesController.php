@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Types_activity;
+	
 class PagesController extends Controller
 {
     
@@ -14,15 +15,15 @@ public function index()
 	return view('index');
 }
 
+	
 public function course()
 {
-
-	$activities = \App\Models\Types_activity::with('activities')->get();
-	// print_r($activities);
+	$activities = Types_activity::with('activities')->get();
+//	 print_r($activities);
 	// exit;
 	return view('course', ['activities' => $activities]);
-
 }
+	
 
 public function prices()
 {

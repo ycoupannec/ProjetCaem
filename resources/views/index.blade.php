@@ -1,95 +1,220 @@
 <!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
 
-        <title>Laravel</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
 
-            .full-height {
-                height: 100vh;
-            }
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CAEM Besançon École de musique - Accueil</title>
+    <meta name="description" content="École de musique à Besançon" />
+    <link href="http://fonts.googleapis.com/css?family=Quicksand:300,400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="../assets/css/style.css" rel="stylesheet">
+</head>
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
 
-            .position-ref {
-                position: relative;
-            }
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
 
-            .content {
-                text-align: center;
-            }
+<body>
 
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+      <header>
+        <div class="container-fluid">
+          <div class="row" id="contact-connection">
+            <div id="logo-desktop" class="col-md-11">Suivez-nous sur <a href="#"><img src="../assets/img/facebook_logo.svg" /></a> <a href="#"><img src="../assets/img/twitter_logo.svg" /></a> <a href="#"><img src="../assets/img/youtube_logo.svg" /></a> ou <a href="#">contactez-nous</a> directement.
             </div>
+            <div id="logo-mobile" class="col-md-11"><a href="#"><img src="../assets/img/facebook_logo.svg" /></a> <a href="#"><img src="../assets/img/twitter_logo.svg" /></a> <a href="#"><img src="../assets/img/youtube_logo.svg" /></a></div>
+            <div  class="col-md-1">
+              <a id="connection" href="#">Connexion</a>
+            </div>
+          </div>
+          <div class="row" id="header">
+            <img src="../assets/img/logo_CAEM.svg" alt="logo">
+          </div>
         </div>
-    </body>
+        <nav>
+          <ul class="menu" id="myMenu">
+              <li class="home"><a href="#">Accueil</a></li>
+              <li class="icon">
+                  <a href="javascript:void(0);" onclick="myBurger()">&#9776;</a>
+              </li>
+              <li><a href="#">Mon parcours musical</a></li>
+              <li><a href="#">Tarifs &amp; Inscriptions</a></li>
+              <li><a href="#">Évenements</a></li>
+              <li><a href="#">L'équipe</a></li>
+          </ul>
+        </nav>
+      </header>
+
+
+      <main class="container">
+        <!-- #PRENSENTATION CAEM -->
+        <header class="row">
+            <h2 class="text-center">Le Carrefour d'Animation et d'Expression Musicales, qu’est-ce que c’est ?</h2>
+            <p class="borderLeftBlue">Un parcours personnalisé</p>
+            <p class="borderLeftGreen">Des rencontres, de la mixité et de l’échange</p>
+            <p class="borderLeftPink">Du jeu dynamique, en groupe</p>
+            <p class="borderLeftOrange">L’expérience de la scène</p>
+            <div class="text-center">
+                <a href="#" class="">Mon parcours musical</a>
+            </div>
+        </header>
+        <!-- /PRENSENTATION CAEM -->
+        <!-- #NEWS -->
+        <section>
+            <header>
+                <p>En ce moment &hellip;</p>
+            </header>
+            <article class="col-md-6">
+                <div class="new">
+                    <figure>
+                        <figcaption >
+                            <h2>Exemple exemple exemple</h2>
+                            <time datetime="14/02/2017">mardi 14 février 2017</time>
+                        </figcaption>
+                        <img class="img-responsive" src="../assets/img/stagenaty.jpg" alt="">
+                    </figure>
+                    <div class="ellipsis">
+                        <p>
+                            Du 20 au 24 février, Naty Andria vous pro- pose un stage d'approfondissement sur la maîtrise vocale et l'improvisation, destiné à tous les chanteurs amateurs...
+                            Du 20 au 24 février, Naty Andria vous pro- pose un stage d'approfondissement sur la maîtrise vocale et l'improvisation, destiné à tous les chanteurs amateurs...
+                            Du 20 au 24 février, Naty Andria vous pro- pose un stage d'approfondissement sur la maîtrise vocale et l'improvisation, destiné à tous les chanteurs amateur
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <a href="#">Lire la suite</a>
+                    </div>
+                </div>
+            </article>
+            <article class="col-md-6">
+                <div class="new">
+                    <figure>
+                        <figcaption >
+                            <h2>Exemple exemple exemple</h2>
+                            <time datetime="14/02/2017">mardi 14 février 2017</time>
+                        </figcaption>
+                        <img class="img-responsive" src="../assets/img/blop.jpg" alt="">
+                    </figure>
+                    <p class="block-with-text">
+                        Du 20 au 24 février, Naty Andria vous pro- pose un stage d'approfondissement sur la maîtrise vocale et l'improvisation, destiné à tous les chanteurs amateurs...
+                        Du 20 au 24 février, Naty Andria vous pro- pose un stage d'approfondissement sur la maîtrise vocale et l'improvisation, destiné à tous les chanteurs amateurs...
+                        Du 20 au 24 février, Naty Andria vous pro- pose un stage d'approfondissement sur la maîtrise vocale et l'improvisation, destiné à tous les chanteurs amateurs...
+                    </p>
+                    <div class="text-center">
+                        <a href="#">Lire la suite</a>
+                    </div>
+                </div>
+            </article>
+            <article class="col-md-6">
+                <div class="new">
+                    <figure>
+                        <figcaption >
+                            <h2>Exemple exemple exemple</h2>
+                            <time datetime="14/02/2017">mardi 14 février 2017</time>
+                        </figcaption>
+                        <img class="img-responsive" src="../assets/img/stagenaty.jpg" alt="">
+                    </figure>
+                    <p>
+                        Du 20 au 24 février, Naty Andria vous pro- pose un stage d'approfondissement sur la maîtrise vocale et l'improvisation, destiné à tous les chanteurs amateurs...
+                        Du 20 au 24 février, Naty Andria vous pro- pose un stage d'approfondissement sur la maîtrise vocale et l'improvisation, destiné à tous les chanteurs amateurs...
+                        Du 20 au 24 février, Naty Andria vous pro- pose un stage d'approfondissement sur la maîtrise vocale et l'improvisation, destiné à tous les chanteurs amateurs...
+                    </p>
+                    <div class="text-center">
+                        <a href="#">Lire la suite</a>
+                    </div>
+                </div>
+            </article>
+        <!-- /NEWS -->
+    </main>
+
+
+
+
+		<div id="bgImage" class="container-fluid">
+			<footer class="container">
+
+
+				<section class="row caemSection">
+
+					<address class="col-md-5 col-sm-6">
+						<div class="caemInfos col-md-12">
+							<img class="col-md-2" src="../assets/img/position_icon-05.svg" />
+							<p class="col-md-10" id="address">13 A avenue Ile-de-France 25 000 Besançon</p>
+						</div>
+						<div class="caemInfos col-md-12">
+							<img class="col-md-2" src="../assets/img/phone_icon-05.svg" />
+							<p class="col-md-10" id="phone">03.81.51.21.36</p>
+						</div>
+						<div class="caemInfos col-md-12">
+							<img class="col-md-2" src="../assets/img/mail_icon-05.svg" />
+							<p class="col-md-10" id="email">&#097;&#099;&#099;&#117;&#101;&#105;&#108;&#064;&#099;&#097;&#101;&#109;&#045;&#098;&#101;&#115;&#097;&#110;ç&#111;&#110;&#046;&#102;&#114;</p>
+						</div>
+					</address>
+
+					<img class="col-md-2 hidden-sm hidden-xs center-block" src="../assets/img/logo_CAEM.svg" alt="logo CAEM">
+
+					<div class="socialNetwork col-md-5 col-sm-6">
+						<p>Suivez-nous sur :</p>
+						<div>
+							<a href="#"><img src="../assets/img/facebook_logo.svg" /></a>
+							<a href="#"><img src="../assets/img/twitter_logo.svg" /></a>
+							<a href="#"><img src="../assets/img/youtube_logo.svg" /></a>
+						</div>
+					</div>
+
+				</section>
+
+
+				<nav class="row">
+				  <ul class="list-inline">
+					<li class="col-md-4 col-sm-4 col-xs-12 text-center"><a href="#">L'association</a></li>
+					<li class="col-md-4 col-sm-4 col-xs-12 text-center"><a href="#">Crédits</a></li>
+					<li class="col-md-4 col-sm-4 col-xs-12 text-center"><a href="#">Mentions légales</a></li>
+				  </ul>
+				</nav>
+
+
+				<section class="row banner">
+
+					<div class="col-md-3 col-sm-6 col-xs-6">
+					  <img class="img-responsive" src="../assets/img/besancon_logo.png" alt="Logo ville de Besançon">
+					</div>
+
+					<div class="col-md-3 col-sm-6 col-xs-6">
+					  <img class="img-responsive" src="../assets/img/grandbesancon_logo.png" alt="Logo grand Besançon">
+					</div>
+
+					<div class="col-md-3 col-sm-6 col-xs-6">
+					  <img class="img-responsive" src="../assets/img/doubs_logo.png" alt="Logo Doubs">
+					</div>
+
+					<div class="col-md-3 col-sm-6 col-xs-6">
+					  <img class="img-responsive" src="../assets/img/creditmutuel_logo.png" alt="Logo Crédit Mutuelle">
+					</div>
+
+				</section>
+
+
+			</footer>
+		</div>
+
+	<script src="//localhost:35729/livereload.js"></script>
+	<script>
+		function myBurger() {
+			var x = document.getElementById("myMenu");
+			if (x.className === "menu") {
+				x.className += " responsive";
+			} else {
+				x.className = "menu";
+			}
+		}
+	</script>
+
+</body>
+
+
 </html>
