@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
+use Carbon\Carbon;
 
 class Person extends Model
 {
@@ -80,6 +81,11 @@ class Person extends Model
         // return $this->belongsToMany('App\Models\Person');
     }
 
+    public function getyearsold(){
+        $Born = Carbon::parse($this->birthday);
+        $Age = $Born->diff(Carbon::now())->format('%y');
+        return $Age;
+    }
 
     /*
 	|--------------------------------------------------------------------------

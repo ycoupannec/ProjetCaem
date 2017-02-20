@@ -23,6 +23,8 @@ Route::get('contact', 'PagesController@contact');
 
   
 
+  
+
 
 
 
@@ -58,9 +60,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
     CRUD::resource('people_instrument', 'Admin\People_instrumentCrudController');
   
   
+  
   // [...] other routes
 });
-
+Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middleware' => ['web', 'auth']], function () {
+    CRUD::resource('product', 'Admin\ProductCrudController');
+});
 // Admin Interface Routes
 // Route::group(['prefix' => 'admin', 'middleware' => 'admin', 'namespace' => 'Admin'], function()
 // {

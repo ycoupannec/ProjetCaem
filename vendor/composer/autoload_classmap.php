@@ -19,6 +19,7 @@ return array(
     'ChangeNameInstrument' => $baseDir . '/database/migrations/2017_02_08_104226_change_name_instrument.php',
     'CreatePagesTable' => $baseDir . '/database/migrations/2016_05_25_121918_create_pages_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+    'CreateProductsTable' => $baseDir . '/database/migrations/2017_02_15_154157_create_products_table.php',
     'CreateRevisionsTable' => $vendorDir . '/venturecraft/revisionable/src/migrations/2013_04_09_062329_create_revisions_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
