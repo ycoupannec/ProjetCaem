@@ -55,6 +55,7 @@ return array(
     'Barryvdh\\elFinderFlysystemDriver\\' => array($vendorDir . '/barryvdh/elfinder-flysystem-driver/src'),
     'Barryvdh\\Elfinder\\' => array($vendorDir . '/barryvdh/laravel-elfinder/src'),
     'Backpack\\PageManager\\' => array($vendorDir . '/backpack/pagemanager/src'),
+    'Backpack\\NewsCRUD\\' => array($vendorDir . '/backpack/newscrud/src'),
     'Backpack\\LangFileManager\\' => array($vendorDir . '/backpack/langfilemanager/src'),
     'Backpack\\Generators\\' => array($vendorDir . '/backpack/generators/src'),
     'Backpack\\CRUD\\' => array($vendorDir . '/backpack/crud/src'),

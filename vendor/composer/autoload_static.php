@@ -116,6 +116,7 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
             'Barryvdh\\elFinderFlysystemDriver\\' => 33,
             'Barryvdh\\Elfinder\\' => 18,
             'Backpack\\PageManager\\' => 21,
+            'Backpack\\NewsCRUD\\' => 18,
             'Backpack\\LangFileManager\\' => 25,
             'Backpack\\Generators\\' => 20,
             'Backpack\\CRUD\\' => 14,
@@ -326,6 +327,10 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
         array (
             0 => __DIR__ . '/..' . '/backpack/pagemanager/src',
         ),
+        'Backpack\\NewsCRUD\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/backpack/newscrud/src',
+        ),
         'Backpack\\LangFileManager\\' => 
         array (
             0 => __DIR__ . '/..' . '/backpack/langfilemanager/src',
@@ -422,6 +427,8 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
         'AddCodeAnalytiqueGender' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_083814_add_code_analytique_gender.php',
         'AddFieldActivity' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_142703_add_field_activity.php',
         'AddPersonTypePerson' => __DIR__ . '/../..' . '/database/migrations/2017_02_13_103630_add_person_type_person.php',
+        'AddSlugToCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_24_060017_add_slug_to_categories_table.php',
+        'AddSlugToTagsTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_24_060101_add_slug_to_tags_table.php',
         'AddTimestampsToAll' => __DIR__ . '/../..' . '/database/migrations/2017_02_07_154243_add_timestamps_to_all.php',
         'AddTimestampsToCity' => __DIR__ . '/../..' . '/database/migrations/2017_02_07_134003_add_timestamps_to_city.php',
         'AddTimestampsToDistricts' => __DIR__ . '/../..' . '/database/migrations/2017_02_07_145909_add_timestamps_to_districts.php',
@@ -430,9 +437,13 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
         'ChangeIdProduit' => __DIR__ . '/../..' . '/database/migrations/2017_02_08_144542_change_id_produit.php',
         'ChangeIntToCharName' => __DIR__ . '/../..' . '/database/migrations/2017_02_08_110740_change_int_to_char_name.php',
         'ChangeNameInstrument' => __DIR__ . '/../..' . '/database/migrations/2017_02_08_104226_change_name_instrument.php',
+        'CreateArticleTagTable' => __DIR__ . '/../..' . '/database/migrations/2015_08_04_130507_create_article_tag_table.php',
+        'CreateArticlesTable' => __DIR__ . '/../..' . '/database/migrations/2015_08_04_130520_create_articles_table.php',
+        'CreateCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2015_08_04_130551_create_categories_table.php',
         'CreatePagesTable' => __DIR__ . '/../..' . '/database/migrations/2016_05_25_121918_create_pages_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateRevisionsTable' => __DIR__ . '/..' . '/venturecraft/revisionable/src/migrations/2013_04_09_062329_create_revisions_table.php',
+        'CreateTagsTable' => __DIR__ . '/../..' . '/database/migrations/2015_08_04_131626_create_tags_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'DeleteCaemToChamp' => __DIR__ . '/../..' . '/database/migrations/2017_02_08_123715_delete_caem_to_champ.php',
@@ -510,6 +521,7 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
         'ImageRightBoolean' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_081940_image_right_boolean.php',
+        'ModifyEnumArticle' => __DIR__ . '/../..' . '/database/migrations/2017_02_20_134539_modify enum article.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
         'PHPUnit\\Framework\\BaseTestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',
         'PHPUnit\\Framework\\TestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestCase.php',
