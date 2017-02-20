@@ -60,6 +60,19 @@ public function contact()
 	return view('contact');
 }
 
+public function header()
+{
+	return view('header');
+}
 
+public function footer()
+{
+	return view('footer');
+}
+
+public function head()
+{
+	return view('head');
+}
 
 }

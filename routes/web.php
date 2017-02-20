@@ -21,7 +21,6 @@ Route::get('credits', 'PagesController@credits');
 Route::get('mention_legales', 'PagesController@legacy_mention');
 Route::get('contact', 'PagesController@contact');
 
-  
 
 
 

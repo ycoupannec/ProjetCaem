@@ -441,7 +441,7 @@ header ul.menu li.icon {
 }
 
 .mainParcoursMusical div section header {
-  background-color: #fc9633;
+  background-color: #35a1e6;
   padding: 1vh 0vh 1vh 0vh;
 }
 
@@ -476,6 +476,83 @@ header ul.menu li.icon {
 }
 
 /* ---------------- PAGE PARCOURS MUSICAL END ---------------- */
+
+/* ---------------- PAGE EQUIPE ---------------- */
+
+.mainEquipe .contribLine,
+.mainEquipe .adminLine {
+  margin-bottom: 2vh;
+}
+
+.mainEquipe .contribLine div,
+.mainEquipe .adminLine div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mainEquipe .contribLine div h3,
+.mainEquipe .adminLine div h3 {
+  margin-top: 1vh;
+  color: #fc9633;
+}
+
+.mainEquipe .contribLine div p,
+.mainEquipe .adminLine div p {
+  font-size: 3vh;
+}
+
+.mainEquipe .adminOthers {
+  font-size: 3vh;
+}
+
+.mainEquipe #sectionAdministration h2 {
+  margin-top: 5vh;
+  margin-bottom: 4vh;
+}
+
+/* ---------------- PAGE EQUIPE END ---------------- */
+
+/* ---------------- PAGE TARIFS ---------------- */
+
+.mainTarifs ul {
+  font-size: 2.5vh;
+}
+
+.mainTarifs h2 {
+  color: #fc9633;
+}
+
+.titleTop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.tarifsIntro {
+  font-size: 2.5vh;
+}
+
+.disclaimer {
+  margin-top: 2vh;
+  color: #35a1e6;
+  font-weight: bold;
+}
+
+/* ---------------- PAGE TARIFS END ---------------- */
 
 /* ---------------- FOOTER ---------------- */
 
