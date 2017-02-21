@@ -17,7 +17,6 @@
             <!-- ================================================ -->
             <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/dashboard') }}"><i class="fa fa-dashboard"></i> <span>{{ trans('backpack::base.dashboard') }}</span></a></li>
             <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/elfinder') }}"><i class="fa fa-files-o"></i> <span>File manager</span></a></li>
-
             <li class="header">{{ trans('GESTION') }}</li>
             <li><a href="{{ url('admin/person') }}"><i class="fa fa-id-card"></i> <span>Personne</span></a></li>
             <li><a href="{{ url('admin/type_person') }}"><i class="fa fa-tag"></i> <span>Type de personne</span></a></li>
@@ -33,8 +32,8 @@
             <li><a href="{{ url('admin/payment') }}"><i class="fa fa-money"></i> <span>Paiement</span></a></li>
             <li><a href="{{ url('admin/type_payment') }}"><i class="fa fa-credit-card"></i> <span>Type de paiement</span></a></li>
             <li class="header">{{ trans('GESTION SITE') }}</li>
-            <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/page') }}"><i class="fa fa-file-o"></i> <span>Pages</span></a></li>
-            <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/page') }}"><i class="fa fa-file-o"></i> <span>NEWS</span></a></li>
+            <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/article') }}"><i class="fa fa-newspaper-o"></i> <span>Actualités</span></a></li>
+            <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/category') }}"><i class="fa fa-list"></i> <span>Categories</span></a></li>
             <!-- ======================================= -->
             <li class="header">{{ trans('backpack::base.user') }}</li>
             <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/logout') }}"><i class="fa fa-sign-out"></i> <span>{{ trans('backpack::base.logout') }}</span></a></li>

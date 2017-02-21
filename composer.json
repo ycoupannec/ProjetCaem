@@ -9,7 +9,9 @@
         "backpack/base": "^0.7.15",
         "backpack/crud": "^3.1",
         "backpack/langfilemanager": "^1.0",
+        "backpack/newscrud": "^2.1",
         "backpack/pagemanager": "^1.1",
+        "cviebrock/eloquent-sluggable": "^4.2",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "maddhatter/laravel-fullcalendar": "^1.2"

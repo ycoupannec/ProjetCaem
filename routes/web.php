@@ -58,6 +58,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
     CRUD::resource('activity', 'Admin\ActivityCrudController');
     CRUD::resource('payments_detail', 'Admin\Payments_detailCrudController');
     CRUD::resource('people_instrument', 'Admin\People_instrumentCrudController');
+
   
   
   
@@ -70,6 +71,11 @@ Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middle
 // Route::group(['prefix' => 'admin', 'middleware' => 'admin', 'namespace' => 'Admin'], function()
 // {
 //   // Backpack\CRUD: Define the resources for the entities you want to CRUD.
-    
+    Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middleware' => ['auth'], 'namespace' => 'Admin'], function () {
+    // Backpack\NewsCRUD
+    CRUD::resource('article', 'ArticleCrudController');
+    CRUD::resource('category', 'CategoryCrudController');
+    CRUD::resource('tag', 'TagCrudController');
+});
 //   // [...] other routes
 // });
