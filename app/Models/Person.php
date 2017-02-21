@@ -63,6 +63,7 @@ class Person extends Model
         // return $this->belongsToMany('App\Models\Person');
     }
 
+
     public function membership(){
 
         return $this->belongsTo('App\Models\Membership');
@@ -75,7 +76,7 @@ class Person extends Model
 }
 
     
-        public function people_instruments()
+    public function people_instruments()
     {
         return $this->belongsToMany('App\Models\Instrument', 'people_instruments','person_id','instrument_id');
         // return $this->belongsToMany('App\Models\Person');

@@ -35,6 +35,12 @@ class People_types_person extends Model
 	|--------------------------------------------------------------------------
 	*/
 
+	public function type_people()
+    {
+        return $this->belongsToMany('App\Models\Type_person', 'people_types_people','type_person_id', 'person_id');
+        // return $this->belongsToMany('App\Models\Person');
+    }
+
     /*
 	|--------------------------------------------------------------------------
 	| SCOPES

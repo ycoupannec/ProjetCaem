@@ -98,6 +98,7 @@ return array(
     'Hamcrest\\Util' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
     'Hamcrest\\Xml\\HasXPath' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
     'ImageRightBoolean' => $baseDir . '/database/migrations/2017_02_15_081940_image_right_boolean.php',
+    'MoveColumnPerson' => $baseDir . '/database/migrations/2017_02_20_133654_move_column_person.php',
     'PHPUnit\\Framework\\Assert' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
     'PHPUnit\\Framework\\BaseTestListener' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',
     'PHPUnit\\Framework\\TestCase' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/TestCase.php',
