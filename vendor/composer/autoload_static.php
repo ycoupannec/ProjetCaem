@@ -521,7 +521,11 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
         'ImageRightBoolean' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_081940_image_right_boolean.php',
+
+        'MoveColumnPerson' => __DIR__ . '/../..' . '/database/migrations/2017_02_20_133654_move_column_person.php',
+
         'ModifyEnumArticle' => __DIR__ . '/../..' . '/database/migrations/2017_02_20_134539_modify enum article.php',
+
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
         'PHPUnit\\Framework\\BaseTestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',
         'PHPUnit\\Framework\\TestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestCase.php',
