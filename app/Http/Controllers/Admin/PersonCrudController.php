@@ -323,17 +323,6 @@ class PersonCrudController extends CrudController
         // );
         
         
-            $this->crud->addField(
-           
-           [  // Select
-            'label' => "instruments",
-            'type' => 'select2_multiple',
-            'name' => 'instruments', // the db column for the foreign key
-            'entity' => 'instruments', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
-            'model' => "App\Models\Instrument", // foreign key model
-            'pivot' => true
-            ]);
 
             $this->crud->addField(
            
@@ -386,7 +375,7 @@ class PersonCrudController extends CrudController
            ]
         );
 /**/
-        $this->crud->removeColumns(['year_old', 'postal_code','birthday','adress', 'observation', 'city_id', 'district_id', 'image_right', 'code_analytique', 'instruments', 'types']);
+        $this->crud->removeColumns(['year_old', 'postal_code','birthday','adress', 'observation', 'city_id', 'district_id', 'image_right', 'code_analytique', 'types']);
 
 
         // ------ CRUD FIELDS
@@ -485,7 +474,7 @@ class PersonCrudController extends CrudController
 
         // $types = \App\Models\People_types_person::with('type_person')->where('person_id','=',$id)->get();
         $data = \App\Models\Person::with('type_people')
-                                    ->with('instruments')
+                                    
                                     ->with('city')
                                     ->with('people_people')
                                     ->with('district')

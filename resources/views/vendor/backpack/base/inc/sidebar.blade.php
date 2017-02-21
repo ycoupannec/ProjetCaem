@@ -21,6 +21,7 @@
             <li><a href="{{ url('admin/person') }}"><i class="fa fa-id-card"></i> <span>Personne</span></a></li>
             <li><a href="{{ url('admin/type_person') }}"><i class="fa fa-tag"></i> <span>Type de personne</span></a></li>
             <li><a href="{{ url('admin/activity') }}"><i class="fa fa-tag"></i> <span>Activités</span></a></li>
+            <li><a href="{{ url('admin/activity_web') }}"><i class="fa fa-tag"></i> <span>Activités site web</span></a></li>
             <li><a href="{{ url('admin/types_activity') }}"><i class="fa fa-tag"></i> <span>Type d'activités</span></a></li>
             <li><a href="{{ url('admin/formula') }}"><i class="fa fa-tag"></i> <span>Formule</span></a></li>
             <li><a href="{{ url('admin/instrument') }}"><i class="fa fa-tag"></i> <span>Instrument</span></a></li>

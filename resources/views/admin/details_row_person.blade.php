@@ -9,7 +9,7 @@
 					@if(!empty($data['people_people']))
 						@foreach($data['people_people'] as $people_people)
 
-				            	<a href="http://127.0.0.1:8000/admin/person/{{ $people_people->id }}/edit">{{ $people_people->name }}{{ $people_people->family_name }}</a>
+				            	<a href="http://127.0.0.1:8000/admin/person/{{ $people_people->id }}/edit">{{ $people_people->name }} {{ $people_people->family_name }}</a>
 
 				        	@endforeach
 				    @else
@@ -67,21 +67,7 @@
 			        </td>
 
 				</tr>
-				<tr>
-					<td><b>Instruments</b></td>
-					<td>
-					@if(!empty($data['instruments']))
-						@foreach($data['instruments'] as $instrument)
-
-				            	<li><a href="http://127.0.0.1:8000/admin/instrument/{{ $instrument->id }}/edit"> {{ $instrument->name }}</a></li>
-
-				        	@endforeach
-				    @else
-						NOT FOUND
-					@endif
-			        </td>
-			        
-				</tr>
+				
 
 				<tr>
 					<td><b>Activité</b></td>

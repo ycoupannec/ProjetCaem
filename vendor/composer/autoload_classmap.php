@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddActivityInstrument' => $baseDir . '/database/migrations/2017_02_21_133628_add_activity_instrument.php',
     'AddChampActivities' => $baseDir . '/database/migrations/2017_02_15_102828_add_champ_activities.php',
     'AddCodeAnalytiqueGender' => $baseDir . '/database/migrations/2017_02_15_083814_add_code_analytique_gender.php',
     'AddFieldActivity' => $baseDir . '/database/migrations/2017_02_15_142703_add_field_activity.php',
@@ -15,6 +16,7 @@ return array(
     'AddTimestampsToAll' => $baseDir . '/database/migrations/2017_02_07_154243_add_timestamps_to_all.php',
     'AddTimestampsToCity' => $baseDir . '/database/migrations/2017_02_07_134003_add_timestamps_to_city.php',
     'AddTimestampsToDistricts' => $baseDir . '/database/migrations/2017_02_07_145909_add_timestamps_to_districts.php',
+    'AddYearActivity' => $baseDir . '/database/migrations/2017_02_21_135954_add_year_activity.php',
     'ChangeCodeAnalytique' => $baseDir . '/database/migrations/2017_02_20_085536_change_code_analytique.php',
     'ChangeIdIncrement' => $baseDir . '/database/migrations/2017_02_14_124629_change_id_increment.php',
     'ChangeIdProduit' => $baseDir . '/database/migrations/2017_02_08_144542_change_id_produit.php',
@@ -567,6 +569,7 @@ return array(
     'SebastianBergmann\\ResourceOperations\\ResourceOperations' => $vendorDir . '/sebastian/resource-operations/src/ResourceOperations.php',
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
+    'UpdateActivitiesWeb' => $baseDir . '/database/migrations/2017_02_21_132423_update_activities_web.php',
     'UpdateActivityTable' => $baseDir . '/database/migrations/2017_02_21_130416_update_activity_table.php',
     'UpdateGenderVarchar' => $baseDir . '/database/migrations/2017_02_15_091935_update_gender_varchar.php',
     'UpdateImageRightVarchar' => $baseDir . '/database/migrations/2017_02_15_094351_update_image_right_varchar.php',
