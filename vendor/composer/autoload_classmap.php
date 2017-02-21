@@ -104,11 +104,8 @@ return array(
     'Hamcrest\\Util' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
     'Hamcrest\\Xml\\HasXPath' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
     'ImageRightBoolean' => $baseDir . '/database/migrations/2017_02_15_081940_image_right_boolean.php',
-
-    'MoveColumnPerson' => $baseDir . '/database/migrations/2017_02_20_133654_move_column_person.php',
-
     'ModifyEnumArticle' => $baseDir . '/database/migrations/2017_02_20_134539_modify enum article.php',
-
+    'MoveColumnPerson' => $baseDir . '/database/migrations/2017_02_20_133654_move_column_person.php',
     'PHPUnit\\Framework\\Assert' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
     'PHPUnit\\Framework\\BaseTestListener' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',
     'PHPUnit\\Framework\\TestCase' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/TestCase.php',
@@ -570,6 +567,7 @@ return array(
     'SebastianBergmann\\ResourceOperations\\ResourceOperations' => $vendorDir . '/sebastian/resource-operations/src/ResourceOperations.php',
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
+    'UpdateActivityTable' => $baseDir . '/database/migrations/2017_02_21_130416_update_activity_table.php',
     'UpdateGenderVarchar' => $baseDir . '/database/migrations/2017_02_15_091935_update_gender_varchar.php',
     'UpdateImageRightVarchar' => $baseDir . '/database/migrations/2017_02_15_094351_update_image_right_varchar.php',
     'UpdateStatusVarchar' => $baseDir . '/database/migrations/2017_02_15_124725_update_status_varchar.php',
