@@ -84,6 +84,7 @@ CAEM - Ecole de musique
 			</div>
 		</div>
 	</article>
+</section>
 <!-- /NEWS -->
 </main>
 @endsection

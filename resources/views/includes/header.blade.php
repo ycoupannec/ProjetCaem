@@ -14,11 +14,11 @@
 </div>
 <nav>
   <ul class="menu" id="myMenu">
-	  <li class="home"><a href="#">Accueil</a></li>
+	  <li class="home"><a href="/">Accueil</a></li>
 	  <li class="icon">
 		  <a href="javascript:void(0);" onclick="myBurger()">&#9776;</a>
 	  </li>
-	  <li><a href="#">Mon parcours musical</a></li>
+	  <li><a href="/parcours">Mon parcours musical</a></li>
 	  <li><a href="#">Tarifs &amp; Inscriptions</a></li>
 	  <li><a href="#">Évenements</a></li>
 	  <li><a href="#">L'équipe</a></li>

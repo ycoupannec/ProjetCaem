@@ -22,6 +22,19 @@ public function course()
 //	 print_r($activities);
 	// exit;
 	return view('pages.course', ['activities' => $activities]);
+
+
+/*What do I need:
+SIDEBAR:
+
+- Activity name where activity type is [Instruments, Ateliers, Activités];
+
+MAIN CONTENT:
+
+- Block activities ( activities -> Name, Activities -> Description, Activities -> When, Activities -> Teacher, Activities -> Tarifs, Activities -> Images)
+
+
+*/
 }
 	
 

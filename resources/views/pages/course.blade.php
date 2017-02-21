@@ -180,11 +180,13 @@ CAEM - Mon parcours musical
 	<div class="col-md-9 col-sm-9">
 
 
+<!--
 		<ul>
 		@foreach($activities as $activity)
 			<li>{{ $activity->id }}</li>
 		@endforeach
 		</ul>
+-->
 
 
 		<section class="col-md-12">
@@ -195,7 +197,7 @@ CAEM - Mon parcours musical
 
 			<main class="col-md-12">
 				<article>
-					POUETI will not have my fwends widiculed by the common soldiewy. Anybody else feel like a little... giggle... when I
+					I will not have my fwends widiculed by the common soldiewy. Anybody else feel like a little... giggle... when I
 					mention my fwiend... Biggus... Dickus? We use only the finest baby frogs, dew picked and flown from Iraq,
 					cleansed in finest quality spring water, lightly killed, and then sealed in a succulent Swiss quintuple smooth
 					treble cream milk chocolate envelope and lovingly frosted with glucose.
