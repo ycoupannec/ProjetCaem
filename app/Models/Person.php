@@ -76,7 +76,7 @@ class Person extends Model
 }
 
     
-    public function people_instruments()
+    public function instruments()
     {
         return $this->belongsToMany('App\Models\Instrument', 'people_instruments','person_id','instrument_id');
         // return $this->belongsToMany('App\Models\Person');
@@ -86,6 +86,12 @@ class Person extends Model
         $Born = Carbon::parse($this->birthday);
         $Age = $Born->diff(Carbon::now())->format('%y');
         return $Age;
+    }
+
+    public function people_activities()
+    {
+        return $this->belongsToMany('App\Models\Activity', 'member_activities','person_id','activity_id');
+        // return $this->belongsToMany('App\Models\Person');
     }
 
     /*

@@ -3,72 +3,137 @@
 		<div class="col-md-12">
 			<!-- {{ trans('backpack::crud.details_row') }} -->
 			<table>
-				
 				<tr>
-					<td>Date de naissance</td>
-					<td>{{ $entry->birthday }}</td>
-				</tr>
-				<tr>
-					<td>Observation</td>
-					<td>{{ $entry->observation }}</td>
-				</tr>
-				<tr>
-					<td>Droit à l'image</td>
-					<td>{{ $entry->image_right }}</td>
-				</tr>
-				<tr>
-					<td>Code analytique</td>
-					<td>{{ $entry->code_analytique }}</td>
-				</tr>
-				<tr>
-					<td>Ville </td>
-					<td>{{ $city->name }}</td>
-				</tr>
-				<tr>
-					<td>Quartier </td>
-					<td>{{ $district->name }}</td>
-				</tr>
-				<tr>
-					<td>Code postal</td>
-					<td>{{ $entry->postal_code }}</td>
-				</tr>
-				<tr>
-					<td>Adresse</td>
-					<td>{{ $entry->adress }}</td>
-				</tr>
-				<tr>
-					<td>Date de création</td>
-					<td>{{ $entry->created_at }}</td>
-				</tr>
-				<tr>
-					<td>Date de mise à jour</td>
-					<td>{{ $entry->updated_at }}</td>
-				</tr>
+					<td><b>Responsable légal</b></td>
+					<td>
+					@if(!empty($data['people_people']))
+						@foreach($data['people_people'] as $people_people)
 
-				<tr>
-					<td>Types </td>
-					<td>@foreach($types['type_people'] as $type)
+				            	<a href="http://127.0.0.1:8000/admin/person/{{ $people_people->id }}/edit">{{ $people_people->name }}{{ $people_people->family_name }}</a>
 
-			            	<li>{{ $type->name }}</li>
-			        	@endforeach
-			        </td>
-
-				</tr>
-				<tr>
-					<td>Instruments </td>
-					<td>@foreach($instruments['people_instruments'] as $instrument)
-
-			            	<li>{{ $instrument->name }}</li>
-			        	@endforeach
+				        	@endforeach
+				    @else
+						NOT FOUND
+					@endif
 			        </td>
 			        
 				</tr>
+				<tr>
+					<td><b>Date de naissance</b></td>
+					<td>{{ $data->birthday }}</td>
+				</tr>
+				<tr>
+					<td><b>Observation</b></td>
+					<td>{{ $data->observation }}</td>
+				</tr>
+				<tr>
+					<td><b>Droit à l'image</b></td>
+					<td>{{ $data->image_right }}</td>
+				</tr>
+				<tr>
+					<td><b>Code analytique</b></td>
+					<td>{{ $data->code_analytique }}</td>
+				</tr>
+				<tr>
+					<td><b>Ville</b></td>
+					<td>{{ $data->city->name }}</td>
+				</tr>
+				<tr>
+					<td><b>Quartier</b></td>
+					<td>{{ $data->district->name }}</td>
+				</tr>
+				<tr>
+					<td><b>Code postal</b></td>
+					<td>{{ $data->postal_code }}</td>
+				</tr>
+				<tr>
+					<td><b>Adresse</b></td>
+					<td>{{ $data->adress }}</td>
+				</tr>
+
+				<tr>
+					<td><b>Types</b></td>
+					<td>
+					@if(!empty($data['type_people']))
+						@foreach($data['type_people'] as $type)
+
+			            	<li>{{ $type->name }}</li>
+		            	
+			        	@endforeach
+				    @else
+				    	NOT fOUND
+				    @endif
+
+			        </td>
+
+				</tr>
+				<tr>
+					<td><b>Instruments</b></td>
+					<td>
+					@if(!empty($data['instruments']))
+						@foreach($data['instruments'] as $instrument)
+
+				            	<li><a href="http://127.0.0.1:8000/admin/instrument/{{ $instrument->id }}/edit"> {{ $instrument->name }}</a></li>
+
+				        	@endforeach
+				    @else
+						NOT FOUND
+					@endif
+			        </td>
+			        
+				</tr>
+
+				<tr>
+					<td><b>Activité</b></td>
+					<td>
+					@if(!empty($data['people_activities']))
+						@foreach($data['people_activities'] as $activity)
+
+				            	<li><a href="http://127.0.0.1:8000/admin/activity/{{ $activity->id }}/edit"> {{ $activity->name }}</a></li>
+			            	
+				        @endforeach
+			        @else
+			        	NOT FOUND
+		        	@endIf
+			        </td>
+			        
+				</tr>
+
+				<tr>
+					<td><b>Inscription</b></td>
+					<td>
+					@if(!empty($data['membership']))
+							
+
+						@foreach($data['membership'] as $membership)
+
+
+
+				            	<li>Date de début : {{ $membership->date_start }}</li>
+				            	<li>Date de fin : {{ $membership->date_end }}</li>
+			            	
+				        	@endforeach
+				        
+				    @else
+						NOT FOUND
+					@endif
+			        </td>
+				</tr>
+				<tr>
+					<td><b>Date de création</b></td>
+					<td>{{ $data->created_at }}</td>
+				</tr>
+				<tr>
+					<td><b>Date de mise à jour</b></td>
+					<td>{{ $data->updated_at }}</td>
+				</tr>
+
+
+				
 				
 
 			</table>
-			<!-- <pre>
-				{{$entry}}
-			</pre> -->
+			
 	
 			
 

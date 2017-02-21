@@ -323,15 +323,27 @@ class PersonCrudController extends CrudController
         // );
         
         
-             $this->crud->addField(
+            $this->crud->addField(
            
            [  // Select
             'label' => "instruments",
             'type' => 'select2_multiple',
-            'name' => 'people_instruments', // the db column for the foreign key
-            'entity' => 'people_instruments', // the method that defines the relationship in your Model
+            'name' => 'instruments', // the db column for the foreign key
+            'entity' => 'instruments', // the method that defines the relationship in your Model
             'attribute' => 'name', // foreign key attribute that is shown to user
             'model' => "App\Models\Instrument", // foreign key model
+            'pivot' => true
+            ]);
+
+            $this->crud->addField(
+           
+           [  // Select
+            'label' => "activities",
+            'type' => 'select2_multiple',
+            'name' => 'people_activities', // the db column for the foreign key
+            'entity' => 'people_activities', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\Activity", // foreign key model
             'pivot' => true
             ]);
 
@@ -349,16 +361,16 @@ class PersonCrudController extends CrudController
         //     ]
         // );
 
-        $this->crud->addColumn('year_old');
+        // $this->crud->addColumn('year_old');
         
-        $this->crud->setColumnsDetails(['year_old'],
-            [
-               'name'  => 'year_old',
-            'label' => 'Age',
-            'type' => 'model_function',
-            'function_name' => 'getyearsold',
-        ]
-        );
+        // $this->crud->setColumnsDetails(['year_old'],
+        //     [
+        //        'name'  => 'year_old',
+        //     'label' => 'Age',
+        //     'type' => 'model_function',
+        //     'function_name' => 'getyearsold',
+        // ]
+        // );
         
 
         $this->crud->addField([
@@ -467,21 +479,39 @@ class PersonCrudController extends CrudController
     {
         $this->crud->hasAccessOrFail('details_row');
 
-        $this->data['entry'] = $this->crud->getEntry($id);
-        $this->data['crud'] = $this->crud;
+        // $this->data['entry'] = $this->crud->getEntry($id);
+        // $this->data['crud'] = $this->crud;
+           // \DB::connection()->enableQueryLog();
 
+        // $types = \App\Models\People_types_person::with('type_person')->where('person_id','=',$id)->get();
+        $data = \App\Models\Person::with('type_people')
+                                    ->with('instruments')
+                                    ->with('city')
+                                    ->with('people_people')
+                                    ->with('district')
+                                    ->with('membership')
+                                    ->with('people_activities')
+                                    ->find($id);
+           // dd(\DB::getQueryLog());
+        // $instruments = \App\Models\People_instrument::with('people_instruments')->find($id);
+        // $city = \App\Models\City::with('person')->find($this->data['entry']->city_id);
+        // $district = \App\Models\District::with('person')->find($this->data['entry']->district_id);
+        // $activities = \App\Models\Member_activity::with('people_activity')->find($id);
 
-        $types = \App\Models\People_types_person::with('type_people')->find($id);
-        $instruments = \App\Models\People_instrument::with('people_instruments')->find($id);
-        $city = \App\Models\City::with('person')->find($id);
-        $district = \App\Models\District::with('person')->find($id);
-
+        // print_r($activities);
         // load the view from /resources/views/vendor/backpack/crud/ if it exists, otherwise load the one in the package
    //             return view($this->crud->getDetailsRowView(), $this->data);
         
         // print_r($instruments['people_instruments']);
-        print_r($types);
 
-        return view('admin/details_row_person', $this->data,['types' => $types, 'instruments' => $instruments, 'city' => $city, 'district' => $district]);
+        // dd($types->city->name);
+        // foreach ($types as $key => $value) {
+        //     # code...
+        //     print_r($value->type_people);
+        // }
+         // print_r($types);
+        // print_r(['data' => $data]);
+
+        return view('admin/details_row_person', ['data' => $data]);
     }
 }
