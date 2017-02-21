@@ -423,6 +423,7 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
     );
 
     public static $classMap = array (
+        'AddActivityInstrument' => __DIR__ . '/../..' . '/database/migrations/2017_02_21_133628_add_activity_instrument.php',
         'AddChampActivities' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_102828_add_champ_activities.php',
         'AddCodeAnalytiqueGender' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_083814_add_code_analytique_gender.php',
         'AddFieldActivity' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_142703_add_field_activity.php',
@@ -432,6 +433,7 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
         'AddTimestampsToAll' => __DIR__ . '/../..' . '/database/migrations/2017_02_07_154243_add_timestamps_to_all.php',
         'AddTimestampsToCity' => __DIR__ . '/../..' . '/database/migrations/2017_02_07_134003_add_timestamps_to_city.php',
         'AddTimestampsToDistricts' => __DIR__ . '/../..' . '/database/migrations/2017_02_07_145909_add_timestamps_to_districts.php',
+        'AddYearActivity' => __DIR__ . '/../..' . '/database/migrations/2017_02_21_135954_add_year_activity.php',
         'ChangeCodeAnalytique' => __DIR__ . '/../..' . '/database/migrations/2017_02_20_085536_change_code_analytique.php',
         'ChangeIdIncrement' => __DIR__ . '/../..' . '/database/migrations/2017_02_14_124629_change_id_increment.php',
         'ChangeIdProduit' => __DIR__ . '/../..' . '/database/migrations/2017_02_08_144542_change_id_produit.php',
@@ -984,6 +986,7 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
         'SebastianBergmann\\ResourceOperations\\ResourceOperations' => __DIR__ . '/..' . '/sebastian/resource-operations/src/ResourceOperations.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'UpdateActivitiesWeb' => __DIR__ . '/../..' . '/database/migrations/2017_02_21_132423_update_activities_web.php',
         'UpdateActivityTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_21_130416_update_activity_table.php',
         'UpdateGenderVarchar' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_091935_update_gender_varchar.php',
         'UpdateImageRightVarchar' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_094351_update_image_right_varchar.php',

@@ -56,6 +56,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
     CRUD::resource('type_payment', 'Admin\Type_paymentCrudController');
     CRUD::resource('type_person', 'Admin\Type_personCrudController');
     CRUD::resource('activity', 'Admin\ActivityCrudController');
+    CRUD::resource('activity_web', 'Admin\Activity_webCrudController');
     CRUD::resource('payments_detail', 'Admin\Payments_detailCrudController');
     CRUD::resource('people_instrument', 'Admin\People_instrumentCrudController');
 

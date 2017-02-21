@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\ActivityRequest as StoreRequest;
-use App\Http\Requests\ActivityRequest as UpdateRequest;
+use App\Http\Requests\Activity_webRequest as StoreRequest;
+use App\Http\Requests\Activity_webRequest as UpdateRequest;
 
-class ActivityCrudController extends CrudController
+class Activity_webCrudController extends CrudController
 {
 
     public function setUp()
@@ -19,9 +19,9 @@ class ActivityCrudController extends CrudController
 		| BASIC CRUD INFORMATION
 		|--------------------------------------------------------------------------
 		*/
-        $this->crud->setModel("App\Models\Activity");
-        $this->crud->setRoute("admin/activity");
-        $this->crud->setEntityNameStrings('activity', 'Activités');
+        $this->crud->setModel("App\Models\Activity_web");
+        $this->crud->setRoute("admin/activity_web");
+        $this->crud->setEntityNameStrings('activity_web', 'activity_webs');
 
         /*
 		|--------------------------------------------------------------------------
@@ -29,7 +29,7 @@ class ActivityCrudController extends CrudController
 		|--------------------------------------------------------------------------
 		*/
 
-        $this->crud->setFromDb();
+         $this->crud->setFromDb();
 
         // ------ CRUD FIELDS
         $this->crud->addField([
@@ -75,6 +75,7 @@ class ActivityCrudController extends CrudController
         );
 
 
+         
 
         $this->crud->addField([
             'name'  => 'day', // DB column name (will also be the name of the input)
@@ -149,7 +150,61 @@ class ActivityCrudController extends CrudController
             'type'  => 'textarea'
             ]);
 
-       
+        $this->crud->addField([
+            'name'  => 'age_min', // DB column name (will also be the name of the input)
+            'label' => 'Age min', // the human-readable label for the input
+            'type'  => 'number'
+            ]);
+
+        $this->crud->setColumnDetails('age_min',
+            [
+            'name'  => 'age_min', // DB column name (will also be the name of the input)
+            'label' => 'Age min', // the human-readable label for the input
+            'type'  => 'number'
+            ]);
+
+        $this->crud->addField([
+            'name'  => 'age_max', // DB column name (will also be the name of the input)
+            'label' => 'Age max', // the human-readable label for the input
+            'type'  => 'number'
+            ]);
+
+        $this->crud->setColumnDetails('age_max',
+            [
+            'name'  => 'age_max', // DB column name (will also be the name of the input)
+            'label' => 'Age max', // the human-readable label for the input
+            'type'  => 'number'
+            ]);
+
+        $this->crud->addField([
+            'name'  => 'picture_1', // DB column name (will also be the name of the input)
+            'label' => '1ere image', // the human-readable label for the input
+           'type' => 'upload',
+            'upload' => true,
+            'disk' => 'uploads'
+            ]);
+
+        $this->crud->setColumnDetails('picture_1',
+            [
+            'name'  => 'picture_1', // DB column name (will also be the name of the input)
+            'label' => '1ere image', // the human-readable label for the input
+            'type'  => 'text'
+            ]);
+
+        $this->crud->addField([
+            'name'  => 'picture_2', // DB column name (will also be the name of the input)
+            'label' => '2eme image', // the human-readable label for the input
+           'type' => 'upload',
+            'upload' => true,
+            'disk' => 'uploads'
+            ]);
+
+        $this->crud->setColumnDetails('picture_2',
+            [
+            'name'  => 'picture_2', // DB column name (will also be the name of the input)
+            'label' => '2eme image', // the human-readable label for the input
+            'type'  => 'text'
+            ]);
 
         $this->crud->addField([
             'name'  => 'hour_start', // DB column name (will also be the name of the input)
@@ -180,34 +235,32 @@ class ActivityCrudController extends CrudController
             ]);
 
         $this->crud->addField([
-            'name'  => 'year', // DB column name (will also be the name of the input)
-            'label' => 'Année', // the human-readable label for the input
-           'type' => 'number',
+            'name'  => 'when', // DB column name (will also be the name of the input)
+            'label' => 'Quand', // the human-readable label for the input
+           'type' => 'text',
             
             ]);
 
-        $this->crud->setColumnDetails('year',
+        $this->crud->setColumnDetails('when',
             [
-            'name'  => 'year', // DB column name (will also be the name of the input)
-            'label' => 'Année', // the human-readable label for the input
+            'name'  => 'when', // DB column name (will also be the name of the input)
+            'label' => 'Quand', // the human-readable label for the input
             'type'  => 'text'
             ]);
 
-         $this->crud->addField(
-           
-           [  // Select
-            'label' => "instruments",
-            'type' => 'select2_multiple',
-            'name' => 'instruments', // the db column for the foreign key
-            'entity' => 'instruments', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
-            'model' => "App\Models\Instrument", // foreign key model
-            'pivot' => true
+        $this->crud->addField([
+            'name'  => 'price', // DB column name (will also be the name of the input)
+            'label' => 'Tarifs', // the human-readable label for the input
+           'type' => 'text',
+            
             ]);
 
-         $this->crud->removeColumns(['description']);
-
-        
+        $this->crud->setColumnDetails('price',
+            [
+            'name'  => 'price', // DB column name (will also be the name of the input)
+            'label' => 'Tarifs', // the human-readable label for the input
+            'type'  => 'text'
+            ]);
         // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
         // $this->crud->removeColumn('column_name'); // remove a column from the stack
@@ -232,9 +285,8 @@ class ActivityCrudController extends CrudController
         // NOTE: you also need to do allow access to the right users: $this->crud->allowAccess('reorder');
 
         // ------ CRUD DETAILS ROW
-         $this->crud->enableDetailsRow();
-        // NOTE: you also need to do allow access to the right users: 
-         $this->crud->allowAccess('details_row');
+        // $this->crud->enableDetailsRow();
+        // NOTE: you also need to do allow access to the right users: $this->crud->allowAccess('details_row');
         // NOTE: you also need to do overwrite the showDetailsRow($id) method in your EntityCrudController to show whatever you'd like in the details row OR overwrite the views/backpack/crud/details_row.blade.php
 
         // ------ REVISIONS
@@ -284,23 +336,4 @@ class ActivityCrudController extends CrudController
         // use $this->data['entry'] or $this->crud->entry
         return $redirect_location;
 	}
-
-      public function showDetailsRow($id)
-    {
-        $this->crud->hasAccessOrFail('details_row');
-
-        // $this->data['entry'] = $this->crud->getEntry($id);
-        // $this->data['crud'] = $this->crud;
-           // \DB::connection()->enableQueryLog();
-
-        // $types = \App\Models\People_types_person::with('type_person')->where('person_id','=',$id)->get();
-        $data = \App\Models\Activity::with('member_activities')
-                                    
-                                    ->with('teachers_activities')
-                                    ->with('instruments')
-                                    ->find($id);
-        
-
-        return view('admin/details_row_activity', ['data' => $data]);
-    }
 }
