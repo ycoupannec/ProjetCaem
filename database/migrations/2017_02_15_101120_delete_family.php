@@ -21,7 +21,7 @@ class DeleteFamily extends Migration
         });
         Schema::drop('famillies');
      }
-    
+
     /**
      * Reverse the migrations.
      *

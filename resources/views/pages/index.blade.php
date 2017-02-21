@@ -8,6 +8,8 @@ CAEM - Ecole de musique
 <!--MAIN CONTENT :-->
 @section('pageContent')
 <main class="container">
+
+
 <!-- #PRENSENTATION CAEM -->
 <header class="row">
 	<h2 class="text-center">Le Carrefour d'Animation et d'Expression Musicales, qu’est-ce que c’est ?</h2>

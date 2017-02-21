@@ -18,25 +18,10 @@ public function index()
 	
 public function course()
 {
-	$activities = Types_activity::with('activities')->get();
-//	 print_r($activities);
-	// exit;
-	return view('pages.course', ['activities' => $activities]);
+	$typeActivities = Types_activity::with('activities')->get();
 
-
-/*What do I need:
-SIDEBAR:
-
-- Activity name where activity type is [Instruments, Ateliers, Activités];
-
-MAIN CONTENT:
-
-- Block activities ( activities -> Name, Activities -> Description, Activities -> When, Activities -> Teacher, Activities -> Tarifs, Activities -> Images)
-
-
-*/
+	return view('pages.course', ['typeActivities' => $typeActivities]);
 }
-	
 
 public function prices()
 {
