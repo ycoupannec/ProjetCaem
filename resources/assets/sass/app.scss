@@ -294,7 +294,7 @@ header{
 
 			header
 			{
-				background-color: $caemBlue;
+				background-color: $mainChartColor;
 				padding: 1vh 0vh 1vh 0vh;
 
 				h3
@@ -420,7 +420,7 @@ header{
 #bgImage{
 	background-color: $headerFooterMainColor;
 	background-image: url(../img/trame_footer.png);
-	border-top: 1.5vh solid $headerFooterBorderColor;
+	border-top: 1.5vh solid $mainChartColor;
 }
 
 footer
