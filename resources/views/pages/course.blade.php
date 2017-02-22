@@ -1,4 +1,8 @@
+<!--CALLING THE DEFAULT LAYOUT-->
 @extends('layouts.default')
+<!------------------------------>
+
+
 
 <!--HEAD TITLE :-->
 @section('pageTitle')
@@ -8,14 +12,12 @@ CAEM - Mon parcours musical
 
 
 
-
-
-@section('pageContent')
 <!--MAIN CONTENT :-->
+@section('pageContent')
 <main class="container mainParcoursMusical">
 
 
-<!--SELECTION COLUMN :-->
+<!--selection column :-->
 	<aside class="col-md-3 col-sm-3 container">
 		<section id="sectionInterest">
 
@@ -27,7 +29,7 @@ CAEM - Mon parcours musical
 					<h3>{{ $typeActivity->name }}</h3>
 
 					@foreach($typeActivity->activities as $activity)
-					<label data-id="{{ $activity->id }}">
+					<label data-id="{{ $activity->id }}" onclick="showActivity();">
 						<p>{{ $activity->name }}</p>
 						<input type="checkbox">
 					</label>
@@ -39,7 +41,7 @@ CAEM - Mon parcours musical
 	</aside>
 
 
-<!--SELECTED INSTRUMENTS / ACTIVITEES / ATELIERS :-->
+<!--selected instrument / atelier / activites :-->
 	<div class="col-md-9 col-sm-9">
 
 		@foreach($typeActivities as $typeActivity)
@@ -96,12 +98,21 @@ CAEM - Mon parcours musical
 
 </main>
 @endsection
+<!------------------>
 
 
+
+<!--SCRIPT RELATED TO THIS PAGE ONLY :-->
 @section('pageScript')
 <script>
 
+function showActivity()
+	{
+		var idLabel =
+		console.log(test);
 
+	};
 
 </script>
 @endsection
+<!------------------------------------->
