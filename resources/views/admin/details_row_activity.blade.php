@@ -1,7 +1,6 @@
 <div class="m-t-10 m-b-10 p-l-10 p-r-10 p-t-10 p-b-10">
 	<div class="row">
 		<div class="col-md-6">
-			<!-- {{ trans('backpack::crud.details_row') }} -->
 			<table class="table table-hover">
 				<tr>
 					<td><b>Membre</b></td>
@@ -18,6 +17,10 @@
 			        </td>
 			        
 				</tr>
+			</table>
+		</div>
+		<div class="col-md-6">
+			<table class="table table-hover">
 				<tr>
 					<td><b>Professeur</b></td>
 					<td>
@@ -33,8 +36,10 @@
 			        </td>
 			        
 				</tr>
-				
-
+			</table>
+		</div>
+		<div class="col-md-6">
+			<table class="table table-hover">
 				<tr>
 					<td><b>Instruments</b></td>
 					<td>
@@ -50,7 +55,10 @@
 			        </td>
 			        
 				</tr>
-
+			</table>
+		</div>
+		<div class="col-md-6">
+			<table class="table table-hover">
 				
 				<tr>
 					<td><b>Date de création</b></td>
