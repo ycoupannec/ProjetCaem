@@ -90,6 +90,9 @@ class Person extends Model
 
     public function people_activities()
     {
+        // return $this->belongsToMany('App\Models\Person', 'teachers_activities','activity_id','person_id');
+
+        // $data = $this->belongsToMany('App\Models\Activity', 'member_activities','person_id','activity_id'); 
         return $this->belongsToMany('App\Models\Activity', 'member_activities','person_id','activity_id');
         // return $this->belongsToMany('App\Models\Person');
     }

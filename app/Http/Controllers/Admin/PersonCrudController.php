@@ -21,7 +21,7 @@ class PersonCrudController extends CrudController
         */
         $this->crud->setModel("App\Models\Person");
         $this->crud->setRoute("admin/person");
-        $this->crud->setEntityNameStrings('person', 'persons');
+        $this->crud->setEntityNameStrings('Personne', 'Personnes');
 
 
         
@@ -481,6 +481,18 @@ class PersonCrudController extends CrudController
                                     ->with('membership')
                                     ->with('people_activities')
                                     ->find($id);
+        // print_r($data['people_activities']);
+        foreach($data['people_activities'] as $key => $value){
+            // print_r($value['id']);
+            // print_r(\App\Models\Activity::with('teachers_activities')->find($value['id']));
+            $teacher = \App\Models\Activity::with('teachers_activities')->find($value['id']);
+            //print_r($teacher['teachers_activities']);
+             $data['teachers_'.$value['id']]= $teacher['teachers_activities'];
+
+            // exit;
+        }
+        // print_r($data);
+
            // dd(\DB::getQueryLog());
         // $instruments = \App\Models\People_instrument::with('people_instruments')->find($id);
         // $city = \App\Models\City::with('person')->find($this->data['entry']->city_id);
