@@ -19,7 +19,7 @@ public function index()
 public function course()
 {
 	$typeActivities = Types_activity::with('activities')->get();
-
+//	dd($typeActivities);
 	return view('pages.course', ['typeActivities' => $typeActivities]);
 }
 

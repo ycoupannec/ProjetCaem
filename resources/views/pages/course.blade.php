@@ -25,7 +25,7 @@ CAEM - Mon parcours musical
 					<h3>{{ $typeActivity->name }}</h3>
 
 					@foreach($typeActivity->activities as $activity)
-					<label>
+					<label data-id="{{ $activity->id }}">
 						<p>{{ $activity->name }}</p>
 						<input type="checkbox">
 					</label>
@@ -37,22 +37,20 @@ CAEM - Mon parcours musical
 	</aside>
 
 
-<!--SELECTED INSTRUMENTS / ACTIVITEES / ATELIERS ZONE:-->
+<!--SELECTED INSTRUMENTS / ACTIVITEES / ATELIERS :-->
 	<div class="col-md-9 col-sm-9">
 
-
-		<section class="col-md-12">
+		@foreach($typeActivities as $typeActivity)
+		@foreach($typeActivity->activities as $activity)
+		<section id="{{ $activity->id }}" class="col-md-12">
 
 			<header class="col-md-12">
-				<h3>Guitare</h3>
+				<h3>{{ $activity->name }}</h3>
 			</header>
 
 			<main class="col-md-12">
 				<article>
-					I will not have my fwends widiculed by the common soldiewy. Anybody else feel like a little... giggle... when I
-					mention my fwiend... Biggus... Dickus? We use only the finest baby frogs, dew picked and flown from Iraq,
-					cleansed in finest quality spring water, lightly killed, and then sealed in a succulent Swiss quintuple smooth
-					treble cream milk chocolate envelope and lovingly frosted with glucose.
+					{{ $activity->description }}
 				</article>
 			</main>
 
@@ -60,7 +58,7 @@ CAEM - Mon parcours musical
 
 				<div class="col-md-4">
 					<h4>Quand ?</h4>
-					<p>Mercredi 19h-20h30</p>
+					<p>{{ $activity->when }} {{ $activity->hour_start }} {{ $activity->hour_end }}</p>
 				</div>
 
 				<div class="col-md-4">
@@ -70,17 +68,17 @@ CAEM - Mon parcours musical
 
 				<div class="col-md-4">
 					<h4>Tarifs :</h4>
-					<p>10€ par mois ou 120€ l’année</p>
+					<p>{{ $activity->price }}</p>
 				</div>
 
 				<figure class="col-md-12">
 
 					<div class="col-md-6 center-block">
-						<img class="col-md-12" src="http://placehold.it/350x150" />
+						<img class="col-md-12" src="uploads/{{ $activity->picture_1 }}" />
 					</div>
 
 					<div class="col-md-6 center-block">
-						<img class="col-md-12" src="http://placehold.it/350x150" />
+						<img class="col-md-12" src="uploads/{{ $activity->picture_2 }}" />
 					</div>
 
 				</figure>
@@ -88,54 +86,8 @@ CAEM - Mon parcours musical
 			</footer>
 
 		</section>
-
-		<section class="col-md-12">
-
-			<header class="col-md-12">
-				<h3>Guitare</h3>
-			</header>
-
-			<main class="col-md-12">
-				<article>
-					I will not have my fwends widiculed by the common soldiewy. Anybody else feel like a little... giggle... when I
-					mention my fwiend... Biggus... Dickus? We use only the finest baby frogs, dew picked and flown from Iraq,
-					cleansed in finest quality spring water, lightly killed, and then sealed in a succulent Swiss quintuple smooth
-					treble cream milk chocolate envelope and lovingly frosted with glucose.
-				</article>
-			</main>
-
-			<footer class="col-md-12">
-
-				<div class="col-md-4">
-					<h4>Quand ?</h4>
-					<p>Mercredi 19h-20h30</p>
-				</div>
-
-				<div class="col-md-4">
-					<h4>Avec qui ?</h4>
-					<p>Pierre PERRET</p>
-				</div>
-
-				<div class="col-md-4">
-					<h4>Tarifs :</h4>
-					<p>10€ par mois ou 120€ l’année</p>
-				</div>
-
-				<figure class="col-md-12">
-
-					<div class="col-md-6 center-block">
-						<img class="col-md-12" src="http://placehold.it/350x150" />
-					</div>
-
-					<div class="col-md-6 center-block">
-						<img class="col-md-12" src="http://placehold.it/350x150" />
-					</div>
-
-				</figure>
-
-			</footer>
-
-		</section>
+		@endforeach
+		@endforeach
 
 	</div>
 
