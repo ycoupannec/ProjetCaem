@@ -10,29 +10,31 @@
                 <p>{{ Auth::user()->name }}</p> <a href="#"><i class="fa fa-circle text-success"></i> Online</a> </div>
         </div>
         <!-- sidebar menu: : style can be found in sidebar.less -->
-        <ul class="sidebar-menu">
+       <ul class="sidebar-menu">
             <li class="header">{{ trans('backpack::base.administration') }}</li>
             <!-- ================================================ -->
             <!-- ==== Recommended place for admin menu items ==== -->
             <!-- ================================================ -->
             <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/dashboard') }}"><i class="fa fa-dashboard"></i> <span>{{ trans('backpack::base.dashboard') }}</span></a></li>
             <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/elfinder') }}"><i class="fa fa-files-o"></i> <span>File manager</span></a></li>
-            <li class="header">{{ trans('GESTION') }}</li>
+            <li class="header">{{ trans('INDIVIDU') }}</li>
             <li><a href="{{ url('admin/person') }}"><i class="fa fa-id-card"></i> <span>Personne</span></a></li>
             <li><a href="{{ url('admin/type_person') }}"><i class="fa fa-tag"></i> <span>Type de personne</span></a></li>
-            <li><a href="{{ url('admin/activity') }}"><i class="fa fa-tag"></i> <span>Activités</span></a></li>
-            <li><a href="{{ url('admin/activity_web') }}"><i class="fa fa-tag"></i> <span>Activités site web</span></a></li>
+            <li><a href="{{ url('admin/membership') }}"><i class="fa fa-user-plus"></i> <span>Adhésion</span></a></li>
+            <li class="header">{{ trans('ACTIVITE') }}</li>
+            <li><a href="{{ url('admin/activity') }}"><i class="fa fa-tag"></i> <span>Activités</span></a></li>      
             <li><a href="{{ url('admin/types_activity') }}"><i class="fa fa-tag"></i> <span>Type d'activités</span></a></li>
-            <li><a href="{{ url('admin/formula') }}"><i class="fa fa-tag"></i> <span>Formule</span></a></li>
             <li><a href="{{ url('admin/instrument') }}"><i class="fa fa-tag"></i> <span>Instrument</span></a></li>
+            <li class="header">{{ trans('Location') }}</li>
             <li><a href="{{ url('admin/city') }}"><i class="fa fa-industry"></i> <span>Ville</span></a></li>
             <li><a href="{{ url('admin/district') }}"><i class="fa fa-building"></i> <span>Quartier</span></a></li>
             <li><a href="{{ url('admin/location') }}"><i class="fa fa-map"></i> <span>Lieu</span></a></li>
-            <li class="header">{{ trans('GESTION PAIEMENT') }}</li>
-            <li><a href="{{ url('admin/membership') }}"><i class="fa fa-user-plus"></i> <span>Adhésion</span></a></li>
+            <li class="header">{{ trans('PAIEMENT') }}</li>
+        
             <li><a href="{{ url('admin/payment') }}"><i class="fa fa-money"></i> <span>Paiement</span></a></li>
             <li><a href="{{ url('admin/type_payment') }}"><i class="fa fa-credit-card"></i> <span>Type de paiement</span></a></li>
-            <li class="header">{{ trans('GESTION SITE') }}</li>
+            <li class="header">{{ trans('SITE') }}</li>
+            <li><a href="{{ url('admin/activity_web') }}"><i class="fa fa-tag"></i> <span>Activités site web</span></a></li>
             <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/article') }}"><i class="fa fa-newspaper-o"></i> <span>Actualités</span></a></li>
             <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/category') }}"><i class="fa fa-list"></i> <span>Categories</span></a></li>
             <!-- ======================================= -->
