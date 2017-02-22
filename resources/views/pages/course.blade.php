@@ -29,9 +29,9 @@ CAEM - Mon parcours musical
 					<h3>{{ $typeActivity->name }}</h3>
 
 					@foreach($typeActivity->activities as $activity)
-					<label data-id="{{ $activity->id }}" onclick="showActivity();">
+					<label data-id="{{ $activity->id }}" onchange="showActivity({{ $activity->id }});">
 						<p>{{ $activity->name }}</p>
-						<input type="checkbox">
+						<input class="activityLabelCheckbox" type="checkbox" value="{{ $activity->id }}">
 					</label>
 					@endforeach
 
@@ -46,7 +46,7 @@ CAEM - Mon parcours musical
 
 		@foreach($typeActivities as $typeActivity)
 		@foreach($typeActivity->activities as $activity)
-		<section id="{{ $activity->id }}" class="col-md-12">
+		<section id="{{ $activity->id }}" class="activitiesClass col-md-12 activityHide">
 
 			<header class="col-md-12">
 				<h3>{{ $activity->name }}</h3>
@@ -67,7 +67,7 @@ CAEM - Mon parcours musical
 
 				<div class="col-md-4">
 					<h4>Avec qui ?</h4>
-					<p>Pierre PERRET</p>
+					<p>{{ $activity->person }}</p>
 				</div>
 
 				<div class="col-md-4">
@@ -78,11 +78,11 @@ CAEM - Mon parcours musical
 				<figure class="col-md-12">
 
 					<div class="col-md-6 center-block">
-						<img class="col-md-12" src="uploads/{{ $activity->picture_1 }}" />
+						<img src="uploads/{{ $activity->picture_1 }}" />
 					</div>
 
 					<div class="col-md-6 center-block">
-						<img class="col-md-12" src="uploads/{{ $activity->picture_2 }}" />
+						<img src="uploads/{{ $activity->picture_2 }}" />
 					</div>
 
 				</figure>
@@ -106,12 +106,35 @@ CAEM - Mon parcours musical
 @section('pageScript')
 <script>
 
-function showActivity()
-	{
-		var idLabel =
-		console.log(test);
 
+var btnSelectActivity = document.querySelectorAll(".activityLabelCheckbox:checked");
+
+console.log(btnSelectActivity);
+
+for (i=0 ; i < btnSelectActivity.length ; i++)
+	{
+		console.log(btnSelectActivity[i].value);
+		console.log("debug"+i);
 	};
+
+
+
+function showActivity(activityId)
+	{
+//		document.getElementById(activityId).classList.toggle("activityHide");
+	};
+
+
+
+/*SNIPPETS*/
+
+//		$('.activityLabelCheckbox').click(function(){
+//			console.log( $(this).is(':checked'));
+//		});
+
+//		var test = document.getElementsByClassName('activityLabelCheckbox');
+//		console.log(test);
+
 
 </script>
 @endsection

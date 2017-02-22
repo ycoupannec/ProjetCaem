@@ -345,13 +345,26 @@ header{
 					margin:0;
 					padding:0;
 					padding: 1vh 1vh 1vh 1vh;
+
+					img
+					{
+						max-width: 100%;
+						max-height: 30vh;
+					}
 				}
 			}
 		}
 
 	}
 }
+
+.activityHide
+{
+	display: none;
+}
 /* ---------------- PAGE PARCOURS MUSICAL END ---------------- */
+
+
 
 
 /* ---------------- PAGE EQUIPE ---------------- */
@@ -387,6 +400,8 @@ header{
 /* ---------------- PAGE EQUIPE END ---------------- */
 
 
+
+
 /* ---------------- PAGE TARIFS ---------------- */
 
 	.mainTarifs ul{
@@ -414,6 +429,8 @@ header{
 
 
 /* ---------------- PAGE TARIFS END ---------------- */
+
+
 
 
 /* ---------------- FOOTER ---------------- */
@@ -481,8 +498,6 @@ footer
 	}
 }
 /* ---------------- FOOTER END ---------------- */
-
-
 
 
 

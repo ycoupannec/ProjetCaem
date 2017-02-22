@@ -475,6 +475,15 @@ header ul.menu li.icon {
   padding: 1vh 1vh 1vh 1vh;
 }
 
+.mainParcoursMusical div section figure div img {
+  max-width: 100%;
+  max-height: 30vh;
+}
+
+.activityHide {
+  display: none;
+}
+
 /* ---------------- PAGE PARCOURS MUSICAL END ---------------- */
 
 /* ---------------- PAGE EQUIPE ---------------- */
