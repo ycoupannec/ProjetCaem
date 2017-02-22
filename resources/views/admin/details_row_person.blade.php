@@ -120,12 +120,60 @@
 				
 
 			</table>
-			
+			</div>
+			<div class="col-md-6">
+
+							<b>Activité</b>	
+				<table class="table table-hover">
+					<thead>
+						<tr>
+					      <th>#</th>
+					      <th>Nom</th>
+					      <th>Professeur</th>
+					      <th>Heure de début</th>
+					      <th>Heure de fin</th>
+					      <th>Jour</th>
+					    </tr>
+					</thead>
+					
+						@if(!empty($data['people_activities']))
+							@foreach($data['people_activities'] as $activity)
+								<tr>
+									<td>
+										{{ $activity->id }}
+									</td>
+									<td>
+
+										<!-- {{$activity['teachers_activities']}} -->
+										@foreach($data['teachers_'.$activity->id] as $teachers_activities)
+					            		<a href="http://127.0.0.1:8000/admin/activity/{{ $activity->id }}/edit"> {{ $teachers_activities }}</a>
+					            		@endforeach
+					            	</td>
+					            	<td>
+					            	</td>
+					            	<td>
+					            		{{ $activity->hour_start }}
+					            	</td>
+					            	<td>
+					            		{{ $activity->hour_end }}
+					            	</td>
+					            	<td>
+					            		{{ $activity->day }}
+					            	</td>
+				            	</tr>
+					        @endforeach
+				        @else
+				        	NOT FOUND
+			        	@endIf
+
+				</table>
+
+			</div>
 	
 			
 
 	        
-		</div>
+		
 	</div>
 </div>
 
