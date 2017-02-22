@@ -196,12 +196,26 @@ class ActivityCrudController extends CrudController
          $this->crud->addField(
            
            [  // Select
-            'label' => "instruments",
+            'label' => "Instruments",
             'type' => 'select2_multiple',
             'name' => 'instruments', // the db column for the foreign key
             'entity' => 'instruments', // the method that defines the relationship in your Model
             'attribute' => 'name', // foreign key attribute that is shown to user
             'model' => "App\Models\Instrument", // foreign key model
+            'pivot' => true
+            ]);
+
+          
+
+          $this->crud->addField(
+           
+           [  // Select
+            'label' => "Professeurs",
+            'type' => 'select2_multiple',
+            'name' => 'teachers_activities', // the db column for the foreign key
+            'entity' => 'teachers_activities', // the method that defines the relationship in your Model
+            'attribute' => 'fullname', // foreign key attribute that is shown to user
+            'model' => "App\Models\Person", // foreign key model
             'pivot' => true
             ]);
 

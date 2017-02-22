@@ -108,11 +108,11 @@
 				</tr>
 				<tr>
 					<td><b>Date de création</b></td>
-					<td>{{ $data->created_at }}</td>
+					<td>{{ date('d/m/Y H:i',strtotime($data->created_at)) }}</td>
 				</tr>
 				<tr>
 					<td><b>Date de mise à jour</b></td>
-					<td>{{ $data->updated_at }}</td>
+					<td>{{ date('d/m/Y H:i',strtotime($data->updated_at)) }}</td>
 				</tr>
 
 
@@ -143,13 +143,12 @@
 										{{ $activity->id }}
 									</td>
 									<td>
-
-										<!-- {{$activity['teachers_activities']}} -->
-										@foreach($data['teachers_'.$activity->id] as $teachers_activities)
-					            		<a href="http://127.0.0.1:8000/admin/activity/{{ $activity->id }}/edit"> {{ $teachers_activities }}</a>
-					            		@endforeach
+					            		<a href="http://127.0.0.1:8000/admin/activity/{{ $activity->id }}/edit"> {{ $activity->name }}</a>
 					            	</td>
 					            	<td>
+					            		@foreach($data['teachers_'.$activity->id] as $teachers_activities)
+					            		<li><a href="http://127.0.0.1:8000/admin/activity/{{ $activity->id }}/edit"> {{ $teachers_activities->name }} {{ $teachers_activities->family_name }}</a></li>
+					            		@endforeach
 					            	</td>
 					            	<td>
 					            		{{ $activity->hour_start }}
@@ -163,7 +162,7 @@
 				            	</tr>
 					        @endforeach
 				        @else
-				        	NOT FOUND
+				        	Aucune
 			        	@endIf
 
 				</table>
