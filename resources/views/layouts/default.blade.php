@@ -23,6 +23,11 @@
 		@include('includes.footer')
 		<!---------->
 
+
+		<!--SCRIPT-->
+		@include('includes.script')
+		<!---------->
+
 	</body>
 
 </html>

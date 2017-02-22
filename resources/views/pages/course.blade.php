@@ -4,11 +4,13 @@
 @section('pageTitle')
 CAEM - Mon parcours musical
 @endsection
+<!---------------->
+
+
+
 
 
 @section('pageContent')
-
-
 <!--MAIN CONTENT :-->
 <main class="container mainParcoursMusical">
 
@@ -93,6 +95,13 @@ CAEM - Mon parcours musical
 
 
 </main>
+@endsection
 
 
+@section('pageScript')
+<script>
+
+
+
+</script>
 @endsection
