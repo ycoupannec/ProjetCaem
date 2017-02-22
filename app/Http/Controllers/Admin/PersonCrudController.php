@@ -327,7 +327,7 @@ class PersonCrudController extends CrudController
             $this->crud->addField(
            
            [  // Select
-            'label' => "activities",
+            'label' => "Activités",
             'type' => 'select2_multiple',
             'name' => 'people_activities', // the db column for the foreign key
             'entity' => 'people_activities', // the method that defines the relationship in your Model
