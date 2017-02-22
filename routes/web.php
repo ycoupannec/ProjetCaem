@@ -1,16 +1,6 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
+// Website Routes
 Route::get('/', 'PagesController@index');
 Route::get('parcours', 'PagesController@course');
 Route::get('tarifs', 'PagesController@prices');
@@ -21,19 +11,9 @@ Route::get('credits', 'PagesController@credits');
 Route::get('mention_legales', 'PagesController@legacy_mention');
 Route::get('contact', 'PagesController@contact');
 
-  
-
-  
-
-
-
-
-
 // Admin Interface Routes
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
 {
-  // Backpack\CRUD: Define the resources for the entities you want to CRUD.
-  
     CRUD::resource('city', 'Admin\CityCrudController');
     CRUD::resource('district', 'Admin\DistrictCrudController');
     CRUD::resource('person', 'Admin\PersonCrudController');
@@ -59,24 +39,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
     CRUD::resource('activity_web', 'Admin\Activity_webCrudController');
     CRUD::resource('payments_detail', 'Admin\Payments_detailCrudController');
     CRUD::resource('people_instrument', 'Admin\People_instrumentCrudController');
+    CRUD::resource('article', 'Admin\ArticleCrudController');
+    CRUD::resource('category', 'Admin\CategoryCrudController');
+    CRUD::resource('tag', 'Admin\TagCrudController');
 
-  
-  
-  
-  // [...] other routes
 });
-Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middleware' => ['web', 'auth']], function () {
-    CRUD::resource('product', 'Admin\ProductCrudController');
-});
-// Admin Interface Routes
-// Route::group(['prefix' => 'admin', 'middleware' => 'admin', 'namespace' => 'Admin'], function()
-// {
-//   // Backpack\CRUD: Define the resources for the entities you want to CRUD.
-    Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middleware' => ['auth'], 'namespace' => 'Admin'], function () {
-    // Backpack\NewsCRUD
-    CRUD::resource('article', 'ArticleCrudController');
-    CRUD::resource('category', 'CategoryCrudController');
-    CRUD::resource('tag', 'TagCrudController');
-});
-//   // [...] other routes
-// });
