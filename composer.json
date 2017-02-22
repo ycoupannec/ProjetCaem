@@ -6,6 +6,7 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
+        "acacha/admin-lte-template-laravel": "4.*",
         "backpack/base": "^0.7.15",
         "backpack/crud": "^3.1",
         "backpack/langfilemanager": "^1.0",

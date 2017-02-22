@@ -116,8 +116,8 @@ class ActivityCrudController extends CrudController
             'label' => 'Status', // the human-readable label for the input
             'type'  => 'select_from_array',
             'options' => [
-                        'Online' => 'Online',
-                        'Offline' => 'Offline'
+                        'En ligne' => 'En ligne',
+                        'Hors ligne' => 'Hors ligne'
                         ],
             'allows_null' => false,
             ]);
@@ -128,8 +128,8 @@ class ActivityCrudController extends CrudController
             'label' => 'Status', // the human-readable label for the input
             'type'  => 'select_from_array',
             'options' => [
-                        'Online' => 'Online',
-                        'Offline' => 'Offline'
+                        'Online' => 'En ligne',
+                        'Offline' => 'Hors ligne'
                         ],
             'allows_null' => false,
           
