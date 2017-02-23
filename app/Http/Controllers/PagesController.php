@@ -17,9 +17,9 @@ public function index()
 public function course()
 {
 
-	$typeActivities = \App\Models\Types_activity::with('activities')->get();
-	// print_r($activities);
-	// exit;
+	$typeActivities = \App\Models\Types_activity::with('activities_web')->get();
+/*	 print_r($typeActivities);
+	 exit;*/
 	return view('pages.course', ['typeActivities' => $typeActivities]);
 
 }

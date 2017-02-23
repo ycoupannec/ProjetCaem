@@ -28,7 +28,7 @@ CAEM - Mon parcours musical
 
 					<h3>{{ $typeActivity->name }}</h3>
 
-					@foreach($typeActivity->activities as $activity)
+					@foreach($typeActivity->activities_web as $activity)
 					<label onclick="displayActivity();">
 						<p>{{ $activity->name }}</p>
 						<input class="activityCheckbox" type="checkbox" value="{{ $activity->id }}">
@@ -45,7 +45,7 @@ CAEM - Mon parcours musical
 	<div class="col-md-9 col-sm-9">
 
 		@foreach($typeActivities as $typeActivity)
-		@foreach($typeActivity->activities as $activity)
+		@foreach($typeActivity->activities_web as $activity)
 		<section id="{{ $activity->id }}" class="activitiesClass col-md-12">
 
 			<header id="headerParcours" class="col-md-12">
