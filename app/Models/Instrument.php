@@ -9,6 +9,8 @@ class Instrument extends Model
 {
     use CrudTrait;
 
-    protected $fillable = ['name'];
+    protected $fillable = [
+        'name'
+    ];
 
 }

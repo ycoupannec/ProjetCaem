@@ -9,29 +9,44 @@ use Carbon\Carbon;
 class Person extends Model
 {
     use CrudTrait;
-
    
-     protected $fillable = ['gender','name', 'family_name', 'mail', 'tel_fix', 'tel_mob', 'postal_code', 'adress', 'birthday', 'observation','code_analytique','image_right', 'city_id', 'district_id', 'familly_id','status'];
-  
+    protected $fillable = [
+        'gender',
+        'name', 
+        'family_name', 
+        'mail', 
+        'tel_fix', 
+        'tel_mob', 
+        'postal_code', 
+        'adress', 
+        'birthday', 
+        'observation',
+        'code_analytique',
+        'image_right', 
+        'city_id', 
+        'district_id', 
+        'familly_id',
+        'status'
+    ];
 
-	public function city(){
+	public function city()
+    {
         return $this->belongsTo('App\Models\City');
     }
 
-    public function district(){
+    public function district()
+    {
         return $this->belongsTo('App\Models\District');
     }
 
-    public function familly(){
+    public function familly()
+    {
         return $this->belongsTo('App\Models\Familly');
     }
-
-
 
     public function people_people()
     {
         return $this->belongsToMany('App\Models\Person', 'person_people','person_id','people_link_id');
-     
     }
 
     public function type_people()
@@ -40,18 +55,15 @@ class Person extends Model
        
     }
 
-
-    public function membership(){
-
+    public function membership()
+    {
         return $this->belongsTo('App\Models\Membership');
     }
 
-
-
-	public function getFullNameAttribute() {
+	public function getFullNameAttribute() 
+    {
    		return $this->family_name.' '.$this->name;
-}
-
+    }
     
     public function instruments()
     {
@@ -59,17 +71,15 @@ class Person extends Model
         
     }
 
-    public function getyearsold(){
-        $Born = Carbon::parse($this->birthday);
-        $Age = $Born->diff(Carbon::now())->format('%y');
-        return $Age;
+    public function getyearsold()
+    {
+        $born = Carbon::parse($this->birthday);
+        return $born->diff(Carbon::now())->format('%y');
     }
 
     public function people_activities()
     {
-
         return $this->belongsToMany('App\Models\Activity', 'member_activities','person_id','activity_id');
-
     }
 
 }
