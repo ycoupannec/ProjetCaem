@@ -56,16 +56,7 @@ class Activity_webCrudController extends CrudController
            ]
         );
 
-        $this->crud->setColumnsDetails(['type_activity_id'],
-            [
-            'label' => 'Types', // Table column heading
-            'type' => 'select',
-            'name' => 'type_activity_id', // the column that contains the ID of that connected entity;
-            'entity' => 'type_activity', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
-            'model' => "App\Models\Types_activity", // foreign key model
-            ]
-        );
+        
 
 
         $this->crud->addField([
@@ -85,53 +76,10 @@ class Activity_webCrudController extends CrudController
             ]);
 
 
-        $this->crud->setColumnDetails('day',
-            [
-             'name'  => 'day', // DB column name (will also be the name of the input)
-            'label' => 'Jour', // the human-readable label for the input
-            'type'  => 'select_from_array',
-            'options' => [
-                        'Lundi' => 'Lundi',
-                        'Mardi' => 'Mardi',
-                        'Mercredi' => 'Mercredi',
-                        'Jeudi' => 'Jeudi',
-                        'Vendredi' => 'Vendredi',
-                        'Samedi' => 'Samedi',
-                        'Dimanche' => 'Dimanche'
-                        ],
-            'allows_null' => false,
-
-           ]
-        );
-
-
-        $this->crud->addField([
-            'name'  => 'status', 
-            'label' => 'Status', 
-            'type'  => 'select_from_array',
-            'options' => [
-                        '0' => 'Online',
-                        '1' => 'Offline'
-                        ],
-            'allows_null' => false,
-            ]);
-
-
-        $this->crud->setColumnDetails('status',
-            [
-             'name'  => 'status', // DB column name (will also be the name of the input)
-            'label' => 'Status', // the human-readable label for the input
-            'type'  => 'boolean',
-            'options' => [
-                        '0' => 'Online',
-                        '1' => 'Offline'
-                        ],
-     
-           ]
-        );
-
         
 
+
+    
 
         $this->crud->addField([
             'name'  => 'description', 
@@ -185,12 +133,7 @@ class Activity_webCrudController extends CrudController
             ]);
 
 
-        $this->crud->setColumnDetails('hour_start',
-            [
-            'name'  => 'hour_start', // DB column name (will also be the name of the input)
-            'label' => 'Heure de début', // the human-readable label for the input
-            'type'  => 'text'
-            ]);
+      
 
 
         $this->crud->addField([
@@ -218,6 +161,31 @@ class Activity_webCrudController extends CrudController
 
             ]);
 
+        $this->crud->addField([
+            'name'  => 'status', 
+            'label' => 'Status', 
+            'type'  => 'select_from_array',
+            'options' => [
+                        '0' => 'Hors Ligne',
+                        '1' => 'En ligne'
+                        ],
+            'allows_null' => false,
+            ]);
+
+
+        $this->crud->setColumnDetails('status',
+            [
+             'name'  => 'status', 
+            'label' => 'Status', 
+            'type'  => 'boolean',
+            'options' => [
+                        '0' => 'Hors Ligne',
+                        '1' => 'En Ligne'
+                        ],
+     
+           ]
+        );
+
             
             $this->crud->setColumnDetails('name',
             [
@@ -236,6 +204,8 @@ class Activity_webCrudController extends CrudController
             'model' => "App\Models\Types_activity",
             ] 
         );
+
+
 
         $this->crud->setColumnDetails('day',
                     [
@@ -256,19 +226,7 @@ class Activity_webCrudController extends CrudController
                    ]
                 );
 
-        $this->crud->setColumnDetails('status',
-                    [
-                     'name'  => 'status', 
-                    'label' => 'Status', 
-                    'type'  => 'select_from_array',
-                    'options' => [
-                                'Online' => 'Online',
-                                'Offline' => 'Offline'
-                                ],
-                    'allows_null' => false,
-                  
-                   ]
-                );
+     
 
         $this->crud->setColumnDetails('description',
                     [
@@ -304,6 +262,7 @@ class Activity_webCrudController extends CrudController
                     'label' => '2eme image',
                     'type'  => 'text'
                     ]);
+
 
         $this->crud->setColumnDetails('hour_start',
                     [

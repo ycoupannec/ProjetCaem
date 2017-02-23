@@ -23,6 +23,7 @@ class Activity_web extends Model
         'hour_end',
         'when',
         'price',
+        'status'
     ];
  
     public function type_activity()

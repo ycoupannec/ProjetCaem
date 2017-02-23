@@ -111,6 +111,31 @@ class ArticleCrudController extends CrudController
                                 'type' => 'checkbox',
                             ]);
 
+        $this->crud->addField([
+            'name'  => 'status', 
+            'label' => 'Status', 
+            'type'  => 'select_from_array',
+            'options' => [
+                        '1' => 'En ligne',
+                        '0' => 'Hors ligne'
+                        ],
+            'allows_null' => false,
+            ]);
+
+        $this->crud->setColumnDetails('status',
+            [
+             'name'  => 'status', 
+            'label' => 'Status', 
+            'type'  => 'boolean',
+            'options' => [
+                        '1' => 'En ligne',
+                        '0' => 'Hors ligne'
+                        ],
+            'allows_null' => false,
+          
+           ]
+        );
+
         $this->crud->enableAjaxTable();
     }
 

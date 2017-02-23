@@ -51,6 +51,7 @@
 					<td><b>Adresse</b></td>
 					<td>{{ $data->adress }}</td>
 				</tr>
+				
 
 				<tr>
 					<td><b>Types</b></td>
