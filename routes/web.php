@@ -11,10 +11,6 @@ Route::get('credits', 'PagesController@credits');
 Route::get('mention_legales', 'PagesController@legacy_mention');
 Route::get('contact', 'PagesController@contact');
 
-
-
-
-
 // Admin Interface Routes
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
 {
@@ -23,8 +19,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
     CRUD::resource('person', 'Admin\PersonCrudController');
     CRUD::resource('person_person', 'Admin\Person_personCrudController');
     CRUD::resource('familly', 'Admin\FamillyCrudController');
-    CRUD::resource('formula', 'Admin\FormulaCrudController');
-    CRUD::resource('formula_activity', 'Admin\Formula_activityCrudController');
     CRUD::resource('instrument', 'Admin\InstrumentCrudController');
     CRUD::resource('location', 'Admin\LocationCrudController');
     CRUD::resource('membership', 'Admin\MembershipCrudController');
@@ -46,9 +40,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
     CRUD::resource('article', 'Admin\ArticleCrudController');
     CRUD::resource('category', 'Admin\CategoryCrudController');
     CRUD::resource('tag', 'Admin\TagCrudController');
+    CRUD::resource('team', 'Admin\TeamCrudController');
     Route::get('extract', 'Admin\ExtractController@index');
 
-
-
 });
-

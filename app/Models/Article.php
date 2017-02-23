@@ -12,29 +12,22 @@ class Article extends Model
     use CrudTrait;
     use Sluggable, SluggableScopeHelpers;
 
-    /*
-    |--------------------------------------------------------------------------
-    | GLOBAL VARIABLES
-    |--------------------------------------------------------------------------
-    */
+ 
 
     protected $table = 'articles';
     protected $primaryKey = 'id';
     public $timestamps = true;
-    // protected $guarded = ['id'];
+
     protected $fillable = ['slug', 'title', 'content', 'image', 'status', 'category_id', 'featured', 'date'];
-    // protected $hidden = [];
-    // protected $dates = [];
+
     protected $casts = [
         'featured'  => 'boolean',
         'date'      => 'date',
     ];
 
-    /**
-     * Return the sluggable configuration array for this model.
-     *
+   
      * @return array
-     */
+    
     public function sluggable()
     {
         return [
@@ -44,29 +37,14 @@ class Article extends Model
         ];
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | FUNCTIONS
-    |--------------------------------------------------------------------------
-    */
-
-    /*
-    |--------------------------------------------------------------------------
-    | RELATIONS
-    |--------------------------------------------------------------------------
-    */
 
     public function category()
     {
         return $this->belongsTo('App\Models\Category', 'category_id');
     }
 
-
-    /*
-    |--------------------------------------------------------------------------
-    | SCOPES
-    |--------------------------------------------------------------------------
-    */
+    
+  
 
     public function scopePublished($query)
     {
@@ -75,13 +53,7 @@ class Article extends Model
                     ->orderBy('date', 'DESC');
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | ACCESORS
-    |--------------------------------------------------------------------------
-    */
-
-    // The slug is created automatically from the "title" field if no slug exists.
+    
     public function getSlugOrTitleAttribute()
     {
         if ($this->slug != '') {
@@ -91,9 +63,4 @@ class Article extends Model
         return $this->title;
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | MUTATORS
-    |--------------------------------------------------------------------------
-    */
 }

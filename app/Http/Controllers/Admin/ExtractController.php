@@ -11,13 +11,8 @@ class ExtractController extends AdminController {
 
 
 		 $usersActif = DB::table('people')
-<<<<<<< HEAD
-                            ->where('status', 'Actif')
-                            ->get();
-		print_r($usersActif);
+        
 
-		return view('admin/extract',$usersActif);
-=======
                             // ->where('status', 'Actif')
                             ->get();   
         $districts = DB::table('districts')
@@ -34,7 +29,6 @@ class ExtractController extends AdminController {
 		// }
 
 		return view('admin/extract',["usersActif" => $usersActif, "districts" => $districts, 'instruments' => $instruments, "activities" => $activities]); 
->>>>>>> bb658f969e1bad3d6c88e8512ecdfdf4d86e8113
 
 	}
 
