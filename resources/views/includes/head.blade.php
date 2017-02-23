@@ -6,12 +6,20 @@
 
     <title>@yield('pageTitle', 'CAEM - Ecole de musique')</title>
 
-    <!-- OPEN GRAPH -->
-    <meta property="og:title" content="@yield('pageTitle', 'CAEM - Ecole de musique')" />
-    <meta property="og:type" content="Musique" />
-    <meta property="og:url" content="http://www.caem-besancon.fr/" />
-    <meta property="og:image" content="http://www.caem-besancon.fr/images/IMG5793.jpg" />
-    <meta property="og:description" content="Le Carrefour d'Animation et d'Expression Musicales" />
+	<!-- OPEN GRAPH -->
+	<meta property="og:title" content="@yield('pageTitle', 'CAEM - Ecole de musique')" />
+	<meta property="og:type" content="Musique" />
+	<meta property="og:url" content="url()->current();" />
+	<meta property="og:image" content="http://www.caem-besancon.fr/images/IMG5793.jpg" />
+	<meta property="og:description" content="Le Carrefour d'Animation et d'Expression Musicales" />
+
+	<!--  TWITTER CARD-->
+	<meta property="twitter:summary" content="summary" />
+	<meta property="twitter:site" content="@caem" />
+	<meta property="twitter:title" content="@yield('pageTitle', 'CAEM - Ecole de musique')" />
+	<meta property="twitter:description" content="Le Carrefour d'Animation et d'Expression Musicales" />
+	<meta property="twitter:image" content="http://www.caem-besancon.fr/images/IMG5793.jpg" />
+	<meta property="twitter:url" content="Request::url()" />
 
     <!--STYLESHEET-->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -19,9 +27,6 @@
     <!--IMPORT FONTS-->
     <link href="http://fonts.googleapis.com/css?family=Quicksand:300,400,700" rel="stylesheet" type="text/css">
 
-    <!--IMPORT BOOTSTRAP-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

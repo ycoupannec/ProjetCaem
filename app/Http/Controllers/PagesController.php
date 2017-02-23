@@ -11,52 +11,52 @@ class PagesController extends Controller
 
 public function index()
 {
-	return view('index');
+	return view('pages.index');
 }
 
 public function course()
 {
 
-	$activities = \App\Models\Types_activity::with('activities')->get();
+	$typeActivities = \App\Models\Types_activity::with('activities')->get();
 	// print_r($activities);
 	// exit;
-	return view('course', ['activities' => $activities]);
+	return view('pages.course', ['typeActivities' => $typeActivities]);
 
 }
 
 public function prices()
 {
-	return view('prices');
+	return view('pages.prices');
 }
 
 public function events()
 {
-	return view('events');
+	return view('pages.events');
 }
 
 public function team()
 {
-	return view('team');
+	return view('pages.team');
 }
 
 public function association()
 {
-	return view('association');
+	return view('pages.association');
 }
 
 public function credits()
 {
-	return view('credits');
+	return view('pages.credits');
 }
 
 public function legacy_mention()
 {
-	return view('legacy_mention');
+	return view('pages.legacy_mention');
 }
 
 public function contact()
 {
-	return view('contact');
+	return view('pages.contact');
 }
 
 
