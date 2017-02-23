@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-// VALIDATION: change the requests to match your own file names if you need form validation
+
 use App\Http\Requests\ArticleRequest as StoreRequest;
 use App\Http\Requests\ArticleRequest as UpdateRequest;
 
@@ -13,22 +13,14 @@ class ArticleCrudController extends CrudController
     {
         parent::__construct();
 
-        /*
-        |--------------------------------------------------------------------------
-        | BASIC CRUD INFORMATION
-        |--------------------------------------------------------------------------
-        */
+       
         $this->crud->setModel("App\Models\Article");
         $this->crud->setRoute(config('backpack.base.route_prefix', 'admin').'/article');
         $this->crud->setEntityNameStrings('actualité', 'actualités');
 
-        /*
-        |--------------------------------------------------------------------------
-        | COLUMNS AND FIELDS
-        |--------------------------------------------------------------------------
-        */
+        
 
-        // ------ CRUD COLUMNS
+        
         $this->crud->addColumn([
                                 'name' => 'date',
                                 'label' => 'Date',
@@ -56,8 +48,8 @@ class ArticleCrudController extends CrudController
                                 'model' => "App\Models\Category",
                             ]);
 
-        // ------ CRUD FIELDS
-        $this->crud->addField([    // TEXT
+      
+        $this->crud->addField([   
                                 'name' => 'title',
                                 'label' => 'Titre',
                                 'type' => 'text',
@@ -68,33 +60,36 @@ class ArticleCrudController extends CrudController
                                 'label' => "lien de l'actualité",
                                 'type' => 'text',
                                 'hint' => 'il sera généré automatiquement si il reste vide.',
-                                // 'disabled' => 'disabled'
+                               
                             ]);
 
-        $this->crud->addField([    // TEXT
+        $this->crud->addField([    
                                 'name' => 'date',
                                 'label' => 'Date',
                                 'type' => 'date',
                                 'value' => date('Y-m-d'),
                             ], 'create');
-        $this->crud->addField([    // TEXT
+        
+        $this->crud->addField([    
                                 'name' => 'date',
                                 'label' => 'Date',
                                 'type' => 'date',
                             ], 'update');
 
-        $this->crud->addField([    // WYSIWYG
+        $this->crud->addField([    
                                 'name' => 'content',
                                 'label' => 'Contenu',
                                 'type' => 'ckeditor',
                                 'placeholder' => 'Votre texte ici',
                             ]);
-        $this->crud->addField([    // Image
+
+        $this->crud->addField([    
                                 'name' => 'image',
                                 'label' => 'Image',
                                 'type' => 'browse',
                             ]);
-        $this->crud->addField([    // SELECT
+
+        $this->crud->addField([    
                                 'label' => 'Categorie',
                                 'type' => 'select2',
                                 'name' => 'category_id',
@@ -103,12 +98,13 @@ class ArticleCrudController extends CrudController
                                 'model' => "App\Models\Category",
                             ]);
        
-        $this->crud->addField([    // ENUM
+        $this->crud->addField([    
                                 'name' => 'status',
                                 'label' => 'Status',
                                 'type' => 'enum',
                             ]);
-        $this->crud->addField([    // CHECKBOX
+
+        $this->crud->addField([   
                                 'name' => 'featured',
                                 'label' => "A la une",
                                 'type' => 'checkbox',
