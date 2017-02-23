@@ -24,17 +24,15 @@ return array(
     'ChangeIdProduit' => $baseDir . '/database/migrations/2017_02_08_144542_change_id_produit.php',
     'ChangeIntToCharName' => $baseDir . '/database/migrations/2017_02_08_110740_change_int_to_char_name.php',
     'ChangeNameInstrument' => $baseDir . '/database/migrations/2017_02_08_104226_change_name_instrument.php',
+    'ChangeTeamsTable' => $baseDir . '/database/migrations/2017_02_23_095908_change_teams_table.php',
     'CreateArticleTagTable' => $baseDir . '/database/migrations/2015_08_04_130507_create_article_tag_table.php',
     'CreateArticlesTable' => $baseDir . '/database/migrations/2015_08_04_130520_create_articles_table.php',
     'CreateCategoriesTable' => $baseDir . '/database/migrations/2015_08_04_130551_create_categories_table.php',
     'CreatePagesTable' => $baseDir . '/database/migrations/2016_05_25_121918_create_pages_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateRevisionsTable' => $vendorDir . '/venturecraft/revisionable/src/migrations/2013_04_09_062329_create_revisions_table.php',
-<<<<<<< HEAD
-    'CreateTasksTable' => $baseDir . '/database/migrations/2017_02_21_140100_create_tasks_table.php',
-=======
     'CreateTagsTable' => $baseDir . '/database/migrations/2015_08_04_131626_create_tags_table.php',
->>>>>>> c37a5d1bd0bb44f59d4e34b790fc94270d6e9030
+    'CreateTeamTable' => $baseDir . '/database/migrations/2017_02_23_095123_create_team_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'DeleteCaemToChamp' => $baseDir . '/database/migrations/2017_02_08_123715_delete_caem_to_champ.php',

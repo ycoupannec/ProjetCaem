@@ -10,32 +10,9 @@ class Person extends Model
 {
     use CrudTrait;
 
-     /*
-	|--------------------------------------------------------------------------
-	| GLOBAL VARIABLES
-	|--------------------------------------------------------------------------
-	*/
-
-    //protected $table = 'persons';
-    //protected $primaryKey = 'id';
-    // public $timestamps = false;
-    // protected $guarded = ['id'];
+   
      protected $fillable = ['gender','name', 'family_name', 'mail', 'tel_fix', 'tel_mob', 'postal_code', 'adress', 'birthday', 'observation','code_analytique','image_right', 'city_id', 'district_id', 'familly_id'];
-    // protected $hidden = [];
-    // protected $dates = [];
-
-    /*
-	|--------------------------------------------------------------------------
-	| FUNCTIONS
-	|--------------------------------------------------------------------------
-	*/
-
-    /*
-	|--------------------------------------------------------------------------
-	| RELATIONS
-	|--------------------------------------------------------------------------
-	*/
-
+  
 
 	public function city(){
         return $this->belongsTo('App\Models\City');
@@ -54,13 +31,13 @@ class Person extends Model
     public function people_people()
     {
         return $this->belongsToMany('App\Models\Person', 'person_people','person_id','people_link_id');
-        // return $this->belongsToMany('App\Models\Person');
+     
     }
 
     public function type_people()
     {
         return $this->belongsToMany('App\Models\Type_person', 'people_types_people','person_id','type_person_id');
-        // return $this->belongsToMany('App\Models\Person');
+       
     }
 
 
@@ -79,7 +56,7 @@ class Person extends Model
     public function instruments()
     {
         return $this->belongsToMany('App\Models\Instrument', 'people_instruments','person_id','instrument_id');
-        // return $this->belongsToMany('App\Models\Person');
+        
     }
 
     public function getyearsold(){
@@ -90,28 +67,9 @@ class Person extends Model
 
     public function people_activities()
     {
-        // return $this->belongsToMany('App\Models\Person', 'teachers_activities','activity_id','person_id');
 
-        // $data = $this->belongsToMany('App\Models\Activity', 'member_activities','person_id','activity_id');
         return $this->belongsToMany('App\Models\Activity', 'member_activities','person_id','activity_id');
-        // return $this->belongsToMany('App\Models\Person');
+
     }
 
-    /*
-	|--------------------------------------------------------------------------
-	| SCOPES
-	|--------------------------------------------------------------------------
-	*/
-
-    /*
-	|--------------------------------------------------------------------------
-	| ACCESORS
-	|--------------------------------------------------------------------------
-	*/
-
-    /*
-	|--------------------------------------------------------------------------
-	| MUTATORS
-	|--------------------------------------------------------------------------
-	*/
 }
