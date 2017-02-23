@@ -29,9 +29,9 @@ CAEM - Mon parcours musical
 					<h3>{{ $typeActivity->name }}</h3>
 
 					@foreach($typeActivity->activities as $activity)
-					<label data-id="{{ $activity->id }}" onchange="showActivity({{ $activity->id }});">
+					<label data-id="{{ $activity->id }}" onchange="displayActivity({{ $activity->id }});">
 						<p>{{ $activity->name }}</p>
-						<input class="activityLabelCheckbox" type="checkbox" value="{{ $activity->id }}">
+						<input class="activityCheckbox" type="checkbox" value="{{ $activity->id }}">
 					</label>
 					@endforeach
 
@@ -46,9 +46,9 @@ CAEM - Mon parcours musical
 
 		@foreach($typeActivities as $typeActivity)
 		@foreach($typeActivity->activities as $activity)
-		<section id="{{ $activity->id }}" class="activitiesClass col-md-12 activityHide">
+		<section id="{{ $activity->id }}" class="activitiesClass col-md-12">
 
-			<header class="col-md-12">
+			<header id="headerParcours" class="col-md-12">
 				<h3>{{ $activity->name }}</h3>
 			</header>
 
@@ -99,43 +99,3 @@ CAEM - Mon parcours musical
 </main>
 @endsection
 <!------------------>
-
-
-
-<!--SCRIPT RELATED TO THIS PAGE ONLY :-->
-@section('pageScript')
-<script>
-
-
-var btnSelectActivity = document.querySelectorAll(".activityLabelCheckbox:checked");
-
-console.log(btnSelectActivity);
-
-for (i=0 ; i < btnSelectActivity.length ; i++)
-	{
-		console.log(btnSelectActivity[i].value);
-		console.log("debug"+i);
-	};
-
-
-
-function showActivity(activityId)
-	{
-//		document.getElementById(activityId).classList.toggle("activityHide");
-	};
-
-
-
-/*SNIPPETS*/
-
-//		$('.activityLabelCheckbox').click(function(){
-//			console.log( $(this).is(':checked'));
-//		});
-
-//		var test = document.getElementsByClassName('activityLabelCheckbox');
-//		console.log(test);
-
-
-</script>
-@endsection
-<!------------------------------------->

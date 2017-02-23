@@ -7905,10 +7905,7 @@ button.close {
 }
 
 .mainTitleFont,
-main #presentation h2,
-main #news header h2,
-main #news figure figcaption h2,
-.mainParcoursMusical div section header h3 {
+
   font-family: Quicksand;
   font-weight: 700;
   font-size: 1.5em;
@@ -8178,12 +8175,12 @@ main #news a::after {
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
 }
 
-.mainParcoursMusical div section header {
+.mainParcoursMusical div section #headerParcours {
   background-color: #fc9633;
   padding: 1vh 0vh 1vh 0vh;
 }
 
-.mainParcoursMusical div section header h3 {
+.mainParcoursMusical div section #headerParcours h3 {
   padding: 0vh 2vh 0vh 2vh;
 }
 
