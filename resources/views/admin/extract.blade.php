@@ -25,63 +25,117 @@
                
 
                 <div class="box-body">
-                    <div class="form-group">
-                        <select name="roles[]" class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="User roles" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                    <form class="form-group" action="/admin/extract" method="get">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Date de début</h3>
+                                <input type="date" name="sday">
+                            </div>
+                            
+                        </div>
+                         <div class="row">
+                            <div class="col-md-6">
+                                <h3>Date de fin</h3>
+                                 <input type="date" name="eday">
+                            </div>
+                        </div>
+                         <div class="row">
+                            <div class="col-md-6">
+                                <h3>Age minimum</h3>
+                                <input type="number" step="1" value="0" min="0" name="agemin" >
+                            </div>
+                        </div>
+                         <div class="row">
+                            <div class="col-md-6">
+                                <h3>Age maximum</h3>
+                                <input type="number" step="1" value="0" min="0" name="agemax" >
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Professeurs</h3>
+                                <select name="teachers" >
+                                    <option value=""> - </option>
 
-                        @if(!empty($usersActif))
-                            @foreach($usersActif as $user)
+                                @if(!empty($usersActif))
+                                    @foreach($usersActif as $user)
 
-                                <option value="{{ $user->name }}">{{ $user->name }} {{ $user->family_name }}</option>
-                                
-                            @endforeach
-                        @else
-                            NOT fOUND
-                        @endif
-                           
-                        </select>
+                                        <option value="{{ $user->id }}">{{ $user->name }} {{ $user->family_name }}</option>
+                                        
+                                    @endforeach
+                                @else
+                                    NOT fOUND
+                                @endif
+                                   
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Quartiers</h3>
 
-                        <select name="roles[]" class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="User roles" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                <select name="districts">
+                                    <option value=""> - </option>
+                                @if(!empty($districts))
+                                    @foreach($districts as $district)
 
-                        @if(!empty($districts))
-                            @foreach($districts as $district)
+                                        <option value="{{ $district->id }}">{{ $district->name }} </option>
+                                        
+                                    @endforeach
+                                @else
+                                    NOT fOUND
+                                @endif
+                                   
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Instruments</h3>
 
-                                <option value="{{ $district->name }}">{{ $district->name }} </option>
-                                
-                            @endforeach
-                        @else
-                            NOT fOUND
-                        @endif
-                           
-                        </select>
+                                <select name="instruments">
+                                    <option value=""> - </option>
 
-                        <select name="roles[]" class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="User roles" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                @if(!empty($instruments))
+                                    @foreach($instruments as $instrument)
 
-                        @if(!empty($instruments))
-                            @foreach($instruments as $instrument)
+                                        <option value="{{ $instrument->id }}">{{ $instrument->name }} </option>
+                                        
+                                    @endforeach
+                                @else
+                                    NOT fOUND
+                                @endif
+                                   
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Activités</h3>
+                                <select name="activities">
+                                    <option value=""> - </option>
 
-                                <option value="{{ $instrument->name }}">{{ $instrument->name }} </option>
-                                
-                            @endforeach
-                        @else
-                            NOT fOUND
-                        @endif
-                           
-                        </select>
+                                @if(!empty($activities))
+                                    @foreach($activities as $activity)
 
-                        <select name="roles[]" class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="User roles" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                        <option value="{{ $activity->id }}">{{ $activity->name }} </option>
+                                        
+                                    @endforeach
+                                @else
+                                    NOT fOUND
+                                @endif
+                                   
+                                </select>
+                            </div>
+                        </div>
 
-                        @if(!empty($activities))
-                            @foreach($activities as $activity)
-
-                                <option value="{{ $activity->name }}">{{ $activity->name }} </option>
-                                
-                            @endforeach
-                        @else
-                            NOT fOUND
-                        @endif
-                           
-                        </select>
-                    </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="submit" value="Submit">
+                            
+                            </div>    
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
