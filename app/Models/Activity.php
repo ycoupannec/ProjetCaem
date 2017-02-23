@@ -18,6 +18,7 @@ class Activity extends Model
         'hour_start',
         'hour_end',
         'year',
+        'status'
     ];
  
     public function type_activity(){

@@ -18,7 +18,7 @@ class Article extends Model
     protected $primaryKey = 'id';
     public $timestamps = true;
 
-    protected $fillable = ['slug', 'title', 'content', 'image', 'status', 'category_id', 'featured', 'date'];
+    protected $fillable = ['slug', 'title', 'content', 'image', 'status', 'category_id', 'featured', 'date','status'];
 
     protected $casts = [
         'featured'  => 'boolean',

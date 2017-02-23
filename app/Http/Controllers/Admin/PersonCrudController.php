@@ -166,13 +166,7 @@ class PersonCrudController extends CrudController
             ]);
 
 
-         $this->crud->addField([
-            'name'  => 'status',
-            'label' => 'statut', 
-            'type'  => 'select_from_array',
-            'options' => ['actif' => 'actif', 'inactif' => 'inactif'],
-            'allows_null' => false,
-            ]);
+         
   
         $this->crud->addField(
            
@@ -185,6 +179,31 @@ class PersonCrudController extends CrudController
             'model' => "App\Models\Person", 
             'pivot' => true
             ]);
+
+        $this->crud->addField([
+            'name'  => 'status', 
+            'label' => 'Status', 
+            'type'  => 'select_from_array',
+            'options' => [
+                        '0' => 'Inactive',
+                        '1' => 'Active'
+                        ],
+            'allows_null' => false,
+            ]);
+
+
+        $this->crud->setColumnDetails('status',
+            [
+             'name'  => 'status', 
+            'label' => 'Status', 
+            'type'  => 'boolean',
+            'options' => [
+                        '0' => 'Inactive',
+                        '1' => 'Active'
+                        ],
+     
+           ]
+        );
 
 
          

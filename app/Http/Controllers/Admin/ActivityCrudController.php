@@ -112,27 +112,27 @@ class ActivityCrudController extends CrudController
         );
 
         $this->crud->addField([
-            'name'  => 'status', // DB column name (will also be the name of the input)
-            'label' => 'Status', // the human-readable label for the input
+            'name'  => 'status', 
+            'label' => 'Status', 
             'type'  => 'select_from_array',
             'options' => [
-                        'En ligne' => 'En ligne',
-                        'Hors ligne' => 'Hors ligne'
+                        '0' => 'Indisponible',
+                        '1' => 'Disponible'
                         ],
             'allows_null' => false,
             ]);
 
+
         $this->crud->setColumnDetails('status',
             [
-             'name'  => 'status', // DB column name (will also be the name of the input)
-            'label' => 'Status', // the human-readable label for the input
-            'type'  => 'select_from_array',
+             'name'  => 'status', 
+            'label' => 'Status', 
+            'type'  => 'boolean',
             'options' => [
-                        'Online' => 'En ligne',
-                        'Offline' => 'Hors ligne'
+                        '0' => 'Indisponible',
+                        '1' => 'Disponible'
                         ],
-            'allows_null' => false,
-          
+     
            ]
         );
 
