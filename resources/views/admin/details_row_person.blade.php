@@ -21,7 +21,7 @@
 				</tr>
 				<tr>
 					<td><b>Date de naissance</b></td>
-					<td>{{ $data->birthday }}</td>
+					<td>{{ date('d/m/Y',strtotime($data->birthday)) }}</td>
 				</tr>
 				<tr>
 					<td><b>Observation</b></td>

@@ -15,6 +15,7 @@
             <li class="header">{{ trans('backpack::base.administration') }}</li>
             <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/dashboard') }}"><i class="fa fa-dashboard"></i> <span>{{ trans('backpack::base.dashboard') }}</span></a></li>
             <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/elfinder') }}"><i class="fa fa-files-o"></i> <span>Médiathèque</span></a></li>
+            <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/extract') }}"><i class="fa fa-files-o"></i> <span>Extraction</span></a></li>
 
             <li class="header">{{ trans('INDIVIDUS') }}</li>
             <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/person') }}"><i class="fa fa-id-card"></i> <span>Personne</span></a></li>
