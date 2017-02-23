@@ -31,7 +31,7 @@ class Activity_webCrudController extends CrudController
             ]);
 
         $this->crud->addField(
-<<<<<<< HEAD
+
 
            [  // Select
             'label' => "Types",
@@ -68,19 +68,6 @@ class Activity_webCrudController extends CrudController
         );
 
 
-
-=======
-           
-           [  
-            'label' => "Types",
-            'type' => 'select',
-            'name' => 'type_activity_id', 
-            'entity' => 'type_activity', 
-            'attribute' => 'name', 
-            'model' => "App\Models\Types_activity" 
-        
->>>>>>> bb658f969e1bad3d6c88e8512ecdfdf4d86e8113
-
         $this->crud->addField([
             'name'  => 'day', 
             'label' => 'Jour', 
@@ -97,7 +84,7 @@ class Activity_webCrudController extends CrudController
             'allows_null' => false,
             ]);
 
-<<<<<<< HEAD
+
         $this->crud->setColumnDetails('day',
             [
              'name'  => 'day', // DB column name (will also be the name of the input)
@@ -116,9 +103,7 @@ class Activity_webCrudController extends CrudController
 
            ]
         );
-=======
-        
->>>>>>> bb658f969e1bad3d6c88e8512ecdfdf4d86e8113
+
 
         $this->crud->addField([
             'name'  => 'status', 
@@ -131,7 +116,7 @@ class Activity_webCrudController extends CrudController
             'allows_null' => false,
             ]);
 
-<<<<<<< HEAD
+
         $this->crud->setColumnDetails('status',
             [
              'name'  => 'status', // DB column name (will also be the name of the input)
@@ -145,9 +130,9 @@ class Activity_webCrudController extends CrudController
 
            ]
         );
-=======
+
         
->>>>>>> bb658f969e1bad3d6c88e8512ecdfdf4d86e8113
+
 
         $this->crud->addField([
             'name'  => 'description', 
@@ -200,7 +185,7 @@ class Activity_webCrudController extends CrudController
 
             ]);
 
-<<<<<<< HEAD
+
         $this->crud->setColumnDetails('hour_start',
             [
             'name'  => 'hour_start', // DB column name (will also be the name of the input)
@@ -208,10 +193,7 @@ class Activity_webCrudController extends CrudController
             'type'  => 'text'
             ]);
 
-=======
-        
-        
->>>>>>> bb658f969e1bad3d6c88e8512ecdfdf4d86e8113
+
         $this->crud->addField([
             'name'  => 'hour_end', 
             'label' => 'Heure de fin', 
@@ -252,7 +234,8 @@ class Activity_webCrudController extends CrudController
             'name' => 'type_activity_id', 
             'entity' => 'type_activity', 
             'attribute' => 'name', 
-            'model' => "App\Models\Types_activity", 
+            'model' => "App\Models\Types_activity",
+            ] 
         );
 
         $this->crud->setColumnDetails('day',

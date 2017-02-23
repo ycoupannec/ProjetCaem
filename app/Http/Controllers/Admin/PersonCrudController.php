@@ -249,7 +249,7 @@ class PersonCrudController extends CrudController
            ]
         );
 
-<<<<<<< HEAD
+
         // $this->crud->setColumnDetails('postal_code',
         //     [
         //     'name'  => 'postal_code', // DB column name (will also be the name of the input)
@@ -323,16 +323,13 @@ class PersonCrudController extends CrudController
 
 
 // -------------------------------------------------------------------
-=======
-    
->>>>>>> bb658f969e1bad3d6c88e8512ecdfdf4d86e8113
 
         $this->crud->addField(
            
            [  
             'label' => "Responsable légal",
             'type' => 'select2_multiple',
-<<<<<<< HEAD
+
             'name' => 'people_people', // the db column for the foreign key
             'entity' => 'people_people', // the method that defines the relationship in your Model
             'attribute' => 'fullname', // foreign key attribute that is shown to user
@@ -406,25 +403,22 @@ class PersonCrudController extends CrudController
         //     'function_name' => 'getyearsold',
         // ]
         // );
-=======
-            'name' => 'people_people', 
-            'entity' => 'people_people', 
-            'attribute' => 'fullname', 
-            'model' => "App\Models\Person", 
-            'pivot' => true
-            ]);
 
->>>>>>> bb658f969e1bad3d6c88e8512ecdfdf4d86e8113
+            // 'name' => 'people_people', 
+            // 'entity' => 'people_people', 
+            // 'attribute' => 'fullname', 
+            // 'model' => "App\Models\Person", 
+            // 'pivot' => true
+            // ]);
+
+
         
         $this->crud->setColumnDetails('code_analytique',
             [
-<<<<<<< HEAD
+
             'name'  => 'code_analytique', // DB column name (will also be the name of the input)
             'label' => 'Code analytique', // the human-readable label for the input
-=======
-            'name'  => 'code_analytique', 
-            'label' => 'Code analytique', 
->>>>>>> bb658f969e1bad3d6c88e8512ecdfdf4d86e8113
+
            ]
         );
 
@@ -433,11 +427,7 @@ class PersonCrudController extends CrudController
 
       
         $this->crud->enableDetailsRow();
-<<<<<<< HEAD
-        // NOTE: you also need to do allow access to the right users:
-=======
 
->>>>>>> bb658f969e1bad3d6c88e8512ecdfdf4d86e8113
         $this->crud->allowAccess('details_row');
       
         $this->crud->enableAjaxTable();
@@ -468,11 +458,7 @@ class PersonCrudController extends CrudController
     {
         $this->crud->hasAccessOrFail('details_row');
 
-        // $this->data['entry'] = $this->crud->getEntry($id);
-        // $this->data['crud'] = $this->crud;
-           // \DB::connection()->enableQueryLog();
 
-        // $types = \App\Models\People_types_person::with('type_person')->where('person_id','=',$id)->get();
         $data = \App\Models\Person::with('type_people')
 
                                     ->with('city')
@@ -481,37 +467,14 @@ class PersonCrudController extends CrudController
                                     ->with('membership')
                                     ->with('people_activities')
                                     ->find($id);
-        // print_r($data['people_activities']);
+
         foreach($data['people_activities'] as $key => $value){
-            // print_r($value['id']);
-            // print_r(\App\Models\Activity::with('teachers_activities')->find($value['id']));
             $teacher = \App\Models\Activity::with('teachers_activities')->find($value['id']);
-            //print_r($teacher['teachers_activities']);
+
              $data['teachers_'.$value['id']]= $teacher['teachers_activities'];
 
-            // exit;
+
         }
-        // print_r($data);
-
-           // dd(\DB::getQueryLog());
-        // $instruments = \App\Models\People_instrument::with('people_instruments')->find($id);
-        // $city = \App\Models\City::with('person')->find($this->data['entry']->city_id);
-        // $district = \App\Models\District::with('person')->find($this->data['entry']->district_id);
-        // $activities = \App\Models\Member_activity::with('people_activity')->find($id);
-
-        // print_r($activities);
-        // load the view from /resources/views/vendor/backpack/crud/ if it exists, otherwise load the one in the package
-   //             return view($this->crud->getDetailsRowView(), $this->data);
-
-        // print_r($instruments['people_instruments']);
-
-        // dd($types->city->name);
-        // foreach ($types as $key => $value) {
-        //     # code...
-        //     print_r($value->type_people);
-        // }
-         // print_r($types);
-        // print_r(['data' => $data]);
 
         return view('admin/details_row_person', ['data' => $data]);
     }

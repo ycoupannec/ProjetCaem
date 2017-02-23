@@ -97,13 +97,9 @@ class ArticleCrudController extends CrudController
                                 'attribute' => 'name',
                                 'model' => "App\Models\Category",
                             ]);
-<<<<<<< HEAD
 
-        $this->crud->addField([    // ENUM
-=======
        
         $this->crud->addField([    
->>>>>>> bb658f969e1bad3d6c88e8512ecdfdf4d86e8113
                                 'name' => 'status',
                                 'label' => 'Status',
                                 'type' => 'enum',
