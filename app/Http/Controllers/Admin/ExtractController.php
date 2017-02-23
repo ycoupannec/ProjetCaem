@@ -11,11 +11,22 @@ class ExtractController extends AdminController {
 
 
 		 $usersActif = DB::table('people')
-                            ->where('status', 'Actif')
-                            ->get();
-		print_r($usersActif);
+                            // ->where('status', 'Actif')
+                            ->get();   
+        $districts = DB::table('districts')
+        ->get(); 
+		
+		$instruments = DB::table('instruments')
+        ->get(); 
 
-		return view('admin/extract',$usersActif); 
+        $activities = DB::table('activities')
+        ->get(); 
+		// foreach ($usersActif as $key => $value) {
+		// 	# code...
+		// 	print_r($value->name);	
+		// }
+
+		return view('admin/extract',["usersActif" => $usersActif, "districts" => $districts, 'instruments' => $instruments, "activities" => $activities]); 
 
 	} 
 
