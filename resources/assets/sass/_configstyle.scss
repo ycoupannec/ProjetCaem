@@ -60,10 +60,10 @@ $footerFontSize: 1.1em;
 $footerFontColor: $caemWhite; /*check for global colors above or create your own*/
 
 //header nav font :
-//$headerNavFontType: Quicksand; /*Quicksand available*/
-//$headerNavFontWeight: 400; /*300, 400 or 700 availables*/
-//$headerNavFontSize: 1.1em;
-//$headerNavFontColor: $caemWhite; /*check for global colors above or create your own*/
+$headerNavFontType: Quicksand; /*Quicksand available*/
+$headerNavFontWeight: 400; /*300, 400 or 700 availables*/
+$headerNavFontSize: 1.5em;
+$headerNavFontColor: $caemWhite; /*check for global colors above or create your own*/
 
 
 
@@ -76,12 +76,10 @@ $footerFontColor: $caemWhite; /*check for global colors above or create your own
 $mainButtonSymbol: "\25B8";
 
 
-/*news*/
+//news
 $mainNewsHeaderColor: $caemOrange;
 $mainNewsShadow: 0px 0px 7px 1px rgba(51,51,51,0.2);
 $mainNewsPadding: 0 1.3em;
 $mainNewsImgPadding: 1.3em 1.5em;
-// $mainNewsImgSizeHeight: 10vh;
-// $mainNewsImgSizeWidth: ;
-
-/*news*/
+$mainNewsImgSizeHeight: 250px;
+$mainNewsImgSizeWidth: 100%;

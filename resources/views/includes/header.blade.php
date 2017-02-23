@@ -1,40 +1,45 @@
-<header>
-<div class="container-fluid">
-  <div class="row" id="contact-connection">
-	<div id="logo-desktop" class="col-md-11">Suivez-nous sur <a href="#"><img src="{{ asset('images/facebook_logo.svg')}}" /></a> <a href="#"><img src="{{ asset('images/twitter_logo.svg')}}" /></a> <a href="#"><img src="{{ asset('images/youtube_logo.svg')}}" /></a> ou <a href="#">contactez-nous</a> directement.
-	</div>
-	<div id="logo-mobile" class="col-md-11"><a href="#"><img src="{{ asset('images/facebook_logo.svg')}}" /></a> <a href="#"><img src="{{ asset('images/twitter_logo.svg')}}" /></a> <a href="#"><img src="{{ asset('images/youtube_logo.svg')}}" /></a></div>
-	<div  class="col-md-1">
-	  <a id="connection" href="#">Connexion</a>
-	</div>
+<header id="header">
+  <div class="container-fluid">
+    <div class="row " id="contact-connection">
+      <div class="col-md-11">Suivez-nous sur
+        <a href="https://www.facebook.com/caem.besancon"><img src="images/facebook_logo.svg" /></a>
+        <a href="https://www.twitter.com/caembesancon"><img src="images/twitter_logo.svg" /></a>
+        <a href="https://www.youtube.com/channel/UC0ixrwCaOvNLfnfDv8ShaOA"><img src="images/youtube_logo.svg" /></a>
+        <span class="hidden-xs">
+          ou <a href="#">contactez-nous</a> directement.
+        </span>
+      </div>
+      <div  class="col-md-1">
+        <!-- <a id="connection" href="#">Connexion</a> -->
+      </div>
+    </div>
   </div>
-  <div class="row" id="header">
-	<img src="{{ asset('images/logo_CAEM.svg')}}" alt="logo">
+
+  <div id="header-img" class="text-center hidden-xs">
+    <img src="images/logo_CAEM.svg" alt="logo">
   </div>
-</div>
-<nav>
-  <ul class="menu" id="myMenu">
-	  <li class="home"><a href="/">Accueil</a></li>
-	  <li class="icon">
-		  <a href="javascript:void(0);" onclick="myBurger()">&#9776;</a>
-	  </li>
-	  <li><a href="/parcours">Mon parcours musical</a></li>
-	  <li><a href="#">Tarifs &amp; Inscriptions</a></li>
-	  <li><a href="#">Évenements</a></li>
-	  <li><a href="#">L'équipe</a></li>
-  </ul>
-</nav>
+
+  <nav class="navbar navbar-default navbar-caem">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand visible-xs" href="#">
+          <img alt="Brand" src="images/logo_CAEM.svg">
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Accueil</a></li>
+            <li><a href="#">Mon parcours musical</a></li>
+            <li><a href="#">Tarifs &amp; Inscriptions</a></li>
+            <li><a href="#">Évenements</a></li>
+            <li><a href="#">L'équipes</a></li>
+          </ul>
+      </div>
+    </div>
+  </nav>
 </header>
-
-
-<script src="//localhost:35729/livereload.js"></script>
-<script>
-	function myBurger() {
-		var x = document.getElementById("myMenu");
-		if (x.className === "menu") {
-			x.className += " responsive";
-		} else {
-			x.className = "menu";
-		}
-	}
-</script>
