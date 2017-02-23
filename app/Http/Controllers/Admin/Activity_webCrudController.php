@@ -110,8 +110,8 @@ class Activity_webCrudController extends CrudController
             'label' => 'Status', 
             'type'  => 'select_from_array',
             'options' => [
-                        'Online' => 'Online',
-                        'Offline' => 'Offline'
+                        '0' => 'Online',
+                        '1' => 'Offline'
                         ],
             'allows_null' => false,
             ]);
@@ -121,13 +121,12 @@ class Activity_webCrudController extends CrudController
             [
              'name'  => 'status', // DB column name (will also be the name of the input)
             'label' => 'Status', // the human-readable label for the input
-            'type'  => 'select_from_array',
+            'type'  => 'boolean',
             'options' => [
-                        'Online' => 'Online',
-                        'Offline' => 'Offline'
+                        '0' => 'Online',
+                        '1' => 'Offline'
                         ],
-            'allows_null' => false,
-
+     
            ]
         );
 
