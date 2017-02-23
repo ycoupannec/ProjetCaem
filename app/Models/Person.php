@@ -11,7 +11,7 @@ class Person extends Model
     use CrudTrait;
 
    
-     protected $fillable = ['gender','name', 'family_name', 'mail', 'tel_fix', 'tel_mob', 'postal_code', 'adress', 'birthday', 'observation','code_analytique','image_right', 'city_id', 'district_id', 'familly_id'];
+     protected $fillable = ['gender','name', 'family_name', 'mail', 'tel_fix', 'tel_mob', 'postal_code', 'adress', 'birthday', 'observation','code_analytique','image_right', 'city_id', 'district_id', 'familly_id','status'];
   
 
 	public function city(){
