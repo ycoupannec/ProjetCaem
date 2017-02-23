@@ -15,7 +15,7 @@ class AddChampActivities extends Migration
     {
         //
         Schema::table('activities', function (Blueprint $table) {
-            
+
             $table->text('description');
             $table->string('picture_1');
             $table->string('picture_2');
@@ -39,7 +39,7 @@ class AddChampActivities extends Migration
         //
 
         Schema::table('activities', function (Blueprint $table) {
-            
+
             $table->dropcolumn('description');
             $table->dropcolumn('picture_1');
             $table->dropcolumn('picture_2');

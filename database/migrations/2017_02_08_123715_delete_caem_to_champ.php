@@ -48,12 +48,12 @@ class DeleteCaemToChamp extends Migration
                         {
                             $table->renameColumn('caem_'.$i.'_id', $value.'_id');
                         }
-                        
-                        
-                        
-                    }    
-            
-        
+
+
+
+                    }
+
+
                 });
             }
     }
@@ -101,10 +101,10 @@ class DeleteCaemToChamp extends Migration
                         {
                             $table->renameColumn( $value.'_id','caem_'.$i.'_id');
                         }
-                        
-                    }    
-            
-        
+
+                    }
+
+
                 });
             }
     }

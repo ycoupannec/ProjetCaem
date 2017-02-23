@@ -9,19 +9,24 @@
 
 	<body>
 
-		<!--HEADER-->
+		<!--HEADER :-->
 		@include('includes.header')
-		<!---------->
+		<!------------>
 
 
-		<!--MAIN-->
+		<!--MAIN CONTENT :-->
 		@yield('pageContent')
-		<!-------->
+		<!------------------>
 
 
-		<!--FOOTER-->
+		<!--FOOTER :-->
 		@include('includes.footer')
-		<!---------->
+		<!------------>
+
+
+		<!--SCRIPT :-->
+		@include('includes.script')
+		<!------------>
 
 	</body>
 

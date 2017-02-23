@@ -21,8 +21,12 @@ Route::get('credits', 'PagesController@credits');
 Route::get('mention_legales', 'PagesController@legacy_mention');
 Route::get('contact', 'PagesController@contact');
 
-
-
+//Route::get('/', function()
+//{
+//	$tasks = DB::table('tasks')->get();
+//
+//	return view('pages.index', compact('tasks'));
+//});
 
 
 

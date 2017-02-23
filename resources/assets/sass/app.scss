@@ -250,7 +250,7 @@ main{
 
 			header
 			{
-				background-color: $caemBlue;
+				background-color: $mainChartColor;
 				padding: 1vh 0vh 1vh 0vh;
 
 				h3
@@ -301,13 +301,26 @@ main{
 					margin:0;
 					padding:0;
 					padding: 1vh 1vh 1vh 1vh;
+
+					img
+					{
+						max-width: 100%;
+						max-height: 30vh;
+					}
 				}
 			}
 		}
 
 	}
 }
+
+.activityHide
+{
+	display: none;
+}
 /* ---------------- PAGE PARCOURS MUSICAL END ---------------- */
+
+
 
 
 /* ---------------- PAGE EQUIPE ---------------- */
@@ -343,6 +356,8 @@ main{
 /* ---------------- PAGE EQUIPE END ---------------- */
 
 
+
+
 /* ---------------- PAGE TARIFS ---------------- */
 
 	.mainTarifs ul{
@@ -372,11 +387,13 @@ main{
 /* ---------------- PAGE TARIFS END ---------------- */
 
 
+
+
 /* ---------------- FOOTER ---------------- */
 #bgImage{
 	background-color: $headerFooterMainColor;
 	background-image: url(../img/trame_footer.png);
-	border-top: 1.5vh solid $headerFooterBorderColor;
+	border-top: 1.5vh solid $mainChartColor;
 }
 
 footer

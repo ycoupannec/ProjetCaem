@@ -2,6 +2,7 @@
 
 
 
+
 /*=================*/
 /*COLOR VARIABLES :*/
 /*=================*/
@@ -16,11 +17,11 @@ $caemGreen: #4dd433;
 $caemAlert: #db0010;
 $caemWhite: #ffffff; /*plain white color, used to create a background in some elements*/
 
-//header / footer main color :
-$headerFooterMainColor: $caemDark;
+//MAIN CHART COLOR:
+$mainChartColor: $caemOrange;
 
-//header / footer border color:
-$headerFooterBorderColor: $caemOrange;
+//HEADER / FOOTER BACKGROUND COLOR :
+$headerFooterMainColor: $caemDark;
 
 
 
@@ -76,8 +77,8 @@ $headerNavFontColor: $caemWhite; /*check for global colors above or create your 
 $mainButtonSymbol: "\25B8";
 
 
-//news
-$mainNewsHeaderColor: $caemOrange;
+/*news*/
+$mainNewsHeaderColor: $mainChartColor;
 $mainNewsShadow: 0px 0px 7px 1px rgba(51,51,51,0.2);
 $mainNewsPadding: 0 1.3em;
 $mainNewsImgPadding: 1.3em 1.5em;
