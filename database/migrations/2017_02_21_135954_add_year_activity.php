@@ -15,11 +15,11 @@ class AddYearActivity extends Migration
     {
         Schema::table('activities', function($table)
             {
-                
+
                 $table->integer('year')->nullable();
-                
-                
-            }); 
+
+
+            });
     }
 
     /**
@@ -32,10 +32,10 @@ class AddYearActivity extends Migration
         //
          Schema::table('activities', function($table)
             {
-                
+
                 $table->dropcolumn('year');
-                
-                
-            }); 
+
+
+            });
     }
 }

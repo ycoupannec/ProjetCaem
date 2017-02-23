@@ -15,7 +15,7 @@ class AddColumnStatus extends Migration
     {
         //
     Schema::table('people', function (Blueprint $table) {
-   
+
     $table->string('status');
 
     });

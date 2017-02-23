@@ -17,18 +17,18 @@ class AddActivityInstrument extends Migration
         if (Schema::hasTable('activity_instruments')){
             Schema::table('activity_instruments', function($table)
             {
-                
+
                 $table->integer('instrument_id')->unsigned()->change();
                 $table->index('instrument_id')->references('id')->on('instruments')->change();
                 $table->integer('activity_id')->unsigned()->change();
                 $table->index('activity_id')->references('id')->on('activities')->change();
-                
-            });    
+
+            });
         }else{
 
             Schema::create('activity_instruments', function($table)
             {
-                
+
                 $table->integer('instrument_id')->unsigned();
                 $table->foreign('instrument_id')->references('id')->on('instruments');
                 $table->integer('activity_id')->unsigned();

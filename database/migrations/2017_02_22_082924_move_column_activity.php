@@ -16,19 +16,19 @@ class MoveColumnActivity extends Migration
         //
         Schema::table('activities', function($table)
             {
-                
+
                 $table->dropcolumn('year');
                 $table->dropcolumn('status');
-                
-                
+
+
             });
           Schema::table('activities', function($table)
             {
-                
+
                 $table->integer('year')->nullable();
                $table->string('status')->default('EN LIGNE');
-                
-                
+
+
             });
     }
 
@@ -40,16 +40,16 @@ class MoveColumnActivity extends Migration
     public function down()
     {
         //
-        
+
           Schema::table('activities', function($table)
             {
-                
+
                 $table->string('status')->default('EN LIGNE')->change();
                 $table->integer('year')->nullable()->change();
-                
-                
+
+
             });
-    
+
 
     }
 }

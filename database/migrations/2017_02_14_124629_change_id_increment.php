@@ -16,15 +16,15 @@ class ChangeIdIncrement extends Migration
         //
         Schema::table('people_types_people', function (Blueprint $table) {
             $table->dropColumn('id');
-            
+
         });
 
 
         Schema::table('people_types_people', function (Blueprint $table) {
             $table->increments('id');
-            
+
         });
-        
+
     }
 
     /**

@@ -92,7 +92,7 @@ class Person extends Model
     {
         // return $this->belongsToMany('App\Models\Person', 'teachers_activities','activity_id','person_id');
 
-        // $data = $this->belongsToMany('App\Models\Activity', 'member_activities','person_id','activity_id'); 
+        // $data = $this->belongsToMany('App\Models\Activity', 'member_activities','person_id','activity_id');
         return $this->belongsToMany('App\Models\Activity', 'member_activities','person_id','activity_id');
         // return $this->belongsToMany('App\Models\Person');
     }

@@ -12,20 +12,20 @@ class AddTimestampsToAll extends Migration
      * @return void
      */
 
-    
+
 
     public function up()
     {
         $tables = [
         "activities",
-        
+
         "famillies",
-        "formulae", 
+        "formulae",
         "formula_activities",
-        "instruments", 
-        "locations", 
-        "memberships", 
-        "member_activities", 
+        "instruments",
+        "locations",
+        "memberships",
+        "member_activities",
         "payments",
         "payments_people",
         "payments_details",
@@ -50,7 +50,7 @@ class AddTimestampsToAll extends Migration
             //
             });
         }
-       
+
      }
 
     /**
@@ -62,14 +62,14 @@ class AddTimestampsToAll extends Migration
     {
         $tables = [
         "activities",
-        
+
         "famillies",
-        "formulae", 
+        "formulae",
         "formula_activities",
-        "instruments", 
-        "locations", 
-        "memberships", 
-        "member_activities", 
+        "instruments",
+        "locations",
+        "memberships",
+        "member_activities",
         "payments",
         "payments_people",
         "payments_details",

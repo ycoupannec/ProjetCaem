@@ -40,12 +40,12 @@ class Activity_web extends Model
 	|--------------------------------------------------------------------------
 	| RELATIONS
 	|--------------------------------------------------------------------------
-	*/ 
+	*/
     public function type_activity(){
         return $this->belongsTo('App\Models\Types_activity');
     }
 
-   
+
 
     public function setPicture1Attribute($value)
     {

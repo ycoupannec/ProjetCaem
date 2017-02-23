@@ -16,14 +16,14 @@ class DeleteFormulaTable extends Migration
         //
         Schema::table('formula_activities', function($table)
             {
-                
+
                 $table->dropForeign('formula_activities_ibfk_1');
                 $table->dropForeign('formula_activities_ibfk_2');
-                
-                
+
+
             });
 
-        
+
 
         Schema::dropIfExists('formulas');
         Schema::dropIfExists('formula_activities');

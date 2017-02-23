@@ -35,7 +35,7 @@ class Type_person extends Model
 	|--------------------------------------------------------------------------
 	*/
 
-	
+
 
     // public function  get_by_person_id()
     // {

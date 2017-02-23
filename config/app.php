@@ -162,7 +162,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-   
+
 
         /*
          * Package Service Providers...
@@ -190,7 +190,7 @@ return [
         Backpack\LangFileManager\LangFileManagerServiceProvider::class,
         Cviebrock\EloquentSluggable\ServiceProvider::class, 
         Backpack\PageManager\PageManagerServiceProvider::class,
-        
+
 
         /*
          * Acacha Llum Service Providers...
@@ -199,7 +199,7 @@ return [
          */
         Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class,
         #llum_providers
-        
+
 
     ],
 

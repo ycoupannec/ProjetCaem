@@ -1,5 +1,8 @@
 {
   "/js/app.js": "/js/app.js",
+<<<<<<< HEAD
+  "/css/app.css": "/css/app.css"
+=======
   "/css/app.css": "/css/app.css",
   "/css/bootstrap.css": "/css/bootstrap.css",
   "/css/adminlte-app.css": "/css/adminlte-app.css",
@@ -7,4 +10,5 @@
   "/js/app-landing.js": "/js/app-landing.js",
   "/css/all.css": "/css/all.css",
   "/css/all-landing.css": "/css/all-landing.css"
+>>>>>>> c37a5d1bd0bb44f59d4e34b790fc94270d6e9030
 }

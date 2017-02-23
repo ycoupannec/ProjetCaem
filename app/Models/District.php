@@ -37,7 +37,7 @@ class District extends Model
       public function city(){
         return $this->belongsTo('App\Models\City');
     }
-    
+
     public function person(){
         return $this->belongsTo('App\Models\Person');
     }

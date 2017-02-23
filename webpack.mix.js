@@ -12,6 +12,10 @@ const { mix } = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
+<<<<<<< HEAD
+   .sass('resources/assets/sass/app.scss', 'public/css')
+.copy('resources/assets/img/','public/images')
+=======
    .js('resources/assets/js/app-landing.js', 'public/js/app-landing.js')
    .sass('resources/assets/sass/app.scss', 'public/css')
    .less('node_modules/bootstrap-less/bootstrap/bootstrap.less', 'public/css/bootstrap.css')
@@ -39,3 +43,4 @@ mix.js('resources/assets/js/app.js', 'public/js')
    .copy('node_modules/admin-lte/plugins','public/plugins')
    .copy('node_modules/icheck/skins/square/blue.png','public/css')
    .copy('node_modules/icheck/skins/square/blue@2x.png','public/css');
+>>>>>>> c37a5d1bd0bb44f59d4e34b790fc94270d6e9030

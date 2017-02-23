@@ -14,17 +14,17 @@ class ChangeIdProduit extends Migration
     public function up()
     {
         //
-        
+
                 Schema::table('produits', function (Blueprint $table) {
 
-                
+
                         # code...
                     if (Schema::hasColumn('produits', 'activities_id'))
                         {
                             $table->renameColumn('activities_id','activity_id');
                         }
-            
-        
+
+
                 });
     }
 
@@ -38,14 +38,14 @@ class ChangeIdProduit extends Migration
         //
         Schema::table('produits', function (Blueprint $table) {
 
-                
+
                         # code...
                     if (Schema::hasColumn('produits', 'activity_id'))
                         {
                             $table->renameColumn('activity_id','activities_id');
                         }
-            
-        
+
+
                 });
     }
 }

@@ -16,10 +16,10 @@ class AddPictureToPeople extends Migration
         //
         Schema::table('people', function($table)
             {
-                
+
                 $table->string('picture')->nullable();
-                
-                
+
+
             });
     }
 
@@ -33,10 +33,10 @@ class AddPictureToPeople extends Migration
         //
         Schema::table('people', function($table)
             {
-                
+
                 $table->dropcolumn('picture');
-                
-                
+
+
             });
     }
 }

@@ -14,8 +14,8 @@ class UpdateGenderVarchar extends Migration
     public function up()
     {
         Schema::table('people', function (Blueprint $table) {
-            
-            
+
+
             $table->string('gender')->change();
 
         });

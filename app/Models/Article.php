@@ -61,7 +61,7 @@ class Article extends Model
         return $this->belongsTo('App\Models\Category', 'category_id');
     }
 
-    
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES
