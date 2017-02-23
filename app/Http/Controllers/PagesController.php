@@ -17,10 +17,10 @@ public function index()
 public function course()
 {
 
-	$activities = \App\Models\Types_activity::with('activities')->get();
+	$typeActivities = \App\Models\Types_activity::with('activities')->get();
 	// print_r($activities);
 	// exit;
-	return view('pages.course', ['activities' => $activities]);
+	return view('pages.course', ['typeActivities' => $typeActivities]);
 
 }
 

@@ -29,7 +29,7 @@ CAEM - Mon parcours musical
 					<h3>{{ $typeActivity->name }}</h3>
 
 					@foreach($typeActivity->activities as $activity)
-					<label data-id="{{ $activity->id }}" onchange="displayActivity({{ $activity->id }});">
+					<label onclick="displayActivity();">
 						<p>{{ $activity->name }}</p>
 						<input class="activityCheckbox" type="checkbox" value="{{ $activity->id }}">
 					</label>
@@ -99,3 +99,38 @@ CAEM - Mon parcours musical
 </main>
 @endsection
 <!------------------>
+
+@section('pageScript')
+<script>
+
+var btnActivity = document.querySelectorAll(".activityCheckbox");
+
+function displayActivity()
+	{
+		var count = 0;
+
+		for (i=0 ; btnActivity[i] ; i++)
+			{
+				activityId = btnActivity[i].value;
+				document.getElementById(activityId).classList.add("activityHide");
+
+				if(btnActivity[i].checked)
+					{
+						count++;
+						document.getElementById(activityId).classList.remove("activityHide");
+					}
+
+			}
+
+
+		if(count == 0)
+			{
+				for(i=0 ; btnActivity[i] ; i++)
+					{
+						activityId = btnActivity[i].value;
+						document.getElementById(activityId).classList.remove("activityHide");
+					}
+			}
+	}
+	</script>
+@endsection
