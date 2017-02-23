@@ -17,8 +17,18 @@ $caemGreen: #4dd433;
 $caemAlert: #db0010;
 $caemWhite: #ffffff; /*plain white color, used to create a background in some elements*/
 
+
+
+
+/*=======================*/
+/*CHANGE WEBSITE COLORS :*/
+/*=======================*/
+
 //MAIN CHART COLOR:
 $mainChartColor: $caemOrange;
+
+//MAIN ACTION COLOR:
+$mainColorAction: $caemBlue;
 
 //HEADER / FOOTER BACKGROUND COLOR :
 $headerFooterMainColor: $caemDark;
@@ -45,7 +55,7 @@ $mainSubtitleColor: $caemDark; /*check for global colors above or create your ow
 //main font:
 $mainFontType: Quicksand;
 $mainFontWeight: 400; /*300, 400 or 700 availables*/
-$mainFontSize: 1em;
+$mainFontSize: 1.1em;
 $mainFontColor: $caemDark; /*check for global colors above or create your own*/
 
 //light font:
@@ -65,6 +75,13 @@ $headerNavFontType: Quicksand; /*Quicksand available*/
 $headerNavFontWeight: 400; /*300, 400 or 700 availables*/
 $headerNavFontSize: 1.5em;
 $headerNavFontColor: $caemWhite; /*check for global colors above or create your own*/
+
+//button font :
+$btnFontType: Quicksand; /*Quicksand available*/
+$btnFontWeight: 400; /*300, 400 or 700 availables*/
+$btnFontSize: 1.3em;
+$btnFontColor: $caemWhite; /*check for global colors above or create your own*/
+$btnBackgroundColor: $mainColorAction;
 
 
 

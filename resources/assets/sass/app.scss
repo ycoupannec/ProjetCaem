@@ -21,7 +21,7 @@
 .borderLeftPink{@include borderLeft($caemPink);}
 .borderLeftOrange{@include borderLeft($caemOrange);}
 .borderLeftGreen{@include borderLeft($caemGreen);}
-.button{@include button($caemWhite,$caemBlue);}
+.button{@include button($btnFontType, $btnFontWeight, $btnFontSize, $btnFontColor, $btnBackgroundColor);}
 .shadow{@include shadow($mainNewsShadow);}
 .paddingNews{@include padding($mainNewsPadding);}
 
@@ -30,16 +30,13 @@
 
 
 
-body{
-	font-family: QuickSand;
-}
 
 /* ---------------- HEADER ---------------- */
 #header{
 	@extend .headerFont;
 
 	#contact-connection{
-		background-color: $caemDark;
+		background-color: $headerFooterMainColor;
 		color: $caemWhite;
 		padding: 0.4em;
 	}
@@ -55,11 +52,11 @@ body{
 	#header-img{
 		padding-top: 30px;
 		height: 370px;
-		background: url("../img/header.png") top no-repeat, url("../img/trame_footer.png") repeat, $caemDark;
+		background: url("../img/header.png") top no-repeat, url("../img/trame_footer.png") repeat, $headerFooterMainColor;
 		background-size: cover;
 	}
 	.navbar-caem{
-		border-bottom: 1.5vh solid $caemOrange;
+		border-bottom: 1.5vh solid $mainChartColor;
 	}
 
 	.navbar-caem img{
@@ -85,20 +82,74 @@ body{
 
 
 /* ---------------- ACCUEIL PAGE ---------------- */
-main{
 
-	#presentation{
-		margin: 1em 1em;
-	 	h2{ @extend .mainTitleFont;}
+#presentation{
+	margin: 1em 1em;
+	h2{ @extend .mainTitleFont;}
 
+	p{
+		@extend .mainFont;
+		padding-left: 0.7em;
+	}
+
+	a{
+		@extend .button;
+		@extend .mainFont;
+	}
+
+	a::after{
+		content: $mainButtonSymbol;
+		padding-left: 1em;
+	}
+}
+
+#news{
+	padding: 1em;
+	padding-bottom: 3em;
+	header {
+		background-color: $mainNewsHeaderColor;
+		h2{
+			@extend .mainTitleFont;
+			color: $caemWhite;
+			padding: 0.5em 1em;
+		}
+	}
+
+		.new{
+			@extend .shadow;
+			padding-bottom: 1em;
+		}
+		figure{
+			figcaption{
+				@extend .paddingNews;
+				background-image: url('../img/trame_footer.png');
+				padding-bottom: 1em;
+				h2{
+					@extend .mainTitleFont;
+					padding-top: 0.5em;
+				}
+				time{
+					@extend .mainFont;
+				}
+			}
+
+			img{
+				padding: $mainNewsImgPadding;
+				height: $mainNewsImgSizeHeight;
+				max-width: $mainNewsImgSizeWidth;
+			}
+		}
 		p{
 			@extend .mainFont;
-			padding-left: 0.7em;
+			@extend .paddingNews;
+			overflow: hidden;
+			max-height: 4em;
 		}
 
 		a{
 			@extend .button;
 			@extend .mainFont;
+
 		}
 
 		a::after{
@@ -107,62 +158,6 @@ main{
 		}
 	}
 
-	#news{
-		padding: 1em;
-		padding-bottom: 3em;
-		header {
-			background-color: $mainNewsHeaderColor;
-			h2{
-				@extend .mainTitleFont;
-				color: $caemWhite;
-				padding: 0.5em 1em;
-			}
-		}
-
-			.new{
-				@extend .shadow;
-				padding-bottom: 1em;
-			}
-			figure{
-				figcaption{
-					@extend .paddingNews;
-					background-image: url('../img/trame_footer.png');
-					padding-bottom: 1em;
-					h2{
-						@extend .mainTitleFont;
-						padding-top: 0.5em;
-					}
-					time{
-						@extend .mainFont;
-					}
-				}
-
-				img{
-					padding: $mainNewsImgPadding;
-					height: $mainNewsImgSizeHeight;
-					max-width: $mainNewsImgSizeWidth;
-				}
-			}
-			p{
-				@extend .mainFont;
-				@extend .paddingNews;
-				overflow: hidden;
-				max-height: 4em;
-			}
-
-			a{
-				@extend .button;
-				@extend .mainFont;
-
-			}
-
-			a::after{
-				content: $mainButtonSymbol;
-				padding-left: 1em;
-			}
-		}
-
-}
 
 /* ---------------- ACCUEIL PAGE END ---------------- */
 

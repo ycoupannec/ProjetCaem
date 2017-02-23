@@ -17,13 +17,12 @@
 		border-left: $caemColor solid 0.5rem;
 	}
 
-@mixin button($colorFont,$colorBackground){
+@mixin button($fontType, $fontWeight, $fontSize, $fontColor, $colorBackground){
+	@include font ($fontType, $fontWeight, $fontSize, $fontColor);
 	display: inline-block;
-	color: $colorFont;
 	background-color: $colorBackground;
 	padding: 1rem 2.3rem;
 	letter-spacing: 0.2rem;
-	font-weight: 400;
 }
 
 @mixin shadow($shadow){

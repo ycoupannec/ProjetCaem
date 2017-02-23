@@ -18,6 +18,12 @@
 
 /*plain white color, used to create a background in some elements*/
 
+/*=======================*/
+
+/*CHANGE WEBSITE COLORS :*/
+
+/*=======================*/
+
 /*=================*/
 
 /*FONTS VARIABLES :*/
@@ -52,11 +58,19 @@
 
 /*check for global colors above or create your own*/
 
+/*Quicksand available*/
+
+/*300, 400 or 700 availables*/
+
+/*check for global colors above or create your own*/
+
 /*===============================*/
 
 /*BUTTONS AND EFFECTS VARIABLES :*/
 
 /*===============================*/
+
+/*news*/
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
@@ -369,7 +383,7 @@ th {
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url(/fonts/glyphicons-halflings-regular.eot?f4769f9bdb7466be65088239c12046d1);
-  src: url(/fonts/glyphicons-halflings-regular.eot?f4769f9bdb7466be65088239c12046d1?#iefix) format("embedded-opentype"), url(/fonts/glyphicons-halflings-regular.woff2?448c34a56d699c29117adc64c43affeb) format("woff2"), url(/fonts/glyphicons-halflings-regular.woff?fa2772327f55d8198301fdb8bcfc8158) format("woff"), url(/fonts/glyphicons-halflings-regular.ttf?e18bbf611f2a2e43afc071aa2f4e1512) format("truetype"), url(/fonts/glyphicons-halflings-regular.svg?89889688147bd7575d6327160d64e760#glyphicons_halflingsregular) format("svg");
+  src: url(/fonts/glyphicons-halflings-regular.eot?f4769f9bdb7466be65088239c12046d1?#iefix) format("embedded-opentype"), url(/fonts/glyphicons-halflings-regular.woff2?448c34a56d699c29117adc64c43affeb) format("woff2"), url(/fonts/glyphicons-halflings-regular.woff?fa2772327f55d8198301fdb8bcfc8158) format("woff"), url(/fonts/glyphicons-halflings-regular.ttf?e18bbf611f2a2e43afc071aa2f4e1512) format("truetype"), url(/fonts/glyphicons-halflings-regular.svg?f721466883998665b87923b92dea655b#glyphicons_halflingsregular) format("svg");
 }
 
 .glyphicon {
@@ -7854,6 +7868,12 @@ button.close {
 
 /*plain white color, used to create a background in some elements*/
 
+/*=======================*/
+
+/*CHANGE WEBSITE COLORS :*/
+
+/*=======================*/
+
 /*=================*/
 
 /*FONTS VARIABLES :*/
@@ -7888,11 +7908,19 @@ button.close {
 
 /*check for global colors above or create your own*/
 
+/*Quicksand available*/
+
+/*300, 400 or 700 availables*/
+
+/*check for global colors above or create your own*/
+
 /*===============================*/
 
 /*BUTTONS AND EFFECTS VARIABLES :*/
 
 /*===============================*/
+
+/*news*/
 
 /*EXTENDS:*/
 
@@ -7905,7 +7933,10 @@ button.close {
 }
 
 .mainTitleFont,
-
+#presentation h2,
+#news header h2,
+#news figure figcaption h2,
+.mainParcoursMusical div section #headerParcours h3 {
   font-family: Quicksand;
   font-weight: 700;
   font-size: 1.5em;
@@ -7922,16 +7953,16 @@ button.close {
 }
 
 .mainFont,
-main #presentation p,
-main #presentation a,
-main #news figure figcaption time,
-main #news p,
-main #news a,
+#presentation p,
+#presentation a,
+#news figure figcaption time,
+#news p,
+#news a,
 .mainParcoursMusical aside section label p,
 .mainParcoursMusical div section main {
   font-family: Quicksand;
   font-weight: 400;
-  font-size: 1em;
+  font-size: 1.1em;
   color: #1a1a1a;
 }
 
@@ -7970,32 +8001,30 @@ footer nav a {
 }
 
 .button,
-main #presentation a,
-main #news a {
-  display: inline-block;
+#presentation a,
+#news a {
+  font-family: Quicksand;
+  font-weight: 400;
+  font-size: 1.3em;
   color: #ffffff;
+  display: inline-block;
   background-color: #35a1e6;
   padding: 1rem 2.3rem;
   letter-spacing: 0.2rem;
-  font-weight: 400;
 }
 
 .shadow,
-main #news .new {
+#news .new {
   box-shadow: 0px 0px 7px 1px rgba(51, 51, 51, 0.2);
 }
 
 .paddingNews,
-main #news figure figcaption,
-main #news p {
+#news figure figcaption,
+#news p {
   padding: 0 1.3em;
 }
 
 /*========*/
-
-body {
-  font-family: QuickSand;
-}
 
 /* ---------------- HEADER ---------------- */
 
@@ -8045,58 +8074,58 @@ body {
 
 /* ---------------- ACCUEIL PAGE ---------------- */
 
-main #presentation {
+#presentation {
   margin: 1em 1em;
 }
 
-main #presentation p {
+#presentation p {
   padding-left: 0.7em;
 }
 
-main #presentation a::after {
+#presentation a::after {
   content: "\25B8";
   padding-left: 1em;
 }
 
-main #news {
+#news {
   padding: 1em;
   padding-bottom: 3em;
 }
 
-main #news header {
+#news header {
   background-color: #fc9633;
 }
 
-main #news header h2 {
+#news header h2 {
   color: #ffffff;
   padding: 0.5em 1em;
 }
 
-main #news .new {
+#news .new {
   padding-bottom: 1em;
 }
 
-main #news figure figcaption {
+#news figure figcaption {
   background-image: url(/images/trame_footer.png?28b2055d5c4e8e5368b14e85561883c8);
   padding-bottom: 1em;
 }
 
-main #news figure figcaption h2 {
+#news figure figcaption h2 {
   padding-top: 0.5em;
 }
 
-main #news figure img {
+#news figure img {
   padding: 1.3em 1.5em;
   height: 250px;
   max-width: 100%;
 }
 
-main #news p {
+#news p {
   overflow: hidden;
   max-height: 4em;
 }
 
-main #news a::after {
+#news a::after {
   content: "\25B8";
   padding-left: 1em;
 }
