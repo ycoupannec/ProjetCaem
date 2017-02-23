@@ -62,11 +62,11 @@
 				
 				<tr>
 					<td><b>Date de création</b></td>
-					<td>{{ $data->created_at }}</td>
+					<td>{{ date('d/m/Y H:i',strtotime($data->created_at)) }}</td>
 				</tr>
 				<tr>
 					<td><b>Date de mise à jour</b></td>
-					<td>{{ $data->updated_at }}</td>
+					<td>{{ date('d/m/Y H:i',strtotime($data->updated_at)) }}</td>
 				</tr>
 
 

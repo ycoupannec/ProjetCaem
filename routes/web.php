@@ -42,5 +42,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
     CRUD::resource('article', 'Admin\ArticleCrudController');
     CRUD::resource('category', 'Admin\CategoryCrudController');
     CRUD::resource('tag', 'Admin\TagCrudController');
+    Route::get('extract', 'Admin\ExtractController@index');
 
 });
