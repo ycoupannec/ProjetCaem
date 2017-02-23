@@ -12,11 +12,12 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
         '1d1b89d124cc9cb8219922c9d5569199' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
-        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
+        'a1944ad99b2c9dde1f8975eab6b29a40' => __DIR__ . '/..' . '/acacha/helpers/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -49,6 +50,7 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
             'Symfony\\Component\\HttpFoundation\\' => 33,
             'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\EventDispatcher\\' => 34,
+            'Symfony\\Component\\DomCrawler\\' => 29,
             'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
@@ -75,6 +77,7 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
             'League\\Flysystem\\Cached\\' => 24,
             'League\\Flysystem\\' => 17,
             'Laravel\\Tinker\\' => 15,
+            'Laravel\\BrowserKitTesting\\' => 26,
             'Laracasts\\Generators\\' => 21,
         ),
         'J' => 
@@ -107,6 +110,7 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
         array (
             'Cviebrock\\EloquentSluggable\\' => 28,
             'Cron\\' => 5,
+            'Creativeorange\\Gravatar\\' => 24,
             'Collective\\Html\\' => 16,
             'Cocur\\Slugify\\' => 14,
             'Carbon\\' => 7,
@@ -116,6 +120,7 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
             'Barryvdh\\elFinderFlysystemDriver\\' => 33,
             'Barryvdh\\Elfinder\\' => 18,
             'Backpack\\PageManager\\' => 21,
+            'Backpack\\NewsCRUD\\' => 18,
             'Backpack\\LangFileManager\\' => 25,
             'Backpack\\Generators\\' => 20,
             'Backpack\\CRUD\\' => 14,
@@ -124,6 +129,10 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
         'A' => 
         array (
             'App\\' => 4,
+            'Acacha\\User\\' => 12,
+            'Acacha\\Helpers\\' => 15,
+            'Acacha\\Filesystem\\' => 18,
+            'Acacha\\AdminLTETemplateLaravel\\' => 31,
         ),
     );
 
@@ -190,6 +199,10 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
         array (
             0 => __DIR__ . '/..' . '/symfony/event-dispatcher',
         ),
+        'Symfony\\Component\\DomCrawler\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/dom-crawler',
+        ),
         'Symfony\\Component\\Debug\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/debug',
@@ -245,6 +258,10 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
         'Laravel\\Tinker\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
+        ),
+        'Laravel\\BrowserKitTesting\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/browser-kit-testing/src',
         ),
         'Laracasts\\Generators\\' => 
         array (
@@ -302,6 +319,10 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
         array (
             0 => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron',
         ),
+        'Creativeorange\\Gravatar\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/creativeorange/gravatar/src',
+        ),
         'Collective\\Html\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravelcollective/html/src',
@@ -326,6 +347,10 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
         array (
             0 => __DIR__ . '/..' . '/backpack/pagemanager/src',
         ),
+        'Backpack\\NewsCRUD\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/backpack/newscrud/src',
+        ),
         'Backpack\\LangFileManager\\' => 
         array (
             0 => __DIR__ . '/..' . '/backpack/langfilemanager/src',
@@ -345,6 +370,22 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
+        ),
+        'Acacha\\User\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/acacha/user/src',
+        ),
+        'Acacha\\Helpers\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/acacha/helpers/src',
+        ),
+        'Acacha\\Filesystem\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/acacha/filesystem/src',
+        ),
+        'Acacha\\AdminLTETemplateLaravel\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/acacha/admin-lte-template-laravel/src',
         ),
     );
 
@@ -418,25 +459,40 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
     );
 
     public static $classMap = array (
+        'AddActivityInstrument' => __DIR__ . '/../..' . '/database/migrations/2017_02_21_133628_add_activity_instrument.php',
         'AddChampActivities' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_102828_add_champ_activities.php',
         'AddCodeAnalytiqueGender' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_083814_add_code_analytique_gender.php',
+        'AddColumnStatus' => __DIR__ . '/../..' . '/database/migrations/2017_02_21_083656_add_column_status.php',
         'AddFieldActivity' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_142703_add_field_activity.php',
         'AddPersonTypePerson' => __DIR__ . '/../..' . '/database/migrations/2017_02_13_103630_add_person_type_person.php',
+        'AddPictureToPeople' => __DIR__ . '/../..' . '/database/migrations/2017_02_22_143149_add_picture_to_people.php',
+        'AddSlugToCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_24_060017_add_slug_to_categories_table.php',
+        'AddSlugToTagsTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_24_060101_add_slug_to_tags_table.php',
         'AddTimestampsToAll' => __DIR__ . '/../..' . '/database/migrations/2017_02_07_154243_add_timestamps_to_all.php',
         'AddTimestampsToCity' => __DIR__ . '/../..' . '/database/migrations/2017_02_07_134003_add_timestamps_to_city.php',
         'AddTimestampsToDistricts' => __DIR__ . '/../..' . '/database/migrations/2017_02_07_145909_add_timestamps_to_districts.php',
+        'AddYearActivity' => __DIR__ . '/../..' . '/database/migrations/2017_02_21_135954_add_year_activity.php',
+        'ChangeCodeAnalytique' => __DIR__ . '/../..' . '/database/migrations/2017_02_20_085536_change_code_analytique.php',
         'ChangeIdIncrement' => __DIR__ . '/../..' . '/database/migrations/2017_02_14_124629_change_id_increment.php',
         'ChangeIdProduit' => __DIR__ . '/../..' . '/database/migrations/2017_02_08_144542_change_id_produit.php',
         'ChangeIntToCharName' => __DIR__ . '/../..' . '/database/migrations/2017_02_08_110740_change_int_to_char_name.php',
         'ChangeNameInstrument' => __DIR__ . '/../..' . '/database/migrations/2017_02_08_104226_change_name_instrument.php',
+        'CreateArticleTagTable' => __DIR__ . '/../..' . '/database/migrations/2015_08_04_130507_create_article_tag_table.php',
+        'CreateArticlesTable' => __DIR__ . '/../..' . '/database/migrations/2015_08_04_130520_create_articles_table.php',
+        'CreateCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2015_08_04_130551_create_categories_table.php',
         'CreatePagesTable' => __DIR__ . '/../..' . '/database/migrations/2016_05_25_121918_create_pages_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateRevisionsTable' => __DIR__ . '/..' . '/venturecraft/revisionable/src/migrations/2013_04_09_062329_create_revisions_table.php',
+<<<<<<< HEAD
         'CreateTasksTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_21_140100_create_tasks_table.php',
+=======
+        'CreateTagsTable' => __DIR__ . '/../..' . '/database/migrations/2015_08_04_131626_create_tags_table.php',
+>>>>>>> c37a5d1bd0bb44f59d4e34b790fc94270d6e9030
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'DeleteCaemToChamp' => __DIR__ . '/../..' . '/database/migrations/2017_02_08_123715_delete_caem_to_champ.php',
         'DeleteFamily' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_101120_delete_family.php',
+        'DeleteFormulaTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_22_143453_delete_formula_table.php',
         'DropPersonId' => __DIR__ . '/../..' . '/database/migrations/2017_02_13_090016_drop_person_id.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
@@ -510,6 +566,9 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
         'ImageRightBoolean' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_081940_image_right_boolean.php',
+        'ModifyEnumArticle' => __DIR__ . '/../..' . '/database/migrations/2017_02_20_134539_modify enum article.php',
+        'MoveColumnActivity' => __DIR__ . '/../..' . '/database/migrations/2017_02_22_082924_move_column_activity.php',
+        'MoveColumnPerson' => __DIR__ . '/../..' . '/database/migrations/2017_02_20_133654_move_column_person.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
         'PHPUnit\\Framework\\BaseTestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',
         'PHPUnit\\Framework\\TestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestCase.php',
@@ -971,6 +1030,8 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
         'SebastianBergmann\\ResourceOperations\\ResourceOperations' => __DIR__ . '/..' . '/sebastian/resource-operations/src/ResourceOperations.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'UpdateActivitiesWeb' => __DIR__ . '/../..' . '/database/migrations/2017_02_21_132423_update_activities_web.php',
+        'UpdateActivityTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_21_130416_update_activity_table.php',
         'UpdateGenderVarchar' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_091935_update_gender_varchar.php',
         'UpdateImageRightVarchar' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_094351_update_image_right_varchar.php',
         'UpdateStatusVarchar' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_124725_update_status_varchar.php',

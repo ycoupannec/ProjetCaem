@@ -21,7 +21,7 @@ class PersonCrudController extends CrudController
         */
         $this->crud->setModel("App\Models\Person");
         $this->crud->setRoute("admin/person");
-        $this->crud->setEntityNameStrings('person', 'persons');
+        $this->crud->setEntityNameStrings('Personne', 'Personnes');
 
 
         
@@ -122,7 +122,7 @@ class PersonCrudController extends CrudController
         $this->crud->addField(
            
            [  // Select
-            'label' => "Cities",
+            'label' => "Ville",
             'type' => 'select',
             'name' => 'city_id', // the db column for the foreign key
             'entity' => 'city', // the method that defines the relationship in your Model
@@ -173,6 +173,20 @@ class PersonCrudController extends CrudController
            ]
         );
 
+        $this->crud->addColumn('rattache');
+
+        $this->crud->setColumnsDetails(['rattache'],
+            [
+            'label' => 'Responsable légal', // Table column heading
+            'type' => 'select_multiple',
+            'name' => 'people_people', // the column that contains the ID of that connected entity;
+            'entity' => 'people_people', // the method that defines the relationship in your Model
+            'attribute' => 'fullname', // foreign key attribute that is shown to user
+            'model' => "App\Models\Person", // foreign key model
+
+            ]
+        );
+
         $this->crud->setColumnDetails('mail',
             [
             'name'  => 'mail', // DB column name (will also be the name of the input)
@@ -194,74 +208,74 @@ class PersonCrudController extends CrudController
            ]
         );
 
-        $this->crud->setColumnDetails('postal_code',
-            [
-            'name'  => 'postal_code', // DB column name (will also be the name of the input)
-            'label' => 'Code postal', // the human-readable label for the input 
-           ]
-        );
+        // $this->crud->setColumnDetails('postal_code',
+        //     [
+        //     'name'  => 'postal_code', // DB column name (will also be the name of the input)
+        //     'label' => 'Code postal', // the human-readable label for the input
+        //    ]
+        // );
 
-        $this->crud->setColumnDetails('adress',
-            [
-            'name'  => 'adress', // DB column name (will also be the name of the input)
-            'label' => 'Adresse', // the human-readable label for the input 
-           ]
-        );
+        // $this->crud->setColumnDetails('adress',
+        //     [
+        //     'name'  => 'adress', // DB column name (will also be the name of the input)
+        //     'label' => 'Adresse', // the human-readable label for the input
+        //    ]
+        // );
 
-        $this->crud->setColumnDetails('birthday',
-            [
-            'name'  => 'birthday', // DB column name (will also be the name of the input)
-            'label' => 'Date de naissance', // the human-readable label for the input 
-           ]
-        );
+        // $this->crud->setColumnDetails('birthday',
+        //     [
+        //     'name'  => 'birthday', // DB column name (will also be the name of the input)
+        //     'label' => 'Date de naissance', // the human-readable label for the input
+        //    ]
+        // );
 
-        $this->crud->setColumnDetails('observation',
-            [
-            'name'  => 'observation', // DB column name (will also be the name of the input)
-            'label' => 'Observation', // the human-readable label for the input 
-           ]
-        );
+        // $this->crud->setColumnDetails('observation',
+        //     [
+        //     'name'  => 'observation', // DB column name (will also be the name of the input)
+        //     'label' => 'Observation', // the human-readable label for the input
+        //    ]
+        // );
 
-        $this->crud->setColumnDetails('code_analytique',
-            [
-            'name'  => 'code_analytique', // DB column name (will also be the name of the input)
-            'label' => 'code_analytique', // the human-readable label for the input 
-           ]
-        );
+        // $this->crud->setColumnDetails('code_analytique',
+        //     [
+        //     'name'  => 'code_analytique', // DB column name (will also be the name of the input)
+        //     'label' => 'code_analytique', // the human-readable label for the input
+        //    ]
+        // );
 
-       $this->crud->setColumnDetails('image_right',
-            [
-             'name'  => 'image_right', // DB column name (will also be the name of the input)
-            'label' => 'Droit à l\'image', // the human-readable label for the input
-            'type'  => 'select_from_array',
-            'options' => ['Oui' => 'Oui', 'Non' => 'Non'],
-            'allows_null' => false,
+       // $this->crud->setColumnDetails('image_right',
+       //      [
+       //       'name'  => 'image_right', // DB column name (will also be the name of the input)
+       //      'label' => 'Droit à l\'image', // the human-readable label for the input
+       //      'type'  => 'select_from_array',
+       //      'options' => ['Oui' => 'Oui', 'Non' => 'Non'],
+       //      'allows_null' => false,
           
-           ]
-        );
+       //     ]
+       //  );
 
 
-        $this->crud->setColumnsDetails(['city_id'],
-            [
-            'label' => 'Ville', // Table column heading
-            'type' => 'select',
-            'name' => 'city_id', // the column that contains the ID of that connected entity;
-            'entity' => 'city', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
-            'model' => "App\Models\City", // foreign key model
-            ]
-        );
+       //  $this->crud->setColumnsDetails(['city_id'],
+       //      [
+       //      'label' => 'Ville', // Table column heading
+       //      'type' => 'select',
+       //      'name' => 'city_id', // the column that contains the ID of that connected entity;
+       //      'entity' => 'city', // the method that defines the relationship in your Model
+       //      'attribute' => 'name', // foreign key attribute that is shown to user
+       //      'model' => "App\Models\City", // foreign key model
+       //      ]
+       //  );
 
-        $this->crud->setColumnsDetails(['district_id'],
-            [
-            'label' => 'Quartier', // Table column heading
-            'type' => 'select',
-            'name' => 'district_id', // the column that contains the ID of that connected entity;
-            'entity' => 'district', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
-            'model' => "App\Models\district", // foreign key model
-            ]
-        );
+       //  $this->crud->setColumnsDetails(['district_id'],
+       //      [
+       //      'label' => 'Quartier', // Table column heading
+       //      'type' => 'select',
+       //      'name' => 'district_id', // the column that contains the ID of that connected entity;
+       //      'entity' => 'district', // the method that defines the relationship in your Model
+       //      'attribute' => 'name', // foreign key attribute that is shown to user
+       //      'model' => "App\Models\district", // foreign key model
+       //      ]
+       //  );
 
        
 
@@ -275,24 +289,12 @@ class PersonCrudController extends CrudController
             'type' => 'select2_multiple',
             'name' => 'people_people', // the db column for the foreign key
             'entity' => 'people_people', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
+            'attribute' => 'fullname', // foreign key attribute that is shown to user
             'model' => "App\Models\Person", // foreign key model
             'pivot' => true
             ]);
 
-        $this->crud->addColumn('rattache');
 
-        $this->crud->setColumnsDetails(['rattache'],
-            [
-            'label' => 'Responsable légal', // Table column heading
-            'type' => 'select_multiple',
-            'name' => 'people_people', // the column that contains the ID of that connected entity;
-            'entity' => 'people_people', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
-            'model' => "App\Models\Person", // foreign key model
-
-            ]
-        );
 
         $this->crud->addField(
            
@@ -306,52 +308,74 @@ class PersonCrudController extends CrudController
             'pivot' => true
             ]);
 
-        $this->crud->addColumn('type');
+        // $this->crud->addColumn('type');
 
-        $this->crud->setColumnsDetails(['type'],
-            [
-            'label' => 'Types', // Table column heading
-            'type' => 'select_multiple',
-            'name' => 'type_people', // the column that contains the ID of that connected entity;
-            'entity' => 'type_people', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
-            'model' => "App\Models\Type_person", // foreign key model
+        // $this->crud->setColumnsDetails(['type'],
+        //     [
+        //     'label' => 'Types', // Table column heading
+        //     'type' => 'select_multiple',
+        //     'name' => 'type_people', // the column that contains the ID of that connected entity;
+        //     'entity' => 'type_people', // the method that defines the relationship in your Model
+        //     'attribute' => 'name', // foreign key attribute that is shown to user
+        //     'model' => "App\Models\Type_person", // foreign key model
 
-            ]
-        );
+        //     ]
+        // );
         
         
-             $this->crud->addField(
+
+            $this->crud->addField(
            
            [  // Select
-            'label' => "instruments",
+            'label' => "Activités",
             'type' => 'select2_multiple',
-            'name' => 'people_instruments', // the db column for the foreign key
-            'entity' => 'people_instruments', // the method that defines the relationship in your Model
+            'name' => 'people_activities', // the db column for the foreign key
+            'entity' => 'people_activities', // the method that defines the relationship in your Model
             'attribute' => 'name', // foreign key attribute that is shown to user
-            'model' => "App\Models\Instrument", // foreign key model
+            'model' => "App\Models\Activity", // foreign key model
             'pivot' => true
             ]);
 
-        $this->crud->addColumn('instruments');
+        // $this->crud->addColumn('instruments');
 
-        $this->crud->setColumnsDetails(['instruments'],
-            [
-            'label' => 'Instruments', // Table column heading
-            'type' => 'select_multiple',
-            'name' => 'people_instruments', // the column that contains the ID of that connected entity;
-            'entity' => 'people_instruments', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
-            'model' => "App\Models\Instrument", // foreign key model
+        // $this->crud->setColumnsDetails(['instruments'],
+        //     [
+        //     'label' => 'Instruments', // Table column heading
+        //     'type' => 'select_multiple',
+        //     'name' => 'people_instruments', // the column that contains the ID of that connected entity;
+        //     'entity' => 'people_instruments', // the method that defines the relationship in your Model
+        //     'attribute' => 'name', // foreign key attribute that is shown to user
+        //     'model' => "App\Models\Instrument", // foreign key model
 
-            ]
-        );
+        //     ]
+        // );
 
+        // $this->crud->addColumn('year_old');
 
+        // $this->crud->setColumnsDetails(['year_old'],
+        //     [
+        //        'name'  => 'year_old',
+        //     'label' => 'Age',
+        //     'type' => 'model_function',
+        //     'function_name' => 'getyearsold',
+        // ]
+        // );
         
 
+        $this->crud->addField([
+            'name'  => 'code_analytique', // DB column name (will also be the name of the input)
+            'label' => 'Code analytique', // the human-readable label for the input
+            'type'  => 'textarea'
+            ]);
 
-
+        $this->crud->setColumnDetails('code_analytique',
+            [
+            'name'  => 'code_analytique', // DB column name (will also be the name of the input)
+            'label' => 'Code analytique', // the human-readable label for the input
+           ]
+        );
+/**/
+        $this->crud->removeColumns(['year_old', 'postal_code','birthday','adress', 'observation', 'city_id', 'district_id', 'image_right', 'code_analytique', 'types']);
 
 
         // ------ CRUD FIELDS
@@ -385,8 +409,9 @@ class PersonCrudController extends CrudController
         // NOTE: you also need to do allow access to the right users: $this->crud->allowAccess('reorder');
 
         // ------ CRUD DETAILS ROW
-        // $this->crud->enableDetailsRow();
-        // NOTE: you also need to do allow access to the right users: $this->crud->allowAccess('details_row');
+        $this->crud->enableDetailsRow();
+        // NOTE: you also need to do allow access to the right users:
+        $this->crud->allowAccess('details_row');
         // NOTE: you also need to do overwrite the showDetailsRow($id) method in your EntityCrudController to show whatever you'd like in the details row OR overwrite the views/backpack/crud/details_row.blade.php
 
         // ------ REVISIONS
@@ -436,4 +461,58 @@ class PersonCrudController extends CrudController
         // use $this->data['entry'] or $this->crud->entry
         return $redirect_location;
 	}
+
+
+
+     public function showDetailsRow($id)
+    {
+        $this->crud->hasAccessOrFail('details_row');
+
+        // $this->data['entry'] = $this->crud->getEntry($id);
+        // $this->data['crud'] = $this->crud;
+           // \DB::connection()->enableQueryLog();
+
+        // $types = \App\Models\People_types_person::with('type_person')->where('person_id','=',$id)->get();
+        $data = \App\Models\Person::with('type_people')
+
+                                    ->with('city')
+                                    ->with('people_people')
+                                    ->with('district')
+                                    ->with('membership')
+                                    ->with('people_activities')
+                                    ->find($id);
+        // print_r($data['people_activities']);
+        foreach($data['people_activities'] as $key => $value){
+            // print_r($value['id']);
+            // print_r(\App\Models\Activity::with('teachers_activities')->find($value['id']));
+            $teacher = \App\Models\Activity::with('teachers_activities')->find($value['id']);
+            //print_r($teacher['teachers_activities']);
+             $data['teachers_'.$value['id']]= $teacher['teachers_activities'];
+
+            // exit;
+        }
+        // print_r($data);
+
+           // dd(\DB::getQueryLog());
+        // $instruments = \App\Models\People_instrument::with('people_instruments')->find($id);
+        // $city = \App\Models\City::with('person')->find($this->data['entry']->city_id);
+        // $district = \App\Models\District::with('person')->find($this->data['entry']->district_id);
+        // $activities = \App\Models\Member_activity::with('people_activity')->find($id);
+
+        // print_r($activities);
+        // load the view from /resources/views/vendor/backpack/crud/ if it exists, otherwise load the one in the package
+   //             return view($this->crud->getDetailsRowView(), $this->data);
+
+        // print_r($instruments['people_instruments']);
+
+        // dd($types->city->name);
+        // foreach ($types as $key => $value) {
+        //     # code...
+        //     print_r($value->type_people);
+        // }
+         // print_r($types);
+        // print_r(['data' => $data]);
+
+        return view('admin/details_row_person', ['data' => $data]);
+    }
 }

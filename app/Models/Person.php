@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
+use Carbon\Carbon;
 
 class Person extends Model
 {
@@ -62,6 +63,7 @@ class Person extends Model
         // return $this->belongsToMany('App\Models\Person');
     }
 
+
     public function membership(){
 
         return $this->belongsTo('App\Models\Membership');
@@ -74,12 +76,26 @@ class Person extends Model
 }
 
     
-        public function people_instruments()
+    public function instruments()
     {
         return $this->belongsToMany('App\Models\Instrument', 'people_instruments','person_id','instrument_id');
         // return $this->belongsToMany('App\Models\Person');
     }
 
+    public function getyearsold(){
+        $Born = Carbon::parse($this->birthday);
+        $Age = $Born->diff(Carbon::now())->format('%y');
+        return $Age;
+    }
+
+    public function people_activities()
+    {
+        // return $this->belongsToMany('App\Models\Person', 'teachers_activities','activity_id','person_id');
+
+        // $data = $this->belongsToMany('App\Models\Activity', 'member_activities','person_id','activity_id');
+        return $this->belongsToMany('App\Models\Activity', 'member_activities','person_id','activity_id');
+        // return $this->belongsToMany('App\Models\Person');
+    }
 
     /*
 	|--------------------------------------------------------------------------

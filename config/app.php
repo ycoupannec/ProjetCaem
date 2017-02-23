@@ -163,6 +163,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */
@@ -189,6 +190,16 @@ return [
         Backpack\LangFileManager\LangFileManagerServiceProvider::class,
         Cviebrock\EloquentSluggable\ServiceProvider::class, 
         Backpack\PageManager\PageManagerServiceProvider::class,
+
+
+        /*
+         * Acacha Llum Service Providers...
+         *
+         * See: https://github.com/acacha/llum
+         */
+        Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class,
+        #llum_providers
+
 
     ],
 
@@ -240,6 +251,14 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Calendar'  => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
     
+
+        /*
+         * Acacha Llum Aliases...
+         *
+         * See: https://github.com/acacha/llum
+         */
+        'AdminLTE' => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class,
+        #llum_aliases
 
     ],
 

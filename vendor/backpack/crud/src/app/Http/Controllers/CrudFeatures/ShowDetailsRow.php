@@ -19,7 +19,7 @@ trait ShowDetailsRow
 
         $this->data['entry'] = $this->crud->getEntry($id);
         $this->data['crud'] = $this->crud;
-
+        
         // load the view from /resources/views/vendor/backpack/crud/ if it exists, otherwise load the one in the package
         return view($this->crud->getDetailsRowView(), $this->data);
     }

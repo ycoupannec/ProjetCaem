@@ -35,6 +35,14 @@ class Type_person extends Model
 	|--------------------------------------------------------------------------
 	*/
 
+
+
+    // public function  get_by_person_id()
+    // {
+    // 	return $this->leftJoin('people_types_people', 'type_people.id', '=', 'posts.user_id')->get();
+    // }
+
+
     /*
 	|--------------------------------------------------------------------------
 	| SCOPES

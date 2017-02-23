@@ -58,4 +58,11 @@ public function contact()
 	return view('pages.contact');
 }
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> c37a5d1bd0bb44f59d4e34b790fc94270d6e9030
 }

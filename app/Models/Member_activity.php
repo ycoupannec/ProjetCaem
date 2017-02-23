@@ -34,6 +34,11 @@ class Member_activity extends Model
 	| RELATIONS
 	|--------------------------------------------------------------------------
 	*/
+	public function people_activity()
+    {
+        return $this->belongsToMany('App\Models\Activity', 'member_activities','activity_id','person_id');
+        // return $this->belongsToMany('App\Models\Person');
+    }
 
     /*
 	|--------------------------------------------------------------------------

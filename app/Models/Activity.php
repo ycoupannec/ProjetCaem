@@ -22,17 +22,12 @@ class Activity extends Model
        protected $fillable = [
         'name',
         'type_activity_id',
-        'picture_1',
-        'picture_2',
-        'age_min',
-        'age_max',
         'day',
         'description',
         'status',
         'hour_start',
         'hour_end',
-        'when',
-        'price',
+        'year',
     ];
     // protected $hidden = [];
     // protected $dates = [];
@@ -64,23 +59,12 @@ class Activity extends Model
         // return $this->belongsToMany('App\Models\Person');
     }
 
-    public function setPicture1Attribute($value)
+     public function instruments()
     {
-        $attribute_name = "picture_1";
-        $disk = "uploads";
-        $destination_path = "activity";
-
-        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path);
+        return $this->belongsToMany('App\Models\Instrument', 'activity_instruments','activity_id','instrument_id');
+        // return $this->belongsToMany('App\Models\Person');
     }
 
-    public function setPicture2Attribute($value)
-    {
-        $attribute_name = "picture_2";
-        $disk = "uploads";
-        $destination_path = "activity";
-
-        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path);
-    }
 
     /*
 	|--------------------------------------------------------------------------

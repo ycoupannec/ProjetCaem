@@ -1,4 +1,20 @@
-//IN THIS FILE YOU CAN CHANGE COLORS AND FONT STYLE OF THE WHOLE WEBSITE
+//IN THIS FILE YOU CAN CHANGE COLORS AND FONT STYLE FOR THE WHOLE WEBSITE
+
+
+
+
+/*=======================*/
+/*CHANGE WEBSITE COLORS :*/
+/*=======================*/
+
+//MAIN CHART COLOR:
+$mainChartColor: $caemOrange;
+
+//MAIN ACTION COLOR:
+$mainColorAction: $caemBlue;
+
+//HEADER / FOOTER BACKGROUND COLOR :
+$headerFooterMainColor: $caemDark;
 
 
 
@@ -16,22 +32,6 @@ $caemPink: #e83377;
 $caemGreen: #4dd433;
 $caemAlert: #db0010;
 $caemWhite: #ffffff; /*plain white color, used to create a background in some elements*/
-
-
-
-
-/*=======================*/
-/*CHANGE WEBSITE COLORS :*/
-/*=======================*/
-
-//MAIN CHART COLOR:
-$mainChartColor: $caemOrange;
-
-//MAIN ACTION COLOR:
-$mainColorAction: $caemBlue;
-
-//HEADER / FOOTER BACKGROUND COLOR :
-$headerFooterMainColor: $caemDark;
 
 
 

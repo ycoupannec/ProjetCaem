@@ -1310,9 +1310,17 @@ if (typeof jQuery === 'undefined') {
     this.$viewport = this.options.viewport && $($.isFunction(this.options.viewport) ? this.options.viewport.call(this, this.$element) : (this.options.viewport.selector || this.options.viewport))
     this.inState   = { click: false, hover: false, focus: false }
 
+<<<<<<< HEAD
     if (this.$element[0] instanceof document.constructor && !this.options.selector) {
       throw new Error('`selector` option must be specified when initializing ' + this.type + ' on the window.document object!')
     }
+=======
+require('bootstrap-less');
+
+require('admin-lte');
+window.toastr = require('toastr');
+require('icheck');
+>>>>>>> c37a5d1bd0bb44f59d4e34b790fc94270d6e9030
 
     var triggers = this.options.trigger.split(' ')
 
@@ -1335,6 +1343,7 @@ if (typeof jQuery === 'undefined') {
       this.fixTitle()
   }
 
+<<<<<<< HEAD
   Tooltip.prototype.getDefaults = function () {
     return Tooltip.DEFAULTS
   }
@@ -2369,6 +2378,21 @@ if (typeof jQuery === 'undefined') {
 
       if (data.offsetBottom != null) data.offset.bottom = data.offsetBottom
       if (data.offsetTop    != null) data.offset.top    = data.offsetTop
+=======
+// Use trans function in Vue (equivalent to trans() Laravel Translations helper). See htmlheader.balde.php partial.
+Vue.prototype.trans = (key) => {
+    return _.get(window.trans, key, key);
+};
+
+//Laravel AdminLTE login input field component
+Vue.component('login-input-field', require('./components/LoginInputField.vue'));
+
+/**
+ * Echo exposes an expressive API for subscribing to channels and listening
+ * for events that are broadcast by Laravel. Echo and event broadcasting
+ * allows your team to easily build robust real-time web applications.
+ */
+>>>>>>> c37a5d1bd0bb44f59d4e34b790fc94270d6e9030
 
       Plugin.call($spy, data)
     })

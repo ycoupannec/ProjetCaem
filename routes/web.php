@@ -1,16 +1,6 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
+// Website Routes
 Route::get('/', 'PagesController@index');
 Route::get('parcours', 'PagesController@course');
 Route::get('tarifs', 'PagesController@prices');
@@ -21,6 +11,7 @@ Route::get('credits', 'PagesController@credits');
 Route::get('mention_legales', 'PagesController@legacy_mention');
 Route::get('contact', 'PagesController@contact');
 
+<<<<<<< HEAD
 //Route::get('/', function()
 //{
 //	$tasks = DB::table('tasks')->get();
@@ -30,11 +21,11 @@ Route::get('contact', 'PagesController@contact');
 
 
 
+=======
+>>>>>>> c37a5d1bd0bb44f59d4e34b790fc94270d6e9030
 // Admin Interface Routes
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
 {
-  // Backpack\CRUD: Define the resources for the entities you want to CRUD.
-  
     CRUD::resource('city', 'Admin\CityCrudController');
     CRUD::resource('district', 'Admin\DistrictCrudController');
     CRUD::resource('person', 'Admin\PersonCrudController');
@@ -57,13 +48,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
     CRUD::resource('type_payment', 'Admin\Type_paymentCrudController');
     CRUD::resource('type_person', 'Admin\Type_personCrudController');
     CRUD::resource('activity', 'Admin\ActivityCrudController');
+    CRUD::resource('activity_web', 'Admin\Activity_webCrudController');
     CRUD::resource('payments_detail', 'Admin\Payments_detailCrudController');
     CRUD::resource('people_instrument', 'Admin\People_instrumentCrudController');
-  
-  
-  // [...] other routes
-});
+    CRUD::resource('article', 'Admin\ArticleCrudController');
+    CRUD::resource('category', 'Admin\CategoryCrudController');
+    CRUD::resource('tag', 'Admin\TagCrudController');
+    Route::get('extract', 'Admin\ExtractController@index');
 
+<<<<<<< HEAD
 // Admin Interface Routes
 // Route::group(['prefix' => 'admin', 'middleware' => 'admin', 'namespace' => 'Admin'], function()
 // {
@@ -71,3 +64,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
     
 //   // [...] other routes
 // });
+=======
+});
+>>>>>>> c37a5d1bd0bb44f59d4e34b790fc94270d6e9030
