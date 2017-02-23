@@ -18,32 +18,26 @@ class InstrumentCrudController extends CrudController
         $this->crud->setEntityNameStrings('instrument', 'instruments');
 
         $this->crud->addField([
-                                'name' => 'name',
-                                'label' => "nom",
-                                'type' => 'text'
-                                ]);
-
+            'name' => 'name',
+            'label' => "nom",
+            'type' => 'text'
+        ]);
         $this->crud->addColumn([
-                                'name' => 'name',
-                                'label' => "nom",
-                                'type' => 'text'
-                                ]);
-      
+            'name' => 'name',
+            'label' => "nom",
+            'type' => 'text'
+        ]);
+
     }
 
 	public function store(StoreRequest $request)
 	{
-
-        $redirect_location = parent::storeCrud();
-
-        return $redirect_location;
+        return parent::storeCrud();
 	}
 
 	public function update(UpdateRequest $request)
 	{
-
-        $redirect_location = parent::updateCrud();
-
-        return $redirect_location;
+        return parent::updateCrud();
 	}
+
 }
