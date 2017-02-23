@@ -9,19 +9,20 @@ class Payment extends Model
 {
     use CrudTrait;
 
+    protected $fillable = [
+        'price', 
+        'date', 
+        'type_payment_id'
+    ];
 
-     protected $fillable = ['price', 'date', 'type_payment_id'];
-
-	 public function type_payment(){
+	public function type_payment()
+    {
         return $this->belongsTo('App\Models\Type_payment');
     }
-
-    
 
     public function payments_people()
     {
         return $this->belongsToMany('App\Models\Person', 'payments_people','payment_id','person_id');
-
     }
 
 }
