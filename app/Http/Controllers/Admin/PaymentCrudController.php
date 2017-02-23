@@ -117,6 +117,7 @@ class PaymentCrudController extends CrudController
 	}
 
 	public function update(UpdateRequest $request)
+    {
 
         $redirect_location = parent::updateCrud();
 

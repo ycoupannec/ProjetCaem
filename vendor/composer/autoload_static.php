@@ -483,11 +483,11 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
         'CreatePagesTable' => __DIR__ . '/../..' . '/database/migrations/2016_05_25_121918_create_pages_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateRevisionsTable' => __DIR__ . '/..' . '/venturecraft/revisionable/src/migrations/2013_04_09_062329_create_revisions_table.php',
-<<<<<<< HEAD
+
         'CreateTasksTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_21_140100_create_tasks_table.php',
-=======
+
         'CreateTagsTable' => __DIR__ . '/../..' . '/database/migrations/2015_08_04_131626_create_tags_table.php',
->>>>>>> c37a5d1bd0bb44f59d4e34b790fc94270d6e9030
+
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'DeleteCaemToChamp' => __DIR__ . '/../..' . '/database/migrations/2017_02_08_123715_delete_caem_to_champ.php',

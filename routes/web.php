@@ -11,18 +11,10 @@ Route::get('credits', 'PagesController@credits');
 Route::get('mention_legales', 'PagesController@legacy_mention');
 Route::get('contact', 'PagesController@contact');
 
-<<<<<<< HEAD
-//Route::get('/', function()
-//{
-//	$tasks = DB::table('tasks')->get();
-//
-//	return view('pages.index', compact('tasks'));
-//});
 
 
 
-=======
->>>>>>> c37a5d1bd0bb44f59d4e34b790fc94270d6e9030
+
 // Admin Interface Routes
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
 {
@@ -56,14 +48,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
     CRUD::resource('tag', 'Admin\TagCrudController');
     Route::get('extract', 'Admin\ExtractController@index');
 
-<<<<<<< HEAD
-// Admin Interface Routes
-// Route::group(['prefix' => 'admin', 'middleware' => 'admin', 'namespace' => 'Admin'], function()
-// {
-//   // Backpack\CRUD: Define the resources for the entities you want to CRUD.
-    
-//   // [...] other routes
-// });
-=======
+
+
 });
->>>>>>> c37a5d1bd0bb44f59d4e34b790fc94270d6e9030
+
