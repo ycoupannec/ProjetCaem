@@ -9,24 +9,25 @@ class Location extends Model
 {
     use CrudTrait;
 
+    protected $fillable=[
+        'room',
+        'adress',
+        'city_id'
+    ];
 
-
-    protected $table = 'locations';
-
-    protected $fillable=['room',
-    					'adress',
-    					'city_id'];
-
-	public function city(){
+	public function city()
+    {
         return $this->belongsTo('App\Models\City');
     }
 
-    public function membership(){
+    public function membership()
+    {
         return $this->belongsTo('App\Models\Membership');
     }
 
-    public function getFullAdressAttribute() {
+    public function getFullAdressAttribute() 
+    {
    		return $this->city_id.' '.$this->adress.' '.$this->room;
-}
+    }
 
 }

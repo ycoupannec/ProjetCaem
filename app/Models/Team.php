@@ -10,12 +10,12 @@ class team extends Model
 {
     use CrudTrait;
 
-
-    protected $table = 'teams';
-
-    protected $fillable = ['name','firstname','instrument','type','status'];
-
-      @return array
-     
+    protected $fillable = [
+        'name',
+        'firstname',
+        'instrument',
+        'type',
+        'status'
+    ];
 
 }

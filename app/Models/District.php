@@ -9,14 +9,18 @@ class District extends Model
 {
     use CrudTrait;
 
+    protected $fillable = [
+        'name', 
+        'city_id'
+    ];
 
-    protected $fillable = ['name', 'city_id'];
-
-      public function city(){
+    public function city()
+    {
         return $this->belongsTo('App\Models\City');
     }
     
-    public function person(){
+    public function person()
+    {
         return $this->belongsTo('App\Models\Person');
     }
 

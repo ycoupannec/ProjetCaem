@@ -9,7 +9,7 @@ class Activity extends Model
 {
     use CrudTrait;
 
-       protected $fillable = [
+    protected $fillable = [
         'name',
         'type_activity_id',
         'day',
@@ -27,21 +27,16 @@ class Activity extends Model
     public function member_activities()
     {
         return $this->belongsToMany('App\Models\Person', 'member_activities','activity_id','person_id');
-
     }
 
     public function teachers_activities()
     {
         return $this->belongsToMany('App\Models\Person', 'teachers_activities','activity_id','person_id');
-
     }
 
-     public function instruments()
+    public function instruments()
     {
         return $this->belongsToMany('App\Models\Instrument', 'activity_instruments','activity_id','instrument_id');
-
     }
-
-
 
 }

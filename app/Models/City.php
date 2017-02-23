@@ -9,10 +9,12 @@ class City extends Model
 {
     use CrudTrait;
 
+    protected $fillable = [
+        'name'
+    ];
 
-    protected $fillable = ['name'];
-
-	public function person(){
+	public function person()
+    {
         return $this->belongsTo('App\Models\Person');
     }
 

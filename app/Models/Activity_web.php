@@ -9,7 +9,7 @@ class Activity_web extends Model
 {
     use CrudTrait;
 
-       protected $fillable = [
+    protected $fillable = [
         'name',
         'type_activity_id',
         'picture_1',
@@ -25,18 +25,16 @@ class Activity_web extends Model
         'price',
     ];
  
-    public function type_activity(){
+    public function type_activity()
+    {
         return $this->belongsTo('App\Models\Types_activity');
     }
-
-   
 
     public function setPicture1Attribute($value)
     {
         $attribute_name = "picture_1";
         $disk = "uploads";
         $destination_path = "activity";
-
         $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path);
     }
 
@@ -45,7 +43,6 @@ class Activity_web extends Model
         $attribute_name = "picture_2";
         $disk = "uploads";
         $destination_path = "activity";
-
         $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path);
     }
 
