@@ -30,29 +30,16 @@
                             <div class="col-md-6">
                                 <h3>Date de début</h3>
                                 <input type="date" name="sday">
-                            </div>
                             
-                        </div>
-                         <div class="row">
-                            <div class="col-md-6">
                                 <h3>Date de fin</h3>
                                  <input type="date" name="eday">
-                            </div>
-                        </div>
-                         <div class="row">
-                            <div class="col-md-6">
+                            
                                 <h3>Age minimum</h3>
                                 <input type="number" step="1" value="0" min="0" name="agemin" >
-                            </div>
-                        </div>
-                         <div class="row">
-                            <div class="col-md-6">
+                           
                                 <h3>Age maximum</h3>
                                 <input type="number" step="1" value="0" min="0" name="agemax" >
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
+                            
                                 <h3>Professeurs</h3>
                                 <select name="teachers" >
                                     <option value=""> - </option>
@@ -68,10 +55,7 @@
                                 @endif
                                    
                                 </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
+                          
                                 <h3>Quartiers</h3>
 
                                 <select name="districts">
@@ -87,10 +71,7 @@
                                 @endif
                                    
                                 </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
+                            
                                 <h3>Instruments</h3>
 
                                 <select name="instruments">
@@ -107,10 +88,7 @@
                                 @endif
                                    
                                 </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
+                            
                                 <h3>Activités</h3>
                                 <select name="activities">
                                     <option value=""> - </option>
@@ -126,16 +104,44 @@
                                 @endif
                                    
                                 </select>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
+                            
                                 <input type="submit" value="Submit">
                             
                             </div>    
-                        </div>
+                        
                     </form>
+                    <div class="col-md-6">
+                               <table>
+
+                               @if(!empty($dataExtract))
+                                    @foreach($dataExtract as $data)
+
+                                    <tr>
+                                        <td><b>Professeur</b></td>
+                                        <td>{{ $data->peo_name }} {{ $data->peo_family_name }}</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td><b>Date de naissance</b></td>
+                                        <td>{{ date('d/m/Y',strtotime($data->peo_birthday)) }}</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td><b>Activité</b></td>
+                                        <td>{{ $data->act_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Année</b></td>
+                                        <td>{{ $data->act_year }}</td>
+                                    </tr>
+                                    @endforeach
+                                @else
+                                    
+                                @endif
+                                   
+                               </table>
+                            
+                    </div>    
                 </div>
             </div>
         </div>
