@@ -15,7 +15,9 @@ class team extends Model
         'firstname',
         'instrument',
         'type',
-        'status'
+        'status',
+        'picture',
+        'observation'
     ];
 
 }

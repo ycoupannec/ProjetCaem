@@ -40,6 +40,4 @@ class ExtractController extends AdminController {
         //
     }
 
-
-
 }

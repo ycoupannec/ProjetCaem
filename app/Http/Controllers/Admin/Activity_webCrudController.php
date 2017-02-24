@@ -129,9 +129,6 @@ class Activity_webCrudController extends CrudController
             ]);
 
 
-      
-
-
         $this->crud->addField([
             'name'  => 'hour_end', 
             'label' => 'Heure de fin', 
@@ -149,7 +146,6 @@ class Activity_webCrudController extends CrudController
             ]);
 
         
-
         $this->crud->addField([
             'name'  => 'price', 
             'label' => 'Tarifs', 
@@ -231,7 +227,7 @@ class Activity_webCrudController extends CrudController
                     'type'  => 'textarea'
                     ]);
 
-         $this->crud->setColumnDetails('age_min',
+        $this->crud->setColumnDetails('age_min',
                     [
                     'name'  => 'age_min', 
                     'label' => 'Age min', 
@@ -267,7 +263,7 @@ class Activity_webCrudController extends CrudController
                     'type'  => 'text'
                     ]);
 
-         $this->crud->setColumnDetails('hour_end',
+        $this->crud->setColumnDetails('hour_end',
                     [
                     'name'  => 'hour_end', 
                     'label' => 'Heure de fin', 
@@ -281,7 +277,7 @@ class Activity_webCrudController extends CrudController
                     'type'  => 'text'
                     ]);
 
-         $this->crud->setColumnDetails('price',
+        $this->crud->setColumnDetails('price',
                     [
                     'name'  => 'price', 
                     'label' => 'Tarifs', 
