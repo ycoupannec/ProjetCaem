@@ -36,7 +36,6 @@ public function events()
 
 public function team()
 {
-	$team = \App\Models\team::where
 	return view('pages.team');
 }
 

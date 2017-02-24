@@ -1,5 +1,7 @@
 <?php
 
+
+
 // Website Routes
 Route::get('/', 'PagesController@index');
 Route::get('parcours', 'PagesController@course');
