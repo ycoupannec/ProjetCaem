@@ -20,9 +20,5 @@ class team extends Model
         'description'
     ];
 
-	public function teamMember(){
-	return $this->all();
-    }
-
 	
 }

@@ -36,9 +36,7 @@ public function events()
 
 public function team()
 {
-	$typeActivities = \App\Models\Team::with('teamMember')->get();
-	 print_r($typeActivities);
-	 exit;
+	$team = \App\Models\team::where
 	return view('pages.team');
 }
 
