@@ -18,4 +18,8 @@ class team extends Model
         'status'
     ];
 
+	public function teamMember(){
+	return $this->hasMany('App\Models\Team','id');
+    }
+
 }

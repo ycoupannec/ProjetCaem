@@ -36,6 +36,9 @@ public function events()
 
 public function team()
 {
+	$typeActivities = \App\Models\Team::with('teamMember')->get();
+	 print_r($typeActivities);
+	 exit;
 	return view('pages.team');
 }
 
