@@ -17,7 +17,7 @@ class team extends Model
         'type',
         'status',
         'picture',
-        'observation'
+        'description'
     ];
 
 }
