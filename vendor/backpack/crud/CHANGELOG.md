@@ -20,6 +20,14 @@ All Notable changes to `Backpack CRUD` will be documented in this file
 - Nothing
 
 
+## [3.2.4] - 2017-02-24
+
+### Fixed
+- Spanish translation;
+- Greek translation;
+- select2_from_ajax, thanks to [MarcosBL](https://github.com/MarcosBL);
+- Translatable "Add" button in table field view;
+
 ## [3.2.3] - 2017-02-14
 
 ### Fixed
