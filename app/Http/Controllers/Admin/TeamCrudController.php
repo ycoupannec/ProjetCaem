@@ -62,12 +62,29 @@ class TeamCrudController extends CrudController
             'allows_null' => false,
             ]);
 
+        $this->crud->addField([
+            'name'=>'description',
+            'label'=>'Description',
+            'type'=>'text'
+            ]);
+
+         $this->crud->addField([
+            'name'  => 'picture', 
+            'label' => 'image', 
+           'type' => 'upload',
+            'upload' => true,
+            'disk' => 'uploads'
+            ]);
+
 
          $this->crud->addColumn('name');
          $this->crud->addColumn('firstname');
          $this->crud->addColumn('instrument');
          $this->crud->addColumn('type');
          $this->crud->addColumn('status');
+         $this->crud->addColumn('description');
+         $this->crud->addColumn('picture');
+
 
 
         $this->crud->setColumnDetails('name',
@@ -111,6 +128,20 @@ class TeamCrudController extends CrudController
             'allows_null' => false,
            ]
         );
+
+         $this->crud->setColumnDetails('description',
+            [
+            'name'  => 'description', 
+            'label' => 'Description', 
+           ]
+        );
+
+         $this->crud->setColumnDetails('picture',
+                    [
+                    'name'  => 'picture',  
+                    'label' => 'image',  
+                    'type'  => 'text'
+                    ]);
 
 
 
