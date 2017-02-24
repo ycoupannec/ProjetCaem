@@ -121,7 +121,7 @@ class ExtractController extends AdminController {
  // $entitiesArray = $this->entities->toArray();
         	// Excel::create('activities',function($excel){
         	// 	$excel->sheet('activities', function($sheet){
-        	// 		$sheet->loadView('export_activities');
+        	// 		$sheet->loadView('admin/export_activities');
         	// 	});
         	// })->export('xlsx');
 
