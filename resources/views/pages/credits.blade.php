@@ -1,19 +1,29 @@
-!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--CALLING THE DEFAULT LAYOUT-->
+@extends('layouts.default')
+<!------------------------------>
 
-        <title>Laravel</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-        <!-- Styles -->
+<!--HEAD TITLE :-->
+@section('pageTitle')
+CAEM - Crédits
+@endsection
+<!---------------->
 
-    </head>
-    <body>
-        <p>credit</p>
-    </body>
-</html>
+
+
+<!--MAIN CONTENT :-->
+@section('pageContent')
+<main>
+<pre>
+Contenu : Lucie Anaclet
+Développement et intégration : Yves Tannier / tanLab
+Maquette : Jules Jacques
+Le site Internet du CAEM est réalisé exclusivement avec des logiciels libres. Entre autres :
+
+Joomla
+Twitter Bootstrap
+FontAwesome
+</pre>
+</main>
+@endsection

@@ -8,7 +8,7 @@ Route::get('evenements', 'PagesController@events');
 Route::get('equipe', 'PagesController@team');
 Route::get('association', 'PagesController@association');
 Route::get('credits', 'PagesController@credits');
-Route::get('mention_legales', 'PagesController@legacy_mention');
+Route::get('mentions_legales', 'PagesController@legacy_mention');
 Route::get('contact', 'PagesController@contact');
 
 // Admin Interface Routes
