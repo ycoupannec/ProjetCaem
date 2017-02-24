@@ -18,13 +18,13 @@ class Article extends Model
     public $timestamps = true;
 
     protected $fillable = [
-        'slug', 
-        'title', 
-        'content', 
-        'image', 
-        'status', 
-        'category_id', 
-        'featured', 
+        'slug',
+        'title',
+        'content',
+        'image',
+        'status',
+        'category_id',
+        'featured',
         'date'
     ];
 
@@ -32,7 +32,7 @@ class Article extends Model
         'featured'  => 'boolean',
         'date'      => 'date',
     ];
-   
+
     public function sluggable()
     {
         return [
@@ -62,4 +62,34 @@ class Article extends Model
         return $this->title;
     }
 
+    /*
+    * return the recurent event
+    * We need to create a category "A venir" or change the value.
+    */
+    public function scopeComing($query){
+
+      $coming = static::whereHas('category', function($query){
+        $query->where('name','LIKE','A venir');
+      })
+      ->where('featured',1)
+      ->get();
+
+      return $coming;
+    }
+
+    /*
+    * return news who was not coming
+    * so news who is not in category 'A venir'
+    */
+    public function scopeNews($query){
+
+      $coming = static::whereHas('category', function($query){
+        $query->where('name','NOT LIKE','A venir');
+      })
+      ->where('featured',1)
+      ->take(8)
+      ->get();
+
+      return $coming;
+    }
 }

@@ -58,7 +58,7 @@
 		background: url("../img/header.png") top no-repeat, url("../img/trame_footer.png") repeat, $headerFooterMainColor;
 		background-size: cover;
 	}
-	
+
 	.navbar-caem{
 		border-bottom: 1.5vh solid $mainChartColor;
 	}
@@ -107,7 +107,7 @@
 	}
 }
 
-#news{
+.news{
 	padding: 1em;
 	padding-bottom: 3em;
 	header {

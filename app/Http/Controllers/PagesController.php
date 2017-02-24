@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 
 class PagesController extends Controller
 {
-    
+
 
 
 
 public function index()
 {
-	return view('pages.index');
+  $typeActualities['Actualités'] = \App\Models\Article::news(); // get news
+  $typeActualities['A venir'] = \App\Models\Article::coming(); // get news
+
+	return view('pages.index',compact(['typeActualities']));
 }
 
 public function course()
