@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 use Carbon\Carbon;
 
-class team extends Model
+class Team extends Model
 {
     use CrudTrait;
 

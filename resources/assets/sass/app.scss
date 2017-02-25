@@ -323,8 +323,61 @@
 
 
 /* ---------------- PAGE EQUIPE ---------------- */
-.mainEquipe{
-	.contribLine, .adminLine{
+.mainEquipe
+{
+
+	section
+	{
+
+		h2
+		{
+			@extend .mainTitleFont;
+			background-color: $mainChartColor;
+			padding: 1vh 2vh 1vh 2vh;
+		}
+
+		div
+		{
+			padding: 1.5vh 1.5vh;
+
+			div
+			{
+				background-color: $caemWhite;
+				box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
+				display: flex;
+				flex-flow: column;
+				align-items: center;
+
+				img
+				{
+					max-width: 100%;
+					max-height: 25vh;
+				}
+
+				h3
+				{
+					@extend .mainSubtitleFont;
+				}
+
+				p
+				{
+					@extend .mainFont;
+				}
+
+
+			}
+		}
+
+
+	}
+
+
+
+
+
+
+
+/*	.contribLine, .adminLine{
 		margin-bottom: 2vh;
 	}
 
@@ -350,7 +403,7 @@
 	#sectionAdministration h2{
 		margin-top: 5vh;
 		margin-bottom: 4vh;
-	}
+	}*/
 }
 /* ---------------- PAGE EQUIPE END ---------------- */
 

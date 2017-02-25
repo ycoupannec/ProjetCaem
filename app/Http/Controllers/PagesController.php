@@ -36,7 +36,12 @@ public function events()
 
 public function team()
 {
-	return view('pages.team');
+	$professeurs= \App\Models\Team::where('type', 'Professeur' )->get();
+	$bureaux= \App\Models\Team::where('type', 'Bureau' )->get();
+	$administrations= \App\Models\Team::where('type', 'Administration' )->get();
+	$autres= \App\Models\Team::where('type', 'Autre' )->get();
+
+	return view('pages.team', ['professeurs' => $professeurs, 'bureaux' => $bureaux, 'administrations' => $administrations, 'autres' => $autres]);
 }
 
 public function association()
