@@ -33,11 +33,11 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Accueil</a></li>
-            <li><a href="#">Mon parcours musical</a></li>
-            <li><a href="#">Tarifs &amp; Inscriptions</a></li>
-            <li><a href="#">Évenements</a></li>
-            <li><a href="#">L'équipes</a></li>
+            <li class="active"><a href="/">Accueil</a></li>
+            <li><a href="/parcours">Mon parcours musical</a></li>
+            <li><a href="/tarifs">Tarifs &amp; Inscriptions</a></li>
+            <li><a href="/evenements">Évenements</a></li>
+            <li><a href="/equipe">L'équipes</a></li>
           </ul>
       </div>
     </div>

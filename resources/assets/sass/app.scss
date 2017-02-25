@@ -25,6 +25,7 @@
 .borderLeftOrange{@include borderLeft($caemOrange);}
 .borderLeftGreen{@include borderLeft($caemGreen);}
 .button{@include button($btnFontType, $btnFontWeight, $btnFontSize, $btnFontColor, $btnBackgroundColor);}
+.button:hover{background-color: $caemGreen;}
 .shadow{@include shadow($mainNewsShadow);}
 .paddingNews{@include padding($mainNewsPadding);}
 
