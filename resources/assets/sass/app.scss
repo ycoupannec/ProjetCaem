@@ -372,42 +372,7 @@
 		{
 			@extend .mainSubtitleFont;
 		}
-
 	}
-
-
-
-
-
-
-
-/*	.contribLine, .adminLine{
-		margin-bottom: 2vh;
-	}
-
-	.contribLine div, .adminLine div{
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-	.contribLine div h3, .adminLine div h3{
-		margin-top: 1vh;
-		color: $caemOrange;
-	}
-
-	.contribLine div p, .adminLine div p{
-		font-size: 3vh;
-	}
-
-	.adminOthers{
-		font-size: 3vh;
-	}
-
-	#sectionAdministration h2{
-		margin-top: 5vh;
-		margin-bottom: 4vh;
-	}*/
 }
 /* ---------------- PAGE EQUIPE END ---------------- */
 
@@ -416,29 +381,14 @@
 
 /* ---------------- PAGE TARIFS ---------------- */
 
-	.mainTarifs ul{
-		font-size: 2.5vh;
-	}
+.mainTarifs
+{
 
-	.mainTarifs h2{
-		color: $caemOrange;
-	}
 
-	.titleTop{
-		display: flex;
-		justify-content: center;
-	}
 
-	.tarifsIntro{
-		font-size: 2.5vh;
-	}
 
-	.disclaimer{
-		margin-top: 2vh;
-		color: $caemBlue;
-		font-weight: bold;
-	}
 
+}
 
 /* ---------------- PAGE TARIFS END ---------------- */
 
