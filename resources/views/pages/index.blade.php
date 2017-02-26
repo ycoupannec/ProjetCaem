@@ -17,7 +17,7 @@ CAEM - Ecole de musique
 	<p class="borderLeftPink">Du jeu dynamique, en groupe</p>
 	<p class="borderLeftOrange">L’expérience de la scène</p>
 	<div class="text-center">
-		<a href="#" class="">Mon parcours musical</a>
+		<a href="parcours" class="">Mon parcours musical</a>
 	</div>
 </header>
 <!-- END PRENSENTATION CAEM -->
@@ -35,7 +35,7 @@ CAEM - Ecole de musique
 					<figure>
 						<figcaption >
 							<h2>{{ $actuality->title }}</h2>
-							<time datetime="{{ $actuality->date }}">{{ $actuality->date }}</time>
+							<time datetime="{{ $actuality->date }}">{{ $typeActuality->formatDate }}</time>
 						</figcaption>
 						<img class="img-responsive center-block" src="{{ $actuality->image }}" alt="">
 					</figure>

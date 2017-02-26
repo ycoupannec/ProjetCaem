@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
+use Carbon\Carbon;
 
 class Article extends Model
 {
@@ -66,14 +67,14 @@ class Article extends Model
     * return the recurent event
     * We need to create a category "A venir" or change the value.
     */
-    public function scopeComing($query){
+    public static function coming(){
 
       $coming = static::whereHas('category', function($query){
         $query->where('name','LIKE','A venir');
       })
       ->where('featured',1)
+      ->take(4)
       ->get();
-
       return $coming;
     }
 
@@ -81,15 +82,47 @@ class Article extends Model
     * return news who was not coming
     * so news who is not in category 'A venir'
     */
-    public function scopeNews($query){
+    public static function news(){
 
-      $coming = static::whereHas('category', function($query){
+      $news = static::whereHas('category', function($query){
         $query->where('name','NOT LIKE','A venir');
       })
       ->where('featured',1)
-      ->take(8)
       ->get();
-
-      return $coming;
+      return $news;
     }
-}
+
+    /**
+    *taker date format and
+    *return date french format
+    **/
+    public static function carbon($date){
+
+      setlocale(LC_TIME, 'fr_FR.utf8');
+      return Carbon::parse($date, 'Europe/Paris')->formatLocalized('%A %d %B %Y');
+
+    }
+
+    public function scopeFutureActualities($query){
+
+      $date = Carbon::parse('today')->addWeeks(2);
+      return $query->where('date','>=',$date);
+    }
+
+    public function scopeActualities($query){
+
+      $maxDate = Carbon::parse('today')->addWeeks(2);
+      $date = Carbon::parse('today');
+      return $query->where('date','<=',$maxDate)
+            ->where('date','>=',$date);
+    }
+
+    public function scopeOldActualities($query){
+
+      $minDate = Carbon::parse('today')->subWeeks(7);
+      $date = Carbon::parse('today');
+      return $query->where('date','>=',$minDate)
+      ->where('date','<=',$date);
+      return $query;
+    }
+  }

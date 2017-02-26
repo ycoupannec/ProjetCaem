@@ -25,7 +25,8 @@
 .borderLeftOrange{@include borderLeft($caemOrange);}
 .borderLeftGreen{@include borderLeft($caemGreen);}
 .button{@include button($btnFontType, $btnFontWeight, $btnFontSize, $btnFontColor, $btnBackgroundColor);}
-.button:hover{background-color: $caemGreen;}
+.button:hover{background-color: $btnBackgroundColor; opacity: 0.9;}
+// .button:active{@include shadow(inset 0 0 8px rgba(0,0,0,.6));} // CHOOSE
 .shadow{@include shadow($mainNewsShadow);}
 .paddingNews{@include padding($mainNewsPadding);}
 
@@ -386,8 +387,22 @@
 
 /* ---------------- PAGE TARIFS END ---------------- */
 
+/* ---------------- PAGE EVENEMENT START ---------------- */
+#event{
+	h1{
+		@extend .mainTitleFont;
+		text-align: center;
+		color: white;
+		background-color: $mainNewsHeaderColor;
+		padding: 0.5em 1em;
+	}
+	time{
+		@extend .mainSubtitleFont;
+		text-align: center;
+	}
 
-
+}
+/* ---------------- PAGE EVENEMENT END ---------------- */
 
 /* ---------------- FOOTER ---------------- */
 #bgImage{
