@@ -23,16 +23,20 @@ public function index()
 public function course()
 {
 
-	$typeActivities = \App\Models\Types_activity::with('activities')->get();
-	// print_r($activities);
-	// exit;
+	$typeActivities = \App\Models\Types_activity::with('activities_web')->get();
+/*	 print_r($typeActivities);
+	 exit;*/
 	return view('pages.course', ['typeActivities' => $typeActivities]);
 
 }
 
 public function prices()
 {
-	return view('pages.prices');
+
+	$priceActivities = \App\Models\Types_activity::with('activities_web')->get();
+/*	 print_r($priceActivities);
+	 exit;*/
+	return view('pages.prices', ['priceActivities' => $priceActivities]);
 }
 
 public function events()
@@ -67,7 +71,12 @@ public function event($id){
 
 public function team()
 {
-	return view('pages.team');
+	$professeurs= \App\Models\Team::where('type', 'Professeur' )->get();
+	$bureaux= \App\Models\Team::where('type', 'Bureau' )->get();
+	$administrations= \App\Models\Team::where('type', 'Administration' )->get();
+	$autres= \App\Models\Team::where('type', 'Autre' )->get();
+
+	return view('pages.team', ['professeurs' => $professeurs, 'bureaux' => $bureaux, 'administrations' => $administrations, 'autres' => $autres]);
 }
 
 public function association()

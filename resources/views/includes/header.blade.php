@@ -6,7 +6,7 @@
         <a href="https://www.twitter.com/caembesancon"><img src="{{ asset('images/twitter_logo.svg')}}" /></a>
         <a href="https://www.youtube.com/channel/UC0ixrwCaOvNLfnfDv8ShaOA"><img src="{{ asset('images/youtube_logo.svg')}}" /></a>
         <span class="hidden-xs">
-          ou <a href="#">contactez-nous</a> directement.
+          ou <a href="/contact">contactez-nous</a> directement.
         </span>
       </div>
       <div  class="col-md-1">

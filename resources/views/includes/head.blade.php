@@ -21,6 +21,10 @@
 	<meta property="twitter:image" content="http://www.caem-besancon.fr/images/IMG5793.jpg" />
 	<meta property="twitter:url" content="Request::url()" />
 
+    <!--LEAFLET-->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
     <!--STYLESHEET-->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 

@@ -1,5 +1,7 @@
 <?php
 
+
+
 // Website Routes
 Route::get('/', 'PagesController@index');
 Route::get('parcours', 'PagesController@course');
@@ -9,7 +11,7 @@ Route::get('evenement/{event}', 'PagesController@event')->name('event');
 Route::get('equipe', 'PagesController@team');
 Route::get('association', 'PagesController@association');
 Route::get('credits', 'PagesController@credits');
-Route::get('mention_legales', 'PagesController@legacy_mention');
+Route::get('mentions_legales', 'PagesController@legacy_mention');
 Route::get('contact', 'PagesController@contact');
 
 // Admin Interface Routes
