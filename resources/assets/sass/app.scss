@@ -383,11 +383,39 @@
 
 .mainTarifs
 {
+	h2
+	{
+		@extend .mainTitleFont;
+		background-color: $mainChartColor;
+		padding: 2vh 2vh 1vh 2vh;
+		margin-top: 5vh;
+	}
 
+	h3
+	{
+		@extend .mainSubtitleFont;
+		margin: 0;
+		padding:0;
+		margin-bottom: 2vh;
+	}
 
+	article
+	{
+		padding: 1.5vh 1.5vh;
 
+		div
+		{
+			padding: 1.5vh 1.5vh;
+			min-height: 20vh;
+			background-color: $caemWhite;
+			@extend .shadow;
+		}
+	}
 
-
+	p
+	{
+		@extend .mainFont;
+	}
 }
 
 /* ---------------- PAGE TARIFS END ---------------- */
