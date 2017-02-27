@@ -1,6 +1,7 @@
 <?php
 
 namespace Backpack\Base\app\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -20,12 +21,18 @@ class AdminController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function dashboard()
-    {
+        
+    {    $usersActif = DB::table('people')
+                            ->where('status', 1)
+                            ->count();
         $this->data['title'] = trans('backpack::base.dashboard'); // set the page title
+                $coucou = 8 ;
+        $this->data['userActif'] =$usersActif;
 
         return view('backpack::dashboard', $this->data);
     }
-
+    
+  
     /**
      * Redirect to the dashboard.
      *
