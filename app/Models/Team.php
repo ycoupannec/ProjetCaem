@@ -19,26 +19,13 @@ class Team extends Model
         'picture',
         'description'
     ];
-<<<<<<< HEAD
-
 	
-}
 
-function setPictureAttribute($value)
-=======
-
-    public function setPictureAttribute($value)
->>>>>>> 1a66353357feb3f9bbeae9ce0e68251cd5d6534b
+public function setPictureAttribute($value)
     {
         $attribute_name = "picture";
         $disk = "uploads";
         $destination_path = "photo_team";
         $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path);
-<<<<<<< HEAD
     }
-=======
-    }
-
 }
-
->>>>>>> 1a66353357feb3f9bbeae9ce0e68251cd5d6534b

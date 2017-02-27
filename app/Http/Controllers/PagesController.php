@@ -26,7 +26,11 @@ public function course()
 
 public function prices()
 {
-	return view('pages.prices');
+
+	$priceActivities = \App\Models\Types_activity::with('activities_web')->get();
+/*	 print_r($priceActivities);
+	 exit;*/
+	return view('pages.prices', ['priceActivities' => $priceActivities]);
 }
 
 public function events()

@@ -14,16 +14,15 @@ CAEM - Crédits
 
 <!--MAIN CONTENT :-->
 @section('pageContent')
-<main>
-<pre>
-Contenu : Lucie Anaclet
-Développement et intégration : Yves Tannier / tanLab
-Maquette : Jules Jacques
-Le site Internet du CAEM est réalisé exclusivement avec des logiciels libres. Entre autres :
+<main class="container mainCredits">
+	<h2>Contenu :</h2><p>Lucie Anaclet</p>
+	<h2>Développement et intégration :</h2><p>Yves Tannier / TanLab</p>
 
-Joomla
-Twitter Bootstrap
-FontAwesome
-</pre>
+	<h2>Le site Internet du CAEM est réalisé exclusivement avec des logiciels libres. Entre autres :</h2>
+	<ul>
+		<li>Laravel</li>
+		<li>Backpack</li>
+		<li>Twitter Bootstrap</li>
+	</ul>
 </main>
 @endsection

@@ -22,7 +22,11 @@ CAEM - Mon parcours musical
 		@foreach($professeurs as $professeur)
 		<div class="col-md-3">
 			<div>
-				<img src="http://placehold.it/150x150">
+				@if($professeur->picture != null)
+				<img src="uploads/{{ $professeur->picture }}">
+				@else
+				<img src="uploads/photo_team/placeholder.png">
+				@endif
 				<h3>{{ $professeur->firstname }} {{ $professeur->name }}</h3>
 				<p>{{ $professeur->instrument }}</p>
 			</div>
@@ -36,7 +40,11 @@ CAEM - Mon parcours musical
 		@foreach($bureaux as $bureau)
 		<div class="col-md-3">
 			<div>
-				<img src="http://placehold.it/150x150">
+				@if($bureau->picture != null)
+				<img src="uploads/{{ $bureau->picture }}">
+				@else
+				<img src="uploads/photo_team/placeholder.png">
+				@endif
 				<h3>{{ $bureau->firstname }} {{ $bureau->name }}</h3>
 				<p>{{ $bureau->instrument }}</p>
 			</div>
@@ -50,7 +58,11 @@ CAEM - Mon parcours musical
 		@foreach($administrations as $administration)
 		<div class="col-md-3">
 			<div>
-				<img src="http://placehold.it/150x150">
+				@if($administration->picture != null)
+				<img src="uploads/{{ $administration->picture }}">
+				@else
+				<img src="uploads/photo_team/placeholder.png">
+				@endif
 				<h3>{{ $administration->firstname }} {{ $administration->name }}</h3>
 				<p>{{ $administration->instrument }}</p>
 			</div>

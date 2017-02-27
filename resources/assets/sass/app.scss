@@ -1,13 +1,22 @@
  //TO EASILY CHANGE THE STYLE OF THE WEBSITE, GO TO _configstyle.scss FILE
 
 
+
+
+/*========*/
+/*IMPORTS:*/
+/*========*/
 @import "stylesheets/bootstrap";
 @import 'mixinstyle';
+/*==============================*/
 
 
+
+
+/*========*/
 /*EXTENDS:*/
+/*========*/
 .headerFont{@include font($headerNavFontType, $headerNavFontWeight, $headerNavFontSize, $headerNavFontColor);}
-
 
 .mainTitleFont{@include font($mainTitleType, $mainTitleWeight, $mainTitleSize, $mainTitleColor);}
 
@@ -19,16 +28,20 @@
 
 .footerFont{@include font($footerFontType, $footerFontWeight, $footerFontSize, $footerFontColor);}
 
-
 .borderLeftBlue{@include borderLeft($caemBlue);}
-.borderLeftPink{@include borderLeft($caemPink);}
-.borderLeftOrange{@include borderLeft($caemOrange);}
-.borderLeftGreen{@include borderLeft($caemGreen);}
-.button{@include button($btnFontType, $btnFontWeight, $btnFontSize, $btnFontColor, $btnBackgroundColor);}
-.shadow{@include shadow($mainNewsShadow);}
-.paddingNews{@include padding($mainNewsPadding);}
 
-/*========*/
+.borderLeftPink{@include borderLeft($caemPink);}
+
+.borderLeftOrange{@include borderLeft($caemOrange);}
+
+.borderLeftGreen{@include borderLeft($caemGreen);}
+
+.button{@include button($btnFontType, $btnFontWeight, $btnFontSize, $btnFontColor, $btnBackgroundColor);}
+
+.shadow{@include shadow($mainNewsShadow);}
+
+.paddingNews{@include padding($mainNewsPadding);}
+/*==============================================================================================*/
 
 
 
@@ -79,14 +92,13 @@
 	  }
 	}
 }
-/* ---------------- HEADER END ---------------- */
+/* -------------- HEADER END -------------- */
 
 
 
 
 
 /* ---------------- ACCUEIL PAGE ---------------- */
-
 #presentation{
 	margin: 1em 1em;
 	h2{ @extend .mainTitleFont;}
@@ -161,9 +173,7 @@
 			padding-left: 1em;
 		}
 	}
-
-
-/* ---------------- ACCUEIL PAGE END ---------------- */
+/* -------------- ACCUEIL PAGE END -------------- */
 
 
 
@@ -318,7 +328,7 @@
 {
 	display: none;
 }
-/* ---------------- PAGE PARCOURS MUSICAL END ---------------- */
+/* -------------- PAGE PARCOURS MUSICAL END -------------- */
 
 
 
@@ -326,7 +336,6 @@
 /* ---------------- PAGE EQUIPE ---------------- */
 .mainEquipe
 {
-
 	section
 	{
 
@@ -375,51 +384,138 @@
 		}
 	}
 }
-/* ---------------- PAGE EQUIPE END ---------------- */
+/* --------------- PAGE EQUIPE END ------------- */
 
 
 
 
 /* ---------------- PAGE TARIFS ---------------- */
-
 .mainTarifs
 {
-	h2
-	{
-		@extend .mainTitleFont;
-		background-color: $mainChartColor;
-		padding: 2vh 2vh 1vh 2vh;
-		margin-top: 5vh;
-	}
+	padding-bottom: 3vh;
 
-	h3
+	.tarifsInformations
 	{
-		@extend .mainSubtitleFont;
-		margin: 0;
-		padding:0;
-		margin-bottom: 2vh;
-	}
+		margin-bottom: 3vh;
 
-	article
-	{
-		padding: 1.5vh 1.5vh;
-
-		div
+		h2
 		{
-			padding: 1.5vh 1.5vh;
-			min-height: 20vh;
-			background-color: $caemWhite;
-			@extend .shadow;
+			@extend .mainTitleFont;
+		}
+
+		p
+		{
+			@extend .mainFont;
 		}
 	}
 
-	p
+	.tarifsActivitees
 	{
-		@extend .mainFont;
+		h2
+		{
+			@extend .mainTitleFont;
+			background-color: $mainChartColor;
+			padding: 1vh 2vh 1vh 2vh;
+			margin:0;
+		}
+
+		div
+		{
+			padding: 2vh 2vh 3vh 2vh;
+
+			h3
+			{
+				@extend .mainSubtitleFont;
+				margin: 0;
+				padding:0;
+				margin-bottom: 2vh;
+			}
+
+			p
+			{
+				@extend .mainFont;
+			}
+		}
+	}
+
+	.tarifsFormules
+	{
+
+		h2
+		{
+			@extend .mainTitleFont;
+			background-color: $mainChartColor;
+			padding: 1vh 2vh 1vh 2vh;
+			margin:0;
+		}
+
+		div
+		{
+			border: 1rem dashed $mainColorAction;
+			margin-left: 2vh;
+		}
+
+		.enchanced
+		{
+			@extend .mainTitleFont;
+			font-size: 2.5em;
+			color: darken($mainColorAction, 10%);
+			text-align: center;
+
+		}
+
+		p
+		{
+			@extend .mainSubtitleFont;
+			font-size: 1.5em;
+			color: lighten($mainColorAction, 10%);
+			text-align: center;
+			margin: 0;
+		}
 	}
 }
+/* --------------- PAGE TARIFS END ------------- */
 
-/* ---------------- PAGE TARIFS END ---------------- */
+
+
+
+/* ---------------- PAGE CONTACT ---------------- */
+.mainContact
+{
+	min-height: 60vh;
+
+	#mapid
+	{
+		height: 60vh;
+		margin-top: 5vh;
+		margin-bottom: 5vh;
+	}
+
+	section
+	{
+		margin: 5vh 0vh;
+
+		h2
+		{
+			@extend .mainTitleFont;
+			background-color: $mainChartColor;
+			padding: 1vh 2vh 1vh 2vh;
+			margin:0;
+		}
+
+		h3
+		{
+			@extend .mainSubtitleFont;
+		}
+
+		p
+		{
+			@extend .mainFont;
+		}
+	}
+
+}
+/* ---------------- PAGE CONTACT END ------------ */
 
 
 
@@ -428,8 +524,75 @@
 .mainAssociation
 {
 
+
+	h2
+	{
+		@extend .mainTitleFont;
+	}
+
+	p
+	{
+		@extend .mainFont;
+	}
+
+	li
+	{
+		@extend .mainSubtitleFont;
+	}
 }
 /* ---------------- PAGE ASSOCIATION END ------------ */
+
+
+
+
+/* ---------------- PAGE CREDITS ---------------- */
+.mainCredits
+{
+
+
+	h2
+	{
+		@extend .mainTitleFont;
+	}
+
+	p
+	{
+		@extend .mainFont;
+	}
+
+	li
+	{
+		@extend .lightFont;
+	}
+
+}
+/* ---------------- PAGE CREDITS END ------------ */
+
+
+
+
+/* ---------------- PAGE MENTIONS LEGALES ---------------- */
+.mainMentions
+{
+
+
+	h2, h1
+	{
+		@extend .mainTitleFont;
+	}
+
+	p
+	{
+		@extend .mainFont;
+	}
+
+	li
+	{
+		@extend .mainFont;
+	}
+
+}
+/* ---------------- PAGE MENTIONS LEGALES END ------------ */
 
 
 
@@ -504,6 +667,9 @@ footer
 	}
 }
 /* ---------------- FOOTER END ---------------- */
+
+
+
 
 /* ------------ FOOTER MEDIA QUERIES ------------ */
 

@@ -9,7 +9,7 @@
 
 				<div class="caemInfos col-md-12">
 					<img class="col-md-2" src="{{ asset('images/position_icon-05.svg')}}" />
-					<p class="col-md-10" id="address">13 A avenue Ile-de-France 25 000 Besançon</p>
+					<p class="col-md-10" id="address"><a href="/contact">13 A avenue Ile-de-France 25 000 Besançon</a></p>
 				</div>
 
 				<div class="caemInfos col-md-12">
