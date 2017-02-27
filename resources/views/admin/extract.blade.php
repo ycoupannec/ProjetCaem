@@ -27,12 +27,27 @@
                 <div class="box-body">
                     <form class="form-group" action="/admin/extract" method="get">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
+                                <h3>Type de données à exporter </h3>
+                                <input type="radio" name="type" value="0" checked>Activités</br>
+                                <input type="radio" name="type" value="1">Membres</br>
                                 <h3>Date de début</h3>
                                 <input type="date" name="sday">
                             
                                 <h3>Date de fin</h3>
                                  <input type="date" name="eday">
+
+                                 <h3>Jour</h3>
+                                 <select name="days">
+                                     <option value=""> - </option>
+                                     <option value="Lundi">Lundi</option>
+                                     <option value="Mardi">Mardi</option>
+                                     <option value="Mercredi">Mercredi</option>
+                                     <option value="Jeudi">Jeudi</option>
+                                     <option value="Vendredi">Vendredi</option>
+                                     <option value="Samedi">Samedi</option>
+                                     <option value="Dimanche"></option>
+                                 </select>
                             
                                 <h3>Age minimum</h3>
                                 <input type="number" step="1" value="0" min="0" name="agemin" >
@@ -110,36 +125,63 @@
                             </div>    
                         
                     </form>
-                    <div class="col-md-6">
-                               <table>
+                    <div class="col-md-8">
+                        <table class="table table-hover">
 
-                               @if(!empty($dataExtract))
-                                    @foreach($dataExtract as $data)
+                            <tr>
+                                <td><b>Nombre d'adhérent :</b></td>
+                            </tr>
 
-                                    <tr>
-                                        <td><b>Professeur</b></td>
-                                        <td>{{ $data->peo_name }} {{ $data->peo_family_name }}</td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td><b>Date de naissance</b></td>
-                                        <td>{{ date('d/m/Y',strtotime($data->peo_birthday)) }}</td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td><b>Activité</b></td>
-                                        <td>{{ $data->act_name }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b>Année</b></td>
-                                        <td>{{ $data->act_year }}</td>
-                                    </tr>
-                                    @endforeach
-                                @else
+                            <tr>
+                                
+                            </tr>
+
+                            <tr>
+                                <td><b>Activité</b></td>
+                                <td><b>Types</b></td>
+                                <td><b>Jour</b></td>
+                                <td><b>Heure de début</b></td>
+                                <td><b>Heure de fin</b></td>
+                                <td><b>Année</b></td>
+                                <td><b>Professeur</b></td>
+                                <td><b>Membre</b></td>
+                                <td><b>Total membre</b></td>
+                                <td><b>Instrument</b></td>
+                            </tr>
+                            
+
+                           @if(!empty($dataExtract))
+                                @foreach($dataExtract as $data)
+
+                                <tr>
+                                    <td>{{ $data->act_name }} /</td>
+
+                                    <td>{{ $data->typ_name }}</td>
+
+                                    <td>{{ $data->act_day }}</td>
+
+                                    <td>{{ $data->act_hour_start }}</td>
+
+                                    <td>{{ $data->act_hour_end }}</td>
+
+                                    <td>{{ $data->act_year }}</td>    
+                                  
+                                    <td>{{ $data->peo_name }} {{ $data->peo_family_name }}</td>
+
+                                    <td>{{ $data->mem_name }} {{ $data->mem_family_name }}</td>
+
+                                    <td>{{ $data->nbMembre }}</td>
                                     
-                                @endif
-                                   
-                               </table>
+                                    <td>{{ $data->ins_name }}</td>
+                                
+                                    
+                                </tr>
+                                @endforeach
+                            @else
+                                
+                            @endif
+                               
+                        </table>
                             
                     </div>    
                 </div>
