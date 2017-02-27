@@ -440,19 +440,21 @@
 
 	.tarifsFormules
 	{
+		margin-left: 2vh;
 
 		h2
 		{
 			@extend .mainTitleFont;
-			background-color: $mainChartColor;
+			background-color: $mainColorAction;
 			padding: 1vh 2vh 1vh 2vh;
 			margin:0;
 		}
 
 		div
 		{
-			border: 1rem dashed $mainColorAction;
-			margin-left: 2vh;
+			border: 0.5rem dashed $mainColorAction;
+			margin: 2vh 0vh 4vh 0vh;
+			padding: 2vh 0vh;
 		}
 
 		.enchanced

@@ -51,9 +51,16 @@ CAEM - Tarifs &amp; Inscriptions
 			<p>Cours d'instrument en groupe</p>
 			<p class="enchanced">+</p>
 			<p>Ateliers thématiques</p>
-			<p class="enchanced">OU</p>
-			<p>Pratiques collectives</p>
 			<p class="enchanced">=</p>
+			<p>-50% sur l'atelier</p>
+		</div>
+
+		<div>
+			<p>Cours d'instrument en groupe</p>
+			<p class="enchanced">+</p>
+			<p>Pratique collective &amp; Expression corporelle</p>
+			<p class="enchanced">=</p>
+			<p>-50% sur l'activité</p>
 		</div>
 
 
