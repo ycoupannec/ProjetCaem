@@ -14,8 +14,14 @@ CAEM - L'association
 
 <!--MAIN CONTENT :-->
 @section('pageContent')
-<main>
-<pre>Une école de musique à votre écoute.
+<main class="container mainAssociation">
+
+
+</main>
+@endsection
+
+
+<!--<pre>Une école de musique à votre écoute.
 
 Le Carrefour d'Animation et d'Expression Musicales est une association née en 1992 proposant des activités musicales pour tous.
 
@@ -33,6 +39,4 @@ Privilégier le jeu et la dynamique de groupe
 Vous faire vivre l’expérience de la scène
 
 Tout au long de l’année, le CAEM participe à l’animation musicale du territoire du Grand Besançon en programmant de nombreuses manifestations.
-</pre>
-</main>
-@endsection
+</pre>-->

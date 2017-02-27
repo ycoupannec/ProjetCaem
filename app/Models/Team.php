@@ -23,7 +23,7 @@ class Team extends Model
 	
 }
 
-public function setPictureAttribute($value)
+function setPictureAttribute($value)
     {
         $attribute_name = "picture";
         $disk = "uploads";
