@@ -60,17 +60,19 @@ CAEM - Mon parcours musical
 
 			<footer class="col-md-12">
 
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<h4>Quand ?</h4>
-					<p>{{ $activity->when }} {{ $activity->hour_start }} {{ $activity->hour_end }}</p>
+					<p>{{ $activity->when }}</p>
 				</div>
 
+<!--
 				<div class="col-md-4">
 					<h4>Avec qui ?</h4>
 					<p>{{ $activity->person }}</p>
 				</div>
+-->
 
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<h4>Tarifs :</h4>
 					<p>{{ $activity->price }}</p>
 				</div>
