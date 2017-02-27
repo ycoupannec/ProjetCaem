@@ -16,11 +16,8 @@ class Activity_web extends Model
         'picture_2',
         'age_min',
         'age_max',
-        'day',
         'description',
         'status',
-        'hour_start',
-        'hour_end',
         'when',
         'price',
         'status'

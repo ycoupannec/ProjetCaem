@@ -199,6 +199,7 @@ return [
          */
         Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class,
         #llum_providers
+        Maatwebsite\Excel\ExcelServiceProvider::class,
 
 
     ],
@@ -259,6 +260,8 @@ return [
          */
         'AdminLTE' => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class,
         #llum_aliases
+
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
     ],
 

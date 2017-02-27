@@ -33,50 +33,21 @@ class Activity_webCrudController extends CrudController
         $this->crud->addField(
 
 
-           [  // Select
+           [  
             'label' => "Types",
             'type' => 'select',
-            'name' => 'type_activity_id', // the db column for the foreign key
-            'entity' => 'type_activity', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
-            'model' => "App\Models\Types_activity" // foreign key model
+            'name' => 'type_activity_id', 
+            'entity' => 'type_activity', 
+            'attribute' => 'name', 
+            'model' => "App\Models\Types_activity" 
             ]);
 
 
-        // $this->crud->addFields($array_of_arrays, 'update/create/both');
-        // $this->crud->removeField('name', 'update/create/both');
-        // $this->crud->removeFields($array_of_names, 'update/create/both');
+     
 
-        // ------ CRUD COLUMNS
+       
 
-        $this->crud->setColumnDetails('name',
-            [
-            'name'  => 'name', // DB column name (will also be the name of the input)
-            'label' => 'Nom', // the human-readable label for the input
-           ]
-        );
-
-        
-
-
-        $this->crud->addField([
-            'name'  => 'day', 
-            'label' => 'Jour', 
-            'type'  => 'select_from_array',
-            'options' => [
-                        'Lundi' => 'Lundi',
-                        'Mardi' => 'Mardi',
-                        'Mercredi' => 'Mercredi',
-                        'Jeudi' => 'Jeudi',
-                        'Vendredi' => 'Vendredi',
-                        'Samedi' => 'Samedi',
-                        'Dimanche' => 'Dimanche'
-                        ],
-            'allows_null' => false,
-            ]);
-
-
-        
+             
 
 
     
@@ -125,24 +96,6 @@ class Activity_webCrudController extends CrudController
 
         
 
-        $this->crud->addField([
-            'name'  => 'hour_start', 
-            'label' => 'Heure de début', 
-           'type' => 'time',
-
-            ]);
-
-
-      
-
-
-        $this->crud->addField([
-            'name'  => 'hour_end', 
-            'label' => 'Heure de fin', 
-           'type' => 'time',
-
-            ]);
-
        
 
         $this->crud->addField([
@@ -153,7 +106,6 @@ class Activity_webCrudController extends CrudController
             ]);
 
         
-
         $this->crud->addField([
             'name'  => 'price', 
             'label' => 'Tarifs', 
@@ -172,6 +124,13 @@ class Activity_webCrudController extends CrudController
             'allows_null' => false,
             ]);
 
+        $this->crud->setColumnDetails('name',
+            [
+            'name'  => 'name', 
+            'label' => 'Nom', 
+           ]
+        );
+
 
         $this->crud->setColumnDetails('status',
             [
@@ -180,7 +139,7 @@ class Activity_webCrudController extends CrudController
             'type'  => 'boolean',
             'options' => [
                         '0' => 'Hors Ligne',
-                        '1' => 'En Ligne'
+                        '1' => 'En Ligne '
                         ],
      
            ]
@@ -206,26 +165,6 @@ class Activity_webCrudController extends CrudController
         );
 
 
-
-        $this->crud->setColumnDetails('day',
-                    [
-                     'name'  => 'day', 
-                    'label' => 'Jour', 
-                    'type'  => 'select_from_array',
-                    'options' => [
-                                'Lundi' => 'Lundi',
-                                'Mardi' => 'Mardi',
-                                'Mercredi' => 'Mercredi',
-                                'Jeudi' => 'Jeudi',
-                                'Vendredi' => 'Vendredi',
-                                'Samedi' => 'Samedi',
-                                'Dimanche' => 'Dimanche'
-                                ],
-                    'allows_null' => false,
-                  
-                   ]
-                );
-
      
 
         $this->crud->setColumnDetails('description',
@@ -235,7 +174,7 @@ class Activity_webCrudController extends CrudController
                     'type'  => 'textarea'
                     ]);
 
-         $this->crud->setColumnDetails('age_min',
+        $this->crud->setColumnDetails('age_min',
                     [
                     'name'  => 'age_min', 
                     'label' => 'Age min', 
@@ -264,20 +203,6 @@ class Activity_webCrudController extends CrudController
                     ]);
 
 
-        $this->crud->setColumnDetails('hour_start',
-                    [
-                    'name'  => 'hour_start', 
-                    'label' => 'Heure de début', 
-                    'type'  => 'text'
-                    ]);
-
-         $this->crud->setColumnDetails('hour_end',
-                    [
-                    'name'  => 'hour_end', 
-                    'label' => 'Heure de fin', 
-                    'type'  => 'text'
-                    ]);
-
         $this->crud->setColumnDetails('when',
                     [
                     'name'  => 'when', 
@@ -285,7 +210,7 @@ class Activity_webCrudController extends CrudController
                     'type'  => 'text'
                     ]);
 
-         $this->crud->setColumnDetails('price',
+        $this->crud->setColumnDetails('price',
                     [
                     'name'  => 'price', 
                     'label' => 'Tarifs', 
