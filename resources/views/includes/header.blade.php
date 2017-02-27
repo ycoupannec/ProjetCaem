@@ -37,7 +37,7 @@
             <li {{{ (Request::is('parcours') ? 'class=active' : '') }}}><a href="/parcours">Mon parcours musical</a></li>
             <li {{{ (Request::is('tarifs') ? 'class=active' : '') }}}><a href="/tarifs">Tarifs &amp; Inscriptions</a></li>
             <li {{{ (Request::is('evenements') ? 'class=active' : '') }}}><a href="/evenements">Évenements</a></li>
-            <li {{{ (Request::is('equipe') ? 'class=active' : '') }}}><a href="/equipe">L'équipes</a></li>
+            <li {{{ (Request::is('equipe') ? 'class=active' : '') }}}><a href="/equipe">L'équipe</a></li>
           </ul>
       </div>
     </div>
