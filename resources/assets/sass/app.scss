@@ -57,7 +57,7 @@
 	#header-img{
 		padding-top: 30px;
 		height: 370px;
-		background: url("../img/header.png") top no-repeat, url("../img/trame_footer.png") repeat, $headerFooterMainColor;
+		background: url("img/header.jpg") top no-repeat, url("../img/trame_footer.png") repeat, $headerFooterMainColor;
 		background-size: cover;
 	}
 
@@ -66,7 +66,11 @@
 	}
 
 	.navbar-caem img{
-		height: 40px;
+		height: 50px;
+	}
+
+	.navbar-brand{
+		padding: 7px 15px;
 	}
 
 	@media (min-width: $grid-float-breakpoint-max) {
@@ -78,7 +82,7 @@
 	      float: none;
 	      display: inline-block;
 	    }
-	  }
+		}
 	}
 }
 /* ---------------- HEADER END ---------------- */
@@ -124,6 +128,7 @@
 		.new{
 			@extend .shadow;
 			padding-bottom: 1em;
+			height: 500px;
 		}
 		figure{
 			figcaption{
@@ -145,11 +150,12 @@
 				max-width: $mainNewsImgSizeWidth;
 			}
 		}
-		p{
+		.description{
 			@extend .mainFont;
 			@extend .paddingNews;
+			margin: 0 1rem 1.5rem 1rem;
 			overflow: hidden;
-			max-height: 4em;
+			height: 9rem;
 		}
 
 		a{
@@ -389,6 +395,8 @@
 
 /* ---------------- PAGE EVENEMENT START ---------------- */
 #event{
+		padding: 	2em 1em;
+
 	h1{
 		@extend .mainTitleFont;
 		text-align: center;
@@ -398,7 +406,8 @@
 	}
 	time{
 		@extend .mainSubtitleFont;
-		text-align: center;
+		padding-left: 0;
+		padding-right: 0;
 	}
 
 }

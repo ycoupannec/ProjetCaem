@@ -40,14 +40,15 @@ public function events()
   // $typeActualities['A venir'] = \App\Models\Article::news(); // get news
   // $typeActualities['Actualités'] = \App\Models\Article::coming(); // get news
 
-  $typeActualities['Evenements à venir'] = Article::futureActualities()->get();
-  foreach ($typeActualities['Evenements à venir'] as $actuality) {
-    $typeActualities['Evenements à venir']->formatDate = Article::carbon($actuality->date);
-  }
 
   $typeActualities['Evenements proche'] = Article::actualities()->get();
   foreach ($typeActualities['Evenements proche'] as $actuality) {
     $typeActualities['Evenements proche']->formatDate = Article::carbon($actuality->date);
+  }
+
+  $typeActualities['Evenements à venir'] = Article::futureActualities()->get();
+  foreach ($typeActualities['Evenements à venir'] as $actuality) {
+    $typeActualities['Evenements à venir']->formatDate = Article::carbon($actuality->date);
   }
 
   $typeActualities['Evenements passés'] = Article::oldActualities()->get();

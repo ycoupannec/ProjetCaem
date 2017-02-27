@@ -39,11 +39,11 @@ CAEM - Ecole de musique
 						</figcaption>
 						<img class="img-responsive center-block" src="{{ $actuality->image }}" alt="">
 					</figure>
-					<div>
+					<div class="description">
 						{!! $actuality->content !!}
 					</div>
 					<div class="text-center">
-						<a href="#">Lire la suite</a>
+						<a href="evenement/{{ $actuality->id }}">Lire la suite</a>
 					</div>
 				</div>
 			</article>
