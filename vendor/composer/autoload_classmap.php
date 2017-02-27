@@ -51,6 +51,7 @@ return array(
     'Acacha\\User\\Http\\Middleware\\GuestUser' => $vendorDir . '/acacha/user/src/Http/Middleware/GuestUser.php',
     'Acacha\\User\\Providers\\GuestUserServiceProvider' => $vendorDir . '/acacha/user/src/Providers/GuestUserServiceProvider.php',
     'AddActivityInstrument' => $baseDir . '/database/migrations/2017_02_21_133628_add_activity_instrument.php',
+    'AddAlertTable' => $baseDir . '/database/migrations/2017_02_27_155140_add_alert_table.php',
     'AddChampActivities' => $baseDir . '/database/migrations/2017_02_15_102828_add_champ_activities.php',
     'AddCodeAnalytiqueGender' => $baseDir . '/database/migrations/2017_02_15_083814_add_code_analytique_gender.php',
     'AddColumnStatus' => $baseDir . '/database/migrations/2017_02_21_083656_add_column_status.php',

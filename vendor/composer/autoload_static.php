@@ -512,6 +512,7 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
         'Acacha\\User\\Http\\Middleware\\GuestUser' => __DIR__ . '/..' . '/acacha/user/src/Http/Middleware/GuestUser.php',
         'Acacha\\User\\Providers\\GuestUserServiceProvider' => __DIR__ . '/..' . '/acacha/user/src/Providers/GuestUserServiceProvider.php',
         'AddActivityInstrument' => __DIR__ . '/../..' . '/database/migrations/2017_02_21_133628_add_activity_instrument.php',
+        'AddAlertTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_27_155140_add_alert_table.php',
         'AddChampActivities' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_102828_add_champ_activities.php',
         'AddCodeAnalytiqueGender' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_083814_add_code_analytique_gender.php',
         'AddColumnStatus' => __DIR__ . '/../..' . '/database/migrations/2017_02_21_083656_add_column_status.php',
