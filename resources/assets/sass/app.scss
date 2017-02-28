@@ -48,7 +48,6 @@
 
 
 
-
 /* ---------------- HEADER ---------------- */
 #header{
 	@extend .headerFont;
@@ -99,7 +98,6 @@
 	}
 }
 /* -------------- HEADER END -------------- */
-
 
 
 
@@ -186,9 +184,10 @@
 
 
 
-
 /* ---------------- PAGE PARCOURS MUSICAL ---------------- */
-.mainParcoursMusical{
+.mainParcoursMusical
+{
+	padding: 2rem 0rem;
 
 	aside
 	{
@@ -197,7 +196,6 @@
 		padding: 2vh;
 		border-right: 1px solid #f2f2f2;
 		background-color: $caemWhite;
-
 
 		section
 		{
@@ -344,44 +342,68 @@
 /* ---------------- PAGE EQUIPE ---------------- */
 .mainEquipe
 {
+	padding: 2rem 0rem;
+
 	section
 	{
+		padding-bottom: 2rem;
 
 		h2
 		{
 			@extend .mainTitleFont;
 			background-color: $mainChartColor;
 			padding: 1rem 1rem 1rem 1rem;
-			margin-top: 3rem;
 		}
 
+		div
+		{
+			padding: 1rem 1rem;
 
-			div
+			article
 			{
-				padding: 3rem 0rem;
+				padding: 1rem 1rem;
 				background-color: $caemWhite;
 				@extend .shadow;
-				display: flex;
-				flex-flow: column;
-				align-items: center;
+				min-height: 30rem;
 
-				img
+				figure
 				{
-					max-width: 100%;
-					max-height: 20rem;
+					height: 20rem;
+					display: flex;
+					flex-flow: column;
+					align-items: center;
+
+					img
+					{
+						max-width: 100%;
+						height: 20rem;
+					}
 				}
 
-				h3
+				figcaption
 				{
-					@extend .mainSubtitleFont;
-				}
+					max-height: 10rem;
+					display: flex;
+					flex-flow: column;
+					align-items: center;
 
-				p
-				{
-					@extend .mainFont;
+					h3
+					{
+						@extend .mainSubtitleFont;
+						display: inline-block;
+						white-space: nowrap;
+					}
+
+					p
+					{
+						@extend .mainFont;
+						display: inline-block;
+						overflow: hidden;
+						white-space: nowrap;
+					}
 				}
 			}
-
+		}
 
 		h3
 		{
@@ -397,7 +419,7 @@
 /* ---------------- PAGE TARIFS ---------------- */
 .mainTarifs
 {
-	padding-bottom: 3vh;
+	padding: 2rem 0rem;
 
 	.tarifsInformations
 	{
@@ -488,6 +510,7 @@
 /* ---------------- PAGE CONTACT ---------------- */
 .mainContact
 {
+	padding: 2rem 0rem;
 	min-height: 60vh;
 
 	#mapid
@@ -529,7 +552,7 @@
 /* ---------------- PAGE ASSOCIATION ---------------- */
 .mainAssociation
 {
-
+	padding: 2rem 0rem;
 
 	h2
 	{
@@ -554,7 +577,7 @@
 /* ---------------- PAGE CREDITS ---------------- */
 .mainCredits
 {
-
+	padding: 2rem 0rem;
 
 	h2
 	{
@@ -580,7 +603,7 @@
 /* ---------------- PAGE MENTIONS LEGALES ---------------- */
 .mainMentions
 {
-	padding: 3vh 0vh;
+	padding: 2rem 0rem;
 
 	h1
 	{
@@ -608,6 +631,9 @@
 }
 /* ---------------- PAGE MENTIONS LEGALES END ------------ */
 
+
+
+
 /* ---------------- PAGE EVENEMENT START ---------------- */
 #event{
 		padding: 	2em 1em;
@@ -627,6 +653,9 @@
 
 }
 /* ---------------- PAGE EVENEMENT END ---------------- */
+
+
+
 
 /* ---------------- FOOTER ---------------- */
 #bgImage{
@@ -715,3 +744,4 @@ footer
 		padding: 8vh 0vh 5vh 0vh;
 	}
 }
+/* ---------- FOOTER MEDIA QUERIES END ----------- */
