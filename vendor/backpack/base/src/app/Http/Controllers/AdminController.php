@@ -2,6 +2,7 @@
 
 namespace Backpack\Base\app\Http\Controllers;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class AdminController extends Controller
 {
@@ -14,7 +15,7 @@ class AdminController extends Controller
     {
         $this->middleware('admin');
     }
-
+   
     /**
      * Show the admin dashboard.
      *
@@ -25,8 +26,78 @@ class AdminController extends Controller
     {    $usersActif = DB::table('people')
                             ->where('status', 1)
                             ->count();
-        $this->data['title'] = trans('backpack::base.dashboard'); // set the page title
-                $coucou = 8 ;
+        $this->data['title'] = trans('backpack::base.dashboard'); // set the page title    
+
+    $personnes=DB::table('people')
+              ->where('status', 1)
+              ->get();
+
+    foreach ($personnes as $key) {
+        $born = Carbon::parse($key->birthday);
+        $age=$born->diff(Carbon::now())->format('%y');
+        $agearray[]=$age;
+    }
+
+
+    $agedix=0;
+    $agevingt=0;
+    $agetrente=0;
+    $agequarante=0;
+    $agecinquante=0;
+    $agesoixante=0;
+    $agesoixantedix=0;
+    $agequatrevingt=0;
+
+    for($i=0;$i<count($agearray);$i++){
+        if ($agearray[$i]<=10){
+           $agedix++;
+        }
+        if ($agearray[$i]>10 && $agearray[$i]<=20){
+           $agevingt++;
+        }
+
+        if ($agearray[$i]>20 && $agearray[$i]<=30){
+            $agetrente++;
+        }
+
+        if ($agearray[$i]>30 && $agearray[$i]<=40){
+            $agequarante++;
+        }
+
+        if ($agearray[$i]>40 && $agearray[$i]<=50){
+            $agecinquante++;
+        }
+
+        if ($agearray[$i]>50 && $agearray[$i]<=60){
+            $agesoixante++;
+        }
+
+        if ($agearray[$i]>60 && $agearray[$i]<=70){
+            $agesoixantedix++;
+        }
+        if ($agearray[$i]>70 && $agearray[$i]<=90){
+           $agequatrevingt++;
+        }
+
+    }
+
+
+
+   $agepersonne = array(    $agedix,
+                            $agevingt , 
+                            $agetrente, 
+                            $agequarante, 
+                            $agecinquante , 
+                            $agesoixante, 
+                            $agesoixantedix, 
+                            $agequatrevingt , 
+ );
+
+
+
+        $this->data['agepersonne']=json_encode( $agepersonne);
+
+            
         $this->data['userActif'] =$usersActif;
 
         return view('backpack::dashboard', $this->data);
@@ -44,3 +115,5 @@ class AdminController extends Controller
         return redirect(config('backpack.base.route_prefix').'/dashboard');
     }
 }
+
+
