@@ -58,19 +58,19 @@
 		<section class="row banner"> <!--Footer section to display partnership logotypes-->
 
 			<div class="col-md-3 col-sm-6 col-xs-6">
-			  <img class="img-responsive" src="{{ asset('images/besancon_logo.png')}}" alt="Logo ville de Besançon">
+				<a href="http://www.grandbesancon.fr/"><img class="img-responsive" src="{{ asset('images/besancon_logo.png')}}" alt="Logo ville de Besançon" /></a>
 			</div>
 
 			<div class="col-md-3 col-sm-6 col-xs-6">
-			  <img class="img-responsive" src="{{ asset('images/grandbesancon_logo.png')}}" alt="Logo grand Besançon">
+				<a href="http://www.grandbesancon.fr/"><img class="img-responsive" src="{{ asset('images/grandbesancon_logo.png')}}" alt="Logo grand Besançon" /></a>
 			</div>
 
 			<div class="col-md-3 col-sm-6 col-xs-6">
-			  <img class="img-responsive" src="{{ asset('images/doubs_logo.png')}}" alt="Logo Doubs">
+				<a href="https://www.doubs.fr/"><img class="img-responsive" src="{{ asset('images/doubs_logo.png')}}" alt="Logo Doubs" /></a>
 			</div>
 
 			<div class="col-md-3 col-sm-6 col-xs-6">
-			  <img class="img-responsive" src="{{ asset('images/creditmutuel_logo.png')}}" alt="Logo Crédit Mutuelle">
+				<a href="https://www.creditmutuel.fr/groupe/fr/index.html"><img class="img-responsive" src="{{ asset('images/creditmutuel_logo.png')}}" alt="Logo Crédit Mutuelle" /></a>
 			</div>
 
 		</section>

@@ -351,17 +351,14 @@
 		{
 			@extend .mainTitleFont;
 			background-color: $mainChartColor;
-			padding: 2vh 2vh 1vh 2vh;
-			margin-top: 5vh;
+			padding: 1rem 1rem 1rem 1rem;
+			margin-top: 3rem;
 		}
 
-		div
-		{
-			padding: 1.5vh 1.5vh;
 
 			div
 			{
-				padding: 3vh 0vh;
+				padding: 3rem 0rem;
 				background-color: $caemWhite;
 				@extend .shadow;
 				display: flex;
@@ -371,7 +368,7 @@
 				img
 				{
 					max-width: 100%;
-					max-height: 25vh;
+					max-height: 20rem;
 				}
 
 				h3
@@ -384,9 +381,9 @@
 					@extend .mainFont;
 				}
 			}
-		}
 
-		p
+
+		h3
 		{
 			@extend .mainSubtitleFont;
 		}
@@ -583,11 +580,19 @@
 /* ---------------- PAGE MENTIONS LEGALES ---------------- */
 .mainMentions
 {
+	padding: 3vh 0vh;
 
-
-	h2, h1
+	h1
 	{
 		@extend .mainTitleFont;
+		background-color: $mainChartColor;
+		padding: 1vh 2vh 1vh 2vh;
+		margin: 0vh 0vh 2vh 0vh;
+	}
+
+	h2
+	{
+		@extend .mainSubtitleFont;
 	}
 
 	p
@@ -651,7 +656,7 @@ footer
 
 				a
 				{
-					@extend .footerFont;
+					color: $footerFontColor;
 				}
 			}
 		}

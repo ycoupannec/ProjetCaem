@@ -3,15 +3,11 @@
 <!------------------------------>
 
 
-
-
 <!--HEAD TITLE :-->
 @section('pageTitle')
-CAEM - Mon parcours musical
+CAEM - Contactez-nous
 @endsection
 <!---------------->
-
-
 
 
 <!--MAIN CONTENT :-->

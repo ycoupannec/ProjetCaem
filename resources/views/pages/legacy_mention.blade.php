@@ -3,13 +3,11 @@
 <!------------------------------>
 
 
-
 <!--HEAD TITLE :-->
 @section('pageTitle')
 CAEM - Mentions légales
 @endsection
 <!---------------->
-
 
 
 <!--MAIN CONTENT :-->

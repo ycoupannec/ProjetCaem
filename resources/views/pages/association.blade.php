@@ -3,13 +3,11 @@
 <!------------------------------>
 
 
-
 <!--HEAD TITLE :-->
 @section('pageTitle')
 CAEM - L'association
 @endsection
 <!---------------->
-
 
 
 <!--MAIN CONTENT :-->

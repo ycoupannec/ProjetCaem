@@ -3,12 +3,12 @@
 <!------------------------------>
 
 
-
 <!--HEAD TITLE :-->
 @section('pageTitle')
 CAEM - Tarifs &amp; Inscriptions
 @endsection
 <!---------------->
+
 
 <!--MAIN CONTENT :-->
 @section('pageContent')

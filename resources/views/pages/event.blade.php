@@ -1,9 +1,14 @@
+<!--CALLING THE DEFAULT LAYOUT-->
 @extends('layouts.default')
+<!------------------------------>
+
 
 <!--HEAD TITLE :-->
 @section('pageTitle')
-CAEM - Ecole de musique
+CAEM - Évenements
 @endsection
+<!---------------->
+
 
 <!--MAIN CONTENT :-->
 @section('pageContent')
