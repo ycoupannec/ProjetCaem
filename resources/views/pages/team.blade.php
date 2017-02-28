@@ -1,19 +1,84 @@
-!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--CALLING THE DEFAULT LAYOUT-->
+@extends('layouts.default')
+<!------------------------------>
 
-        <title>Laravel</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-        <!-- Styles -->
+<!--HEAD TITLE :-->
+@section('pageTitle')
+CAEM - Mon parcours musical
+@endsection
+<!---------------->
 
-    </head>
-    <body>
-        <p>team</p>
-    </body>
-</html>
+
+
+<!--MAIN CONTENT :-->
+@section('pageContent')
+<main class="container mainEquipe">
+
+
+	<section class="col-md-12">
+		<h2>Intervenants</h2>
+		@foreach($professeurs as $professeur)
+		<div class="col-md-3">
+			<div>
+				@if($professeur->picture != null)
+				<img src="uploads/{{ $professeur->picture }}">
+				@else
+				<img src="uploads/photo_team/placeholder.png">
+				@endif
+				<h3>{{ $professeur->firstname }} {{ $professeur->name }}</h3>
+				<p>{{ $professeur->instrument }}</p>
+			</div>
+		</div>
+		@endforeach
+	</section>
+
+
+	<section class="col-md-12">
+		<h2>Salariés administration</h2>
+		@foreach($bureaux as $bureau)
+		<div class="col-md-3">
+			<div>
+				@if($bureau->picture != null)
+				<img src="uploads/{{ $bureau->picture }}">
+				@else
+				<img src="uploads/photo_team/placeholder.png">
+				@endif
+				<h3>{{ $bureau->firstname }} {{ $bureau->name }}</h3>
+				<p>{{ $bureau->instrument }}</p>
+			</div>
+		</div>
+		@endforeach
+	</section>
+
+
+	<section class="col-md-12">
+		<h2>Conseil d'Administration</h2>
+		@foreach($administrations as $administration)
+		<div class="col-md-3">
+			<div>
+				@if($administration->picture != null)
+				<img src="uploads/{{ $administration->picture }}">
+				@else
+				<img src="uploads/photo_team/placeholder.png">
+				@endif
+				<h3>{{ $administration->firstname }} {{ $administration->name }}</h3>
+				<p>{{ $administration->instrument }}</p>
+			</div>
+		</div>
+		@endforeach
+	</section>
+
+
+	<section class="col-md-12">
+		<h2>Autres membres</h2>
+		@foreach($autres as $autre)
+		<p>{{ $autre->firstname }} {{ $autre->name }}</p>
+		@endforeach
+	</section>
+
+
+</main>
+@endsection
+<!------------------>

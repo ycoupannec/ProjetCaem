@@ -1,19 +1,45 @@
-!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.default')
 
-        <title>Laravel</title>
+<!--HEAD TITLE :-->
+@section('pageTitle')
+CAEM - Ecole de musique
+@endsection
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+<!--MAIN CONTENT :-->
+@section('pageContent')
+<main class="container">
 
-        <!-- Styles -->
-
-    </head>
-    <body>
-        <p>events</p>
-    </body>
-</html>
+<!-- START NEWS -->
+		@foreach ($typeActualities as $key => $typeActuality)
+		@if(count($typeActuality))
+		<section class="news">
+			<header>
+				<h2>{{ $key }}</h2>
+			</header>
+			<div class="row">
+				@foreach ($typeActuality as $actuality)
+					<article class="col-md-3">
+						<div class="new">
+							<figure>
+								<figcaption >
+									<h2>{{ $actuality->title }}</h2>
+									<time datetime="{{ $actuality->date }}">{{ $typeActuality->formatDate }}</time>
+								</figcaption>
+								<img class="img-responsive center-block" src="{{ $actuality->image }}" alt="">
+							</figure>
+							<div class="description">
+								{!! $actuality->content !!}
+							</div>
+							<div class="text-center">
+								<a href="evenement/{{ $actuality->id }}">Lire la suite</a>
+							</div>
+						</div>
+					</article>
+				@endforeach
+			</div>
+		</section>
+		@endif
+		@endforeach
+<!--END NEWS -->
+</main>
+@endsection
