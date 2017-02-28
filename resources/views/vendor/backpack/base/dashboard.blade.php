@@ -27,7 +27,7 @@
 <div class="col-md-4">
     <div class="info-box ">
         <!-- Apply any bg-* class to to the icon to color it --><span class="info-box-icon bg-orange"><i class="fa fa-building"></i></span>
-        <div class="info-box-content"> <span class="info-box-text">Nombre d'habitant Planoise</span> <span class="info-box-number">it's over 9000!</span> </div>
+        <div class="info-box-content"> <span class="info-box-text">Nombre d'habitant Planoise</span> <span class="info-box-number">{{$district}}</span> </div>
     </div>
 </div>
 <div class="col-md-4">
@@ -41,4 +41,36 @@
         <!-- Apply any bg-* class to to the icon to color it --><span class="info-box-icon bg-orange"><i class="fa fa-music"></i></span>
         <div class="info-box-content"> <span class="info-box-text">nombre d'élève qui joue de la guitare</span> <span class="info-box-number">it's over 9000!</span> </div>
     </div>
+</div>
+<div class="col-md-8">
+    <div class="box-body">
+        <div class="chart-responsive">
+            <canvas id="pieChart" height="165" width="199"> </canvas>
+        </div>
+    </div>
 </div> @endsection
+
+ @section('after_scripts')
+<script>
+     var ctx = document.getElementById("pieChart");
+
+    var test = ({!!$district!!});
+    console.log({!!$district!!});
+
+
+ var myDoughnutChart = new Chart(ctx, {
+     type: 'doughnut',
+     data: {
+        labels: {!!$district_labels!!},
+        datasets: [{
+            data: {!!$district!!},
+            backgroundColor:{!!$district_colors!!}
+        }]
+     }, 
+     options: {
+         animation: {
+             animateScale: true
+         }
+     }
+ });
+</script>@endsection

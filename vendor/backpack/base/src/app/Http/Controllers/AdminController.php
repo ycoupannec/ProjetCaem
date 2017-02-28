@@ -3,6 +3,7 @@
 namespace Backpack\Base\app\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 
+
 class AdminController extends Controller
 {
     protected $data = []; // the information we send to the view
@@ -21,17 +22,48 @@ class AdminController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function dashboard()
+    {    
         
-    {    $usersActif = DB::table('people')
-                            ->where('status', 1)
-                            ->count();
+        // number user online
+        $usersActif = DB::table('people')
+                        ->where('status', 1)
+                        ->count();                      
+        $this->data['userActif'] = $usersActif;
+
+        // districts list
+        $districts = DB::table('districts')->get();
+     
+        $districtsArray = array();
+        
+        //$colors = tableau avec des couleurs 
+        
+        foreach ($districts as $district) {
+       
+            // number people on district
+            $person = DB::table('people')
+                        ->where('district_id', $district->id)
+                        ->get();
+            
+            // to js chart
+            $districtsArray[] = $person->count();
+            $districtsLabelsArray[] = $district->name;
+            $districtsColorsArray[] = '#' . str_pad(dechex(mt_rand(0, 0xFFFFFF)), 6, '0', STR_PAD_LEFT);
+            
+            // tableau districtsColorsArray qui prend alétaoirement dans le tableau $colors (php array_rand)
+
+        
+        }
+      
+        $this->data['district'] = json_encode($districtsArray);
+        $this->data['district_colors'] = json_encode($districtsColorsArray);
+        $this->data['district_labels'] = json_encode($districtsLabelsArray);
+
+     
         $this->data['title'] = trans('backpack::base.dashboard'); // set the page title
-                $coucou = 8 ;
-        $this->data['userActif'] =$usersActif;
 
         return view('backpack::dashboard', $this->data);
+        
     }
-    
   
     /**
      * Redirect to the dashboard.
