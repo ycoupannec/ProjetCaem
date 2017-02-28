@@ -41,6 +41,7 @@
             <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/article') }}"><i class="fa fa-newspaper-o"></i> <span>Actualités</span></a></li>
             <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/category') }}"><i class="fa fa-list"></i> <span>Categories</span></a></li>
             <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/team') }}"><i class="fa fa-users"></i> <span>Équipe</span></a></li>
+            <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/alert') }}"><i class="fa fa-star"></i> <span>Alertes</span></a></li>
 
         </ul>
     </section>
