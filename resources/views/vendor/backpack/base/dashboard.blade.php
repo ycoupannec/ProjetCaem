@@ -39,6 +39,40 @@
 <div class="col-md-4">
     <div class="info-box ">
         <!-- Apply any bg-* class to to the icon to color it --><span class="info-box-icon bg-orange"><i class="fa fa-music"></i></span>
-        <div class="info-box-content"> <span class="info-box-text">nombre d'élève qui joue de la guitare</span> <span class="info-box-number">it's over 9000!</span> </div>
+        <div class="info-box-content"> <span class="info-box-text .vertical">nombre d'élève qui joue de la guitare</span> <span class="info-box-number">{{$agepersonne}}</span> </div>
     </div>
-</div> @endsection
+
+    <canvas id="pieChart" width="1500" height="1000"></canvas>
+</div>
+@endsection
+@section("after_scripts")
+<script>
+    var ctx = document.getElementById("pieChart");
+     var myDoughnutChart = new Chart(ctx, {
+        type:'line'
+      ,data: {
+         labels: ["0-10", "11-20", "21-30", "31-40", "41-50", "51-60", "61-70"],
+    datasets: [
+        {
+            label: "personnes par tranches d'âge",
+            fill: false,
+            lineTension: 0.1,
+            backgroundColor: "rgba(75,192,192,0.4)",
+            borderColor: "rgba(75,192,192,1)",
+            borderJoinStyle: 'miter',
+            pointBorderColor: "rgba(75,192,192,1)",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 1,
+            data: {!!$agepersonne!!}
+        }
+    ]
+ }});
+     console.log({!!$agepersonne!!})
+</script>
+@endsection
+
+
+
+
+
+

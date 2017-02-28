@@ -110,6 +110,8 @@
     <script src="{{ asset('vendor/adminlte') }}/plugins/fastclick/fastclick.js"></script>
     <script src="{{ asset('vendor/adminlte') }}/dist/js/app.min.js"></script>
 
+    <!--Chart-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>  
     <!-- page script -->
     <script type="text/javascript">
         // To make Pace works on Ajax calls
@@ -138,5 +140,6 @@
 
     <!-- JavaScripts -->
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+         <script type="text/javascript" src="{!! asset('js/testcharts_graph.js') !!}"></script>
 </body>
 </html>
