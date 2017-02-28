@@ -69,6 +69,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
 
 
+
+    <!--Chart-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>  
+    <!-- page script -->
+
     <script type="text/javascript">
         // To make Pace works on Ajax calls
         Pace.restart();
@@ -90,4 +95,4 @@
     <!-- JavaScripts -->{{--
     <script src="{{ elixir('js/app.js') }}"></script> --}} </body>
 
-</html>
+

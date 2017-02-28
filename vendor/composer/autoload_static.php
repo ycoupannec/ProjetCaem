@@ -468,6 +468,7 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
 
     public static $classMap = array (
         'AddActivityInstrument' => __DIR__ . '/../..' . '/database/migrations/2017_02_21_133628_add_activity_instrument.php',
+        'AddAlertTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_27_155140_add_alert_table.php',
         'AddChampActivities' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_102828_add_champ_activities.php',
         'AddCodeAnalytiqueGender' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_083814_add_code_analytique_gender.php',
         'AddColumnStatus' => __DIR__ . '/../..' . '/database/migrations/2017_02_21_083656_add_column_status.php',
@@ -476,6 +477,7 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
         'AddPictureToPeople' => __DIR__ . '/../..' . '/database/migrations/2017_02_22_143149_add_picture_to_people.php',
         'AddSlugToCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_24_060017_add_slug_to_categories_table.php',
         'AddSlugToTagsTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_24_060101_add_slug_to_tags_table.php',
+        'AddTimestampAlert' => __DIR__ . '/../..' . '/database/migrations/2017_02_28_081531_add_timestamp_alert.php',
         'AddTimestampsToAll' => __DIR__ . '/../..' . '/database/migrations/2017_02_07_154243_add_timestamps_to_all.php',
         'AddTimestampsToCity' => __DIR__ . '/../..' . '/database/migrations/2017_02_07_134003_add_timestamps_to_city.php',
         'AddTimestampsToDistricts' => __DIR__ . '/../..' . '/database/migrations/2017_02_07_145909_add_timestamps_to_districts.php',
@@ -1070,6 +1072,7 @@ class ComposerStaticInitfaf62d661bf8771e016517f9c1dce1ad
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
         'UpdateActivitiesWeb' => __DIR__ . '/../..' . '/database/migrations/2017_02_21_132423_update_activities_web.php',
         'UpdateActivityTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_21_130416_update_activity_table.php',
+        'UpdateAlertTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_28_074755_update_alert_table.php',
         'UpdateGenderVarchar' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_091935_update_gender_varchar.php',
         'UpdateImageRightVarchar' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_094351_update_image_right_varchar.php',
         'UpdateStatusBoolean' => __DIR__ . '/../..' . '/database/migrations/2017_02_23_132445_update_status_boolean.php',

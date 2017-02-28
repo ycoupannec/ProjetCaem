@@ -28,7 +28,7 @@ CAEM - Mon parcours musical
 
 					<h3>{{ $typeActivity->name }}</h3>
 
-					@foreach($typeActivity->activities as $activity)
+					@foreach($typeActivity->activities_web as $activity)
 					<label onclick="displayActivity();">
 						<p>{{ $activity->name }}</p>
 						<input class="activityCheckbox" type="checkbox" value="{{ $activity->id }}">
@@ -45,7 +45,7 @@ CAEM - Mon parcours musical
 	<div class="col-md-9 col-sm-9">
 
 		@foreach($typeActivities as $typeActivity)
-		@foreach($typeActivity->activities as $activity)
+		@foreach($typeActivity->activities_web as $activity)
 		<section id="{{ $activity->id }}" class="activitiesClass col-md-12">
 
 			<header id="headerParcours" class="col-md-12">
@@ -60,17 +60,19 @@ CAEM - Mon parcours musical
 
 			<footer class="col-md-12">
 
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<h4>Quand ?</h4>
-					<p>{{ $activity->when }} {{ $activity->hour_start }} {{ $activity->hour_end }}</p>
+					<p>{{ $activity->when }}</p>
 				</div>
 
+<!--
 				<div class="col-md-4">
 					<h4>Avec qui ?</h4>
 					<p>{{ $activity->person }}</p>
 				</div>
+-->
 
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<h4>Tarifs :</h4>
 					<p>{{ $activity->price }}</p>
 				</div>

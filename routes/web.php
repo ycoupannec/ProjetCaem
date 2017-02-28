@@ -1,14 +1,17 @@
 <?php
 
+
+
 // Website Routes
 Route::get('/', 'PagesController@index');
 Route::get('parcours', 'PagesController@course');
 Route::get('tarifs', 'PagesController@prices');
-Route::get('evenements', 'PagesController@events');
+Route::get('evenements', 'PagesController@events')->name('events');
+Route::get('evenement/{event}', 'PagesController@event')->name('event');
 Route::get('equipe', 'PagesController@team');
 Route::get('association', 'PagesController@association');
 Route::get('credits', 'PagesController@credits');
-Route::get('mention_legales', 'PagesController@legacy_mention');
+Route::get('mentions_legales', 'PagesController@legacy_mention');
 Route::get('contact', 'PagesController@contact');
 
 // Admin Interface Routes
@@ -39,7 +42,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
     CRUD::resource('people_instrument', 'Admin\People_instrumentCrudController');
     CRUD::resource('article', 'Admin\ArticleCrudController');
     CRUD::resource('category', 'Admin\CategoryCrudController');
-    CRUD::resource('tag', 'Admin\TagCrudController');
+    CRUD::resource('alert', 'Admin\AlertCrudController');
     CRUD::resource('team', 'Admin\TeamCrudController');
     Route::get('extract', 'Admin\ExtractController@index');
 

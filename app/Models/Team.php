@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 use Carbon\Carbon;
 
-class team extends Model
+class Team extends Model
 {
     use CrudTrait;
 
@@ -19,8 +19,7 @@ class team extends Model
         'picture',
         'description'
     ];
-
-}
+	
 
 public function setPictureAttribute($value)
     {
@@ -29,3 +28,4 @@ public function setPictureAttribute($value)
         $destination_path = "photo_team";
         $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path);
     }
+}
