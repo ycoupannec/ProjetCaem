@@ -22,7 +22,7 @@ CAEM - Ecole de musique
 	<p class="borderLeftPink">Du jeu dynamique, en groupe</p>
 	<p class="borderLeftOrange">L’expérience de la scène</p>
 	<div class="text-center">
-		<a href="parcours" class="">Mon parcours musical</a>
+		<a href="/parcours" class="">Mon parcours musical</a>
 	</div>
 </header>
 <!-- END PRENSENTATION CAEM -->

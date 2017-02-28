@@ -3,6 +3,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="École de musique à Besançon" />
+    <link rel="icon" type="image/png" href="{{ asset('images/caem_favicon.png')}}" />
 
     <title>@yield('pageTitle', 'CAEM - Ecole de musique')</title>
 
