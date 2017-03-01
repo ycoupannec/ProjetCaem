@@ -45,5 +45,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
     CRUD::resource('alert', 'Admin\AlertCrudController');
     CRUD::resource('team', 'Admin\TeamCrudController');
     Route::get('extract', 'Admin\ExtractController@index');
+    Route::get('export', 'Admin\ExtractController@export');
 
 });
