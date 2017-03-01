@@ -3,7 +3,6 @@
 <!------------------------------>
 
 
-
 <!--HEAD TITLE :-->
 @section('pageTitle')
 CAEM - Mentions légales

@@ -3,7 +3,6 @@
 <!------------------------------>
 
 
-
 <!--HEAD TITLE :-->
 @section('pageTitle')
 CAEM - Mon parcours musical
@@ -23,7 +22,7 @@ CAEM - Mon parcours musical
 
 
 <!--selection column :-->
-	<aside class="col-md-3 col-sm-3 container">
+	<aside class="col-md-3 col-sm-3 hidden-xs container">
 		<section id="sectionInterest">
 
 			<h2>Qu'est-ce qui vous intéresse ?</h2>

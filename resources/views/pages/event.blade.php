@@ -1,9 +1,14 @@
+<!--CALLING THE DEFAULT LAYOUT-->
 @extends('layouts.default')
+<!------------------------------>
+
 
 <!--HEAD TITLE :-->
 @section('pageTitle')
-CAEM - Ecole de musique
+CAEM - Évenements
 @endsection
+<!---------------->
+
 
 <!--  OG & TT CARD-->
 @section('ogtags')

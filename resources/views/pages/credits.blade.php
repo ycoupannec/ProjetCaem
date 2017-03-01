@@ -3,7 +3,6 @@
 <!------------------------------>
 
 
-
 <!--HEAD TITLE :-->
 @section('pageTitle')
 CAEM - Crédits
@@ -21,7 +20,7 @@ CAEM - Crédits
 @section('pageContent')
 <main class="container mainCredits">
 	<h2>Contenu :</h2><p>Lucie Anaclet</p>
-	<h2>Développement et intégration :</h2><p>Yves Tannier / TanLab</p>
+	<h2>Développement et intégration :</h2><p>Yves Tannier / TanLab / ACS Besançon</p>
 
 	<h2>Le site Internet du CAEM est réalisé exclusivement avec des logiciels libres. Entre autres :</h2>
 	<ul>

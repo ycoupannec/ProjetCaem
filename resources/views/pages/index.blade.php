@@ -1,9 +1,14 @@
+<!--CALLING THE DEFAULT LAYOUT-->
 @extends('layouts.default')
+<!------------------------------>
+
 
 <!--HEAD TITLE :-->
 @section('pageTitle')
 CAEM - INDEX
 @endsection
+<!---------------->
+
 
 
 <!--  OG & TT CARD-->
@@ -25,7 +30,7 @@ CAEM - INDEX
 	<p class="borderLeftPink">Du jeu dynamique, en groupe</p>
 	<p class="borderLeftOrange">L’expérience de la scène</p>
 	<div class="text-center">
-		<a href="parcours" class="">Mon parcours musical</a>
+		<a href="/parcours" class="">Mon parcours musical</a>
 	</div>
 </header>
 <!-- END PRENSENTATION CAEM -->

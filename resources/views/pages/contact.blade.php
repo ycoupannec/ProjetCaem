@@ -3,11 +3,9 @@
 <!------------------------------>
 
 
-
-
 <!--HEAD TITLE :-->
 @section('pageTitle')
-CAEM - Mon parcours musical
+CAEM - Contactez-nous
 @endsection
 <!---------------->
 
@@ -17,8 +15,6 @@ CAEM - Mon parcours musical
 		{{-- you can precise title, type, url, image, description--}}
 @stop
 <!---------------->
-
-
 
 <!--MAIN CONTENT :-->
 @section('pageContent')
