@@ -22,5 +22,8 @@ CAEM - Crédits
 		<li>Backpack</li>
 		<li>Twitter Bootstrap</li>
 	</ul>
+<!--	<img src="{{ asset('images/logo_CAEM.svg')}}" alt="logo CAEM">-->
+
+	<img src="{{ url('images/200x200/item-02.png') }}">
 </main>
 @endsection
