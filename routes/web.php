@@ -39,11 +39,13 @@ Route::get('/images/{size}/{name}', function($size = NULL, $name = NULL){
 	{
         $size = explode('x', $size);
 
-        $cache_image = Image::cache(function($image) use($size, $name){return $image->make(url('uploads/activity/'.$name))->resize(300, null, function ($constraint) {
-    $constraint->aspectRatio();
-})
-        }, 10); // cache for 10 minutes
+        $name = str_replace('uploads@','',$name);
+        $name = str_replace('@','/',$name);
 
+        $cache_image = Image::cache(function($image) use($size, $name){return $image->make(url('uploads/'.$name))->resize($size[0], null,
+          function ($constraint) {
+          $constraint->aspectRatio();
+        });}, 10); // cache for 10 minutes
 
         return Response::make($cache_image, 200, ['Content-Type' => 'image']);
     }

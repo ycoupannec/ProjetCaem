@@ -18,7 +18,7 @@ CAEM - Évenements
 
 <section class="row">
 	<figure class="col-sm-6">
-		<img class="img-responsive" src="http://placehold.it/800x600" alt="">
+		<img class="img-responsive" src="{{ url('images/800/'.str_replace("/","@",$event->image)) }}" alt="">
 	</figure>
 	<div class="col-sm-6">
 		<h1 class="col-sm-12">{{ $event->title }}<a class="pull-right" href="javascript:history.back()"><img src="{{ asset('images/back.svg')}}" alt=""></a></h1>

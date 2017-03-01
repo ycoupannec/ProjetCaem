@@ -77,11 +77,11 @@ CAEM - Mon parcours musical
 				<figure class="col-md-12">
 
 					<div class="col-md-6 center-block">
-						<img src="{{ url('images/100x100/'.basename($activity->picture_1)) }}" />
+						<img src="{{ url('images/400/'.str_replace("/","@",$activity->picture_1)) }}" />
 					</div>
 
 					<div class="col-md-6 center-block">
-						<img src="uploads/{{ $activity->picture_2 }}" />
+						<img src="{{ url('images/400/'.str_replace("/","@",$activity->picture_2)) }}" />
 					</div>
 
 				</figure>
