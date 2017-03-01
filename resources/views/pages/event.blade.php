@@ -16,7 +16,6 @@ CAEM - Ecole de musique
 
 <!--MAIN CONTENT :-->
 @section('pageContent')
-
 <main id="event" class="container">
 
 <section class="row">
@@ -31,11 +30,7 @@ CAEM - Ecole de musique
 		</div>
     <div class="col-sm-12 share">
       <!-- Your share button code -->
-      <a href="https://www.facebook.com/share?href={{  str_replace('http://', 'https://', Request::url()) }}&display=popup"
-      title="Partager sur Facebook" target="_blank" class="button">
-      <img src="{{ asset('images/facebook_logo.svg')}}" />
-      Facebook
-      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ str_replace('http://', 'https://', Request::url()) }}" title="Partager sur Facebook" target="_blank" class="button"><img src="{{ asset('images/facebook_logo.svg')}}" alt=""> Facebook</a>
       <!-- Your share button code -->
       <a class="twitter-share-button button" target="_blank" title="Partager sur Twitter"
       href="https://twitter.com/share"
