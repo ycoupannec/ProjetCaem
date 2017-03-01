@@ -1,25 +1,18 @@
-<!--CALLING THE DEFAULT LAYOUT-->
 @extends('layouts.default')
-<!------------------------------>
 
 
-<!--HEAD TITLE :-->
 @section('pageTitle')
 CAEM - Évenements
 @endsection
-<!---------------->
 
 
-<!--  OG & TT CARD-->
 @section('ogtags')
     @include('includes.og_tags', ['title' => $event->title,
 																	'image' => $event->image,
 																	'description' => strip_tags(mb_strimwidth($event->content, 0, 75, "..."))])
 		{{-- you can precise title, type, url, image, description--}}
 @stop
-<!---------------->
 
-<!--MAIN CONTENT :-->
 @section('pageContent')
 <main id="event" class="container">
 

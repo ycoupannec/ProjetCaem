@@ -1,22 +1,15 @@
-<!--CALLING THE DEFAULT LAYOUT-->
 @extends('layouts.default')
-<!------------------------------>
 
 
-<!--HEAD TITLE :-->
 @section('pageTitle')
 CAEM - Mon parcours musical
 @endsection
-<!---------------->
 
-<!--  OG & TT CARD-->
 @section('ogtags')
     @include('includes.og_tags', ['title' => 'CAEM Besançon École de musique - Mon parcours musical'])
 		{{-- you can precise title, type, url, image, description--}}
 @stop
-<!---------------->
 
-<!--MAIN CONTENT :-->
 @section('pageContent')
 <main class="container mainParcoursMusical">
 
@@ -104,7 +97,6 @@ CAEM - Mon parcours musical
 
 </main>
 @endsection
-<!------------------>
 
 @section('pageScript')
 <script>

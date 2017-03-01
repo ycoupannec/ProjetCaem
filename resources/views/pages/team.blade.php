@@ -1,22 +1,14 @@
-<!--CALLING THE DEFAULT LAYOUT-->
 @extends('layouts.default')
-<!------------------------------>
 
-
-<!--HEAD TITLE :-->
 @section('pageTitle')
 CAEM - L'équipe
 @endsection
-<!---------------->
 
-<!--  OG & TT CARD-->
 @section('ogtags')
     @include('includes.og_tags', ['title' => 'CAEM Besançon École de musique - Équipe'])
 		{{-- you can precise title, type, url, image, description--}}
 @stop
-<!---------------->
 
-<!--MAIN CONTENT :-->
 @section('pageContent')
 <main class="container mainEquipe">
 
@@ -119,4 +111,3 @@ CAEM - L'équipe
 
 </main>
 @endsection
-<!------------------>

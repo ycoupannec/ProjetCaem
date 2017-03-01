@@ -1,27 +1,19 @@
-<!--CALLING THE DEFAULT LAYOUT-->
 @extends('layouts.default')
-<!------------------------------>
 
 
-<!--HEAD TITLE :-->
 @section('pageTitle')
 CAEM - Évenements
 @endsection
-<!---------------->
 
 
-<!--  OG & TT CARD-->
 @section('ogtags')
     @include('includes.og_tags', ['title' => 'CAEM Besançon École de musique - Évenements'])
 		{{-- you can precise title, type, url, image, description--}}
 @stop
-<!---------------->
 
-<!--MAIN CONTENT :-->
 @section('pageContent')
 <main class="container">
 
-<!-- START NEWS -->
 		@foreach ($typeActualities as $key => $typeActuality)
 		@if(count($typeActuality))
 		<section class="news">
@@ -52,6 +44,5 @@ CAEM - Évenements
 		</section>
 		@endif
 		@endforeach
-<!--END NEWS -->
 </main>
 @endsection
