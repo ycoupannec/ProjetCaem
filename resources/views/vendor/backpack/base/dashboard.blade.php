@@ -27,7 +27,7 @@
 <div class="col-md-4">
     <div class="info-box ">
         <!-- Apply any bg-* class to to the icon to color it --><span class="info-box-icon bg-orange"><i class="fa fa-building"></i></span>
-        <div class="info-box-content"> <span class="info-box-text">Nombre d'habitant Planoise</span> <span class="info-box-number">it's over 9000!</span> </div>
+        <div class="info-box-content"> <span class="info-box-text">Nombre d'habitant Planoise</span> <span class="info-box-number">{{$district}}</span> </div>
     </div>
 </div>
 <div class="col-md-4">
@@ -36,18 +36,47 @@
         <div class="info-box-content"> <span class="info-box-text">nombre d'élève jeudi 17 à 18h</span> <span class="info-box-number">it's over 9000!</span> </div>
     </div>
 </div>
-<div class="col-md-4">
-    <div class="info-box ">
-        <!-- Apply any bg-* class to to the icon to color it --><span class="info-box-icon bg-orange"><i class="fa fa-music"></i></span>
-        <div class="info-box-content"> <span class="info-box-text .vertical">nombre d'élève qui joue de la guitare</span> <span class="info-box-number">{{$agepersonne}}</span> </div>
-    </div>
 
-    <canvas id="pieChart" width="1500" height="1000"></canvas>
+<div class ="row">
+<div class="col-md-6">
+    <div class="box-body">
+        <div class="chart-responsive">
+            <canvas id="pieChart" height="165" width="199"> </canvas>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="box-body">
+        <div class="chart-responsive">
+            <canvas id="graphChart" width="1500" height="1000"></canvas>
+        </div>
+    </div>
+</div>
 </div>
 @endsection
-@section("after_scripts")
+
+ @section('after_scripts')
 <script>
-    var ctx = document.getElementById("pieChart");
+     var ctx = document.getElementById("pieChart");
+
+
+ var myDoughnutChart = new Chart(ctx, {
+     type: 'doughnut',
+     data: {
+        labels: {!!$district_labels!!},
+        datasets: [{
+            data: {!!$district!!},
+            backgroundColor:{!!$district_colors!!}
+        }]
+     }, 
+     options: {
+         animation: {
+             animateScale: true
+         }
+     }
+ });
+    
+var ctx = document.getElementById("graphChart");
      var myDoughnutChart = new Chart(ctx, {
         type:'line'
       ,data: {
@@ -67,9 +96,11 @@
         }
     ]
  }});
-     console.log({!!$agepersonne!!})
-</script>
-@endsection
+</script>@endsection
+
+
+
+
 
 
 
