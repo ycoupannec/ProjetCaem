@@ -35,6 +35,8 @@ class AdminController extends Controller
         $districts = DB::table('districts')->get();
      
         $districtsArray = array();
+        $agearray= array();
+       /* debug*/
         
         //$colors = tableau avec des couleurs 
         
