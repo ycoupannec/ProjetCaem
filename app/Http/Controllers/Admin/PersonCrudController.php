@@ -138,8 +138,9 @@ class PersonCrudController extends CrudController
             'label' => 'Status', 
             'type'  => 'select_from_array',
             'options' => [
-                0 => 'Inactive',
-                1 => 'Active'
+                1 => 'Active',
+                0 => 'Inactive'
+                
             ],
             'allows_null' => false,
         ]);
@@ -202,7 +203,7 @@ class PersonCrudController extends CrudController
 
         $this->crud->allowAccess('details_row');
       
-        $this->crud->enableAjaxTable();
+        /*$this->crud->enableAjaxTable();*/
 
         $this->crud->enableExportButtons();
         
