@@ -31,12 +31,6 @@
 
 			</div>
 
-	<!--
-			<div  class="col-md-2">
-				<a id="connection" href="#">Connexion</a>
-			</div>
-	-->
-
 		</div>
 
 	</div>

@@ -202,6 +202,17 @@ return [
         Maatwebsite\Excel\ExcelServiceProvider::class,
 
 
+        // ------------------------------------------------
+        // add by benoit
+        // ------------------------------------------------
+        /*
+        * Intervention...
+		*
+		* See: http://image.intervention.io/getting_started/installation#laravel
+        */
+		Intervention\Image\ImageServiceProvider::class
+
+
     ],
 
     /*
@@ -263,6 +274,14 @@ return [
 
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
+	   /*
+        * Added by benoit
+		*
+        * Intervention...
+		*
+		* See: http://image.intervention.io/getting_started/installation#laravel
+        */
+		'Image' => Intervention\Image\Facades\Image::class
     ],
 
 ];
