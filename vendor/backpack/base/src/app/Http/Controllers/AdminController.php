@@ -22,6 +22,25 @@ class AdminController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function dashboard()
+<<<<<<< HEAD
+=======
+    {    
+        
+        // number user online
+        $usersActif = DB::table('people')
+                        ->where('status', 1)
+                        ->count();                      
+        $this->data['userActif'] = $usersActif;
+
+        // districts list
+        $districts = DB::table('districts')->get();
+     
+        $districtsArray = array();
+        $agearray= array();
+       /* debug*/
+        
+        //$colors = tableau avec des couleurs 
+>>>>>>> 3035398c07a86c63078de984c6917a9fbcefc286
         
     {    $usersActif = DB::table('people')
                             ->where('status', 1)
