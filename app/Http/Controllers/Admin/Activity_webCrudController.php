@@ -118,8 +118,8 @@ class Activity_webCrudController extends CrudController
             'label' => 'Status', 
             'type'  => 'select_from_array',
             'options' => [
-                        '0' => 'Hors Ligne',
-                        '1' => 'En ligne'
+                        '1' => 'En ligne',
+                        '0' => 'Hors Ligne'
                         ],
             'allows_null' => false,
             ]);
