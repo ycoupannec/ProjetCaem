@@ -28,15 +28,15 @@ class AdminController extends Controller
                             ->count();
         $this->data['title'] = trans('backpack::base.dashboard'); // set the page title    
 
-    $personnes=DB::table('people')
+         $personnes=DB::table('people')
               ->where('status', 1)
               ->get();
 
-    foreach ($personnes as $key) {
-        $born = Carbon::parse($key->birthday);
-        $age=$born->diff(Carbon::now())->format('%y');
-        $agearray[]=$age;
-    }
+        foreach ($personnes as $key) {
+            $born = Carbon::parse($key->birthday);
+            $age=$born->diff(Carbon::now())->format('%y');
+            $agearray[]=$age;
+        }
 
 
     $agedix=0;
