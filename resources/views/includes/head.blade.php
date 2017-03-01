@@ -5,21 +5,9 @@
     <meta name="description" content="École de musique à Besançon" />
 
     <title>@yield('pageTitle', 'CAEM - Ecole de musique')</title>
-
-	<!-- OPEN GRAPH -->
-	<meta property="og:title" content="@yield('pageTitle', 'CAEM - Ecole de musique')" />
-	<meta property="og:type" content="Musique" />
-	<meta property="og:url" content="url()->current();" />
-	<meta property="og:image" content="http://www.caem-besancon.fr/images/IMG5793.jpg" />
-	<meta property="og:description" content="Le Carrefour d'Animation et d'Expression Musicales" />
-
-	<!--  TWITTER CARD-->
-	<meta property="twitter:summary" content="summary" />
-	<meta property="twitter:site" content="@caem" />
-	<meta property="twitter:title" content="@yield('pageTitle', 'CAEM - Ecole de musique')" />
-	<meta property="twitter:description" content="Le Carrefour d'Animation et d'Expression Musicales" />
-	<meta property="twitter:image" content="http://www.caem-besancon.fr/images/IMG5793.jpg" />
-	<meta property="twitter:url" content="Request::url()" />
+    @section('ogtags')
+        @include('includes.og_tags')
+    @show
 
     <!--LEAFLET-->
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />

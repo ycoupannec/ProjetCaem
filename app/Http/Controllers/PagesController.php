@@ -6,9 +6,6 @@ use \App\Models\Article;
 class PagesController extends Controller
 {
 
-
-
-
 public function index()
 {
   // $typeActualities['Actualités'] = \App\Models\Article::news(); // get news
@@ -24,8 +21,7 @@ public function course()
 {
 
 	$typeActivities = \App\Models\Types_activity::with('activities_web')->get();
-/*	 print_r($typeActivities);
-	 exit;*/
+
 	return view('pages.course', ['typeActivities' => $typeActivities]);
 
 }
@@ -34,8 +30,7 @@ public function prices()
 {
 
 	$priceActivities = \App\Models\Types_activity::with('activities_web')->get();
-/*	 print_r($priceActivities);
-	 exit;*/
+
 	return view('pages.prices', ['priceActivities' => $priceActivities]);
 }
 

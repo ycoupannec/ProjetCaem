@@ -10,7 +10,12 @@ CAEM - Crédits
 @endsection
 <!---------------->
 
-
+<!--  OG & TT CARD-->
+@section('ogtags')
+    @include('includes.og_tags', ['title' => 'CAEM Besançon École de musique - Crédits'])
+		{{-- you can precise title, type, url, image, description--}}
+@stop
+<!---------------->
 
 <!--MAIN CONTENT :-->
 @section('pageContent')

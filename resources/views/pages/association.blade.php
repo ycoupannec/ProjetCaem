@@ -10,7 +10,12 @@ CAEM - L'association
 @endsection
 <!---------------->
 
-
+<!--  OG & TT CARD-->
+@section('ogtags')
+    @include('includes.og_tags', ['title' => 'CAEM Besançon École de musique - Assocation'])
+		{{-- you can precise title, type, url, image, description--}}
+@stop
+<!---------------->
 
 <!--MAIN CONTENT :-->
 @section('pageContent')
@@ -35,4 +40,3 @@ CAEM - L'association
 
 </main>
 @endsection
-
