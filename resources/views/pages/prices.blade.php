@@ -1,16 +1,14 @@
-<!--CALLING THE DEFAULT LAYOUT-->
 @extends('layouts.default')
-<!------------------------------>
 
-
-
-<!--HEAD TITLE :-->
 @section('pageTitle')
 CAEM - Tarifs &amp; Inscriptions
 @endsection
-<!---------------->
 
-<!--MAIN CONTENT :-->
+@section('ogtags')
+    @include('includes.og_tags', ['title' => 'CAEM Besançon École de musique - Tarifs'])
+		{{-- you can precise title, type, url, image, description--}}
+@stop
+
 @section('pageContent')
 <main class="mainTarifs container">
 
@@ -68,10 +66,6 @@ CAEM - Tarifs &amp; Inscriptions
 
 </main>
 @endsection
-<!------------------>
-
-
-
 <!--	<section id="sectionTarifsFormules" class="row">
 
 		<h2>Les formules :</h2>

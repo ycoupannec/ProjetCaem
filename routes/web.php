@@ -14,6 +14,50 @@ Route::get('credits', 'PagesController@credits');
 Route::get('mentions_legales', 'PagesController@legacy_mention');
 Route::get('contact', 'PagesController@contact');
 
+
+/*Route::get('/images/{size}/{name}', function($size = NULL, $name = NULL){
+    if(!is_null($size) && !is_null($name))
+	{
+        $size = explode('x', $size);
+
+        $cache_image = Image::cache(function($image) use($size, $name){return $image->make(url('uploads/activity/'.$name))->resize($size[0], $size[1]);
+        }, 10); // cache for 10 minutes
+
+
+        return Response::make($cache_image, 200, ['Content-Type' => 'image']);
+    }
+
+	else
+	{
+        abort(404);
+    }
+});*/
+
+
+Route::get('/images/{size}/{name}', function($size = NULL, $name = NULL){
+    if(!is_null($size) && !is_null($name))
+	{
+        $size = explode('x', $size);
+
+        $name = str_replace('uploads@','',$name);
+        $name = str_replace('@','/',$name);
+
+        $cache_image = Image::cache(function($image) use($size, $name){return $image->make(url('uploads/'.$name))->resize($size[0], null,
+          function ($constraint) {
+          $constraint->aspectRatio();
+        });}, 10); // cache for 10 minutes
+
+        return Response::make($cache_image, 200, ['Content-Type' => 'image']);
+    }
+
+	else
+	{
+        abort(404);
+    }
+});
+
+
+
 // Admin Interface Routes
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
 {

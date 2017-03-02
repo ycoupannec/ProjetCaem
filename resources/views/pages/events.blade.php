@@ -1,15 +1,19 @@
 @extends('layouts.default')
 
-<!--HEAD TITLE :-->
+
 @section('pageTitle')
-CAEM - Ecole de musique
+CAEM - Évenements
 @endsection
 
-<!--MAIN CONTENT :-->
+
+@section('ogtags')
+    @include('includes.og_tags', ['title' => 'CAEM Besançon École de musique - Évenements'])
+		{{-- you can precise title, type, url, image, description--}}
+@stop
+
 @section('pageContent')
 <main class="container">
 
-<!-- START NEWS -->
 		@foreach ($typeActualities as $key => $typeActuality)
 		@if(count($typeActuality))
 		<section class="news">
@@ -25,7 +29,7 @@ CAEM - Ecole de musique
 									<h2>{{ $actuality->title }}</h2>
 									<time datetime="{{ $actuality->date }}">{{ $typeActuality->formatDate }}</time>
 								</figcaption>
-								<img class="img-responsive center-block" src="{{ $actuality->image }}" alt="">
+								<img class="img-responsive center-block" src="{{ url('images/300/'.str_replace("/","@",$actuality->image)) }}" alt="">
 							</figure>
 							<div class="description">
 								{!! $actuality->content !!}
@@ -40,6 +44,5 @@ CAEM - Ecole de musique
 		</section>
 		@endif
 		@endforeach
-<!--END NEWS -->
 </main>
 @endsection

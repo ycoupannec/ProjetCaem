@@ -1,60 +1,27 @@
-<html>
-  <head>
-    <title>{{ config('backpack.base.project_name') }} Error 404</title>
+<!--CALLING THE DEFAULT LAYOUT-->
+@extends('layouts.errors')
+<!------------------------------>
 
-    <link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
 
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-        color: #B0BEC5;
-        display: table;
-        font-weight: 100;
-        font-family: 'Lato';
-      }
+<!--HEAD TITLE :-->
+@section('pageTitle')
+CAEM - 404
+@endsection
+<!---------------->
 
-      .container {
-        text-align: center;
-        display: table-cell;
-        vertical-align: middle;
-      }
 
-      .content {
-        text-align: center;
-        display: inline-block;
-      }
+<!--MAIN CONTENT :-->
+@section('pageContent')
+<main class="main404">
 
-      .title {
-        font-size: 156px;
-      }
+	<h1>404 - La page n'existe pas ou a été déplacée</h1>
 
-      .quote {
-        font-size: 36px;
-      }
+	<figure>
+		<a href="/"><img src="{{ asset('images/logo_CAEM.svg')}}" alt="Logo CAEM" /></a>
+	</figure>
 
-      .explanation {
-        font-size: 24px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="content">
-        <div class="title">404</div>
-        <div class="quote">Page not found.</div>
-        <div class="explanation">
-          <br>
-          <small>
-            <?php
-              $default_error_message = "Please return to <a href='".url('')."'>our homepage</a>.";
-            ?>
-            {!! isset($exception)? ($exception->getMessage()?$exception->getMessage():$default_error_message): $default_error_message !!}
-         </small>
-       </div>
-      </div>
-    </div>
-  </body>
-</html>
+	<a id="btnRetour" href="/">retour à la page d'accueil</a>
+
+</main>
+@endsection
+<!------------------>

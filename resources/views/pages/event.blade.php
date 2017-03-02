@@ -1,30 +1,45 @@
 @extends('layouts.default')
 
-<!--HEAD TITLE :-->
+
 @section('pageTitle')
-CAEM - Ecole de musique
+CAEM - Évenements
 @endsection
 
-<!--MAIN CONTENT :-->
+
+@section('ogtags')
+    @include('includes.og_tags', ['title' => $event->title,
+																	'image' => $event->image,
+																	'description' => strip_tags(mb_strimwidth($event->content, 0, 75, "..."))])
+		{{-- you can precise title, type, url, image, description--}}
+@stop
+
 @section('pageContent')
 <main id="event" class="container">
 
 <section class="row">
 	<figure class="col-sm-6">
-		<img class="img-responsive" src="http://placehold.it/800x600" alt="">
+		<img class="img-responsive" src="{{ url('images/800/'.str_replace("/","@",$event->image)) }}" alt="">
 	</figure>
 	<div class="col-sm-6">
-		<h1 class="col-sm-12">{{ $event->title }}</h1>
+		<h1 class="col-sm-12">{{ $event->title }}<a class="pull-right" href="javascript:history.back()"><img src="{{ asset('images/back.svg')}}" alt=""></a></h1>
 		<time class="col-sm-12" datetime="{{ $event->date }}">{{ $event->formatDate }}</time>
 		<div class="description">
 			{!! $event->content !!}
 		</div>
-		<div class="col-sm-12">
-			<h5 class="pull-left"><i class="fa fa-share-alt"></i> Partagez ce contenu&nbsp;&nbsp;</h5>
-			<a href="http://twitter.com/intent/tweet?text=Contactez-nous http://www.caem-besancon.fr//contact.html @CaemBesancon" title="Partager sur twitter" target="_blank" class="btn btn-twitter btn-sm"><i class="fa fa-twitter"></i> Twitter</a>
-			<a href="https://www.facebook.com/sharer/sharer.php?u=http://www.caem-besancon.fr//contact.html" title="Partager sur Facebook" target="_blank" class="btn btn-facebook btn-sm"><i class="fa fa-facebook"></i> Facebook</a>
-			<a class="button" href="https://plus.google.com/share?url=http://www.caem-besancon.fr//contact.html" title="Partager sur Google+" target="_blank" class="btn btn-googleplus btn-sm"><i class="fa fa-google-plus"></i> Google+</a>
-		</div>
+    <div class="col-sm-12 share">
+      <!-- Your share button code -->
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ str_replace('http://', 'https://', Request::url()) }}" title="Partager sur Facebook" target="_blank" class="button"><img src="{{ asset('images/facebook_logo.svg')}}" alt=""> Facebook</a>
+      <!-- Your share button code -->
+      <a class="twitter-share-button button" target="_blank" title="Partager sur Twitter"
+      href="https://twitter.com/share"
+      data-text="@CaemBesancon"
+      data-url="{{  str_replace('http://', 'https://', Request::url()) }}"
+      data-hashtags="caem,musique"
+      data-via="caembesancon"
+      data-related="caembesancon">
+      <img src="{{ asset('images/twitter_logo.svg')}}" />
+      Tweet</a>
+    </div>
 	</div>
 </section>
 </main>

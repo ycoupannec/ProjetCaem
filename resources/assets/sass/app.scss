@@ -1,8 +1,5 @@
  //TO EASILY CHANGE THE STYLE OF THE WEBSITE, GO TO _configstyle.scss FILE
 
-
-
-
 /*========*/
 /*IMPORTS:*/
 /*========*/
@@ -48,58 +45,111 @@
 
 
 
-
 /* ---------------- HEADER ---------------- */
-#header{
+#header
+{
 	@extend .headerFont;
 
-	#contact-connection{
+	#contact-connection
+	{
 		background-color: $headerFooterMainColor;
 		color: $caemWhite;
 		padding: 0.4em;
-	}
-	#contact-connection img{
-		max-height: 33px;
-	}
 
-	#contact-connection a{
-		color: $caemWhite !important;
-		text-decoration: underline;
+		div
+		{
+			@media (max-width: 767px)
+			{
+				display: flex;
+				justify-content: center;
+			}
+
+			a
+			{
+			color: $caemWhite !important;
+
+				img
+				{
+					padding: 0em 0.2em;
+				}
+			}
+
+			a:hover
+			{
+				text-decoration: none;
+			}
+
+			span
+			{
+				a
+				{
+					text-decoration: underline;
+				}
+			}
+
+			img
+			{
+				max-height: 33px;
+			}
+		}
 	}
 
 	#header-img{
-		padding-top: 30px;
-		height: 370px;
+		padding-top: 2rem;
+		height: 35rem;
 		background:  url("../img/trame_header.png"), url("img/header.jpg") top no-repeat;
 		background-size: auto, cover;
 	}
 
-	.navbar-caem{
-		border-bottom: 1.5vh solid $mainChartColor;
+	#header-img2
+	{
+		background-color: $headerFooterMainColor;
+		img
+		{
+			height: 16rem;
+		}
 	}
 
-	.navbar-caem img{
-		height: 50px;
+	.navbar-caem
+	{
+		border-bottom: 1rem solid $mainChartColor;
 	}
 
-	.navbar-brand{
-		padding: 7px 15px;
-	}
 
 	@media (min-width: $grid-float-breakpoint-max) {
 
-		.navbar-nav {
-	    width: 100%;
-	    text-align: center;
-	    > li {
-	      float: none;
-	      display: inline-block;
-	    }
+		.navbar-nav
+		{
+			width: 100%;
+			text-align: center;
+
+	    	> li
+			{
+				float: none;
+				display: inline-block;
+			}
+		}
+	}
+
+
+	#EDM
+	{
+		position: absolute;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		h2
+		{
+			@extend .mainSubtitleFont;
+			color: $headerNavFontColor ;
+			margin: 0;
+			padding: 0.4em 0em 0em 0em;
 		}
 	}
 }
 /* -------------- HEADER END -------------- */
-
 
 
 
@@ -186,9 +236,10 @@
 
 
 
-
 /* ---------------- PAGE PARCOURS MUSICAL ---------------- */
-.mainParcoursMusical{
+.mainParcoursMusical
+{
+	padding: 2rem 0rem;
 
 	aside
 	{
@@ -197,7 +248,6 @@
 		padding: 2vh;
 		border-right: 1px solid #f2f2f2;
 		background-color: $caemWhite;
-
 
 		section
 		{
@@ -344,49 +394,70 @@
 /* ---------------- PAGE EQUIPE ---------------- */
 .mainEquipe
 {
+	padding: 2rem 0rem;
+
 	section
 	{
+		padding-bottom: 2rem;
 
 		h2
 		{
 			@extend .mainTitleFont;
 			background-color: $mainChartColor;
-			padding: 2vh 2vh 1vh 2vh;
-			margin-top: 5vh;
+			padding: 1rem 1rem 1rem 1rem;
 		}
 
 		div
 		{
-			padding: 1.5vh 1.5vh;
+			padding: 1rem 1rem;
 
-			div
+			article
 			{
-				padding: 3vh 0vh;
+				padding: 1rem 1rem;
 				background-color: $caemWhite;
 				@extend .shadow;
-				display: flex;
-				flex-flow: column;
-				align-items: center;
+				min-height: 30rem;
 
-				img
+				figure
 				{
-					max-width: 100%;
-					max-height: 25vh;
+					height: 20rem;
+					display: flex;
+					flex-flow: column;
+					align-items: center;
+
+					img
+					{
+						max-width: 100%;
+						height: 20rem;
+					}
 				}
 
-				h3
+				figcaption
 				{
-					@extend .mainSubtitleFont;
-				}
+					max-height: 10rem;
+					display: flex;
+					flex-flow: column;
+					align-items: center;
 
-				p
-				{
-					@extend .mainFont;
+					h3
+					{
+						@extend .mainSubtitleFont;
+						display: inline-block;
+						white-space: nowrap;
+					}
+
+					p
+					{
+						@extend .mainFont;
+						display: inline-block;
+						overflow: hidden;
+						white-space: nowrap;
+					}
 				}
 			}
 		}
 
-		p
+		h3
 		{
 			@extend .mainSubtitleFont;
 		}
@@ -400,7 +471,7 @@
 /* ---------------- PAGE TARIFS ---------------- */
 .mainTarifs
 {
-	padding-bottom: 3vh;
+	padding: 2rem 0rem;
 
 	.tarifsInformations
 	{
@@ -491,6 +562,7 @@
 /* ---------------- PAGE CONTACT ---------------- */
 .mainContact
 {
+	padding: 2rem 0rem;
 	min-height: 60vh;
 
 	#mapid
@@ -532,7 +604,7 @@
 /* ---------------- PAGE ASSOCIATION ---------------- */
 .mainAssociation
 {
-
+	padding: 2rem 0rem;
 
 	h2
 	{
@@ -557,7 +629,7 @@
 /* ---------------- PAGE CREDITS ---------------- */
 .mainCredits
 {
-
+	padding: 2rem 0rem;
 
 	h2
 	{
@@ -583,11 +655,19 @@
 /* ---------------- PAGE MENTIONS LEGALES ---------------- */
 .mainMentions
 {
+	padding: 2rem 0rem;
 
-
-	h2, h1
+	h1
 	{
 		@extend .mainTitleFont;
+		background-color: $mainChartColor;
+		padding: 1vh 2vh 1vh 2vh;
+		margin: 0vh 0vh 2vh 0vh;
+	}
+
+	h2
+	{
+		@extend .mainSubtitleFont;
 	}
 
 	p
@@ -603,6 +683,9 @@
 }
 /* ---------------- PAGE MENTIONS LEGALES END ------------ */
 
+
+
+
 /* ---------------- PAGE EVENEMENT START ---------------- */
 #event{
 		padding: 	2em 1em;
@@ -613,21 +696,37 @@
 		color: white;
 		background-color: $mainNewsHeaderColor;
 		padding: 0.5em 1em;
+		margin-top: 0;
+		img{
+			height: 2rem;
+		}
 	}
 	time{
 		@extend .mainSubtitleFont;
 		padding-left: 0;
 		padding-right: 0;
 	}
+	.share{
+		padding-left: 0;
+		a{
+			text-decoration: none;
+		}
+		img{
+			height: 2rem;
+		}
+	}
 
 }
 /* ---------------- PAGE EVENEMENT END ---------------- */
+
+
+
 
 /* ---------------- FOOTER ---------------- */
 #bgImage{
 	background-color: $headerFooterMainColor;
 	background-image: url(../img/trame_footer.png);
-	border-top: 1.5vh solid $mainChartColor;
+	border-top: 1rem solid $mainChartColor;
 }
 
 footer
@@ -651,7 +750,7 @@ footer
 
 				a
 				{
-					@extend .footerFont;
+					color: $footerFontColor;
 				}
 			}
 		}
@@ -697,8 +796,41 @@ footer
 
 
 
-/* ------------ FOOTER MEDIA QUERIES ------------ */
+/* ----------------- PAGE 404 ------------------ */
+.main404
+{
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: $headerFooterMainColor;
+	background-image: url(../img/trame_footer.png);
 
+	h1
+	{
+		@extend .mainTitleFont;
+		color: $footerFontColor;
+		font-size: 2em;
+	}
+
+	figure
+	{
+		padding: 5rem 0rem;
+	}
+
+	#btnRetour
+	{
+		@extend .button;
+		text-transform: uppercase;
+	}
+}
+/* ----------------- PAGE 404 END ------------------ */
+
+
+
+
+/* ------------ FOOTER MEDIA QUERIES ------------ */
 @media screen and (max-width: 768px){
 	footer nav li
 	{
@@ -710,3 +842,4 @@ footer
 		padding: 8vh 0vh 5vh 0vh;
 	}
 }
+/* ---------- FOOTER MEDIA QUERIES END ----------- */

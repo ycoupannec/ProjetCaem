@@ -1,24 +1,21 @@
-<!--CALLING THE DEFAULT LAYOUT-->
 @extends('layouts.default')
-<!------------------------------>
 
 
-
-<!--HEAD TITLE :-->
 @section('pageTitle')
 CAEM - Mon parcours musical
 @endsection
-<!---------------->
 
+@section('ogtags')
+    @include('includes.og_tags', ['title' => 'CAEM Besançon École de musique - Mon parcours musical'])
+		{{-- you can precise title, type, url, image, description--}}
+@stop
 
-
-<!--MAIN CONTENT :-->
 @section('pageContent')
 <main class="container mainParcoursMusical">
 
 
 <!--selection column :-->
-	<aside class="col-md-3 col-sm-3 container">
+	<aside class="col-md-3 col-sm-3 hidden-xs container">
 		<section id="sectionInterest">
 
 			<h2>Qu'est-ce qui vous intéresse ?</h2>
@@ -80,11 +77,11 @@ CAEM - Mon parcours musical
 				<figure class="col-md-12">
 
 					<div class="col-md-6 center-block">
-						<img src="uploads/{{ $activity->picture_1 }}" />
+						<img src="{{ url('images/400/'.str_replace("/","@",$activity->picture_1)) }}" />
 					</div>
 
 					<div class="col-md-6 center-block">
-						<img src="uploads/{{ $activity->picture_2 }}" />
+						<img src="{{ url('images/400/'.str_replace("/","@",$activity->picture_2)) }}" />
 					</div>
 
 				</figure>
@@ -100,7 +97,6 @@ CAEM - Mon parcours musical
 
 </main>
 @endsection
-<!------------------>
 
 @section('pageScript')
 <script>
