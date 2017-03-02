@@ -62,8 +62,9 @@ class ActivityCrudController extends CrudController
                     'label' => 'Status', 
                     'type'  => 'select_from_array',
                     'options' => [
-                                '0' => 'Indisponible',
-                                '1' => 'Disponible'
+                                '1' => 'Disponible',
+                                '0' => 'Indisponible'
+                        
                                 ],
                     'allows_null' => false,
                     ]);
