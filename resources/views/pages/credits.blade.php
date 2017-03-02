@@ -1,16 +1,15 @@
-<!--CALLING THE DEFAULT LAYOUT-->
 @extends('layouts.default')
-<!------------------------------>
 
 
-<!--HEAD TITLE :-->
 @section('pageTitle')
 CAEM - Crédits
 @endsection
-<!---------------->
 
+@section('ogtags')
+    @include('includes.og_tags', ['title' => 'CAEM Besançon École de musique - Crédits'])
+		{{-- you can precise title, type, url, image, description--}}
+@stop
 
-<!--MAIN CONTENT :-->
 @section('pageContent')
 <main class="container mainCredits">
 	<h2>Contenu :</h2><p>Lucie Anaclet</p>

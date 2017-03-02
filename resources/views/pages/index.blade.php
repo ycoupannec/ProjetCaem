@@ -1,16 +1,17 @@
-<!--CALLING THE DEFAULT LAYOUT-->
 @extends('layouts.default')
-<!------------------------------>
 
 
-<!--HEAD TITLE :-->
 @section('pageTitle')
-CAEM - Ecole de musique
+CAEM - INDEX
 @endsection
-<!---------------->
 
 
-<!--MAIN CONTENT :-->
+
+@section('ogtags')
+    @include('includes.og_tags', ['title' => 'CAEM Besançon École de musique - Accueil'])
+		{{-- you can precise title, type, url, image, description--}}
+@stop
+
 @section('pageContent')
 <main class="container">
 
@@ -42,7 +43,7 @@ CAEM - Ecole de musique
 							<h2>{{ $actuality->title }}</h2>
 							<time datetime="{{ $actuality->date }}">{{ $typeActuality->formatDate }}</time>
 						</figcaption>
-						<img class="img-responsive center-block" src="{{ $actuality->image }}" alt="">
+  						<img class="img-responsive center-block" src="{{ url('images/250/'.str_replace("/","@",$actuality->image)) }}" alt="">
 					</figure>
 					<div class="description">
 						{!! $actuality->content !!}

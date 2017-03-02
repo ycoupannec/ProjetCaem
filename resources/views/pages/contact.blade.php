@@ -1,16 +1,14 @@
-<!--CALLING THE DEFAULT LAYOUT-->
 @extends('layouts.default')
-<!------------------------------>
 
-
-<!--HEAD TITLE :-->
 @section('pageTitle')
 CAEM - Contactez-nous
 @endsection
-<!---------------->
 
+@section('ogtags')
+    @include('includes.og_tags', ['title' => 'CAEM Besançon École de musique - Contact'])
+		{{-- you can precise title, type, url, image, description--}}
+@stop
 
-<!--MAIN CONTENT :-->
 @section('pageContent')
 <main class="container mainContact">
 
@@ -38,7 +36,6 @@ CAEM - Contactez-nous
 
 </main>
 @endsection
-<!------------------>
 
 
 @section('pageScript')

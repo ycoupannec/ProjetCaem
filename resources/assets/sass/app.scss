@@ -1,8 +1,5 @@
  //TO EASILY CHANGE THE STYLE OF THE WEBSITE, GO TO _configstyle.scss FILE
 
-
-
-
 /*========*/
 /*IMPORTS:*/
 /*========*/
@@ -699,11 +696,24 @@
 		color: white;
 		background-color: $mainNewsHeaderColor;
 		padding: 0.5em 1em;
+		margin-top: 0;
+		img{
+			height: 2rem;
+		}
 	}
 	time{
 		@extend .mainSubtitleFont;
 		padding-left: 0;
 		padding-right: 0;
+	}
+	.share{
+		padding-left: 0;
+		a{
+			text-decoration: none;
+		}
+		img{
+			height: 2rem;
+		}
 	}
 
 }
